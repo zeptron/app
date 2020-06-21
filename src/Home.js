@@ -8,6 +8,8 @@ import Button from './Button'
 import Hero from './components/Public/Hero'
 import Below from './components/Public/Below'
 import Results from './components/Public/Results'
+import Pricing from './components/Public/Pricing'
+import Start from './components/Public/Start'
 
 class Home extends React.Component {
   state = {
@@ -43,6 +45,8 @@ class Home extends React.Component {
         <Hero/>
         <Below/>
         <Results/>
+        <Pricing/>
+        <Start/>
 
         {
           isAuthenticated && (
