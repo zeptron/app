@@ -1,17 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
-import VideocamIcon from '@material-ui/icons/Videocam';
-import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
-import PieChartIcon from '@material-ui/icons/PieChart';
-import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
-import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
-import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import { IoLogoApple, IoLogoFacebook, IoLogoGoogle } from "react-icons/io";
+import { Auth } from 'aws-amplify'
 import SignUp from '../../SignUp'
+import { Button } from "../../containers/Auth.style";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,7 +28,13 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-  export default function Hero() {
+  export default function Start() {
+    const thisGoogle = () => {
+        Auth.federatedSignIn({ provider: "Google" });
+      };
+    const thisFacebook = () => {
+        Auth.federatedSignIn({ provider: "Facebook" });
+      };
     const [spacing, setSpacing] = React.useState(2);
     const classes = useStyles();
     const Text = styled.p`
@@ -62,11 +65,33 @@ const useStyles = makeStyles((theme) => ({
             Start browsing models
             </h2>
             <p className={s.subheader}>Sign up now for FREE and start browsing models.<br/> Want to try the platform? Get 5 hours free use every month!</p>
-            
+           
             </Grid> 
             
             </Grid> 
-            <SignUp/>
+            
+            <Button
+          fullwidth
+          title={'Sign up with Facebook'}
+          className='facebook'
+          icon={<IoLogoFacebook />}
+          iconPosition='left'
+          iconStyle={{ color: '#ffffff', marginRight: 5 }}
+          intlButtonId='continueFacebookBtn'
+          onClick={thisFacebook}
+          style={{ color: '#fff' }}
+        />
+        <Button
+          fullwidth
+          title={'Sign up with Google'}
+          className='google'
+          icon={<IoLogoGoogle />}
+          iconPosition='left'
+          iconStyle={{ color: '#ffffff', marginRight: 5 }}
+          intlButtonId='continueGoogleBtn'
+          onClick={thisGoogle}
+          style={{ color: '#fff' }}
+        />
             <Spacer height="80px"/>
 
         </Grid> 

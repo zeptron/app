@@ -19,8 +19,7 @@ class SignUp extends React.Component {
     })
   }
   signUp = () => {
-    const { username, password, given_name, family_name, email } = this.state
-    
+    const {username, password, given_name, family_name, email } = this.state
     Auth.signUp({
         username,
         password,
@@ -50,7 +49,7 @@ class SignUp extends React.Component {
           !showConfirmation && (
             <div {...css(styles.formContainer)}>
               
-              <Button
+          <Button
           fullwidth
           title={'Sign up with Facebook'}
           className='facebook'
@@ -91,14 +90,14 @@ class SignUp extends React.Component {
               />
               <input
                 {...css(styles.input)}
-                placeholder='Password'
-                type='password'
-                onChange={evt => this.onChange('password', evt.target.value)}
+                placeholder='Email'
+                onChange={evt => this.onChange('email', evt.target.value)}
               />
               <input
                 {...css(styles.input)}
-                placeholder='Email'
-                onChange={evt => this.onChange('email', evt.target.value)}
+                placeholder='Password'
+                type='password'
+                onChange={evt => this.onChange('password', evt.target.value)}
               />
               {/* 
               uncomment if you'd like to enable adding phone number as an attribute
