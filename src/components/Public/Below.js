@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
             <Grid item xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'center'}}>
-              Select your AI brain from the library
+              Select an AI brain from the library
               </h2>
               <p className={s.subheader}>Start now with no technical skills, training or setup required. For developers, integrate models into your app using JSON feeds or our API</p>
               <Spacer height="40px"/>
