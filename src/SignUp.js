@@ -49,7 +49,7 @@ class SignUp extends React.Component {
         {
           !showConfirmation && (
             <div {...css(styles.formContainer)}>
-              <h2 {...css(styles.signUpHeader)}>Sign Up</h2>
+              
               <Button
           fullwidth
           title={'Sign up with Facebook'}
@@ -177,6 +177,7 @@ const styles = {
   },
   input: {
     height: 40,
+    padding: 5,
     marginBottom: '10px',
     border: 'none',
     outline: 'none',

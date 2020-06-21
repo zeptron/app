@@ -9,12 +9,19 @@ const theme = createMuiTheme({
       contrastText: '#fff',
     },
     secondary: {
-      light: '#ffaf4c',
-      main: '#f47e17',
-      dark: '#bb5000',
+      light: '#ffb04c',
+      main: '#f57f17',
+      dark: '#bc5100',
       contrastText: '#000',
       fontWeight: '700'
     },
+    success: {
+        light: '#629749',
+        main: '#33691e',
+        dark: '#003d00',
+        contrastText: '#000',
+        fontWeight: '700'
+      },
   },
   screen: {
     xs: '575px',
