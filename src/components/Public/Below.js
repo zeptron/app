@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
               <h2 className={s.header} style={{textAlign: 'center'}}>
               Select your AI brain from the library
               </h2>
-              <p className={s.subheader}>Start now with no technical skills, training or setup required. Or, integrate the model into your own app using our API and JSON feeds</p>
+              <p className={s.subheader}>Start now with no technical skills, training or setup required. For developers, integrate models into your app using JSON feeds or our API</p>
               <Spacer height="40px"/>
               <h3 className={s.subclass}>Featured models</h3>
               </Grid>
