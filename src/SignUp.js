@@ -23,9 +23,9 @@ class SignUp extends React.Component {
     Auth.signUp({
         username,
         password,
+        given_name,
+        family_name,
         attributes: {
-          given_name,
-          family_name,
             email,
             // 'custom:favorite_flavor': 'Cookie Dough'  // custom attribute, not standard
         }

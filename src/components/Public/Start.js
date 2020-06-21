@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
             <h2 className={s.header} style={{textAlign: 'center'}}>
             Start browsing models
             </h2>
-            <p className={s.subheader}>Sign up now for FREE and start browsing models.<br/> Want to try the platform? Get 5 hours free use every month!</p>
+            <p className={s.subheader}>Sign up now for FREE and start browsing models.<br/> No credit card required!</p>
            
             </Grid> 
             

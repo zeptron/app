@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
               <h2 className={s.header} style={{textAlign: 'center'}}>
               Pricing
               </h2>
-              <p className={s.subheader}>Simple pay-as-you-go pricing</p>
+              <p className={s.subheader}>Simple pay-as-you-go pricing. No lock-in contract</p>
               <Spacer height="40px"/>
             </Grid>
             <Grid item>
