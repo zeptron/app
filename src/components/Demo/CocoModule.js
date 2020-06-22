@@ -1,90 +1,118 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
+import React, {useRef, useEffect} from 'react';
+import './App.css';
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
-import "@tensorflow/tfjs";
-import "./style.css";
+import classData from './classData.js'
 
-class CocoModule extends React.Component {
-  componentDidMount() {
-    const video = document.getElementById("video");
-    const webCamPromise = navigator.mediaDevices
-      .getUserMedia({
-        audio: false,
-        video: {
-          facingMode: "user",
-          width: 600,
-          height: 500
-        }
+const CocoModule = (props) => {
+  // promised loading model 
+  const loadModel = cocoSsd.load('mobilenet_v2');
+  // Refs
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  const canvasRef = useRef(null);
+  const vidRef = useRef(null);
+  
+
+  // Utils
+  const detectUtility = (video, model) => { // uses detect method on the model then calls the box building util below on each object recognized
+  
+    model.detect(video)
+      .then(discriminations => {
+        // console.log(discriminations);
+        // props.handleCountFrames()
+        buildRectangle(discriminations);
+        // props.handleGuess(discriminations);
       })
-      .then(stream => {
-        video.srcObject = stream;
-        return new Promise((resolve, reject) => {
-          video.onloadedmetadata = () => {
-            video.play();
-            resolve();
-          };
-        });
-      });
-    const modelPromise = cocoSsd.load();
-    Promise.all([modelPromise, webCamPromise]).then(values => {
-      this.detectFrame(video, values[0]);
-    });
-  }
-
-  detectFrame = (video, model) => {
-    model.detect(video).then(predictions => {
-      this.renderPredictions(predictions);
-      requestAnimationFrame(() => {
-        this.detectFrame(video, model);
-      });
-    });
+    requestAnimationFrame(() => detectUtility(video, model));
   };
 
-  renderPredictions = predictions => {
-    const c = document.getElementById("canvas");
-    const ctx = c.getContext("2d");
+  const buildRectangle = discriminations => { // Draws a rectangle with html around each discriminations in the object passed in
+    // !!!!
+    // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+    // !!!!
+
+    const ctx = canvasRef.current.getContext('2d'); // define the rectangle
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    // Font options.
-    const font = "16px sans-serif";
-    ctx.font = font;
-    ctx.textBaseline = "top";
-    predictions.forEach(prediction => {
-      const x = prediction.bbox[0];
-      const y = prediction.bbox[1];
-      const width = prediction.bbox[2];
-      const height = prediction.bbox[3];
-      // Draw the bounding box.
-      ctx.strokeStyle = "#00FFFF";
-      ctx.lineWidth = 4;
-      ctx.strokeRect(x, y, width, height);
-      // Draw the label background.
-      ctx.fillStyle = "#00FFFF";
-      const textWidth = ctx.measureText(prediction.class).width;
-      const textHeight = parseInt(font, 10); // base 10
-      ctx.fillRect(x, y, textWidth + 4, textHeight + 4);
-    });
 
-    predictions.forEach(prediction => {
-      const x = prediction.bbox[0];
-      const y = prediction.bbox[1];
-      // Draw the text last to ensure it's on top.
-      ctx.fillStyle = "#000000";
-      ctx.fillText(prediction.class, x, y);
+    // Build the rectangle styling
+    ctx.lineWidth = 2;
+    ctx.textBaseline = 'bottom';
+    ctx.font = '14px sans-serif';
+    
+    discriminations.forEach(guess => { // Draw the rectangle around each object prediction
+      const guessText = `${guess.class}`;
+     
+      ctx.strokeStyle = classData[guessText]; // give each guess.class's box a unique color
+     
+      const textWidth = ctx.measureText(guessText).width;
+      const textHeight = parseInt(ctx.font, 10);
+      ctx.strokeRect(guess.bbox[0], guess.bbox[1], guess.bbox[2], guess.bbox[3]);
+      ctx.fillStyle = 'white';
+      ctx.fillRect( 
+        guess.bbox[0]-ctx.lineWidth/2, // place the label on the top left of the box
+        guess.bbox[1], 
+        textWidth + ctx.lineWidth, 
+        -textHeight);
+      ctx.fillStyle = '#fc0303' // color the label text red, always
+      ctx.fillText(guessText, guess.bbox[0], guess.bbox[1]);
     });
   };
 
-  render() {
-    return (
-      <div>
-        <video id="video" width="600" height="500" />
-        <canvas id="canvas" width="600" height="500" />
-      </div>
+  // https://reactjs.org/docs/hooks-effect.html
+  useEffect(() => {
+
+    const rules = {// Define the rules for the mediaDevices in loadCam below
+      audio: false,
+      video: {facingMode: 'environment'}
+    };
+
+    // Control if user has cam / browser
+    if (navigator.mediaDevices.getUserMedia) { // check if the browser is getting a prompt for cam permission
+      const loadCam = navigator.mediaDevices.getUserMedia(rules) // returns promise, ask for cam permission with constraints in rules above
+      .then(stream => {
+        vidRef.current.srcObject = stream;
+        return new Promise(resolve => 
+          vidRef.current.onloadedmetadata = resolve
+          );
+      })
+      .catch(err => {
+        alert(`Please allow the browser to access your device's camera!!!`)
+      });
+
+      // Wait for the cocoSsd model to load, then for the cam to load
+      Promise.all([loadModel, loadCam]) // wait for loading the coco-ssd model & the cam feed, then call detectutility with the vidref and results
+      .then(
+        res => {
+          detectUtility(vidRef.current, res[0]) // build guesses on each image from the feed
+        }
+        )
+      .catch(
+        err => console.error(`Error loading the models / cam ${err}`));
+    }
+    else {
+      alert('You should probably download Chrome buddy');
+    }
+  });
+
+  // Render the feed & app
+  return (
+    <>
+      <video
+        ref={vidRef}
+        className='app-position'
+        autoPlay
+        playsInline
+        muted
+        width={windowWidth}
+        height={windowHeight}
+      />
+      <canvas
+        ref={canvasRef}
+        className='app-position'
+        width={windowWidth}
+        height={windowHeight-100}
+      />
+    </>
     );
-  }
 }
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<CocoModule />, rootElement);
-
-export default CocoModule
+export default CocoModule;
