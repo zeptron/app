@@ -239,9 +239,9 @@ If you have any questions about this Privacy Policy, please <a style={{color: 'w
             <Box>
             <Grid container justify="center"    >
                 <Grid item xs={12}>
-                <Button size="large" variant="contained" color="secondary" href="/auth">
+                {/* <Button size="large" variant="contained" color="secondary" href="/auth">
                 <span className={s.ctabutton}>Start Now for FREE</span>
-              </Button>
+              </Button> */}
               </Grid>
               </Grid>
               <Spacer height="80px"/>

@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
             </Grid>
             <Grid item>
               <Paper className={`${classes.paper} ${s.ripeness}`} />
-              <BoxHeading>Apple Ripeness</BoxHeading>
+              <BoxHeading>Tomato Ripeness</BoxHeading>
               <Notes>96% mAP · 30FPS · Transfer learning</Notes>
             </Grid>
             <Grid item>

@@ -409,9 +409,9 @@ We may change this User Generated Content Policy from time to time, in which cas
             <Box>
             <Grid container justify="center"    >
                 <Grid item xs={12}>
-                <Button size="large" variant="contained" color="secondary" href="/auth">
+                {/* <Button size="large" variant="contained" color="secondary" href="/auth">
                 <span className={s.ctabutton}>Start Now for FREE</span>
-              </Button>
+              </Button> */}
               </Grid>
               </Grid>
               <Spacer height="80px"/>

@@ -12,6 +12,7 @@ import Pricing from './components/Public/Pricing'
 import Start from './components/Public/Start'
 import Footer from './components/Common/Footer'
 import Spacer from 'react-spacer'
+import Welcome from './components/App/Welcome'
 
 class Home extends React.Component {
   state = {
@@ -50,9 +51,10 @@ class Home extends React.Component {
           isAuthenticated ? (
             <>
             <div>
+              {/* <Welcome/> */}
               <Spacer height="100px"/>
               <h1>The platform is undergoing scheduled maintenace</h1>
-              <h1>Plese try again later</h1>
+              <h1>Please try again later</h1>
               <Spacer height="100px"/>
               </div>
               {/* <Button
@@ -96,12 +98,12 @@ class Home extends React.Component {
              </>
           ) : (
             <div>
-              <Hero/>
-        <Below/>
-        <Results/>
-        <Pricing/>
-        <Start/>
-        <Footer/>
+            <Hero/>
+            <Below/>
+            <Results/>
+            <Pricing/>
+            <Start/>
+            <Footer/>
             </div>
           )
         }
