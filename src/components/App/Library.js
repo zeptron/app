@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
       height: 350,
-      width: '90%',
+      width: '100%',
       padding: theme.spacing(2),
       textAlign: 'center'
 
@@ -52,23 +52,37 @@ const useStyles = makeStyles((theme) => ({
                 
                 <Spacer height="100px"/>
                 <Grid container alignItems="center" justify="center">
-                    <Grid item md={3} >
+                  <Grid item md={8}>
+                  <Grid container alignItems="center" justify="center" spacing={2}>
+                    <Grid item md={6} >
                       <Link to="/library/currency">
+                        <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>Australian Currency</h2>
                         <Paper className={`${classes.paper} ${s.money}`}/>
                         </Link>
                     </Grid>
-                    <Grid item md={3}>
+                    <Grid item md={6}>
                       <Link to="/library/openpose">
+                      <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>OpenPose</h2>
                         <Paper className={`${classes.paper} ${s.openpose}`}/>
                         </Link>
                     </Grid>
-                    <Grid item md={3}>
+                    <Grid item md={6}>
                       <Link to="/library/coco">
+                      <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>COCO</h2>
                         <Paper className={`${classes.paper} ${s.coco}`}/>
                         </Link>
+                    </Grid>
+                    <Grid item md={6}>
+                      <Link to="/library/ripeness">
+                      <Spacer height="20px"/>
+                      <h2 className={s.librarytitle}>Tomato Ripeness</h2>
+                        <Paper className={`${classes.paper} ${s.ripeness}`}/>
+                        </Link>
+                    </Grid>
+                    </Grid>
                     </Grid>
                 </Grid>
                 <Spacer height="100px"/>

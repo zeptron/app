@@ -6,7 +6,7 @@ import Footer from '../Common/Footer'
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
 import Coco from '../../assets/coco.gif'
-
+import YouTube from 'react-youtube'
 
 export default function Currency() {
     return ( 
@@ -18,8 +18,8 @@ export default function Currency() {
                 <Box component="fieldset" mb={3} borderColor="transparent">
                 <Rating name="read-only" value={5} readOnly />
                 </Box>
-                    <h1 className={s.header}>COCO</h1>
-                    <p className={s.subheader}>80 classes of everyday objects</p>
+                    <h1 className={s.header}>Tomato Ripeness</h1>
+                    <p className={s.subheader}>Transfer learning is available for other fruits & vegetables</p>
                     <Spacer height="25px"/>
                     <Button size="large" variant="contained" color="tertiary" href="#">
                 <span className={s.ctabutton}>Upgrade to use model</span>
@@ -29,22 +29,19 @@ export default function Currency() {
             </Grid>
             <Spacer height="50px"/>
         </Box>
-        
-        <Box bgcolor="primary.light">
-        <Spacer height="50px"/>
-        <Grid container alignItems="center" justify="center">
-                <Grid item md={8} sm={12} xs={12}>
-                <Spacer height="50px"/>
-                <Grid container alignItems="center" justify="center">
-                    <Grid item md={6} sm={12} xs={12}>
-                        <img src={Coco} style={{maxWidth: '100%'}}/>
-                    </Grid>
-                </Grid>
+        <Box>
+             <Spacer height="50px"/>
+            <Grid container alignItems="top" justify="center">
+                <Grid item md={6} sm={6} xs={12}>
+                <h3 className={s.subclass}>Demo Video</h3>
+                    <Box p={4}>
+                    <Spacer height="20px"/>
+                <YouTube videoId="8PxkjMgXlEw" />
+                </Box>
                 </Grid>
             </Grid>
             <Spacer height="50px"/>
-         </Box>
-         
+        </Box>
         <Footer />
     </div>
     )
