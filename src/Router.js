@@ -18,6 +18,9 @@ import Contact from './Contact'
 import Privacy from './Privacy'
 import Terms from './Terms'
 import Currency from './components/Models/Currency'
+import OpenPose from './components/Models/OpenPose'
+import OpenPoseLib from './components/Demo/Posenet'
+import Coco from './components/Models/Coco'
 
 class PrivateRoute extends React.Component {
   state = {
@@ -80,6 +83,9 @@ const Routes = () => (
         <PrivateRoute path='/private' exact component={Private} />
         <PrivateRoute path='/library' exact component={Library} />
         <PrivateRoute path='/library/currency' exact component={Currency} />
+        <PrivateRoute path='/library/openpose' exact component={OpenPose} />
+        <PrivateRoute path='/model/openpose' exact component={OpenPoseLib} />
+        <PrivateRoute path='/library/coco' exact component={Coco} />
         <PrivateRoute path='/profile'  component={Profile} />
         <Route component={NoMatch} />
       </Switch>

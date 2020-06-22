@@ -48,7 +48,6 @@ const useStyles = makeStyles((theme) => ({
    return (
     //   <Container>
             <Box p={2}>
-          
           <Grid container justify="center" spacing={spacing}>
             <Grid item md={8} sm={10} xs={12}>
             <Grid container justify="center" spacing={spacing}>

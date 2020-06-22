@@ -54,7 +54,8 @@ export default function Currency() {
         <Spacer height="50px"/>
             <Grid container alignItems="center" justify="center">
                 <Grid item md={8} sm={12} xs={12}>
-                    <Grid container spacing={2}>
+                <h3 style={{color:'white'}} className={s.subclass}>Classes</h3>
+            <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                 <div className={classes.demo}>
                     <List dense={dense}>
@@ -152,14 +153,12 @@ export default function Currency() {
          </Grid>
          </Box>
          <Box>
-            <Grid container alignItems="center" justify="center">
-                <Grid item md={4} sm={6} xs={12}>
-                    <h3 className={s.subclass}>Training chart</h3>
-                    <img style={{maxWidth: '100%'}} src={chart} />
-                </Grid>
-                <Grid item md={4} sm={6} xs={12}>
-    
+             <Spacer height="50px"/>
+            <Grid container alignItems="top" justify="center">
+                <Grid item md={6} sm={6} xs={12}>
+                <h3 className={s.subclass}>Demo Video</h3>
                     <Box p={4}>
+                    <Spacer height="20px"/>
                 <YouTube videoId="7UTpr-jPH0A" />
                 </Box>
                 </Grid>
