@@ -1,13 +1,11 @@
 import React from 'react'
-import {Box, Button, Grid, Card} from '@material-ui/core'
+import {Box, Button, Grid} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import s from '../../styles/styles.module.css'
-import chart from '../../assets/currency.jpg'
 import YouTube from 'react-youtube'
 import Footer from '../Common/Footer'
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -28,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Currency() {
     const classes = useStyles();
     const [dense, setDense] = React.useState(false);
-    const [secondary, setSecondary] = React.useState(false);
     return ( 
     <div>
         <Box bgcolor="primary.dark" color="primary.contrastText">

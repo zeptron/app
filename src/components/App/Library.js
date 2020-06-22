@@ -5,14 +5,15 @@ import Spacer from 'react-spacer'
 import {Box, Button, Grid, Paper} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Footer from '../Common/Footer'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
     paper: {
-      height: 200,
-      width: 200,
+      height: 350,
+      width: '90%',
       padding: theme.spacing(2),
       textAlign: 'center'
 
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
             <div>
             <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
                 <h1  className={s.header} style={{textAlign: 'center'}}>
-                Model Library                
+                My Library                
                 </h1>
                 <Box>
                     <Grid container alignItems="center" justify="center">
@@ -51,8 +52,23 @@ const useStyles = makeStyles((theme) => ({
                 
                 <Spacer height="100px"/>
                 <Grid container alignItems="center" justify="center">
-                    <Grid item md={3}>
+                    <Grid item md={3} >
+                      <Link to="/library/currency">
+                      <h2 className={s.librarytitle}>Australian Currency</h2>
                         <Paper className={`${classes.paper} ${s.money}`}/>
+                        </Link>
+                    </Grid>
+                    <Grid item md={3}>
+                      <Link to="/library/openpose">
+                      <h2 className={s.librarytitle}>OpenPose</h2>
+                        <Paper className={`${classes.paper} ${s.openpose}`}/>
+                        </Link>
+                    </Grid>
+                    <Grid item md={3}>
+                      <Link to="/library/coco">
+                      <h2 className={s.librarytitle}>COCO</h2>
+                        <Paper className={`${classes.paper} ${s.coco}`}/>
+                        </Link>
                     </Grid>
                 </Grid>
                 <Spacer height="100px"/>

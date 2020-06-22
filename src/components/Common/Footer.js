@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { css } from 'glamor'
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
 import {Link} from 'react-router-dom'
 
@@ -28,16 +27,7 @@ const useStyles = makeStyles((theme) => ({
   export default function Footer() {
     const [spacing, setSpacing] = React.useState(8);
     const classes = useStyles();
-    const Text = styled.p`
-    color: white;
-    text-align: left;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    `
-    const BoxHeading = styled.h3`
-    text-transform: uppercase;
-    `
+ 
    return (
 
     <Box bgcolor="primary.main" color="primary.contrastText" p={4} >

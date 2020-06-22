@@ -146,3 +146,7 @@ background-position: center;
     }
   }
 
+  .librarytitle  {
+    color: white!important;
+    text-transform: center;
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,7 +6,6 @@ import Spacer from 'react-spacer'
 import { IoLogoGoogle } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { Auth } from 'aws-amplify'
-import SignUp from '../../SignUp'
 import { Button } from "../../containers/Auth.style";
 
 
@@ -38,23 +36,7 @@ const useStyles = makeStyles((theme) => ({
     //   };
     const [spacing, setSpacing] = React.useState(2);
     const classes = useStyles();
-    const Text = styled.p`
-    color: white;
-    text-align: left;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    `
-    const BoxHeading = styled.h3`
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 5px;
-    
-    `
-    const Notes = styled.p`
-    text-align: center;
-    margin: 0px 0px 5px 0px;
-    `
+   
    return (
     <Box p={2} bgcolor="primary.dark" color="primary.contrastText" >
          <Grid container justify="center" spacing={spacing}>

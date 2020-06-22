@@ -21,6 +21,7 @@ import Currency from './components/Models/Currency'
 import OpenPose from './components/Models/OpenPose'
 import OpenPoseLib from './components/Demo/Posenet'
 import Coco from './components/Models/Coco'
+import CocoLib from './components/Demo/COCO'
 
 class PrivateRoute extends React.Component {
   state = {
@@ -84,6 +85,7 @@ const Routes = () => (
         <PrivateRoute path='/library' exact component={Library} />
         <PrivateRoute path='/library/currency' exact component={Currency} />
         <PrivateRoute path='/library/openpose' exact component={OpenPose} />
+        <PrivateRoute path='/model/coco' exact component={CocoLib} />
         <PrivateRoute path='/model/openpose' exact component={OpenPoseLib} />
         <PrivateRoute path='/library/coco' exact component={Coco} />
         <PrivateRoute path='/profile'  component={Profile} />

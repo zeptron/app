@@ -29,13 +29,7 @@ const useStyles = makeStyles((theme) => ({
   export default function Hero() {
     const [spacing, setSpacing] = React.useState(2);
     const classes = useStyles();
-    const Text = styled.p`
-    color: white;
-    text-align: left;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    `
+    
     const BoxHeading = styled.h3`
     text-transform: uppercase;
     text-align: left;

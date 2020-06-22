@@ -1,33 +1,14 @@
 import React, {useState} from 'react'
-import {Box, Button, Grid, Card} from '@material-ui/core'
+import {Box,  Grid} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import s from '../../styles/styles.module.css'
 import Footer from '../Common/Footer'
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import PoseNet from "react-posenet"
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-      maxWidth: 752,
-    },
-    demo: {
-      backgroundColor: theme.palette.background.paper,
-    },
-    title: {
-      margin: theme.spacing(4, 0, 2),
-    },
-  }));
 
-  
 export default function Currency() {
-    const classes = useStyles();
-    const [dense, setDense] = React.useState(false);
-    const [secondary, setSecondary] = React.useState(false);
     const [posesString, setPosesString] = useState([])
     return ( 
     <div>

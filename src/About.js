@@ -3,11 +3,8 @@ import styled from 'styled-components';
 import {Box, Button, Grid} from '@material-ui/core'
 import s from './styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
 import Footer from './components/Common/Footer'
-import Jason from './assets/jason.jpg'
-import Jose from './assets/j460.jpg'
 
 const useStyles = makeStyles((theme) => ({
     root: {

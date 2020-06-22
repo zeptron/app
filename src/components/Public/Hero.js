@@ -3,13 +3,10 @@ import styled from 'styled-components';
 import {Box, Button, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
 import Data from '../../assets/animations/data'
 import Brain from '../../assets/animations/brain'
 import Results from '../../assets/animations/results'
-import { HmacSHA384 } from 'crypto-js';
-
 
 
 const useStyles = makeStyles((theme) => ({

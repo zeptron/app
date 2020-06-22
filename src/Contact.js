@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Grid} from '@material-ui/core'
 import s from './styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
 import Footer from './components/Common/Footer'
 
@@ -27,16 +26,8 @@ const useStyles = makeStyles((theme) => ({
   export default function About() {
     const [spacing, setSpacing] = React.useState(8);
     const classes = useStyles();
-    const Text = styled.p`
-    color: white;
-    text-align: left;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    `
-    const BoxHeading = styled.h3`
-    text-transform: uppercase;
-    `
+    
+   
    return (
         <div>
             <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >

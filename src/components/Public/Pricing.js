@@ -40,15 +40,12 @@ const useStyles = makeStyles((theme) => ({
     text-align: center;
     margin: 25px 0px;
     `
-    const Notes = styled.p`
-    text-align: left;
-    margin: 0px 0px 10px 0px;
-    `
+  
    return (
        <div>
         <Box p={2}>
         <Grid container justify="center" spacing={spacing}>
-            <Grid item md={8} sm={10} xs={12}>
+            <Grid item md={8} sm={12} xs={12}>
             <Grid container justify="center" spacing={spacing}>
             <Grid item xs={12}>
             <Spacer height="40px"/>

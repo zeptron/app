@@ -5,7 +5,6 @@ import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
-import Models from './Control/Models'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -51,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
       <Grid container alignItems="center" justify="center">
         <Grid item md={4} xs={12}>
         <h3>My Models</h3>
-        <Models/>
+       
         </Grid>
         <Grid item md={4} xs={12}>
         <h3>Model Hours</h3>
