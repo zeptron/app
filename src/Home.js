@@ -10,6 +10,7 @@ import Below from './components/Public/Below'
 import Results from './components/Public/Results'
 import Pricing from './components/Public/Pricing'
 import Start from './components/Public/Start'
+import Footer from './components/Common/Footer'
 
 class Home extends React.Component {
   state = {
@@ -47,7 +48,8 @@ class Home extends React.Component {
         <Results/>
         <Pricing/>
         <Start/>
-
+        <Footer/>
+        
         {
           isAuthenticated && (
             <>

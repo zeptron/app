@@ -30,9 +30,15 @@ class Header extends React.Component {
               </Link>
               </div>
             ) : (
+              <div>
+                <Link to='/about' {...css(styles.link)}>
+              <p className={s.navItem}>About</p>
+            </Link>
               <Link to='/auth' {...css(styles.link)}>
                 <p className={s.navItem}>Sign In</p>
               </Link>
+              
+            </div>
             ) : null
             
           }

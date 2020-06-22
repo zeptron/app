@@ -23,9 +23,9 @@ class SignUp extends React.Component {
     Auth.signUp({
         username,
         password,
-        given_name,
-        family_name,
         attributes: {
+          given_name,
+          family_name,
             email,
             // 'custom:favorite_flavor': 'Cookie Dough'  // custom attribute, not standard
         }
@@ -49,7 +49,7 @@ class SignUp extends React.Component {
           !showConfirmation && (
             <div {...css(styles.formContainer)}>
               
-          <Button
+          {/* <Button
           fullwidth
           title={'Sign up with Facebook'}
           className='facebook'
@@ -59,7 +59,7 @@ class SignUp extends React.Component {
           intlButtonId='continueFacebookBtn'
           onClick={thisFacebook}
           style={{ color: '#fff' }}
-        />
+        /> */}
         <Button
           fullwidth
           title={'Sign up with Google'}
@@ -134,9 +134,9 @@ class SignUp extends React.Component {
 const thisGoogle = () => {
   Auth.federatedSignIn({ provider: "Google" });
 };
-const thisFacebook = () => {
-  Auth.federatedSignIn({ provider: "Facebook" });
-};
+// const thisFacebook = () => {
+//   Auth.federatedSignIn({ provider: "Facebook" });
+// };
 
 const styles = {
   signUpHeader: {

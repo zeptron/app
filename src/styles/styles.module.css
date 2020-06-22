@@ -118,6 +118,20 @@ background-position: center;
     border-bottom: 2px solid transparent;
   }
 
+  .navItemF {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: 500;
+    font-size: 1.3em;
+    color: white;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .navItemF :hover {
+    border-bottom: '2px solid white';
+  }
+
   .navItem :hover {
     border-bottom: '2px solid white';
   }
