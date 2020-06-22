@@ -42,7 +42,7 @@ export default function Currency() {
                     <h1 className={s.header}>OPENPOSE</h1>
                     <p className={s.subheader}>130 human body part keypoints</p>
                     <Spacer height="25px"/>
-                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <Button size="large" variant="contained" color="secondary" href="/model/openpose">
                 <span className={s.ctabutton}>Start with this model</span>
               </Button>
               <Spacer height="25px"/>
