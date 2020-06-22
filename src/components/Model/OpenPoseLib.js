@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import PoseNet from "react-posenet"
 
 
-export default function Currency() {
+export default function OpenPoseLib() {
     const [posesString, setPosesString] = useState([])
     return ( 
     <div>

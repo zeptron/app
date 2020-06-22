@@ -38,7 +38,7 @@ export default function Currency() {
                     <h1 className={s.header}>Australian Currency</h1>
                     <p className={s.subheader}>featuring handgun & knife protection</p>
                     <Spacer height="25px"/>
-                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <Button size="large" variant="contained" color="secondary" href="/model/currency/configure">
                 <span className={s.ctabutton}>Start with this model</span>
               </Button>
               <Spacer height="25px"/>
@@ -54,8 +54,8 @@ export default function Currency() {
                 <h3 style={{color:'white'}} className={s.subclass}>Classes</h3>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
-                <div className={classes.demo}>
-                    <List dense={dense}>
+                <div >
+                    <List className={classes.demo} dense={dense}>
                         <ListItem>
                         <ListItemText
                             primary="$5 Note"
@@ -86,6 +86,9 @@ export default function Currency() {
                             secondary="#5"
                         />
                         </ListItem>
+                        </List>
+                        <Spacer height="20px"/>
+                        <List className={classes.demo} dense={dense}>
                         <ListItem>
                         <ListItemText
                             primary="Handgun"

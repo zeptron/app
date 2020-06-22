@@ -17,11 +17,12 @@ import About from './About'
 import Contact from './Contact'
 import Privacy from './Privacy'
 import Terms from './Terms'
-import Currency from './components/Models/Currency'
-import OpenPose from './components/Models/OpenPose'
-import OpenPoseLib from './components/Demo/Posenet'
-import Coco from './components/Models/Coco'
-import Ripeness from './components/Models/Ripeness'
+import Currency from './components/Library/Currency'
+import OpenPose from './components/Library/OpenPose'
+import OpenPoseLib from './components/Model/OpenPoseLib'
+import Coco from './components/Library/Coco'
+import Ripeness from './components/Library/Ripeness'
+import CurrencyConfigure from './components/Model/Currency/Configure'
 
 
 class PrivateRoute extends React.Component {
@@ -85,6 +86,7 @@ const Routes = () => (
         <PrivateRoute path='/private' exact component={Private} />
         <PrivateRoute path='/library' exact component={Library} />
         <PrivateRoute path='/library/currency' exact component={Currency} />
+        <PrivateRoute path='/model/currency/configure' exact component={CurrencyConfigure} />
         <PrivateRoute path='/library/openpose' exact component={OpenPose} />
         <PrivateRoute path='/model/openpose' exact component={OpenPoseLib} />
         <PrivateRoute path='/library/coco' exact component={Coco} />
