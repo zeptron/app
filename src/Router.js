@@ -23,6 +23,7 @@ import OpenPoseLib from './components/Model/OpenPoseLib'
 import Coco from './components/Library/Coco'
 import Ripeness from './components/Library/Ripeness'
 import CurrencyConfigure from './components/Model/Currency/Configure'
+import CurrencyStream from './components/Model/Currency/Stream'
 
 
 class PrivateRoute extends React.Component {
@@ -87,6 +88,7 @@ const Routes = () => (
         <PrivateRoute path='/library' exact component={Library} />
         <PrivateRoute path='/library/currency' exact component={Currency} />
         <PrivateRoute path='/model/currency/configure' exact component={CurrencyConfigure} />
+        <PrivateRoute path='/model/currency/stream' exact component={CurrencyStream} />
         <PrivateRoute path='/library/openpose' exact component={OpenPose} />
         <PrivateRoute path='/model/openpose' exact component={OpenPoseLib} />
         <PrivateRoute path='/library/coco' exact component={Coco} />

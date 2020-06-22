@@ -4,8 +4,8 @@ import s from '../../../styles/styles.module.css'
 import Cogs from '../../../assets/animations/cogs'
 import {Box, Grid, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
+import Ip from './Ip'
 import Footer from '../../Common/Footer'
-
 
 
 class CurrencyConfigure extends Component {
@@ -14,17 +14,33 @@ class CurrencyConfigure extends Component {
     this.state = {
       name: "React",
       showHideProvision: false,
+      showHideIP: false,
+      count: 0
     };
     this.hideComponent = this.hideComponent.bind(this);
   }
   
-
+  componentDidMount() {
+    this.timeout = setTimeout(() => {
+      this.setState({ showHideProvision: false });
+      this.setState({ showHideIP: true });
+    }, 34000);
+  }
+  handleIncrement = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+  componentWillUnmount() {
+    clearTimeout(this.timeout);
+  }
   hideComponent(name) {
     console.log(name);
     switch (name) {
       case "showHideProvision":
         this.setState({ showHideProvision: !this.state.showHideProvision });
         break;
+        case "showHideIP":
+            this.setState({ showHideIP: !this.state.showHideIP });
+            break;
       
     }
   }
@@ -32,7 +48,7 @@ class CurrencyConfigure extends Component {
 
   render() {
     
-    const { showHideProvision } = this.state;
+    const { showHideProvision, showHideIP } = this.state;
     return (
       <div>
          <Box bgcolor="primary.dark" color="primary.contrastText">
@@ -40,7 +56,7 @@ class CurrencyConfigure extends Component {
             <Grid container alignItems="center" justify="center">
                 <Grid item md={8} sm={10} xs={12}>
                     <h1 className={s.header}>Australian Currency</h1>
-                    <p className={s.subheader}>CONFIGURATION</p>
+                    <p className={s.subheader}>MODEL CONFIGURATION</p>
                     <Spacer height="25px"/>
                 </Grid>
             </Grid>
@@ -56,7 +72,9 @@ class CurrencyConfigure extends Component {
                     <Spacer height="50px"/>
                     <Grid container alignItems="center" justify="center">
                     <Grid item sm={2} md={2}>
-                    <div> {showHideProvision && <Cogs />} </div>
+                    <div> {showHideProvision && <Cogs />} 
+                    {showHideIP && <Ip />}
+                    </div>
                     </Grid>
                     </Grid>
                 </Grid>
