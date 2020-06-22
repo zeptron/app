@@ -59,10 +59,10 @@ const useStyles = makeStyles((theme) => ({
                     <Link to='/contact' {...css(styles.link)}>
                         <p className={s.navItemF}>Contact</p>
                      </Link>
-                     <Link to='/privacy-legal' {...css(styles.link)}>
+                     <Link to='/privacy' {...css(styles.link)}>
                         <p className={s.navItemF}>Privacy & Legal</p>
                      </Link>
-                     <Link to='/terms-conditions' {...css(styles.link)}>
+                     <Link to='/terms' {...css(styles.link)}>
                         <p className={s.navItemF}>Terms & Conditions</p>
                      </Link>
                     </div>

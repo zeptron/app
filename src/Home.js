@@ -11,6 +11,7 @@ import Results from './components/Public/Results'
 import Pricing from './components/Public/Pricing'
 import Start from './components/Public/Start'
 import Footer from './components/Common/Footer'
+import Spacer from 'react-spacer'
 
 class Home extends React.Component {
   state = {
@@ -43,17 +44,18 @@ class Home extends React.Component {
     return (
       <div>
         
-        <Hero/>
-        <Below/>
-        <Results/>
-        <Pricing/>
-        <Start/>
-        <Footer/>
+        
         
         {
-          isAuthenticated && (
+          isAuthenticated ? (
             <>
-              <Button
+            <div>
+              <Spacer height="100px"/>
+              <h1>The platform is undergoing scheduled maintenace</h1>
+              <h1>Plese try again later</h1>
+              <Spacer height="100px"/>
+              </div>
+              {/* <Button
                 title="Update TOTP"
                 onClick={this.addTTOP}
               />
@@ -90,7 +92,17 @@ class Home extends React.Component {
                   )
                 }
               </div>
-            </>
+             */}
+             </>
+          ) : (
+            <div>
+              <Hero/>
+        <Below/>
+        <Results/>
+        <Pricing/>
+        <Start/>
+        <Footer/>
+            </div>
           )
         }
       </div>
