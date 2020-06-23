@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import UserContext from './UserContext'
 import { flex } from 'styled-system'
 import s from './styles/styles.module.css'
+import AppBar from './components/Nav/AppBar'
+import Button from "@material-ui/core/Button";
 
 
 class Header extends React.Component {
@@ -22,12 +24,13 @@ class Header extends React.Component {
           {
             isLoaded ? isAuthenticated ? (
               <div>
-              <Link to='/' {...css(styles.link)}>
+                <AppBar/>
+              {/* <Link to='/' {...css(styles.link)}>
               <p className={s.navItem}>Dashboard</p>
-            </Link>
-            <Link to='/profile' {...css(styles.link)}>
-                <p className={s.navItem}>Account</p>
-              </Link>
+            </Link> */}
+            {/* <Link to='/profile' {...css(styles.link)}>
+                <p className={s.navItem}>Profile</p>
+              </Link> */}
               </div>
             ) : (
               <div>
