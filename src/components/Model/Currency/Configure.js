@@ -15,6 +15,7 @@ class CurrencyConfigure extends Component {
       name: "React",
       showHideProvision: false,
       showHideIP: false,
+      showHideButton: true,
       count: 0
     };
     this.hideComponent = this.hideComponent.bind(this);
@@ -24,6 +25,7 @@ class CurrencyConfigure extends Component {
     this.timeout = setTimeout(() => {
       this.setState({ showHideProvision: false });
       this.setState({ showHideIP: true });
+      this.setState({ showHideButton: false });
     }, 34000);
   }
   handleIncrement = () => {
@@ -41,6 +43,9 @@ class CurrencyConfigure extends Component {
         case "showHideIP":
             this.setState({ showHideIP: !this.state.showHideIP });
             break;
+        case "showHideButton":
+            this.setState({ showHideButton: !this.state.showHideButton });
+            break;
       
     }
   }
@@ -48,7 +53,7 @@ class CurrencyConfigure extends Component {
 
   render() {
     
-    const { showHideProvision, showHideIP } = this.state;
+    const { showHideProvision, showHideIP, showHideButton } = this.state;
     return (
       <div>
          <Box bgcolor="primary.dark" color="primary.contrastText">
@@ -66,14 +71,20 @@ class CurrencyConfigure extends Component {
         <Spacer height="50px"/>
             <Grid container alignItems="center" justify="center">
                 <Grid item md={8} sm={10} xs={12}>
+                {showHideButton && 
                     <Button  variant="outlined" color="primary" size="large" onClick={() => this.hideComponent("showHideProvision")}>
                         <span className={s.ctabutton}>Provision</span>
                     </Button>
+                    }
                     <Spacer height="50px"/>
                     <Grid container alignItems="center" justify="center">
+                        <Grid item sm={8} md={4}>
+                        {showHideIP && <Ip />}
+                        </Grid>
+                        </Grid>
+                        <Grid container alignItems="center" justify="center">
                     <Grid item sm={2} md={2}>
                     <div> {showHideProvision && <Cogs />} 
-                    {showHideIP && <Ip />}
                     </div>
                     </Grid>
                     </Grid>

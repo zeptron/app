@@ -26,7 +26,7 @@ class Header extends React.Component {
               <p className={s.navItem}>Dashboard</p>
             </Link>
             <Link to='/profile' {...css(styles.link)}>
-                <p className={s.navItem}>Profile</p>
+                <p className={s.navItem}>Account</p>
               </Link>
               </div>
             ) : (

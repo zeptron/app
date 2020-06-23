@@ -29,7 +29,7 @@ class Stream extends Component {
             <Spacer height="50px"/>
                 <Grid container alignItems="center" justify="center">
                     <Grid item md={8} sm={10} xs={12}>
-                       <img src="http://220.233.144.165:8888/mjpg/video.mjpg?timestamp=1592845138185" />
+                       <img src="http://13.236.132.4:5000/video_feed/camera/0" />
                     </Grid>
                 </Grid>
             </Box>

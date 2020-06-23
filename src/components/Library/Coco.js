@@ -21,8 +21,8 @@ export default function Currency() {
                     <h1 className={s.header}>COCO</h1>
                     <p className={s.subheader}>80 classes of everyday objects</p>
                     <Spacer height="25px"/>
-                    <Button size="large" variant="contained" color="tertiary" href="#">
-                <span className={s.ctabutton}>Upgrade to use model</span>
+                    <Button size="large" variant="contained" color="tertiary" href="/contact">
+                <span className={s.ctabutton}>Contact to activate</span>
               </Button>
               <Spacer height="25px"/>
                 </Grid>

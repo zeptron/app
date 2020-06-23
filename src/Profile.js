@@ -1,24 +1,92 @@
-import React from 'react'
+import React, { useCallback} from 'react'
 import { Auth } from 'aws-amplify'
 import Container from './Container'
-import Button from './Button'
+import UserContext from './UserContext'
+import s from './styles/styles.module.css'
+import {Grid, Box, Button} from '@material-ui/core'
+import Spacer from 'react-spacer'
+import Usage from './components/App/Usage'
+import Footer from './components/Common/Footer'
+import styled from 'styled-components'
 
-const user = Auth.currentAuthenticatedUser()
+const Price = styled.p`
+    color: #ffb04c;
+    text-align: center;
+    font-size: 6em;
+    margin: 0;`
 
 class Profile extends React.Component {
+  
+  static contextType = UserContext
+
   render() {
+    const isAuthenticated = this.context.user && this.context.user.username ? true : false
     return (
-      <Container>
-        <h1>Profile</h1>
-        <h1>{user.username}</h1>
+     <div>
+       <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
+       
+       <Spacer height="10px"/>
+      <Grid container alignItems="center" justify="center">
+          <Grid item md={8} xs={12}>
+          <h1  className={s.header} style={{textAlign: 'center'}}>
+       Hi, {this.context.user.attributes.given_name}  {this.context.user.attributes.family_name}
+       </h1>
+          </Grid>
+      </Grid>
+      <Spacer height="50px"/>
+      <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          href="/"
+        >
+          <span className={s.ctabutton}>Go To Library</span>
+          </Button>
         <Button
-          title="Sign Out"
+          variant="contained"
+          color="secondary"
+          size="large"
           onClick={signOut}
-        />
-      </Container>
+        >
+          <span className={s.ctabutton}>Sign Out</span>
+          </Button>
+          <Spacer height="50px"/>
+          
+    </Box>
+    <Box>
+    <Spacer height="50px"/>
+    <Grid container alignItems="center" justify="center">
+          <Grid item md={8} xs={12}>
+            <Usage/>
+            </Grid>
+            </Grid>
+            <Spacer height="50px"/>
+    </Box>
+    <Box bgcolor="primary.light" color="primary.contrastText">
+    <Spacer height="50px"/>
+    <Grid container alignItems="center" justify="center">
+          <Grid item md={8} xs={12}>
+              <h2 className={s.header}>
+                Billing
+              </h2>
+             <Price>$0</Price>
+              <h3 style={{color:'white'}} className={s.subclass}>Free Tier Eligible </h3>
+            </Grid>
+            </Grid>
+            <Spacer height="50px"/>
+    </Box>
+    <Footer />
+    </div>
     )
   }
 }
+function getUser() {
+const checkUser = ( async () => {
+  const user = await Auth.currentAuthenticatedUser();
+  console.log(user)
+})
+}
+
 
 function signOut() {
   Auth.signOut()

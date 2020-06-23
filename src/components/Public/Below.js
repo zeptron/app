@@ -5,7 +5,6 @@ import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
-import Container from '../../Container'
 
 
 const useStyles = makeStyles((theme) => ({

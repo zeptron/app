@@ -4,8 +4,6 @@ import Spacer from 'react-spacer'
 import s from '../../styles/styles.module.css'
 import Footer from '../Common/Footer'
 import Rating from '@material-ui/lab/Rating';
-import { makeStyles } from '@material-ui/core/styles';
-import Coco from '../../assets/coco.gif'
 import YouTube from 'react-youtube'
 
 export default function Currency() {
@@ -21,8 +19,8 @@ export default function Currency() {
                     <h1 className={s.header}>Tomato Ripeness</h1>
                     <p className={s.subheader}>Transfer learning is available for other fruits & vegetables</p>
                     <Spacer height="25px"/>
-                    <Button size="large" variant="contained" color="tertiary" href="#">
-                <span className={s.ctabutton}>Upgrade to use model</span>
+                    <Button size="large" variant="contained" color="tertiary" href="/contact">
+                <span className={s.ctabutton}>Contact to activate</span>
               </Button>
               <Spacer height="25px"/>
                 </Grid>
