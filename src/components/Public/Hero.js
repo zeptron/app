@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
                <Grid container alignItems="center" justify="center">
                    <Grid item md={8} xs={12}>
                    <h1  className={s.header} style={{textAlign: 'center'}}>
-                Meet the world's first marketplace for trained artificial intelligence models
+                The world's first platform and marketplace for trained artificial intelligence models
                 </h1>
                    </Grid>
                </Grid>
