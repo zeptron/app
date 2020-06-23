@@ -72,13 +72,13 @@ const useStyles = makeStyles((theme) => ({
               <Paper className={`${classes.paper} ${s.satellite}`} />
               <BoxHeading>Satellite Feed</BoxHeading>
              
-              <Notes>42 Classes · 98% mAP · 30FPS</Notes>
+              <Notes>42 Classes</Notes>
             </Grid>
            
             <Grid item>
               <Paper className={`${classes.paper} ${s.license}`} />
-              <BoxHeading>License Plate Reader</BoxHeading>
-              <Notes>OCR · 99% mAP · 30FPS</Notes>
+              <BoxHeading>OpenALPR</BoxHeading>
+            
             </Grid>
             <Grid item>
               <Paper className={`${classes.paper} ${s.coco}`} />
@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
             <Grid item>
               <Paper className={`${classes.paper} ${s.ripeness}`} />
               <BoxHeading>Tomato Ripeness</BoxHeading>
-              <Notes>96% mAP · 30FPS · Transfer learning</Notes>
+              <Notes>Transfer learning available</Notes>
             </Grid>
             <Grid item>
               <Paper className={`${classes.paper} ${s.safety}`} />

@@ -24,7 +24,8 @@ import Coco from './components/Library/Coco'
 import Ripeness from './components/Library/Ripeness'
 import CurrencyConfigure from './components/Model/Currency/Configure'
 import CurrencyStream from './components/Model/Currency/Stream'
-
+import DeepFace from './components/Library/DeepFace'
+import OpenALPR from './components/Library/OpenALPR'
 
 class PrivateRoute extends React.Component {
   state = {
@@ -91,6 +92,8 @@ const Routes = () => (
         <PrivateRoute path='/model/currency/stream' exact component={CurrencyStream} />
         <PrivateRoute path='/library/openpose' exact component={OpenPose} />
         <PrivateRoute path='/model/openpose' exact component={OpenPoseLib} />
+        <PrivateRoute path='/library/deepface' exact component={DeepFace} />
+        <PrivateRoute path='/library/openalpr' exact component={OpenALPR} />
         <PrivateRoute path='/library/coco' exact component={Coco} />
         <PrivateRoute path='/library/ripeness' exact component={Ripeness} />
         <PrivateRoute path='/profile'  component={Profile} />

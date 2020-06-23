@@ -22,7 +22,7 @@ export default function Currency() {
                     <p className={s.subheader}>80 classes of everyday objects</p>
                     <Spacer height="25px"/>
                     <Button size="large" variant="contained" color="tertiary" href="/contact">
-                <span className={s.ctabutton}>Contact to activate</span>
+                <span className={s.ctabutton}>Contact us to activate</span>
               </Button>
               <Spacer height="25px"/>
                 </Grid>

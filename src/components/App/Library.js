@@ -54,18 +54,18 @@ const useStyles = makeStyles((theme) => ({
                 <Grid container alignItems="center" justify="center">
                   <Grid item md={8}>
                   <Grid container alignItems="center" justify="center" spacing={2}>
+                  <Grid item md={6}>
+                      <Link to="/library/openpose">
+                      <Spacer height="20px"/>
+                      <h2 className={s.librarytitle}>OpenPose - LIVE</h2>
+                        <Paper className={`${classes.paper} ${s.openpose}`}/>
+                        </Link>
+                    </Grid>
                     <Grid item md={6} >
                       <Link to="/library/currency">
                         <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>Australian Currency</h2>
                         <Paper className={`${classes.paper} ${s.money}`}/>
-                        </Link>
-                    </Grid>
-                    <Grid item md={6}>
-                      <Link to="/library/openpose">
-                      <Spacer height="20px"/>
-                      <h2 className={s.librarytitle}>OpenPose</h2>
-                        <Paper className={`${classes.paper} ${s.openpose}`}/>
                         </Link>
                     </Grid>
                     <Grid item md={6}>
@@ -82,6 +82,34 @@ const useStyles = makeStyles((theme) => ({
                         <Paper className={`${classes.paper} ${s.ripeness}`}/>
                         </Link>
                     </Grid>
+                    <Grid item md={6} >
+                      <Link to="/library/currency">
+                        <Spacer height="20px"/>
+                      <h2 className={s.librarytitle}>Facial Recognition</h2>
+                        <Paper className={`${classes.paper} ${s.faces}`}/>
+                        </Link>
+                    </Grid>
+                    <Grid item md={6}>
+                      <Link to="/library/openpose">
+                      <Spacer height="20px"/>
+                      <h2 className={s.librarytitle}>License Plate Reading</h2>
+                        <Paper className={`${classes.paper} ${s.license}`}/>
+                        </Link>
+                    </Grid>
+                    {/* <Grid item md={6}>
+                      <Link to="/library/coco">
+                      <Spacer height="20px"/>
+                      <h2 className={s.librarytitle}>Site Safety</h2>
+                        <Paper className={`${classes.paper} ${s.safety}`}/>
+                        </Link>
+                    </Grid>
+                    <Grid item md={6}>
+                      <Link to="/library/ripeness">
+                      <Spacer height="20px"/>
+                      <h2 className={s.librarytitle}>Satellite Feed</h2>
+                        <Paper className={`${classes.paper} ${s.satellite}`}/>
+                        </Link>
+                    </Grid> */}
                     </Grid>
                     </Grid>
                 </Grid>
