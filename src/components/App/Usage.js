@@ -23,7 +23,7 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [0, 0, 0, 0, 0, 0, 1.3,]
+      data: [0, 0, 0, 0, 0, 0, 0,]
     }
   ]
 };
