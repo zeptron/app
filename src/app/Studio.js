@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
                 <Grid container alignItems="center" justify="center">
                   <Grid item md={8}>
                   <Grid container alignItems="center" justify="center" spacing={2}>
-                  <Card/>
+                  {/* <Card/> */}
                     </Grid>
                     </Grid>
                 </Grid>

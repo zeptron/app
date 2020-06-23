@@ -28,10 +28,10 @@ class Header extends React.Component {
               </div>
             ) : (
               <div>
-                <Button href="/about" variant="contained" >
+                <Button href="/about" variant="outlined" style={{color: 'white'}}>
                   About
                 </Button>
-                <Button href="/about" variant="contained" >
+                <Button href="/auth" variant="outlined" style={{color: 'white', marginRight: '15px'}}>
                   Sign In
                 </Button>
                 {/* <Link to='/about' {...css(styles.link)}>
