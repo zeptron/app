@@ -4,7 +4,6 @@ import UserContext from '../UserContext'
 import s from '../styles/styles.module.css'
 import {Grid, Box, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
-import Footer from '../components/Common/Footer'
 import styled from 'styled-components'
 
 const Price = styled.p`
@@ -81,7 +80,6 @@ class Billing extends React.Component {
     <Spacer height="50px"/>
 </Box>
     
-    <Footer />
     </div>
 
     )

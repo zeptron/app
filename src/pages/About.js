@@ -4,7 +4,6 @@ import {Box, Button, Grid} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
-import Footer from '../components/Common/Footer'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -96,7 +95,6 @@ const useStyles = makeStyles((theme) => ({
               </Grid>
               </Grid>
               </Box>
-              <Footer />
               </div>
             
          

@@ -4,7 +4,6 @@ import {Box, Grid} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
-import Footer from '../components/Common/Footer'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -407,7 +406,6 @@ We may change this User Generated Content Policy from time to time, in which cas
               <Spacer height="80px"/>
               </Box>
             </Box>
-            <Footer/>
          </div>
      )
     }

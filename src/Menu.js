@@ -2,17 +2,20 @@ import React from 'react'
 import { css } from 'glamor'
 import { Link } from 'react-router-dom'
 import UserContext from './UserContext'
-import { flex } from 'styled-system'
 import s from './styles/styles.module.css'
 import AppBar from './components/Nav/AppBar'
 import Button from "@material-ui/core/Button";
 
 
 class Header extends React.Component {
+
   static contextType = UserContext
+
   render() {
+    
     const isAuthenticated = this.context.user && this.context.user.username ? true : false
     const isLoaded = this.context.isLoaded
+    
     return (
       <div {...css(styles.container)}>
         
@@ -23,10 +26,13 @@ class Header extends React.Component {
         <div {...css(styles.navContainer)}>
           {
             isLoaded ? isAuthenticated ? (
+              
               <div>
                 <AppBar/>
               </div>
+
             ) : (
+              
               <div>
                 <Button href="/about" variant="outlined" style={{color: 'white'}}>
                   About
@@ -34,16 +40,9 @@ class Header extends React.Component {
                 <Button href="/auth" variant="outlined" style={{color: 'white', marginRight: '15px'}}>
                   Sign In
                 </Button>
-                {/* <Link to='/about' {...css(styles.link)}>
-              <p className={s.navItem}>About</p>
-            </Link>
-              <Link to='/auth' {...css(styles.link)}>
-                <p className={s.navItem}>Sign In</p>
-              </Link> */}
-              
             </div>
-            ) : null
             
+            ) : null
           }
        </div>
       </div>
@@ -52,12 +51,6 @@ class Header extends React.Component {
 }
 
 const styles = {
-  amplifyLogo: {
-    height: 30,
-    marginLeft: 25,
-
-    marginBottom: 5
-  },
   navContainer: {
     display: 'flex',
     flexDirection: 'row-reverse',

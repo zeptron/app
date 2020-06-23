@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
 import {Box, Button, Grid, Paper} from '@material-ui/core'
 import s from '../styles/styles.module.css'
-import Footer from '../components/Common/Footer'
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
@@ -54,42 +53,42 @@ const useStyles = makeStyles((theme) => ({
                 <Grid container alignItems="center" justify="center">
                   <Grid item md={8}>
                   <Grid container alignItems="center" justify="center" spacing={2}>
-                  <Grid item md={6}>
+                  <Grid item md={6} xs={12}>
                       <Link to="/library/openpose">
                       <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>OpenPose - LIVE</h2>
                         <Paper className={`${classes.paper} ${s.openpose}`}/>
                         </Link>
                     </Grid>
-                    <Grid item md={6} >
+                    <Grid item md={6} xs={12}>
                       <Link to="/library/currency">
                         <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>Australian Currency</h2>
                         <Paper className={`${classes.paper} ${s.money}`}/>
                         </Link>
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid item md={6} xs={12}>
                       <Link to="/library/coco">
                       <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>COCO</h2>
                         <Paper className={`${classes.paper} ${s.coco}`}/>
                         </Link>
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid item md={6} xs={12}>
                       <Link to="/library/ripeness">
                       <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>Tomato Ripeness</h2>
                         <Paper className={`${classes.paper} ${s.ripeness}`}/>
                         </Link>
                     </Grid>
-                    <Grid item md={6} >
+                    <Grid item md={6} xs={12}>
                       <Link to="/library/deepface">
                         <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>Facial Recognition</h2>
                         <Paper className={`${classes.paper} ${s.faces}`}/>
                         </Link>
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid item md={6} xs={12}>
                       <Link to="/library/openalpr">
                       <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>OpenALPR</h2>
@@ -115,7 +114,6 @@ const useStyles = makeStyles((theme) => ({
                 </Grid>
                 <Spacer height="100px"/>
             </Box>
-            <Footer/>
             </div>
 
    )

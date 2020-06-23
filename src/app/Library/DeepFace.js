@@ -2,7 +2,6 @@ import React from 'react'
 import {Box, Button, Grid} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import s from '../../styles/styles.module.css'
-import Footer from '../../components/Common/Footer'
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
 import DeepFace1 from '../../assets/deepface1.jpeg'
@@ -50,7 +49,6 @@ export default function DeepFace() {
             <Spacer height="50px"/>
          </Box>
          
-        <Footer />
     </div>
     )
 }

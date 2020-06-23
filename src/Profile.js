@@ -1,12 +1,10 @@
 import React, { useCallback} from 'react'
 import { Auth } from 'aws-amplify'
-import Container from './Container'
 import UserContext from './UserContext'
 import s from './styles/styles.module.css'
 import {Grid, Box, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import Usage from './app/Usage'
-import Footer from './components/Common/Footer'
 import styled from 'styled-components'
 
 const Price = styled.p`
@@ -62,7 +60,6 @@ class Profile extends React.Component {
             </Grid>
             <Spacer height="50px"/>
     </Box>
-    <Footer />
     </div>
     )
   }

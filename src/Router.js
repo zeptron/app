@@ -7,11 +7,11 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom'
 import UserContext from './UserContext'
-import Header from './Header'
+import Header from './Menu'
+import Footer from './Footer'
 import Library from './app/Lib'
 import Authenticator from './Authenticator'
-import Home from './pages/Home'
-import Private from './Private.js'
+import Home from './pages/Home/Index'
 import Profile from './Profile'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -91,7 +91,6 @@ const Routes = () => (
         <Route path='/contact' exact component={Contact} />
         <Route path='/privacy' exact component={Privacy} />
         <Route path='/terms' exact component={Terms} />
-        <PrivateRoute path='/private' exact component={Private} />
         <PrivateRoute path='/library' exact component={Library} />
         <PrivateRoute path='/studio' exact component={Studio} />
         <PrivateRoute path='/streams' exact component={Streams} />
@@ -107,9 +106,10 @@ const Routes = () => (
         <PrivateRoute path='/library/coco' exact component={Coco} />
         <PrivateRoute path='/library/ripeness' exact component={Ripeness} />
         <PrivateRoute path='/account'  component={Profile} />
-        <PrivateRoute path='/billing'  component={Billing} />
+        <PrivateRoute path='/billing'   component={Billing} />
         <Route component={NoMatch} />
       </Switch>
+      <Footer/>
     </div>
   </Router>
 )

@@ -4,9 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
 import {Box, Button, Grid, Paper} from '@material-ui/core'
 import s from '../styles/styles.module.css'
-import Footer from '../components/Common/Footer'
 import { Link } from 'react-router-dom'
-import Card from './Control/Select'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -51,13 +49,12 @@ const useStyles = makeStyles((theme) => ({
                 <Grid container alignItems="center" justify="center">
                   <Grid item md={8}>
                   <Grid container alignItems="center" justify="center" spacing={2}>
-                  {/* <Card/> */}
+               
                     </Grid>
                     </Grid>
                 </Grid>
                 <Spacer height="100px"/>
             </Box>
-            <Footer/>
             </div>
 
    )

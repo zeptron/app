@@ -1,11 +1,10 @@
 import React, { Component, useEffect } from "react";
 import { render } from "react-dom";
 import s from '../../../styles/styles.module.css'
-import Cogs from '../../../assets/animations/cogs'
+import Cogs from '../../animations/cogs'
 import {Box, Grid, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import Ip from './Ip'
-import Footer from '../../../components/Common/Footer'
 
 
 class CurrencyConfigure extends Component {
@@ -92,7 +91,6 @@ class CurrencyConfigure extends Component {
             </Grid>
         </Box>
         <Spacer height="50px"/>
-        <Footer/>
         </div>
     );
   }
