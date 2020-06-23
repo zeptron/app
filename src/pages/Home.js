@@ -1,15 +1,15 @@
 import React from 'react'
 import { Auth } from 'aws-amplify'
 import { css } from 'glamor'
-import UserContext from './UserContext'
-import Hero from './components/Public/Hero'
-import Below from './components/Public/Below'
-import Results from './components/Public/Results'
-import Pricing from './components/Public/Pricing'
-import Start from './components/Public/Start'
-import Footer from './components/Common/Footer'
+import UserContext from '../UserContext'
+import Hero from '../components/Public/Hero'
+import Below from '../components/Public/Below'
+import Results from '../components/Public/Results'
+import Pricing from '../components/Public/Pricing'
+import Start from '../components/Public/Start'
+import Footer from '../components/Common/Footer'
 import Spacer from 'react-spacer'
-import Library from './components/App/Library'
+import Library from '../app/Lib'
 
 class Home extends React.Component {
   state = {

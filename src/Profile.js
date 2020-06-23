@@ -5,7 +5,7 @@ import UserContext from './UserContext'
 import s from './styles/styles.module.css'
 import {Grid, Box, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
-import Usage from './components/App/Usage'
+import Usage from './app/Usage'
 import Footer from './components/Common/Footer'
 import styled from 'styled-components'
 

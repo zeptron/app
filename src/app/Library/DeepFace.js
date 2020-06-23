@@ -2,13 +2,15 @@ import React from 'react'
 import {Box, Button, Grid} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import s from '../../styles/styles.module.css'
-import Footer from '../Common/Footer'
+import Footer from '../../components/Common/Footer'
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
-import Coco from '../../assets/coco.gif'
+import DeepFace1 from '../../assets/deepface1.jpeg'
+import DeepFace2 from '../../assets/deepface2.jpeg'
 
 
-export default function Currency() {
+
+export default function DeepFace() {
     return ( 
     <div>
         <Box bgcolor="primary.dark" color="primary.contrastText">
@@ -18,8 +20,8 @@ export default function Currency() {
                 <Box component="fieldset" mb={3} borderColor="transparent">
                 <Rating name="read-only" value={5} readOnly />
                 </Box>
-                    <h1 className={s.header}>COCO</h1>
-                    <p className={s.subheader}>80 classes of everyday objects</p>
+                    <h1 className={s.header}>Facial recognition</h1>
+                    <p className={s.subheader}>Attribute analysis, face verification, reverse database lookup</p>
                     <Spacer height="25px"/>
                     <Button size="large" variant="contained" color="tertiary" href="/contact">
                 <span className={s.ctabutton}>Contact us to activate</span>
@@ -30,14 +32,17 @@ export default function Currency() {
             <Spacer height="50px"/>
         </Box>
         
-        <Box bgcolor="primary.light">
+        <Box >
         <Spacer height="50px"/>
         <Grid container alignItems="center" justify="center">
-                <Grid item md={8} sm={12} xs={12}>
+                <Grid item md={10} sm={12} xs={12}>
                 <Spacer height="50px"/>
                 <Grid container alignItems="center" justify="center">
                     <Grid item md={6} sm={12} xs={12}>
-                        <img src={Coco} style={{maxWidth: '100%'}}/>
+                        <img src={DeepFace1} style={{maxWidth: '100%'}}/>
+                    </Grid>
+                    <Grid item md={6} sm={12} xs={12}>
+                        <img src={DeepFace2} style={{maxWidth: '100%'}}/>
                     </Grid>
                 </Grid>
                 </Grid>

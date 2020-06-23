@@ -2,7 +2,7 @@ import React from 'react'
 import {Box, Button, Grid} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import s from '../../styles/styles.module.css'
-import Footer from '../Common/Footer'
+import Footer from '../../components/Common/Footer'
 import Rating from '@material-ui/lab/Rating';
 import YouTube from 'react-youtube'
 

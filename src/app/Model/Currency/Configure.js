@@ -5,7 +5,7 @@ import Cogs from '../../../assets/animations/cogs'
 import {Box, Grid, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import Ip from './Ip'
-import Footer from '../../Common/Footer'
+import Footer from '../../../components/Common/Footer'
 
 
 class CurrencyConfigure extends Component {

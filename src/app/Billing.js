@@ -1,10 +1,10 @@
 import React, { useCallback} from 'react'
 import { Auth } from 'aws-amplify'
-import UserContext from '../../UserContext'
-import s from '../../styles/styles.module.css'
+import UserContext from '../UserContext'
+import s from '../styles/styles.module.css'
 import {Grid, Box, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
-import Footer from '../Common/Footer'
+import Footer from '../components/Common/Footer'
 import styled from 'styled-components'
 
 const Price = styled.p`

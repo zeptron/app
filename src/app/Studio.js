@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { makeStyles } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
 import {Box, Button, Grid, Paper} from '@material-ui/core'
-import s from '../../styles/styles.module.css'
-import Footer from '../Common/Footer'
+import s from '../styles/styles.module.css'
+import Footer from '../components/Common/Footer'
 import { Link } from 'react-router-dom'
 import Card from './Control/Select'
 

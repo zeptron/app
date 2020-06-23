@@ -25,21 +25,21 @@ class Header extends React.Component {
             isLoaded ? isAuthenticated ? (
               <div>
                 <AppBar/>
-              {/* <Link to='/' {...css(styles.link)}>
-              <p className={s.navItem}>Dashboard</p>
-            </Link> */}
-            {/* <Link to='/profile' {...css(styles.link)}>
-                <p className={s.navItem}>Profile</p>
-              </Link> */}
               </div>
             ) : (
               <div>
-                <Link to='/about' {...css(styles.link)}>
+                <Button href="/about" variant="contained" >
+                  About
+                </Button>
+                <Button href="/about" variant="contained" >
+                  Sign In
+                </Button>
+                {/* <Link to='/about' {...css(styles.link)}>
               <p className={s.navItem}>About</p>
             </Link>
               <Link to='/auth' {...css(styles.link)}>
                 <p className={s.navItem}>Sign In</p>
-              </Link>
+              </Link> */}
               
             </div>
             ) : null

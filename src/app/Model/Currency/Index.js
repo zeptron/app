@@ -5,7 +5,7 @@ import Cogs from '../../../assets/animations/cogs'
 import {Box, Grid, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import Ip from './Ip'
-import Footer from '../../Common/Footer'
+import Footer from '../../../components/Common/Footer'
 
 class Stream extends Component {
 
@@ -14,6 +14,7 @@ class Stream extends Component {
        
         return (
           <div>
+            
              <Box bgcolor="primary.dark" color="primary.contrastText">
                 <Spacer height="50px"/>
                 <Grid container alignItems="center" justify="center">
@@ -29,7 +30,6 @@ class Stream extends Component {
             <Spacer height="50px"/>
                 <Grid container alignItems="center" justify="center">
                     <Grid item md={8} sm={10} xs={12}>
-                       <img src="http://13.236.132.4:5000/video_feed/camera/0" />
                     </Grid>
                 </Grid>
             </Box>
