@@ -17,7 +17,8 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import HelpIcon from '@material-ui/icons/Help';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
-
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import AppsIcon from '@material-ui/icons/Apps';
 
 const useStyles = makeStyles({
   list: {
@@ -79,12 +80,12 @@ export default function SwipeableTemporaryDrawer() {
       </List>
       <Divider />
       <List>
-        {["Account", "Billing", "Help"].map((text, index) => (
+        {["Account", "Billing"].map((text, index) => (
           <ListItem button component="a" href={`/${text.toLowerCase()}`} key={text}>
            <ListItemIcon>
             {index === 0 && <AccountBoxIcon/>}
             {index === 1 && <AccountBalanceIcon />}
-            {index === 2 && <HelpIcon/>}
+            {/* {index === 2 && <HelpIcon/>} */}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -97,8 +98,7 @@ export default function SwipeableTemporaryDrawer() {
     <div>
       {["right"].map(anchor => (
         <React.Fragment key={anchor}>
-           <Button><span style={{color: 'white'}}>Open</span></Button>
-          <Button onClick={toggleDrawer(anchor, true)}><span style={{color: 'white'}}>Menu</span></Button>
+          <Button onClick={toggleDrawer(anchor, true)}><span style={{color: 'white', marginRight: 10}}><AppsIcon/></span></Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}

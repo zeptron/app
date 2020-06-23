@@ -62,19 +62,6 @@ class Profile extends React.Component {
             </Grid>
             <Spacer height="50px"/>
     </Box>
-    <Box bgcolor="primary.light" color="primary.contrastText">
-    <Spacer height="50px"/>
-    <Grid container alignItems="center" justify="center">
-          <Grid item md={8} xs={12}>
-              <h2 className={s.header}>
-                Billing
-              </h2>
-             <Price>$0</Price>
-              <h3 style={{color:'white'}} className={s.subclass}>Free Tier Eligible </h3>
-            </Grid>
-            </Grid>
-            <Spacer height="50px"/>
-    </Box>
     <Footer />
     </div>
     )

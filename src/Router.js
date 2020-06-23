@@ -29,6 +29,9 @@ import DeepFace from './components/Library/DeepFace'
 import OpenALPR from './components/Library/OpenALPR'
 import CurrencyLib from './components/Model/Currency/Index'
 import Studio from './components/App/Studio'
+import Streams from './components/App/Streams'
+import Billing from './components/App/Billing'
+
 
 class PrivateRoute extends React.Component {
   state = {
@@ -91,6 +94,7 @@ const Routes = () => (
         <PrivateRoute path='/private' exact component={Private} />
         <PrivateRoute path='/library' exact component={Library} />
         <PrivateRoute path='/studio' exact component={Studio} />
+        <PrivateRoute path='/streams' exact component={Streams} />
         <PrivateRoute path='/library/currency' exact component={Currency} />
         <PrivateRoute path='/model/currency/provision' exact component={CurrencyProvision} />
         <PrivateRoute path='/model/currency/configure' exact component={CurrencyConfigure} />
@@ -103,6 +107,7 @@ const Routes = () => (
         <PrivateRoute path='/library/coco' exact component={Coco} />
         <PrivateRoute path='/library/ripeness' exact component={Ripeness} />
         <PrivateRoute path='/account'  component={Profile} />
+        <PrivateRoute path='/billing'  component={Billing} />
         <Route component={NoMatch} />
       </Switch>
     </div>
