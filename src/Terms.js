@@ -61,7 +61,7 @@ Use of your personal information submitted via the Website is governed by our Pr
 The Website and our Apps are provided by Life Data Pty Ltd ACN 640 146 425 (Zeptron, “us”, “we” or “our” for short). “You” and “your” means you as the user of our Website or our App. “these Terms” means these Website & App Terms of Use (as amended from time to time).
 </p>
 <p>
-The Website and our Apps’ main function is to aggregate, and provide a centralised platform for using, first and third party artificial intelligence and machine learning models from developers who want to offer their models for for sale via our Website and our Apps (“Vendors”).
+The Website and our Apps’ main function is to aggregate, and provide a centralised platform for using, first and third party artificial intelligence and machine learning models from developers who want to offer their models for sale via our Website and our Apps (“Vendors”).
 </p>
 <p>
 The content and third party offers on our Website and our Apps are provided by us on an ‘as is’ basis and use of our Website and our Apps is at your own risk. We (nor any of our respective directors, officers, employees or agents) do not make any representation or warranty as to the accuracy, completeness, currency or reliability of the information contained on our Website or our Apps (including in relation to products or services offered by third parties).
