@@ -83,16 +83,16 @@ const useStyles = makeStyles((theme) => ({
                         </Link>
                     </Grid>
                     <Grid item md={6} >
-                      <Link to="/library/currency">
+                      <Link to="/library/deepface">
                         <Spacer height="20px"/>
                       <h2 className={s.librarytitle}>Facial Recognition</h2>
                         <Paper className={`${classes.paper} ${s.faces}`}/>
                         </Link>
                     </Grid>
                     <Grid item md={6}>
-                      <Link to="/library/openpose">
+                      <Link to="/library/openalpr">
                       <Spacer height="20px"/>
-                      <h2 className={s.librarytitle}>License Plate Reading</h2>
+                      <h2 className={s.librarytitle}>OpenALPR</h2>
                         <Paper className={`${classes.paper} ${s.license}`}/>
                         </Link>
                     </Grid>
