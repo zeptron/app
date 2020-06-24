@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Box,  Grid} from '@material-ui/core'
 import Spacer from 'react-spacer'
-import s from '../../styles/styles.module.css'
+import s from '../../../styles/styles.module.css'
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
 import PoseNet from "react-posenet"

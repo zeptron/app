@@ -75,12 +75,12 @@ class SignUp extends React.Component {
               <br/>
               <input
                 {...css(styles.input)}
-                placeholder='First Name'
+                placeholder='First name'
                 onChange={evt => this.onChange('given_name', evt.target.value)}
               />
               <input
                 {...css(styles.input)}
-                placeholder='Given Name'
+                placeholder='Given name'
                 onChange={evt => this.onChange('family_name', evt.target.value)}
               />
               <input
@@ -99,16 +99,14 @@ class SignUp extends React.Component {
                 type='password'
                 onChange={evt => this.onChange('password', evt.target.value)}
               />
-              {/* 
-              uncomment if you'd like to enable adding phone number as an attribute
-              <input
-                {...css(styles.input)}
-                placeholder='Phone Number'
-                onChange={evt => this.onChange('phone_number', evt.target.value)}
-              /> */}
-              <div {...css(styles.button)} onClick={this.signUp}>
-                <p {...css(styles.buttonText)}>Sign Up</p>
-              </div>
+             
+              <Button
+          fullwidth
+          title={'Sign up'}
+          onClick={this.signUp}
+          style={{ color: '#fff' }}
+        />
+              
             </div>
           )
         }

@@ -22,4 +22,4 @@
 
  ## Notes for contributing
 
-Please keep the code clean and concise
+Optimise for performance and future maintanability

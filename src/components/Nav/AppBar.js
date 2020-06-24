@@ -8,16 +8,12 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import BlurOnIcon from '@material-ui/icons/BlurOn';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import HelpIcon from '@material-ui/icons/Help';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import AppsIcon from '@material-ui/icons/Apps';
 
 const useStyles = makeStyles({

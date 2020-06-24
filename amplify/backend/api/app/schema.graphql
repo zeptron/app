@@ -1,0 +1,39 @@
+type Model @model {
+  id: ID!
+  name: String!
+  image: String!
+  description: String!
+  FPS: String!
+  mAP: String!
+  notes: String!
+}
+
+type Class @model @key(name: "byModel", fields: ["modelID"]) {
+  id: ID!
+  name: String!
+  number: Int!
+  modelID: ID!
+  model: Model @connection(fields: ["modelID"])
+}
+
+type Stream @model {
+  id: ID!
+  userID: String!
+  name: String!
+  location: String!
+  url: String!
+  createdAt: String!
+}
+
+type ModelResults @model @key(name: "byStream", fields:  ["streamID"] ) { 
+  id: ID!
+  modelID: String!
+  model: Model @connection(fields: ["modelID"])
+  streamID: String!
+  stream: Stream @connection(fields: ["streamID"])
+  classID: String!
+  class: Class @connection(fields: ["classID"])
+  insertedAt: String!
+  count: String!
+  detected: Boolean!
+}

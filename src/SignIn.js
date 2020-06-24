@@ -89,9 +89,13 @@ class SignIn extends React.Component {
                 {...css(styles.input)}
                 placeholder='password'
               />
-              <div {...css(styles.button)} onClick={this.signIn}>
-                <p {...css(styles.buttonText)}>Sign In</p>
-              </div>
+              <Button
+              fullwidth
+              title={'Sign in'}
+              onClick={this.signIn}
+              style={{ color: '#fff' }}
+              />
+              
             </div>
           )
         }
@@ -103,9 +107,13 @@ class SignIn extends React.Component {
                 {...css(styles.input)}
                 placeholder='Confirmation Code'
               />
-              <div {...css(styles.button)} onClick={this.confirmSignIn.bind(this)}>
-                <p {...css(styles.buttonText)}>Confirm Sign In</p>
-              </div>
+               <Button
+          fullwidth
+          title={'Confirm sign in'}
+          onClick={this.confirmSignIn.bind(this)}
+          style={{ color: '#fff' }}
+        />
+             
             </div>
           )
         }

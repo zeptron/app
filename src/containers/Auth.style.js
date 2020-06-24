@@ -8,6 +8,11 @@ export const Button = styled(Buttons)`
     margin-bottom: 10px;
   }
 
+  &.register {
+    background-color: #f57f17;
+    margin-bottom: 10px;
+  }
+
   &.apple {
     background-color: #000;
     margin-bottom: 10px;

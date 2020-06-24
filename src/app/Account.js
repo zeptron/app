@@ -1,17 +1,12 @@
 import React, { useCallback} from 'react'
 import { Auth } from 'aws-amplify'
-import UserContext from './UserContext'
-import s from './styles/styles.module.css'
+import UserContext from '../UserContext'
+import s from '../styles/styles.module.css'
 import {Grid, Box, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
-import Usage from './app/Usage'
+import Usage from './Usage'
 import styled from 'styled-components'
 
-const Price = styled.p`
-    color: #ffb04c;
-    text-align: center;
-    font-size: 6em;
-    margin: 0;`
 
 class Profile extends React.Component {
   

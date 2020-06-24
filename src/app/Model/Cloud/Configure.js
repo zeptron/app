@@ -22,9 +22,9 @@ class CurrencyConfigure extends Component {
   
   componentDidMount() {
     this.timeout = setTimeout(() => {
-      this.setState({ showHideProvision: false });
-      this.setState({ showHideIP: true });
-      this.setState({ showHideButton: false });
+      this.setState({ displayProvision: false });
+      this.setState({ displayIP: true });
+      this.setState({ displayButton: false });
     }, 34000);
   }
   handleIncrement = () => {
@@ -36,14 +36,14 @@ class CurrencyConfigure extends Component {
   hideComponent(name) {
     console.log(name);
     switch (name) {
-      case "showHideProvision":
-        this.setState({ showHideProvision: !this.state.showHideProvision });
+    case "displayProvision":
+        this.setState({ displayProvision: !this.state.displayProvision });
         break;
-        case "showHideIP":
-            this.setState({ showHideIP: !this.state.showHideIP });
+    case "displayIP":
+            this.setState({ displayIP: !this.state.displayIP });
             break;
-        case "showHideButton":
-            this.setState({ showHideButton: !this.state.showHideButton });
+    case "displayButton":
+            this.setState({ displayButton: !this.state.displayButton });
             break;
       
     }
@@ -52,14 +52,14 @@ class CurrencyConfigure extends Component {
 
   render() {
     
-    const { showHideProvision, showHideIP, showHideButton } = this.state;
+    const { displayProvision, displayIP, displayButton } = this.state;
     return (
       <div>
          <Box bgcolor="primary.dark" color="primary.contrastText">
             <Spacer height="50px"/>
             <Grid container alignItems="center" justify="center">
                 <Grid item md={8} sm={10} xs={12}>
-                    <h1 className={s.header}>Australian Currency</h1>
+    <h1 className={s.header}>``{ModelName}``</h1>
                     <p className={s.subheader}>MODEL CONFIGURATION</p>
                     <Spacer height="25px"/>
                 </Grid>

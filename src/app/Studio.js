@@ -49,7 +49,14 @@ const useStyles = makeStyles((theme) => ({
                 <Grid container alignItems="center" justify="center">
                   <Grid item md={8}>
                   <Grid container alignItems="center" justify="center" spacing={2}>
-               
+                  <Grid item>
+                  <h3 className={s.subclass}>You have not configured any models</h3>
+
+                  <Spacer height="25px"/>
+                  <Button href="/library" variant="outlined" color="primary" size="large">
+                    <span className={s.ctabutton}>Library</span>
+                  </Button>
+                </Grid>
                     </Grid>
                     </Grid>
                 </Grid>
