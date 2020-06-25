@@ -2,10 +2,19 @@ import React, { Component, useEffect } from "react";
 import { render } from "react-dom";
 import s from '../../styles/styles.module.css'
 import Cogs from '../animations/cogs'
+import { makeStyles } from '@material-ui/core/styles';
+
 import {Box, Grid, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import Success from './Components/ProvisionHelper'
-import SelectCameras from './Components/SelectCameras'
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import TextField from '@material-ui/core/TextField';
+
+
 
 
 class Provision extends Component {
@@ -52,6 +61,15 @@ class Provision extends Component {
   
 
   render() {
+
+    const classes = makeStyles((theme) => ({
+      root: {
+        '& > *': {
+          margin: theme.spacing(1),
+          width: '25ch',
+        },
+      },
+    }));
     
     const { showHideProvision, showHideIP, showHideButton } = this.state;
     return (
@@ -73,10 +91,40 @@ class Provision extends Component {
                 <Grid item md={8} sm={10} xs={12}>
                 {showHideButton && 
                   <div>
-                    <SelectCameras/>
+                    <Grid container alignItems="center" justify="center">
+                      
+
+                    <Grid item xs={12}>
+                    <FormControl component="fieldset">
+      <FormLabel component="legend">Instance Type</FormLabel>
+      <RadioGroup aria-label="type" name="type1" >
+        <FormControlLabel value="live" control={<Radio />} label="Live" />
+        <FormControlLabel value="vile" control={<Radio />} label="From File" />
+      </RadioGroup>
+    </FormControl>
+    </Grid>
+    <Spacer height="50px"/>
+    <Grid item xs={12}>
+    <form className={classes.root} noValidate autoComplete="off">
+    <TextField
+          required
+          id="outlined-required"
+          label="Location"
+          defaultValue="Place Near Me"
+          variant="outlined"
+        />
+        </form>
+    </Grid>
+    <Spacer height="50px"/>
+  
+    <Grid item xs={12}>
                     <Button  variant="outlined" color="primary" size="large" onClick={() => this.hideComponent("showHideProvision")}>
                         <span className={s.ctabutton}>Provision</span>
                     </Button>
+                    </Grid>
+                  
+                    </Grid>
+                    
                     </div>
                     }
                     <Spacer height="50px"/>
