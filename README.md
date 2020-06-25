@@ -23,3 +23,5 @@
  ## Notes for contributing
 
 Optimise for performance and future maintanability
+
+Package manager: NPM
