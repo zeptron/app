@@ -4,7 +4,7 @@ import s from '../../../styles/styles.module.css'
 import Cogs from '../../animations/cogs'
 import {Box, Grid, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
-import Ip from '../Cloud/ProvisionHelper'
+import Ip from './ProvisionHelper'
 
 
 class CurrencyConfigure extends Component {

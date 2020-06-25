@@ -1,13 +1,14 @@
 import React, { Component, useEffect } from "react";
 import { render } from "react-dom";
-import s from '../../../styles/styles.module.css'
-import Cogs from '../../animations/cogs'
+import s from '../../styles/styles.module.css'
+import Cogs from '../animations/cogs'
 import {Box, Grid, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
-import Ip from '../Cloud/ProvisionHelper'
+import Success from './Components/ProvisionHelper'
+import SelectCameras from './Components/SelectCameras'
 
 
-class CurrencyConfigure extends Component {
+class Provision extends Component {
   constructor() {
     super();
     this.state = {
@@ -22,9 +23,9 @@ class CurrencyConfigure extends Component {
   
   componentDidMount() {
     this.timeout = setTimeout(() => {
-      this.setState({ displayProvision: false });
-      this.setState({ displayIP: true });
-      this.setState({ displayButton: false });
+      this.setState({ showHideProvision: false });
+      this.setState({ showHideIP: true });
+      this.setState({ showHideButton: false });
     }, 34000);
   }
   handleIncrement = () => {
@@ -36,14 +37,14 @@ class CurrencyConfigure extends Component {
   hideComponent(name) {
     console.log(name);
     switch (name) {
-    case "displayProvision":
-        this.setState({ displayProvision: !this.state.displayProvision });
+      case "showHideProvision":
+        this.setState({ showHideProvision: !this.state.showHideProvision });
         break;
-    case "displayIP":
-            this.setState({ displayIP: !this.state.displayIP });
+        case "showHideIP":
+            this.setState({ showHideIP: !this.state.showHideIP });
             break;
-    case "displayButton":
-            this.setState({ displayButton: !this.state.displayButton });
+        case "showHideButton":
+            this.setState({ showHideButton: !this.state.showHideButton });
             break;
       
     }
@@ -52,14 +53,14 @@ class CurrencyConfigure extends Component {
 
   render() {
     
-    const { displayProvision, displayIP, displayButton } = this.state;
+    const { showHideProvision, showHideIP, showHideButton } = this.state;
     return (
       <div>
          <Box bgcolor="primary.dark" color="primary.contrastText">
             <Spacer height="50px"/>
             <Grid container alignItems="center" justify="center">
                 <Grid item md={8} sm={10} xs={12}>
-    <h1 className={s.header}>``{ModelName}``</h1>
+                    <h1 className={s.header}>`'ModelName'</h1>
                     <p className={s.subheader}>MODEL CONFIGURATION</p>
                     <Spacer height="25px"/>
                 </Grid>
@@ -71,14 +72,17 @@ class CurrencyConfigure extends Component {
             <Grid container alignItems="center" justify="center">
                 <Grid item md={8} sm={10} xs={12}>
                 {showHideButton && 
+                  <div>
+                    <SelectCameras/>
                     <Button  variant="outlined" color="primary" size="large" onClick={() => this.hideComponent("showHideProvision")}>
                         <span className={s.ctabutton}>Provision</span>
                     </Button>
+                    </div>
                     }
                     <Spacer height="50px"/>
                     <Grid container alignItems="center" justify="center">
                         <Grid item sm={8} md={4}>
-                        {showHideIP && <Ip />}
+                        {showHideIP && <Success />}
                         </Grid>
                         </Grid>
                         <Grid container alignItems="center" justify="center">
@@ -96,4 +100,4 @@ class CurrencyConfigure extends Component {
   }
 }
 
-export default CurrencyConfigure
+export default Provision

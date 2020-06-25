@@ -11,6 +11,7 @@ export const onCreateModel = /* GraphQL */ `
       FPS
       mAP
       notes
+      type
     }
   }
 `;
@@ -24,6 +25,7 @@ export const onUpdateModel = /* GraphQL */ `
       FPS
       mAP
       notes
+      type
     }
   }
 `;
@@ -37,6 +39,7 @@ export const onDeleteModel = /* GraphQL */ `
       FPS
       mAP
       notes
+      type
     }
   }
 `;
@@ -55,6 +58,7 @@ export const onCreateClass = /* GraphQL */ `
         FPS
         mAP
         notes
+        type
       }
     }
   }
@@ -74,6 +78,7 @@ export const onUpdateClass = /* GraphQL */ `
         FPS
         mAP
         notes
+        type
       }
     }
   }
@@ -93,6 +98,7 @@ export const onDeleteClass = /* GraphQL */ `
         FPS
         mAP
         notes
+        type
       }
     }
   }
@@ -146,6 +152,7 @@ export const onCreateModelResults = /* GraphQL */ `
         FPS
         mAP
         notes
+        type
       }
       streamID
       stream {
@@ -170,6 +177,7 @@ export const onCreateModelResults = /* GraphQL */ `
           FPS
           mAP
           notes
+          type
         }
       }
       insertedAt
@@ -191,6 +199,7 @@ export const onUpdateModelResults = /* GraphQL */ `
         FPS
         mAP
         notes
+        type
       }
       streamID
       stream {
@@ -215,6 +224,7 @@ export const onUpdateModelResults = /* GraphQL */ `
           FPS
           mAP
           notes
+          type
         }
       }
       insertedAt
@@ -236,6 +246,7 @@ export const onDeleteModelResults = /* GraphQL */ `
         FPS
         mAP
         notes
+        type
       }
       streamID
       stream {
@@ -260,6 +271,7 @@ export const onDeleteModelResults = /* GraphQL */ `
           FPS
           mAP
           notes
+          type
         }
       }
       insertedAt

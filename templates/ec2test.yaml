@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    d0fea2e2-2dc2-4ad0-8167-f6778963aaad:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 170
+        'y': 70
+      z: 0
+Resources:
+  EC2I2VQQ4:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: ami-021e4d943dd020a86
+      InstanceType: t2.micro
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: d0fea2e2-2dc2-4ad0-8167-f6778963aaad
+Outputs:
+  EC2I2VQQ4PublicIP:
+    Value: !GetAtt EC2I2VQQ4.PublicIp
+  EC2I2VQQ4PrivateIP:
+    Value: !GetAtt EC2I2VQQ4.PrivateIp
+  EC2I2VQQ4ID:
+    Value: !Ref EC2I2VQQ4

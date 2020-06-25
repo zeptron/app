@@ -6,6 +6,7 @@ type Model @model {
   FPS: String!
   mAP: String!
   notes: String!
+  type: String!
 }
 
 type Class @model @key(name: "byModel", fields: ["modelID"]) {
@@ -27,11 +28,11 @@ type Stream @model {
 
 type ModelResults @model @key(name: "byStream", fields:  ["streamID"] ) { 
   id: ID!
-  modelID: String!
+  modelID: ID!
   model: Model @connection(fields: ["modelID"])
-  streamID: String!
+  streamID: ID!
   stream: Stream @connection(fields: ["streamID"])
-  classID: String!
+  classID: ID!
   class: Class @connection(fields: ["classID"])
   insertedAt: String!
   count: String!

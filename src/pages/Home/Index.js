@@ -5,7 +5,7 @@ import Below from './Below'
 import Results from './Results'
 import Pricing from './Pricing'
 import Start from './Start'
-import Library from '../../app/Lib'
+import Library from '../../app/Library/Index'
 
 class Home extends React.Component {
 

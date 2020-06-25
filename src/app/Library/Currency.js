@@ -37,7 +37,7 @@ export default function Currency() {
                     <h1 className={s.header}>Australian Currency</h1>
                     <p className={s.subheader}>featuring handgun & knife protection</p>
                     <Spacer height="25px"/>
-                    <Button size="large" variant="contained" color="tertiary" href="/contact">
+                    <Button size="large" variant="contained" color="secondary" href="/studio/provision">
                 <span className={s.ctabutton}>Contact us to activate</span>
               </Button>
               <Spacer height="25px"/>

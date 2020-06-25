@@ -11,6 +11,7 @@ export const getModel = /* GraphQL */ `
       FPS
       mAP
       notes
+      type
     }
   }
 `;
@@ -29,6 +30,7 @@ export const listModels = /* GraphQL */ `
         FPS
         mAP
         notes
+        type
       }
       nextToken
     }
@@ -49,6 +51,7 @@ export const getClass = /* GraphQL */ `
         FPS
         mAP
         notes
+        type
       }
     }
   }
@@ -73,6 +76,7 @@ export const listClasss = /* GraphQL */ `
           FPS
           mAP
           notes
+          type
         }
       }
       nextToken
@@ -123,6 +127,7 @@ export const getModelResults = /* GraphQL */ `
         FPS
         mAP
         notes
+        type
       }
       streamID
       stream {
@@ -147,6 +152,7 @@ export const getModelResults = /* GraphQL */ `
           FPS
           mAP
           notes
+          type
         }
       }
       insertedAt
@@ -173,6 +179,7 @@ export const listModelResultss = /* GraphQL */ `
           FPS
           mAP
           notes
+          type
         }
         streamID
         stream {

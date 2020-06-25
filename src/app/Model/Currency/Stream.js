@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import s from '../../../styles/styles.module.css'
 import {Box, Grid, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
-import Ip from '../Cloud/ProvisionHelper'
+import Ip from './ProvisionHelper'
 
 class Stream extends Component {
 

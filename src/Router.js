@@ -9,7 +9,7 @@ import {
 import UserContext from './UserContext'
 import Header from './Menu'
 import Footer from './Footer'
-import Library from './app/Lib'
+import Library from './app/Library/Index'
 import Authenticator from './Authenticator'
 import Home from './pages/Home/Index'
 import Profile from './app/Account'
@@ -28,9 +28,10 @@ import CurrencyStream from './app/Model/Currency/Stream'
 import DeepFace from './app/Library/DeepFace'
 import OpenALPR from './app/Library/OpenALPR'
 import CurrencyLib from './app/Model/Currency/Index'
-import Studio from './app/Studio'
+import Studio from './app/Studio/Index'
 import Streams from './app/Streams'
 import Billing from './app/Billing'
+import Provision from './app/Studio/Provision'
 
 
 class PrivateRoute extends React.Component {
@@ -105,6 +106,7 @@ const Routes = () => (
         <PrivateRoute path='/library/openalpr' exact component={OpenALPR} />
         <PrivateRoute path='/library/coco' exact component={Coco} />
         <PrivateRoute path='/library/ripeness' exact component={Ripeness} />
+        <PrivateRoute path='/studio/provision/' component={Provision} />
         <PrivateRoute path='/account'  component={Profile} />
         <PrivateRoute path='/billing'   component={Billing} />
         <Route component={NoMatch} />
