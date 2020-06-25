@@ -80,12 +80,13 @@ const useStyles = makeStyles((theme) => ({
                   <Grid item md={8}>
                   <Grid container alignItems="center" justify="center" spacing={2}>
                 
-                  
+                  <Link to="/library">
                   <Card className={classes.card}>
                   <CardContent className={classes.cardInner}>
                   <AddIcon style={{ fontSize: 50 }}/>
                   </CardContent>
                   </Card>
+                  </Link>
                  
                   {/* <Card className={classes.card}>
       <CardActionArea>
