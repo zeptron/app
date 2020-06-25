@@ -8,13 +8,15 @@ export const createModel = /* GraphQL */ `
   ) {
     createModel(input: $input, condition: $condition) {
       id
-      name
-      image
-      description
       FPS
+      description
+      image
       mAP
+      name
       notes
+      rating
       type
+      video
     }
   }
 `;
@@ -25,13 +27,15 @@ export const updateModel = /* GraphQL */ `
   ) {
     updateModel(input: $input, condition: $condition) {
       id
-      name
-      image
-      description
       FPS
+      description
+      image
       mAP
+      name
       notes
+      rating
       type
+      video
     }
   }
 `;
@@ -42,13 +46,15 @@ export const deleteModel = /* GraphQL */ `
   ) {
     deleteModel(input: $input, condition: $condition) {
       id
-      name
-      image
-      description
       FPS
+      description
+      image
       mAP
+      name
       notes
+      rating
       type
+      video
     }
   }
 `;
@@ -59,18 +65,20 @@ export const createClass = /* GraphQL */ `
   ) {
     createClass(input: $input, condition: $condition) {
       id
+      modelID
       name
       number
-      modelID
       model {
         id
-        name
-        image
-        description
         FPS
+        description
+        image
         mAP
+        name
         notes
+        rating
         type
+        video
       }
     }
   }
@@ -82,18 +90,20 @@ export const updateClass = /* GraphQL */ `
   ) {
     updateClass(input: $input, condition: $condition) {
       id
+      modelID
       name
       number
-      modelID
       model {
         id
-        name
-        image
-        description
         FPS
+        description
+        image
         mAP
+        name
         notes
+        rating
         type
+        video
       }
     }
   }
@@ -105,18 +115,20 @@ export const deleteClass = /* GraphQL */ `
   ) {
     deleteClass(input: $input, condition: $condition) {
       id
+      modelID
       name
       number
-      modelID
       model {
         id
-        name
-        image
-        description
         FPS
+        description
+        image
         mAP
+        name
         notes
+        rating
         type
+        video
       }
     }
   }
@@ -176,13 +188,15 @@ export const createModelResults = /* GraphQL */ `
       modelID
       model {
         id
-        name
-        image
-        description
         FPS
+        description
+        image
         mAP
+        name
         notes
+        rating
         type
+        video
       }
       streamID
       stream {
@@ -196,18 +210,20 @@ export const createModelResults = /* GraphQL */ `
       classID
       class {
         id
+        modelID
         name
         number
-        modelID
         model {
           id
-          name
-          image
-          description
           FPS
+          description
+          image
           mAP
+          name
           notes
+          rating
           type
+          video
         }
       }
       insertedAt
@@ -226,13 +242,15 @@ export const updateModelResults = /* GraphQL */ `
       modelID
       model {
         id
-        name
-        image
-        description
         FPS
+        description
+        image
         mAP
+        name
         notes
+        rating
         type
+        video
       }
       streamID
       stream {
@@ -246,18 +264,20 @@ export const updateModelResults = /* GraphQL */ `
       classID
       class {
         id
+        modelID
         name
         number
-        modelID
         model {
           id
-          name
-          image
-          description
           FPS
+          description
+          image
           mAP
+          name
           notes
+          rating
           type
+          video
         }
       }
       insertedAt
@@ -276,13 +296,15 @@ export const deleteModelResults = /* GraphQL */ `
       modelID
       model {
         id
-        name
-        image
-        description
         FPS
+        description
+        image
         mAP
+        name
         notes
+        rating
         type
+        video
       }
       streamID
       stream {
@@ -296,18 +318,20 @@ export const deleteModelResults = /* GraphQL */ `
       classID
       class {
         id
+        modelID
         name
         number
-        modelID
         model {
           id
-          name
-          image
-          description
           FPS
+          description
+          image
           mAP
+          name
           notes
+          rating
           type
+          video
         }
       }
       insertedAt

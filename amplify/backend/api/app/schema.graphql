@@ -1,19 +1,21 @@
 type Model @model {
   id: ID!
-  name: String!
-  image: String!
-  description: String!
   FPS: String!
+  description: String!
+  image: String!
   mAP: String!
+  name: String!
   notes: String!
+  rating: Int!
   type: String!
+  video: String!
 }
 
 type Class @model @key(name: "byModel", fields: ["modelID"]) {
   id: ID!
+  modelID: ID!
   name: String!
   number: Int!
-  modelID: ID!
   model: Model @connection(fields: ["modelID"])
 }
 

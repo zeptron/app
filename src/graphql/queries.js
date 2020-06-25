@@ -5,13 +5,15 @@ export const getModel = /* GraphQL */ `
   query GetModel($id: ID!) {
     getModel(id: $id) {
       id
-      name
-      image
-      description
       FPS
+      description
+      image
       mAP
+      name
       notes
+      rating
       type
+      video
     }
   }
 `;
@@ -24,13 +26,15 @@ export const listModels = /* GraphQL */ `
     listModels(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
-        image
-        description
         FPS
+        description
+        image
         mAP
+        name
         notes
+        rating
         type
+        video
       }
       nextToken
     }
@@ -40,18 +44,20 @@ export const getClass = /* GraphQL */ `
   query GetClass($id: ID!) {
     getClass(id: $id) {
       id
+      modelID
       name
       number
-      modelID
       model {
         id
-        name
-        image
-        description
         FPS
+        description
+        image
         mAP
+        name
         notes
+        rating
         type
+        video
       }
     }
   }
@@ -65,18 +71,20 @@ export const listClasss = /* GraphQL */ `
     listClasss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        modelID
         name
         number
-        modelID
         model {
           id
-          name
-          image
-          description
           FPS
+          description
+          image
           mAP
+          name
           notes
+          rating
           type
+          video
         }
       }
       nextToken
@@ -121,13 +129,15 @@ export const getModelResults = /* GraphQL */ `
       modelID
       model {
         id
-        name
-        image
-        description
         FPS
+        description
+        image
         mAP
+        name
         notes
+        rating
         type
+        video
       }
       streamID
       stream {
@@ -141,18 +151,20 @@ export const getModelResults = /* GraphQL */ `
       classID
       class {
         id
+        modelID
         name
         number
-        modelID
         model {
           id
-          name
-          image
-          description
           FPS
+          description
+          image
           mAP
+          name
           notes
+          rating
           type
+          video
         }
       }
       insertedAt
@@ -173,13 +185,15 @@ export const listModelResultss = /* GraphQL */ `
         modelID
         model {
           id
-          name
-          image
-          description
           FPS
+          description
+          image
           mAP
+          name
           notes
+          rating
           type
+          video
         }
         streamID
         stream {
@@ -193,9 +207,9 @@ export const listModelResultss = /* GraphQL */ `
         classID
         class {
           id
+          modelID
           name
           number
-          modelID
         }
         insertedAt
         count

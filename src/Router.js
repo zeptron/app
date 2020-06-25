@@ -18,6 +18,7 @@ import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Currency from './app/Library/Currency'
+import LibTemplate from './app/Library/{template}'
 import OpenPose from './app/Library/OpenPose'
 import Coco from './app/Library/Coco'
 import Ripeness from './app/Library/Ripeness'
@@ -99,6 +100,7 @@ const Routes = () => (
         <PrivateRoute path='/studio/actions'component={Actions}/>
         <PrivateRoute path='/streams' exact component={Streams} />
         <PrivateRoute path='/library/currency' exact component={Currency} />
+        <PrivateRoute path='/library/template' exact component={LibTemplate} />
         <PrivateRoute path='/model/currency/provision' exact component={CurrencyProvision} />
         <PrivateRoute path='/model/currency/configure' exact component={CurrencyConfigure} />
         <PrivateRoute path='/model/currency/stream' exact component={CurrencyStream} />
