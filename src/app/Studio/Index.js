@@ -87,35 +87,7 @@ const useStyles = makeStyles((theme) => ({
                   </CardContent>
                   </Card>
                   </Link>
-                 
-                  {/* <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://images.exchangerates.org.uk/uploads/australian-dollar-forecast-1.png"
-          title="Cash Counting"
-        />
-        <CardContent>
-          <span>If model is stopped, this should be red</span> 
-          <FiberManualRecordIcon style={{color: '#33eb91'}} />
-          <Typography gutterBottom variant="h5" component="h2">
-            Cash Counting
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Balmain, NSW · Basil & Thyme<br/>
-            1 Camera
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="large" color="secondary">
-          <span className={s.ctabutton}>Stop</span>
-        </Button>
-        <Button size="large" color="primary">
-        <span className={s.ctabutton}>View</span>
-        </Button>
-      </CardActions>
-    </Card> */}
+                  
                   <Spacer height="25px"/>
                   
                

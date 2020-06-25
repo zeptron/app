@@ -1,5 +1,4 @@
 import React, { Component, useEffect } from "react";
-import { render } from "react-dom";
 import s from '../../../styles/styles.module.css'
 import Cogs from '../animations/cogs'
 import {Box, Grid, Button} from '@material-ui/core'

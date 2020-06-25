@@ -1,6 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
-import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
 import {Box, Button, Grid, Paper} from '@material-ui/core'
@@ -34,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-  const ITEM_HEIGHT = 48;
+const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
   PaperProps: {
@@ -45,6 +43,7 @@ const MenuProps = {
   },
 };
 
+// Data from GraphQL
 //This should come from the Classes table for classess associated with modelID
 //The value of classes is their ID number, e.g. 1 Person,
 
@@ -57,29 +56,39 @@ const names = [
     'Cat'
   ];
 
-  function getStyles(name, personName, theme) {
+  const ModelName = "ModelName"
+  const ModelDescription = "Short model description"
+
+
+  function getStyles(name, classNames, theme) {
     return {
       fontWeight:
-        personName.indexOf(name) === -1
+        classNames.indexOf(name) === -1
           ? theme.typography.fontWeightRegular
           : theme.typography.fontWeightMedium,
     };
   }
 
-  export default function Library() {
+  export default function Actions() {
+
     const classes = useStyles();
     const theme = useTheme();
+
+    // Count & Notify switches
+
     const [state, setState] = React.useState({
-        checkedA: true,
-        checkedB: true,
+        countSwitched: true,
+        notifySwitched: true,
       });
-      const handleChange = (event) => {
+
+      const handleSwitch = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
       };
 
+      // Count classes
     
-      const handleCountChange = (event) => {
-        setPersonName(event.target.value);
+      const handleCountSwitch = (event) => {
+        setclassNames(event.target.value);
       };
 
       const handleCountChangeMultiple = (event) => {
@@ -90,8 +99,12 @@ const names = [
             value.push(options[i].value);
           }
         }
-        setPersonName(value);
+        setclassNames(value);
       };
+
+      const [classNames, setclassNames] = React.useState([]);
+
+      // Notify classes
 
       const handleNotifyChange = (event) => {
         setClassName(event.target.value);
@@ -107,6 +120,10 @@ const names = [
         }
         setClassName(value);
       };
+
+      const [className, setClassName] = React.useState([]);
+
+      // Position drop down 
       
       const [position, setPosition] = React.useState('');
       const [open, setOpen] = React.useState(false);
@@ -122,133 +139,130 @@ const names = [
       const handleOpen = () => {
         setOpen(true);
       };
-
-      const [className, setClassName] = React.useState([]);
-      const [personName, setPersonName] = React.useState([]);
     
    return (
-            <div>
-            <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
-                <h1  className={s.header} style={{textAlign: 'center'}}>
-                    ModelName            
-                </h1>
-                <p className={s.subheader}>Configure Actions</p>
-                </Box>
-                <Spacer height="100px"/>
-
-               
-                        
-                        <Grid container alignItems="center" justify="center">
-                        <Grid item sm={8} xs={12}>
-                        <FormGroup row>
-      <FormControlLabel
-        control={
-          <Switch
-            checked={state.checkedA}
-            onChange={handleChange}
-            name="checkedB"
-            color="primary"
-          />
-        }
-        label="Count"
-      />
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-mutiple-chip-label">Classes</InputLabel>
-        <Select
-          labelId="demo-mutiple-chip-label"
-          id="demo-mutiple-chip"
-          multiple
-          value={personName}
-          onChange={handleCountChange}
-          input={<Input id="select-multiple-chip" />}
-          renderValue={(selected) => (
-            <div className={classes.chips}>
-              {selected.map((value) => (
-                <Chip key={value} label={value} className={classes.chip} />
-              ))}
-            </div>
-          )}
-          MenuProps={MenuProps}
-        >
-          {names.map((name) => (
-            <MenuItem key={name} value={name} style={getStyles(name, personName, theme)}>
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label">Line Position</InputLabel>
-        <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={position}
-          onChange={handlePositionChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value="horizontal">Horizontal</MenuItem>
-          <MenuItem value="vertical">Vertical</MenuItem>
-        </Select>
-      </FormControl>
-    </FormGroup>
-    <FormGroup row>
-      <FormControlLabel
-        control={
-          <Switch
-            checked={state.checkedB}
-            onChange={handleChange}
-            name="checkedB"
-            color="primary"
-          />
-        }
-        label="Notify"
-      />
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-mutiple-chip-label">Classes</InputLabel>
-        <Select
-          labelId="demo-mutiple-chip-label"
-          id="demo-mutiple-chip"
-          multiple
-          value={className}
-          onChange={handleNotifyChange}
-          input={<Input id="select-multiple-chip" />}
-          renderValue={(selected) => (
-            <div className={classes.chips}>
-              {selected.map((value) => (
-                <Chip key={value} label={value} className={classes.chip} />
-              ))}
-            </div>
-          )}
-          MenuProps={MenuProps}
-        >
-          {names.map((name) => (
-            <MenuItem key={name} value={name} style={getStyles(name, className, theme)}>
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </FormGroup>
+    <div>
+            
+     <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
+      <h1  className={s.header} style={{textAlign: 'center'}}>
+        {ModelName}           
+      </h1>
+      <p className={s.subheader}>Configure Actions</p>
+      </Box>
+                
+      <Spacer height="100px"/>
+                
+      <Grid container alignItems="center" justify="center">
+        <Grid item md={4} sm={8} xs={12}>
+                      
+          <FormGroup row>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={state.checkedA}
+                  onChange={handleSwitch}
+                  name="checkedB"
+                  color="primary"
+                />
+                }
+                label="Count"
+              />
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-mutiple-chip-label">Classes</InputLabel>
+              <Select
+                labelId="demo-mutiple-chip-label"
+                id="demo-mutiple-chip"
+                multiple
+                value={classNames}
+                onChange={handleCountSwitch}
+                input={<Input id="select-multiple-chip" />}
+                renderValue={(selected) => (
+                  <div className={classes.chips}>
+                    {selected.map((value) => (
+                      <Chip key={value} label={value} className={classes.chip} />
+                    ))}
+                  </div>
+                )}
+                MenuProps={MenuProps}
+              >
+                {names.map((name) => (
+                  <MenuItem key={name} value={name} style={getStyles(name, classNames, theme)}>
+                    {name}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-controlled-open-select-label">Line Position</InputLabel>
+              <Select
+                labelId="demo-controlled-open-select-label"
+                id="demo-controlled-open-select"
+                open={open}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                value={position}
+                onChange={handlePositionChange}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value="horizontal">Horizontal</MenuItem>
+                <MenuItem value="vertical">Vertical</MenuItem>
+              </Select>
+            </FormControl>
+          </FormGroup>
+            <FormGroup row>
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={state.checkedB}
+                    onChange={handleSwitch}
+                    name="checkedB"
+                    color="primary"
+                  />
+                }
+                label="Notify"
+              />
+              <FormControl className={classes.formControl}>
+                <InputLabel id="demo-mutiple-chip-label">Classes</InputLabel>
+                <Select
+                  labelId="demo-mutiple-chip-label"
+                  id="demo-mutiple-chip"
+                  multiple
+                  value={className}
+                  onChange={handleNotifyChange}
+                  input={<Input id="select-multiple-chip" />}
+                  renderValue={(selected) => (
+                    <div className={classes.chips}>
+                      {selected.map((value) => (
+                        <Chip key={value} label={value} className={classes.chip} />
+                      ))}
+                    </div>
+                  )}
+                  MenuProps={MenuProps}
+                >
+                  {names.map((name) => (
+                    <MenuItem key={name} value={name} style={getStyles(name, className, theme)}>
+                      {name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </FormGroup>
         </Grid>
-        <Spacer height="25px" />
+
+       
+
         <Grid item xs={12}>
-        <Button to="/studio/provision" variant="contained" color="primary" size="large">
+        <Spacer height="50px" />
+        <Button href="/studio/provision" variant="contained" color="primary" size="large">
             Next
         </Button>
         </Grid>
+
         </Grid>
-        
-        
-                        
-                
-                
-                
-                <Spacer height="100px"/>
+
+      <Spacer height="100px"/>
             
             </div>
 

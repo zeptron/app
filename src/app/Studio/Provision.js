@@ -3,7 +3,6 @@ import { render } from "react-dom";
 import s from '../../styles/styles.module.css'
 import Cogs from '../animations/cogs'
 import { makeStyles } from '@material-ui/core/styles';
-
 import {Box, Grid, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import Success from './Components/ProvisionHelper'
@@ -13,8 +12,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import TextField from '@material-ui/core/TextField';
-
-
 
 
 class Provision extends Component {
@@ -72,13 +69,15 @@ class Provision extends Component {
     }));
     
     const { showHideProvision, showHideIP, showHideButton } = this.state;
+    const ModelName = "ModelName"
+
     return (
       <div>
          <Box bgcolor="primary.dark" color="primary.contrastText">
             <Spacer height="50px"/>
-            <Grid container alignItems="center" justify="center">
+          <Grid container alignItems="center" justify="center">
                 <Grid item md={8} sm={10} xs={12}>
-                    <h1 className={s.header}>`'ModelName'</h1>
+                    <h1 className={s.header}>{ModelName}</h1>
                     <p className={s.subheader}>MODEL CONFIGURATION</p>
                     <Spacer height="25px"/>
                 </Grid>
@@ -96,30 +95,36 @@ class Provision extends Component {
 
                     <Grid item xs={12}>
                     <FormControl component="fieldset">
-      <FormLabel component="legend">Instance Type</FormLabel>
-      <RadioGroup aria-label="type" name="type1" >
-        <FormControlLabel value="live" control={<Radio />} label="Live" />
-        <FormControlLabel value="vile" control={<Radio />} label="From File" />
-      </RadioGroup>
-    </FormControl>
-    </Grid>
+                      <FormLabel component="legend">Instance Type</FormLabel>
+                      <RadioGroup aria-label="type" name="type1" >
+                        <FormControlLabel value="live" control={<Radio />} label="Live" />
+                        <FormControlLabel value="vile" control={<Radio />} label="From File" />
+                      </RadioGroup>
+                    </FormControl>
+                    </Grid>
     <Spacer height="50px"/>
-    <Grid item xs={12}>
-    <form className={classes.root} noValidate autoComplete="off">
-    <TextField
-          required
-          id="outlined-required"
-          label="Location"
-          defaultValue="Place Near Me"
-          variant="outlined"
-        />
-        </form>
-    </Grid>
+                <Grid item xs={12}>
+                <form className={classes.root} noValidate autoComplete="off">
+      
+
+      {/* // this should only be required if File is checked */}
+
+
+              <TextField
+                    required
+                    id="outlined-required"
+                    label="Public Amazon S3 Link"
+                    // defaultValue="Public Amazon S3 Link"
+                    variant="outlined"
+                  />
+                  </form>
+                  </Grid>
+
     <Spacer height="50px"/>
-  
-    <Grid item xs={12}>
-                    <Button  variant="outlined" color="primary" size="large" onClick={() => this.hideComponent("showHideProvision")}>
-                        <span className={s.ctabutton}>Provision</span>
+    
+                  <Grid item xs={12}>
+                  <Button  variant="outlined" color="primary" size="large" onClick={() => this.hideComponent("showHideProvision")}>
+                    <span className={s.ctabutton}>Provision</span>
                     </Button>
                     </Grid>
                   

@@ -34,6 +34,8 @@ import Billing from './app/Billing'
 import Provision from './app/Studio/Provision'
 import Start from './app/Studio/Start'
 import Actions from './app/Studio/Actions'
+import Instance from './app/Studio/Instance'
+import Analytics from './app/Studio/Instance/analytics'
 
 
 class PrivateRoute extends React.Component {
@@ -96,6 +98,8 @@ const Routes = () => (
         <Route path='/terms' exact component={Terms} />
         <PrivateRoute path='/library' exact component={Library} />
         <PrivateRoute path='/studio' exact component={Studio} />
+        <PrivateRoute path='/studio/{id}/' component={Instance} />
+        <PrivateRoute path='/studio/{id}/analytics' component={Analytics} />
         <PrivateRoute path='/studio/start'component={Start}/>
         <PrivateRoute path='/studio/actions'component={Actions}/>
         <PrivateRoute path='/streams' exact component={Streams} />
