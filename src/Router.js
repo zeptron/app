@@ -19,7 +19,6 @@ import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Currency from './app/Library/Currency'
 import OpenPose from './app/Library/OpenPose'
-import OpenPoseLib from './app/Model/Browser/OpenPoseLib'
 import Coco from './app/Library/Coco'
 import Ripeness from './app/Library/Ripeness'
 import CurrencyProvision from './app/Model/Currency/Provision'
@@ -101,7 +100,6 @@ const Routes = () => (
         <PrivateRoute path='/model/currency/stream' exact component={CurrencyStream} />
         <PrivateRoute path='/model/currency' exact component={CurrencyLib} />
         <PrivateRoute path='/library/openpose' exact component={OpenPose} />
-        <PrivateRoute path='/model/openpose' exact component={OpenPoseLib} />
         <PrivateRoute path='/library/deepface' exact component={DeepFace} />
         <PrivateRoute path='/library/openalpr' exact component={OpenALPR} />
         <PrivateRoute path='/library/coco' exact component={Coco} />
