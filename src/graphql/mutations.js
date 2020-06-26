@@ -340,14 +340,15 @@ export const createModelConfig = /* GraphQL */ `
       id
       userID
       modelID
-      name
-      location
-      pod
+      instanceName
+      instanceLocation
+      instancePod
       count
       notify
       countClasses
       notifyClasses
       fromFile
+      fileUrl
       publicIP
       privateIP
       port
@@ -431,14 +432,15 @@ export const updateModelConfig = /* GraphQL */ `
       id
       userID
       modelID
-      name
-      location
-      pod
+      instanceName
+      instanceLocation
+      instancePod
       count
       notify
       countClasses
       notifyClasses
       fromFile
+      fileUrl
       publicIP
       privateIP
       port
@@ -522,14 +524,15 @@ export const deleteModelConfig = /* GraphQL */ `
       id
       userID
       modelID
-      name
-      location
-      pod
+      instanceName
+      instanceLocation
+      instancePod
       count
       notify
       countClasses
       notifyClasses
       fromFile
+      fileUrl
       publicIP
       privateIP
       port

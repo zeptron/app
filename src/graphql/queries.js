@@ -181,14 +181,15 @@ export const getModelConfig = /* GraphQL */ `
       id
       userID
       modelID
-      name
-      location
-      pod
+      instanceName
+      instanceLocation
+      instancePod
       count
       notify
       countClasses
       notifyClasses
       fromFile
+      fileUrl
       publicIP
       privateIP
       port
@@ -274,14 +275,15 @@ export const listModelConfigs = /* GraphQL */ `
         id
         userID
         modelID
-        name
-        location
-        pod
+        instanceName
+        instanceLocation
+        instancePod
         count
         notify
         countClasses
         notifyClasses
         fromFile
+        fileUrl
         publicIP
         privateIP
         port

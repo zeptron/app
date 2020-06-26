@@ -15,13 +15,31 @@
  - AWS Amplify
  - React 
  - Material UI
- - DynamoDB NoSQL
+ - DynamoDB NoSQL Tables
+    - Model
+    - ModelConfig
+    - Class
+    - ModelResults
  - AppSync
  - API Gateway
 
 
  ## Notes for contributing
 
-Optimise for performance and future maintanability
+Please optimise for performance and future maintanability
 
 Package manager: NPM
+
+## To start
+
+`git clone https://github.com/zeptron/app.git`
+
+`cd app`
+
+`npm install`
+
+`npm start`
+
+
+For local testing, you should authenticate through email instead of social login
+
