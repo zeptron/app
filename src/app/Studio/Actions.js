@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
-import {Box, Button, Grid, Paper} from '@material-ui/core'
+import {Box, Button, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -91,16 +91,6 @@ const names = [
         setclassNames(event.target.value);
       };
 
-      const handleCountChangeMultiple = (event) => {
-        const { options } = event.target;
-        const value = [];
-        for (let i = 0, l = options.length; i < l; i += 1) {
-          if (options[i].selected) {
-            value.push(options[i].value);
-          }
-        }
-        setclassNames(value);
-      };
 
       const [classNames, setclassNames] = React.useState([]);
 
@@ -111,16 +101,6 @@ const names = [
         setClassName(event.target.value);
       };
       
-      const handleNotifyChangeMultiple = (event) => {
-        const { options } = event.target;
-        const value = [];
-        for (let i = 0, l = options.length; i < l; i += 1) {
-          if (options[i].selected) {
-            value.push(options[i].value);
-          }
-        }
-        setClassName(value);
-      };
 
       const [className, setClassName] = React.useState([]);
 

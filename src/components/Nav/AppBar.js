@@ -11,7 +11,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import HelpIcon from '@material-ui/icons/Help';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import AppsIcon from '@material-ui/icons/Apps';
@@ -81,7 +80,6 @@ export default function SwipeableTemporaryDrawer() {
            <ListItemIcon>
             {index === 0 && <AccountBoxIcon/>}
             {index === 1 && <AccountBalanceIcon />}
-            {/* {index === 2 && <HelpIcon/>} */}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'glamor'
 import { Button } from "./containers/Auth.style";
-import { IoLogoApple, IoLogoFacebook, IoLogoGoogle } from "react-icons/io";
+import { IoLogoGoogle } from "react-icons/io";
 import { Auth } from 'aws-amplify'
 
 class SignUp extends React.Component {

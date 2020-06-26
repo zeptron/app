@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
   export default function Hero() {
-    const [spacing, setSpacing] = React.useState(2);
+    const [spacing] = React.useState(2);
     const classes = useStyles();
     const Price = styled.p`
     color: #bb5000;

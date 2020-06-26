@@ -1,4 +1,4 @@
-import React, { useCallback} from 'react'
+import React from 'react'
 import { Auth } from 'aws-amplify'
 import UserContext from '../UserContext'
 import s from '../styles/styles.module.css'
@@ -17,7 +17,7 @@ class Billing extends React.Component {
   static contextType = UserContext
 
   render() {
-    const isAuthenticated = this.context.user && this.context.user.username ? true : false
+    
     return (
      <div>
        <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >

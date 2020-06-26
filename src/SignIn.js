@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from 'glamor'
 import { Auth } from 'aws-amplify'
 import UserContext from './UserContext'
-import { IoLogoApple, IoLogoFacebook, IoLogoGoogle } from "react-icons/io";
+import { IoLogoGoogle } from "react-icons/io";
 import { Button } from "./containers/Auth.style";
 
 

@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import { render } from "react-dom";
 import s from '../../styles/styles.module.css'
 import Cogs from '../animations/cogs'
@@ -43,14 +43,14 @@ class Provision extends Component {
   hideComponent(name) {
     console.log(name);
     switch (name) {
-      case "showHideProvision":
-        this.setState({ showHideProvision: !this.state.showHideProvision });
+    case "showHideProvision":
+      this.setState({ showHideProvision: !this.state.showHideProvision });
+      break;
+    case "showHideIP":
+      this.setState({ showHideIP: !this.state.showHideIP });
         break;
-        case "showHideIP":
-            this.setState({ showHideIP: !this.state.showHideIP });
-            break;
-        case "showHideButton":
-            this.setState({ showHideButton: !this.state.showHideButton });
+    case "showHideButton":
+      this.setState({ showHideButton: !this.state.showHideButton });
             break;
       
     }

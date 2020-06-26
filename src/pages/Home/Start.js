@@ -1,7 +1,6 @@
 import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
-import { makeStyles } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
 import { IoLogoGoogle } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
@@ -9,33 +8,12 @@ import { Auth } from 'aws-amplify'
 import { Button } from "../../containers/Auth.style";
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-      
-    },
-    paper: {
-        height: 250,
-        width: 250,
-      padding: theme.spacing(2),
-      textAlign: 'center'
-
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
-  }));
-
-
   export default function Start() {
     const thisGoogle = () => {
         Auth.federatedSignIn({ provider: "Google" });
       };
-    // const thisFacebook = () => {
-    //     Auth.federatedSignIn({ provider: "Facebook" });
-    //   };
-    const [spacing, setSpacing] = React.useState(2);
-    const classes = useStyles();
+   
+    const [spacing] = React.useState(2);
    
    return (
     <Box p={2} bgcolor="primary.dark" color="primary.contrastText" >

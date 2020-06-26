@@ -1,30 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import {Box, Grid} from '@material-ui/core'
 import s from '../styles/styles.module.css'
-import { makeStyles } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      height: 200,
-      width: 200,
-      padding: theme.spacing(2),
-      textAlign: 'center'
-
-    },
-    control: {
-      padding: theme.spacing(4),
-    },
-  }));
 
 
   export default function About() {
-    const [spacing, setSpacing] = React.useState(8);
-    const classes = useStyles();
+    const [spacing] = React.useState(8);
     
    
    return (

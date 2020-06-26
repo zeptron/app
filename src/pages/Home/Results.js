@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 
   export default function Hero() {
-    const [spacing, setSpacing] = React.useState(2);
+    const [spacing] = React.useState(2);
     const classes = useStyles();
    
     const BoxHeading = styled.h3`

@@ -1,23 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
-import { makeStyles } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
-import {Box, Button, Grid, Paper, Card} from '@material-ui/core'
+import {Box, Button, Grid} from '@material-ui/core'
 import s from '../../../styles/styles.module.css'
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-   
-    control: {
-      padding: theme.spacing(4),
-    },
-  }));
 
   // Data from GraphQL / DynamoDB
 
@@ -27,16 +15,14 @@ const useStyles = makeStyles((theme) => ({
 
 
   export default function Instance() {
-    const [spacing, setSpacing] = React.useState(8);
+
     const [state, setState] = React.useState({
         Started: instanceState,
       });
+
       const instanceSwitch = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
       };
-    const classes = useStyles();
-    
-
 
    return (
             <div>
@@ -80,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
                   </div>
                   <h2>Live Stream</h2>
                   <Grid container alignItems="center" justify="center" spacing={2}>
-                    <img src="https://via.placeholder.com/640x460.png?text=Live+Stream" />
+                    <img alt="stream" src="https://via.placeholder.com/640x460.png?text=Live+Stream" />
                     </Grid>
                     <p>Comes from {publicIP}:5000/0/mjpeg</p>
                     </Grid>
