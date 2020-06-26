@@ -84,10 +84,21 @@ class Provision extends Component {
             </Grid>
             <Spacer height="50px"/>
         </Box>
+        
         <Box>
+
+                <div className="devnotes">
+                  <h3>{"<"}DeveloperNotes{">"}</h3>
+                  <p>Call the CloudFormation template and display public IP, private IP adress</p>
+                  <p>While stack creation in progress, show {"{<cogs/>}"} from src/app/animations/cogs.js </p>
+                  <p>Save public IP, private IP adress, ec2 instance ID in modelConfig table</p>
+                  <h3>{"</"}DeveloperNotes{">"}</h3>
+                </div>
+
         <Spacer height="50px"/>
             <Grid container alignItems="center" justify="center">
                 <Grid item md={8} sm={10} xs={12}>
+
                 {showHideButton && 
                   <div>
                     <Grid container alignItems="center" justify="center">
@@ -102,7 +113,9 @@ class Provision extends Component {
                       </RadioGroup>
                     </FormControl>
                     </Grid>
-    <Spacer height="50px"/>
+
+                <Spacer height="50px"/>
+
                 <Grid item xs={12}>
                 <form className={classes.root} noValidate autoComplete="off">
       
@@ -110,18 +123,22 @@ class Provision extends Component {
       {/* // this should only be required if File is checked */}
 
 
-              <TextField
+                   <TextField
                     required
                     id="outlined-required"
                     label="Public Amazon S3 Link"
                     // defaultValue="Public Amazon S3 Link"
                     variant="outlined"
                   />
+
+      {/* //  */}
+
+
                   </form>
                   </Grid>
 
-    <Spacer height="50px"/>
-    
+                  <Spacer height="50px"/>
+
                   <Grid item xs={12}>
                   <Button  variant="outlined" color="primary" size="large" onClick={() => this.hideComponent("showHideProvision")}>
                     <span className={s.ctabutton}>Provision</span>

@@ -9,33 +9,26 @@ import {
 import UserContext from './UserContext'
 import Header from './Menu'
 import Footer from './Footer'
-import Library from './app/Library/Index'
 import Authenticator from './Authenticator'
 import Home from './pages/Home/Index'
-import Profile from './app/Account'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
-import Currency from './app/Library/Currency'
-import LibTemplate from './app/Library/{template}'
-import OpenPose from './app/Library/OpenPose'
-import Coco from './app/Library/Coco'
-import Ripeness from './app/Library/Ripeness'
-import CurrencyProvision from './app/Model/Currency/Provision'
-import CurrencyConfigure from './app/Model/Currency/Configure'
-import CurrencyStream from './app/Model/Currency/Stream'
-import DeepFace from './app/Library/DeepFace'
-import OpenALPR from './app/Library/OpenALPR'
-import CurrencyLib from './app/Model/Currency/Index'
-import Studio from './app/Studio/Index'
-import Streams from './app/Streams'
+
+import Account from './app/Account'
 import Billing from './app/Billing'
+
+import Library from './app/Library/Index'
+import LibTemplate from './app/Library/{template}'
+
+import Studio from './app/Studio/Index'
+import Instance from './app/Studio/Instance'
+import Analytics from './app/Studio/Instance/analytics'
 import Provision from './app/Studio/Provision'
 import Start from './app/Studio/Start'
 import Actions from './app/Studio/Actions'
-import Instance from './app/Studio/Instance'
-import Analytics from './app/Studio/Instance/analytics'
+
 
 
 class PrivateRoute extends React.Component {
@@ -97,25 +90,14 @@ const Routes = () => (
         <Route path='/privacy' exact component={Privacy} />
         <Route path='/terms' exact component={Terms} />
         <PrivateRoute path='/library' exact component={Library} />
+        <PrivateRoute path='/library/template' exact component={LibTemplate} />
         <PrivateRoute path='/studio' exact component={Studio} />
         <PrivateRoute path='/studio/{id}/' component={Instance} />
         <PrivateRoute path='/studio/{id}/analytics' component={Analytics} />
+        <PrivateRoute path='/studio/provision/' component={Provision} />
         <PrivateRoute path='/studio/start'component={Start}/>
         <PrivateRoute path='/studio/actions'component={Actions}/>
-        <PrivateRoute path='/streams' exact component={Streams} />
-        <PrivateRoute path='/library/currency' exact component={Currency} />
-        <PrivateRoute path='/library/template' exact component={LibTemplate} />
-        <PrivateRoute path='/model/currency/provision' exact component={CurrencyProvision} />
-        <PrivateRoute path='/model/currency/configure' exact component={CurrencyConfigure} />
-        <PrivateRoute path='/model/currency/stream' exact component={CurrencyStream} />
-        <PrivateRoute path='/model/currency' exact component={CurrencyLib} />
-        <PrivateRoute path='/library/openpose' exact component={OpenPose} />
-        <PrivateRoute path='/library/deepface' exact component={DeepFace} />
-        <PrivateRoute path='/library/openalpr' exact component={OpenALPR} />
-        <PrivateRoute path='/library/coco' exact component={Coco} />
-        <PrivateRoute path='/library/ripeness' exact component={Ripeness} />
-        <PrivateRoute path='/studio/provision/' component={Provision} />
-        <PrivateRoute path='/account'  component={Profile} />
+        <PrivateRoute path='/account'  component={Account} />
         <PrivateRoute path='/billing'   component={Billing} />
         <Route component={NoMatch} />
       </Switch>
