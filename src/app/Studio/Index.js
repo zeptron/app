@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   const modelDescription = "{modelDescription}"
 
 
-  export default function Library() {
+  export default function Studio() {
     const [spacing, setSpacing] = React.useState(8);
     const classes = useStyles();
 

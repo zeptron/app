@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   const InstanceName = "InstanceName"
 
 
-  export default function Library() {
+  export default function Analytics() {
     const [spacing, setSpacing] = React.useState(8);
     const classes = useStyles();
     const Text = styled.p`

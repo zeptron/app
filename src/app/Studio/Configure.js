@@ -6,7 +6,7 @@ import Spacer from 'react-spacer'
 import Ip from './Components/ProvisionHelper'
 
 
-class CurrencyConfigure extends Component {
+class Configure extends Component {
   constructor() {
     super();
     this.state = {
@@ -95,4 +95,4 @@ class CurrencyConfigure extends Component {
   }
 }
 
-export default CurrencyConfigure
+export default Configure
