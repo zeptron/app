@@ -32,20 +32,20 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
+  const ITEM_HEIGHT = 48;
+  const ITEM_PADDING_TOP = 8;
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        width: 250,
+      },
     },
-  },
-};
+  };
 
 // Data from GraphQL
-//This should come from the Classes table for classess associated with modelID
-//The value of classes is their ID number, e.g. 1 Person,
+// This should come from the Classes table for classes associated with modelID
+// The value of classes is their associated number in the table, e.g. 1 Person,
 
 const names = [
     'Person',
@@ -56,9 +56,7 @@ const names = [
     'Cat'
   ];
 
-  const ModelName = "ModelName"
-  const ModelDescription = "Short model description"
-
+  const modelName = "{modelName}"
 
   function getStyles(name, classNames, theme) {
     return {
@@ -74,7 +72,8 @@ const names = [
     const classes = useStyles();
     const theme = useTheme();
 
-    // Count & Notify switches
+      //
+      // Count & Notify switches
 
     const [state, setState] = React.useState({
         countSwitched: true,
@@ -85,6 +84,7 @@ const names = [
         setState({ ...state, [event.target.name]: event.target.checked });
       };
 
+      //
       // Count classes
     
       const handleCountSwitch = (event) => {
@@ -104,6 +104,7 @@ const names = [
 
       const [classNames, setclassNames] = React.useState([]);
 
+      //
       // Notify classes
 
       const handleNotifyChange = (event) => {
@@ -123,7 +124,8 @@ const names = [
 
       const [className, setClassName] = React.useState([]);
 
-      // Position drop down 
+      //
+      // Line position drop down 
       
       const [position, setPosition] = React.useState('');
       const [open, setOpen] = React.useState(false);
@@ -145,7 +147,7 @@ const names = [
             
      <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
       <h1  className={s.header} style={{textAlign: 'center'}}>
-        {ModelName}           
+        {modelName}           
       </h1>
       <p className={s.subheader}>Configure Actions</p>
       </Box>

@@ -38,9 +38,10 @@ const useStyles = makeStyles((theme) => ({
   // data from GraphQL
 
   const rating = 5
-  const ModelID = 1
-  const ModelName = "Australian Currency"
-  const description = "featuring handgun & knife protection"
+  const modelID = 1
+  const modelName = "{modelName}"
+  const description = "{short model description}"
+  const videoID = "7UTpr-jPH0A"
   function createData(name, number) {
     return { name, number };
   }
@@ -67,21 +68,21 @@ const useStyles = makeStyles((theme) => ({
     createData("Etc", 5)
   ];
 
-  const videoID = "7UTpr-jPH0A"
-
 export default function Currency() {
+    
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-  const handleChangePage = (event, newPage) => {
+    const handleChangePage = (event, newPage) => {
     setPage(newPage);
-  };
+    };
 
-  const handleChangeRowsPerPage = event => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
+    const handleChangeRowsPerPage = event => {
+        setRowsPerPage(+event.target.value);
+        setPage(0);
+    };
+    
     return ( 
     <div>
 
@@ -89,15 +90,17 @@ export default function Currency() {
             <Spacer height="50px"/>
             <Grid container alignItems="center" justify="center">
                 <Grid item md={8} sm={10} xs={12}>
-                <Box component="fieldset" mb={3} borderColor="transparent">
-                <Rating name="read-only" value={rating} readOnly />
-                </Box>
-                    <h1 className={s.header}>{ModelName}</h1>
+                    
+                    <Box component="fieldset" mb={3} borderColor="transparent">
+                    <Rating name="read-only" value={rating} readOnly />
+                    </Box>
+                    
+                    <h1 className={s.header}>{modelName}</h1>
                     <p className={s.subheader}>{description}</p>
 
                     <Spacer height="25px"/>
 
-                    <Button size="large" variant="contained" color="secondary" href={`/studio/provision/${ModelID}`}>
+                    <Button size="large" variant="contained" color="secondary" href={`/studio/start/${modelID}`}>
                         <span className={s.ctabutton}>Start with this model</span>
                     </Button>
 
@@ -185,7 +188,7 @@ export default function Currency() {
             </Grid>
             <Spacer height="50px"/>
         </Box>
-        
+
     </div>
     )
 }

@@ -17,48 +17,45 @@ const useStyles = makeStyles((theme) => ({
 
 
   export default function Library() {
+    
     const classes = useStyles();
+    const modelName = "{modelName}"
     
    return (
             <div>
             <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
-                <h1  className={s.header} style={{textAlign: 'center'}}>
-                    ModelName            
-                </h1>
+                <h1  className={s.header} style={{textAlign: 'center'}}>{modelName}</h1>
                 <p className={s.subheader}>Create New Instance</p>
-               
-                   
-                </Box>
-                <Spacer height="100px"/>
+            </Box>
+            
+            <Spacer height="100px"/>
 
-               
-                        
-                        <Grid container alignItems="center" justify="center">
-                        <Grid item xs={12}>
-                        <form className={classes.root} noValidate autoComplete="off">
-                        <TextField
-          required
-          id="outlined-required"
-          label="Instance Name"
-          defaultValue="My Model"
-          variant="outlined"
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="Location"
-          defaultValue="City Near Me"
-          variant="outlined"
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="Location"
-          defaultValue="Place Near Me"
-          variant="outlined"
-        />
-        </form>
-        </Grid>
+            <Grid container alignItems="center" justify="center">
+              <Grid item xs={12}>
+                  <form className={classes.root} noValidate autoComplete="off">
+                    <TextField
+                      required
+                      id="outlined-required"
+                      label="Instance Name"
+                      defaultValue="My Model"
+                      variant="outlined"
+                    />
+                  <TextField
+                    required
+                    id="outlined-required"
+                    label="Location"
+                    defaultValue="City Near Me"
+                    variant="outlined"
+                  />
+                  <TextField
+                    required
+                    id="outlined-required"
+                    label="Location"
+                    defaultValue="Place Near Me"
+                    variant="outlined"
+                  />
+                 </form>
+            </Grid>
         <Spacer height="25px" />
         <Grid item xs={12}>
         <Button href="/studio/actions" variant="contained" color="primary" size="large">

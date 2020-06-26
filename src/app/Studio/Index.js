@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { makeStyles } from '@material-ui/core/styles';
 import Spacer from 'react-spacer'
-import {Box, Button, Grid, Paper, Card} from '@material-ui/core'
+import {Box, Button, Grid,  Card} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import { Link } from 'react-router-dom'
 import CardActions from '@material-ui/core/CardActions';
@@ -32,13 +32,6 @@ const useStyles = makeStyles((theme) => ({
     cardInner: {
       marginTop: '41%',
       marginBottom: '41%'
-    },
-    paper: {
-      height: 350,
-      width: '100%',
-      padding: theme.spacing(2),
-      textAlign: 'center'
-
     },
     control: {
       padding: theme.spacing(4),
@@ -106,31 +99,29 @@ const useStyles = makeStyles((theme) => ({
                   title={instanceName}
                   />
                   <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {instanceName}
-          </Typography>
-          <Spacer height="10px"/>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {instanceLocation}
-          </Typography> 
-          <Typography variant="body2" color="textSecondary" component="p">
-            {instancePod}
-          </Typography>
-          <Spacer height="10px"/>
-          <Typography variant="body2" color="textSecondary" component="p">
-            State: {instanceState}
-          </Typography>
-        </CardContent>
-        <Button href={`/studio/${modelConfigID}`}>
-          View
-        </Button>
-        
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {instanceName}
+                  </Typography>
+                  <Spacer height="10px"/>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    {instanceLocation}
+                  </Typography> 
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    {instancePod}
+                  </Typography>
+                  <Spacer height="10px"/>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    State: {instanceState}
+                  </Typography>
+                  </CardContent>
+                  <Button href={`/studio/${modelConfigID}`}>
+                    View
+                  </Button>
                   </CardActionArea>
                   </Card>
                   </Link>
 
                   <Spacer height="25px"/>
-                  
                
                     </Grid>
                     </Grid>

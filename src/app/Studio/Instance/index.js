@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
     
 
+
    return (
             <div>
             <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
@@ -54,9 +55,11 @@ const useStyles = makeStyles((theme) => ({
                     control={<Switch checked={state.Started} onChange={instanceSwitch} name="Started" />}
                     label="Instance Switch"
                 />
+               
                  <Button variant="contained" color="secondary" size="large">
                       Run
                   </Button>
+                  
                 <Button href="/studio/{id}/analytics" variant="contained" color="primary" size="large">
                       Analytics
                   </Button>
@@ -64,13 +67,16 @@ const useStyles = makeStyles((theme) => ({
                 
                   <Spacer height="50px"/>
                   <div className="devnotes">
-                  <h3>{"<"}&nbsp;DeveloperNotes&nbsp;{">"}</h3>
-                  <p>Switch activates Lambda to Start/Stop instance.</p>
+                  <h3>{"<"}DeveloperNotes{">"}</h3>
+                  <p>Switch invokes Lambda to Start/Stop {"{EC2instanceID}"}.</p>
                 
-                  <p>When starting / stopping, show {"<cogs/>"} component from src/app/animations/cogs.js until the Lambda returns success, then show/hide 'Run' button</p>
+                  <p>When starting / stopping, show {"<cogs/>"} component from src/app/animations/cogs.js until the Lambda returns success</p>
+                 
+                  <p>Run button invokes Lambda to start model. Pass {"{modelConfigId}"} to Lambda</p>
+                  
+                  <p>If switch is off, hide run button</p>
 
-                  <p>Run button triggers Lambda which SSHs into instance and runs python3 script with parameters from modelConfig as flags. <br/>Lambdas are found in /lambdas</p>
-                  <h3>{"</"}&nbsp;DeveloperNotes&nbsp;{">"}</h3>
+                  <h3>{"</"}DeveloperNotes{">"}</h3>
                   </div>
                   <h2>Live Stream</h2>
                   <Grid container alignItems="center" justify="center" spacing={2}>

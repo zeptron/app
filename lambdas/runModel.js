@@ -22,23 +22,20 @@ exports.handler = async (event) => {
   
       let ourout = "";
 
-      // 1. please set me up with if statements based on the booleans 
-      // so that I can create different script configurations based on the booleans 
+    // 1. Need to get params from DynamoDB table based on {modelConfigID} 
 
-      // e.g. if count is True, 
-        // ssh.exec('xvfb-run python3 --count ${count} --countClasses ${countClasses} 
+    // 2. please give me access to all values from the table 
+    // that are associated with modelConfigID as params
 
-      // I need the if statements because if count is False, I do not need to pass ${countClasses}
-
-      // 2. please pass in all of the parameters from the table that are associated with modelConfigID
-
-      // 3. if fromFile is true, I need you to do one extra step 
+    // 3. if fromFile is true, I need you to do one extra step 
       // execute: 
       // wget {fileURL}
       // filename = whatever the result of wget saving_as is 
       // so then I can pass ${filename} in the python script
-
-      // not sure how to do that .. best to leave to the expert
+        
+      // not sure how to do that .. best to leave to the expert. 
+      
+      // ** I will provide a bonus if you can do #3 as well as it's outside scope 
 
       // I should be able to take it from there 
       
