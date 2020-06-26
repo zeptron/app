@@ -14,6 +14,54 @@ export const getModel = /* GraphQL */ `
       rating
       type
       video
+      class {
+        id
+        modelID
+        name
+        number
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
+      modelConfig {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
@@ -35,6 +83,24 @@ export const listModels = /* GraphQL */ `
         rating
         type
         video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
       nextToken
     }
@@ -58,6 +124,24 @@ export const getClass = /* GraphQL */ `
         rating
         type
         video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
     }
   }
@@ -74,6 +158,145 @@ export const listClasss = /* GraphQL */ `
         modelID
         name
         number
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
+      nextToken
+    }
+  }
+`;
+export const getModelConfig = /* GraphQL */ `
+  query GetModelConfig($id: ID!) {
+    getModelConfig(id: $id) {
+      id
+      userID
+      modelID
+      name
+      location
+      pod
+      count
+      notify
+      countClasses
+      notifyClasses
+      fromFile
+      publicIP
+      privateIP
+      port
+      EC2instanceID
+      instanceState
+      ModelResultsID
+      ModelResults {
+        id
+        modelID
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+        streamID
+        stream {
+          id
+          userID
+          name
+          location
+          url
+          createdAt
+        }
+        classID
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        insertedAt
+        count
+        detected
+      }
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
+    }
+  }
+`;
+export const listModelConfigs = /* GraphQL */ `
+  query ListModelConfigs(
+    $filter: ModelmodelConfigFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listModelConfigs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userID
+        modelID
+        name
+        location
+        pod
+        count
+        notify
+        countClasses
+        notifyClasses
+        fromFile
+        publicIP
+        privateIP
+        port
+        EC2instanceID
+        instanceState
+        ModelResultsID
+        ModelResults {
+          id
+          modelID
+          streamID
+          classID
+          insertedAt
+          count
+          detected
+        }
         model {
           id
           FPS
@@ -138,6 +361,24 @@ export const getModelResults = /* GraphQL */ `
         rating
         type
         video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
       streamID
       stream {

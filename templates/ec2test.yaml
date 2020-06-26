@@ -15,9 +15,15 @@ Resources:
     Properties:
       ImageId: ami-021e4d943dd020a86
       InstanceType: t2.micro
+      UserData:
+        Fn::Base64: !Sub |
+            #!/bin/bash -xe
+            sudo apt-get upgrade 
+            sudo apt-get update
     Metadata:
       'AWS::CloudFormation::Designer':
         id: d0fea2e2-2dc2-4ad0-8167-f6778963aaad
+  
 Outputs:
   EC2I2VQQ4PublicIP:
     Value: !GetAtt EC2I2VQQ4.PublicIp

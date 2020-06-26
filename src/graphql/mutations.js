@@ -17,6 +17,54 @@ export const createModel = /* GraphQL */ `
       rating
       type
       video
+      class {
+        id
+        modelID
+        name
+        number
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
+      modelConfig {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
@@ -36,6 +84,54 @@ export const updateModel = /* GraphQL */ `
       rating
       type
       video
+      class {
+        id
+        modelID
+        name
+        number
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
+      modelConfig {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
@@ -55,6 +151,54 @@ export const deleteModel = /* GraphQL */ `
       rating
       type
       video
+      class {
+        id
+        modelID
+        name
+        number
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
+      modelConfig {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
@@ -79,6 +223,24 @@ export const createClass = /* GraphQL */ `
         rating
         type
         video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
     }
   }
@@ -104,6 +266,24 @@ export const updateClass = /* GraphQL */ `
         rating
         type
         video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
     }
   }
@@ -129,6 +309,297 @@ export const deleteClass = /* GraphQL */ `
         rating
         type
         video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
+    }
+  }
+`;
+export const createModelConfig = /* GraphQL */ `
+  mutation CreateModelConfig(
+    $input: CreateModelConfigInput!
+    $condition: ModelmodelConfigConditionInput
+  ) {
+    createModelConfig(input: $input, condition: $condition) {
+      id
+      userID
+      modelID
+      name
+      location
+      pod
+      count
+      notify
+      countClasses
+      notifyClasses
+      fromFile
+      publicIP
+      privateIP
+      port
+      EC2instanceID
+      instanceState
+      ModelResultsID
+      ModelResults {
+        id
+        modelID
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+        streamID
+        stream {
+          id
+          userID
+          name
+          location
+          url
+          createdAt
+        }
+        classID
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        insertedAt
+        count
+        detected
+      }
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
+    }
+  }
+`;
+export const updateModelConfig = /* GraphQL */ `
+  mutation UpdateModelConfig(
+    $input: UpdateModelConfigInput!
+    $condition: ModelmodelConfigConditionInput
+  ) {
+    updateModelConfig(input: $input, condition: $condition) {
+      id
+      userID
+      modelID
+      name
+      location
+      pod
+      count
+      notify
+      countClasses
+      notifyClasses
+      fromFile
+      publicIP
+      privateIP
+      port
+      EC2instanceID
+      instanceState
+      ModelResultsID
+      ModelResults {
+        id
+        modelID
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+        streamID
+        stream {
+          id
+          userID
+          name
+          location
+          url
+          createdAt
+        }
+        classID
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        insertedAt
+        count
+        detected
+      }
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
+    }
+  }
+`;
+export const deleteModelConfig = /* GraphQL */ `
+  mutation DeleteModelConfig(
+    $input: DeleteModelConfigInput!
+    $condition: ModelmodelConfigConditionInput
+  ) {
+    deleteModelConfig(input: $input, condition: $condition) {
+      id
+      userID
+      modelID
+      name
+      location
+      pod
+      count
+      notify
+      countClasses
+      notifyClasses
+      fromFile
+      publicIP
+      privateIP
+      port
+      EC2instanceID
+      instanceState
+      ModelResultsID
+      ModelResults {
+        id
+        modelID
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+        streamID
+        stream {
+          id
+          userID
+          name
+          location
+          url
+          createdAt
+        }
+        classID
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        insertedAt
+        count
+        detected
+      }
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
     }
   }
@@ -197,6 +668,24 @@ export const createModelResults = /* GraphQL */ `
         rating
         type
         video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
       streamID
       stream {
@@ -251,6 +740,24 @@ export const updateModelResults = /* GraphQL */ `
         rating
         type
         video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
       streamID
       stream {
@@ -305,6 +812,24 @@ export const deleteModelResults = /* GraphQL */ `
         rating
         type
         video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
       streamID
       stream {

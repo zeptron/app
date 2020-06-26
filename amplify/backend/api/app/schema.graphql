@@ -9,13 +9,38 @@ type Model @model {
   rating: Int!
   type: String!
   video: String!
+  class: Class @connection
+  modelConfig: Model @connection
 }
 
-type Class @model @key(name: "byModel", fields: ["modelID"]) {
+type Class @model {
   id: ID!
   modelID: ID!
   name: String!
   number: Int!
+  model: Model @connection(fields: ["modelID"])
+}
+
+type modelConfig @model  {
+  id: ID!
+  userID: String!
+  modelID: ID!
+  instanceName: String!
+  instanceLocation: String!
+  instancePod: String!
+  count: Boolean!
+  notify: Boolean!
+  countClasses: String!
+  notifyClasses: String!
+  fromFile: Boolean!
+  fileUrl: String!
+  publicIP: String!
+  privateIP: String!
+  port: String!
+  EC2instanceID: String!
+  instanceState: Boolean!
+  ModelResultsID: ID!
+  ModelResults: ModelResults @connection(fields: ["ModelResultsID"])
   model: Model @connection(fields: ["modelID"])
 }
 
