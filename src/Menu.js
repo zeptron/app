@@ -18,8 +18,14 @@ class Header extends React.Component {
     
     return (
       <div {...css(styles.container)}>
+
+       
         
         <Link to='/' {...css(styles.link)}>
+        <img
+          style={styles.amplifyLogo}
+          src={require('./assets/deep_icon_alt.png')}
+        />
           <h2 className={s.title}>Zeptron</h2>
         </Link>
         
@@ -51,6 +57,12 @@ class Header extends React.Component {
 }
 
 const styles = {
+
+  amplifyLogo: {
+    height: 30,
+    marginLeft: 45
+  },
+  
   navContainer: {
     display: 'flex',
     flexDirection: 'row-reverse',

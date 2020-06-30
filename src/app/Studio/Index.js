@@ -64,10 +64,10 @@ const useStyles = makeStyles((theme) => ({
                 <Box>
                 <Spacer height="50px"/>
                 <Grid item>
-                 
+                <h1>Undergoing system maintenance</h1>
                   </Grid>
                   <Spacer height="50px"/>
-                <Grid container alignItems="center" justify="center">
+                {/* <Grid container alignItems="center" justify="center">
                   <Grid item md={8}>
                   <div className="devnotes">
                   <h3>{"<"}DeveloperNotes{">"}</h3>
@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
                     </Grid>
                     </Grid>
                 </Grid>
-                <Spacer height="100px"/>
+                <Spacer height="100px"/> */}
             </Box>
             </div>
 

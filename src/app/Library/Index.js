@@ -45,14 +45,15 @@ const useStyles = makeStyles((theme) => ({
                 </Box>
                 
                 <Spacer height="100px"/>
-                <Box>
+                {/* <Box>
                 <div className="devnotes">
                   <h3>{"<"}DeveloperNotes{">"}</h3>
                   <p>Display every model instance as a card </p>
                   <h3>{"</"}DeveloperNotes{">"}</h3>
                 </div>
-                </Box>
-                <Grid container alignItems="center" justify="center">
+                </Box> */}
+                <h1>Undergoing system maintenance</h1>
+                {/* <Grid container alignItems="center" justify="center">
                   <Grid item md={8}>
                   <Link to={`/library/${modelID}`}>
                   <Card className={classes.card}>
@@ -80,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
                   </Card>
                   </Link>
                     </Grid>
-                </Grid>
+                </Grid> */}
                 <Spacer height="100px"/>
             
             </div>

@@ -44,14 +44,19 @@ type modelConfig @model  {
   model: Model @connection(fields: ["modelID"])
 }
 
-type Stream @model {
+
+type modelUsage @model {
   id: ID!
-  userID: String!
-  name: String!
-  location: String!
-  url: String!
-  createdAt: String!
+  modelID: ID!
+  userID: ID!
+  modelConfigID: ID!
+  startTime: String!
+  stopTime: String!
+  usage: String!
+  model: Model @connection(fields: ["modelID"])
 }
+
+
 
 type ModelResults @model @key(name: "byStream", fields:  ["streamID"] ) { 
   id: ID!
