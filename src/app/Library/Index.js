@@ -1,89 +1,59 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import Spacer from 'react-spacer'
-import {Box, Button, Grid, Card} from '@material-ui/core'
-import s from '../../styles/styles.module.css'
-import { Link } from 'react-router-dom'
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardActionArea from '@material-ui/core/CardActionArea';
+import React, { useState, useEffect } from "react";
+import Spacer from "react-spacer";
+import { Box, Grid } from "@material-ui/core";
+import s from "../../styles/styles.module.css";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    card: {
-      width: 300,
-      margin: 4
-    },
-    control: {
-      padding: theme.spacing(4),
-    },
-  }));
+import { API, graphqlOperation } from "aws-amplify";
+import * as queries from "../../graphql/queries";
 
-// Data from table 
+import ModelCard from "./ModelCard";
 
-  const modelID = "template"
-  const modelName = "{modelName}"
-  const modelImage = "https://zepappassets.s3-ap-southeast-2.amazonaws.com/1_Co8xD0IWPaBiWr-Xfu38dw.jpeg"
-  const modelDescription = "{modelDescription}"
+export default function Library() {
+  const [models, setModels] = useState([]);
 
+  useEffect(() => {
+    async function fetchLibraryModelsAPI() {
+      try {
+        const rdata = await API.graphql(graphqlOperation(queries.listModels));
+        const {
+          data: {
+            listModels: { items },
+          },
+        } = rdata;
+        console.log("items: ", items);
+        setModels(items);
+      } catch (err) {
+        console.log("error: ", err);
+      }
+    }
 
-  export default function Library() {
+    fetchLibraryModelsAPI();
+  }, []);
 
-    const classes = useStyles();
-  
+  let output = (
+    <Box flex align="center" justify="center">
+      No models
+    </Box>
+  );
 
-   return (
-            <div>
-            <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
-                <h1  className={s.header} style={{textAlign: 'center'}}>
-                Model Library                
-                </h1>
-               
-                </Box>
-                
-                <Spacer height="100px"/>
-                <Box>
-                <div className="devnotes">
-                  <h3>{"<"}DeveloperNotes{">"}</h3>
-                  <p>Display every model instance as a card </p>
-                  <h3>{"</"}DeveloperNotes{">"}</h3>
-                </div>
-                </Box>
-                <Grid container alignItems="center" justify="center">
-                  <Grid item md={8}>
-                  <Link to={`/library/${modelID}`}>
-                  <Card className={classes.card}>
-                  <CardActionArea>
-                  <CardMedia
-                  component="img"
-                  alt={modelName}
-                  height="140"
-                  image={modelImage}
-                  title={modelName}
-                  />
-                  <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {modelName}
-                  </Typography>
-                  <Spacer height="25px"/>
-                  <Typography gutterBottom variant="body2" component="p">
-                    {modelDescription}
-                  </Typography>
-                  </CardContent>
-                  <Button href={`/library/${modelID}`}>
-                    View
-                  </Button>
-                  </CardActionArea>
-                  </Card>
-                  </Link>
-                    </Grid>
-                </Grid>
-                <Spacer height="100px"/>
-            
-            </div>
+  if (models.length !== 0) {
+    output = models.map((model) => <ModelCard key={model.id} model={model} />);
+  }
 
-   )
-   }
+  return (
+    <div>
+      <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
+        <h1 className={s.header} style={{ textAlign: "center" }}>
+          Model Library
+        </h1>
+      </Box>
+
+      <Spacer height="100px" />
+      <Grid container alignItems="center" justify="center">
+        <Grid item md={8}></Grid>
+        {output}
+      </Grid>
+      <Spacer height="100px" />
+    </div>
+  );
+}

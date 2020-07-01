@@ -1,76 +1,76 @@
-import React from 'react'
-import { css } from 'glamor'
-import { Link } from 'react-router-dom'
-import UserContext from './UserContext'
-import s from './styles/styles.module.css'
-import AppBar from './components/Nav/AppBar'
+import React from "react";
+import { css } from "glamor";
+import { Link } from "react-router-dom";
+import UserContext from "./UserContext";
+import s from "./styles/styles.module.css";
+import AppBar from "./components/Nav/AppBar";
 import Button from "@material-ui/core/Button";
 
-
 class Header extends React.Component {
-
-  static contextType = UserContext
+  static contextType = UserContext;
 
   render() {
-    
-    const isAuthenticated = this.context.user && this.context.user.username ? true : false
-    const isLoaded = this.context.isLoaded
-    
+    const isAuthenticated =
+      this.context.user && this.context.user.username ? true : false;
+    const isLoaded = this.context.isLoaded;
+
     return (
       <div {...css(styles.container)}>
-        
-        <Link to='/' {...css(styles.link)}>
+        <Link to="/" {...css(styles.link)}>
           <h2 className={s.title}>Zeptron</h2>
         </Link>
-        
-        <div {...css(styles.navContainer)}>
-          {
-            isLoaded ? isAuthenticated ? (
-              
-              <div>
-                <AppBar/>
-              </div>
 
-            ) : (
-              
+        <div {...css(styles.navContainer)}>
+          {isLoaded ? (
+            isAuthenticated ? (
               <div>
-                <Button href="/about" variant="outlined" style={{color: 'white'}}>
+                <AppBar />
+              </div>
+            ) : (
+              <div>
+                <Button
+                  href="/about"
+                  variant="outlined"
+                  style={{ color: "white" }}
+                >
                   About
                 </Button>
-                <Button href="/auth" variant="outlined" style={{color: 'white', marginRight: '15px'}}>
+                <Button
+                  href="/auth"
+                  variant="outlined"
+                  style={{ color: "white", marginRight: "15px" }}
+                >
                   Sign In
                 </Button>
-            </div>
-            
-            ) : null
-          }
-       </div>
+              </div>
+            )
+          ) : null}
+        </div>
       </div>
-    )
+    );
   }
 }
 
 const styles = {
   navContainer: {
-    display: 'flex',
-    flexDirection: 'row-reverse',
+    display: "flex",
+    flexDirection: "row-reverse",
     flex: 1,
     paddingLeft: 50,
-    marginTop: 6
+    marginTop: 6,
   },
   link: {
-    textDecoration: 'none',
-    display: 'inline-flex',
+    textDecoration: "none",
+    display: "inline-flex",
   },
-  
-  container: {
-    height: '80px',
-    alignItems: 'center',
-    width: '100%',
-    backgroundColor: '#000a12',
-    display: 'flex',
-    
-  }
-}
 
-export default Header
+  container: {
+    height: "80px",
+    alignItems: "center",
+    width: "100%",
+    backgroundColor: "#000a12",
+    display: "flex",
+  },
+};
+
+export default Header;
