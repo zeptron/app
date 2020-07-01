@@ -6,15 +6,9 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 
-// Data from GraphQL / DynamoDB
-
-const instanceName = "InstanceName";
-const instanceState = false;
-const publicIP = "{publicIP}";
-
-export default function Instance() {
+export default function Instance({ modelConfig }) {
   const [state, setState] = React.useState({
-    Started: instanceState,
+    Started: modelConfig.instanceState,
   });
 
   const instanceSwitch = (event) => {
@@ -25,7 +19,7 @@ export default function Instance() {
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
         <h1 className={s.header} style={{ textAlign: "center" }}>
-          {instanceName}
+          {modelConfig.instanceName}
         </h1>
       </Box>
 
@@ -89,7 +83,7 @@ export default function Instance() {
                 src="https://via.placeholder.com/640x460.png?text=Live+Stream"
               />
             </Grid>
-            <p>Comes from {publicIP}:5000/0/mjpeg</p>
+            <p>Comes from {modelConfig.publicIP}</p>
           </Grid>
         </Grid>
         <Spacer height="100px" />

@@ -293,7 +293,6 @@ export const listModelConfigs = /* GraphQL */ `
         ModelResults {
           id
           modelID
-          streamID
           classID
           insertedAt
           count
