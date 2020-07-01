@@ -14,6 +14,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import AppsIcon from '@material-ui/icons/Apps';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 const useStyles = makeStyles({
   list: {
@@ -52,22 +53,11 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Studio"].map((text, index) => (
+        {["Studio", "Library"].map((text, index) => (
           <ListItem button component="a" href={`/${text.toLowerCase()}`} key={text}>
             <ListItemIcon>
             {index === 0 && <DashboardIcon/>}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["Library", "Streams"].map((text, index) => (
-          <ListItem button component="a" href={`/${text.toLowerCase()}`} key={text}>
-            <ListItemIcon>
-            {index === 0 && <DynamicFeedIcon/>}
-            {index === 1 && <VideocamIcon/>}
+            {index === 1 && <DynamicFeedIcon/>}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -84,6 +74,18 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemText primary={text} />
           </ListItem>
         ))}
+      </List>
+      <Divider />
+      <List>
+      
+          <ListItem button component="a" href="https://zeptron.github.io" >
+           <ListItemIcon>
+             <HelpOutlineIcon/>
+            </ListItemIcon>
+            <ListItemText>
+              Help
+              </ListItemText>
+          </ListItem>
       </List>
     </div>
   );
