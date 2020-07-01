@@ -1,79 +1,99 @@
-import React from 'react'
-import Spacer from 'react-spacer'
-import {Box, Button, Grid} from '@material-ui/core'
-import s from '../../../styles/styles.module.css'
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
+import React from "react";
+import Spacer from "react-spacer";
+import { Box, Button, Grid } from "@material-ui/core";
+import s from "../../../styles/styles.module.css";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Switch from "@material-ui/core/Switch";
 
+// Data from GraphQL / DynamoDB
 
-  // Data from GraphQL / DynamoDB
+const instanceName = "InstanceName";
+const instanceState = false;
+const publicIP = "{publicIP}";
 
-  const instanceName = "InstanceName"
-  const instanceState = false
-  const publicIP = "{publicIP}"
+export default function Instance() {
+  const [state, setState] = React.useState({
+    Started: instanceState,
+  });
 
+  const instanceSwitch = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
 
-  export default function Instance() {
+  return (
+    <div>
+      <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
+        <h1 className={s.header} style={{ textAlign: "center" }}>
+          {instanceName}
+        </h1>
+      </Box>
 
-    const [state, setState] = React.useState({
-        Started: instanceState,
-      });
+      <Box>
+        <Spacer height="100px" />
+        <Grid container alignItems="center" justify="center">
+          <Grid item md={8}>
+            <FormGroup row>
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={state.Started}
+                    onChange={instanceSwitch}
+                    name="Started"
+                  />
+                }
+                label="Instance Switch"
+              />
 
-      const instanceSwitch = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
-      };
+              <Button variant="contained" color="secondary" size="large">
+                Run
+              </Button>
 
-   return (
-            <div>
-            <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
-                <h1  className={s.header} style={{textAlign: 'center'}}>
-                {instanceName}                
-                </h1>
-            </Box>
+              <Button
+                href="/studio/{id}/analytics"
+                variant="contained"
+                color="primary"
+                size="large"
+              >
+                Analytics
+              </Button>
+            </FormGroup>
 
-            <Box>
-                <Spacer height="100px"/>
-                <Grid container alignItems="center" justify="center">
-                  <Grid item md={8}>
-                  <FormGroup row>
-                  <FormControlLabel
-                    control={<Switch checked={state.Started} onChange={instanceSwitch} name="Started" />}
-                    label="Instance Switch"
-                />
-               
-                 <Button variant="contained" color="secondary" size="large">
-                      Run
-                  </Button>
-                  
-                <Button href="/studio/{id}/analytics" variant="contained" color="primary" size="large">
-                      Analytics
-                  </Button>
-                </FormGroup>
-                
-                  <Spacer height="50px"/>
-                  <div className="devnotes">
-                  <h3>{"<"}DeveloperNotes{">"}</h3>
-                  <p>Switch invokes Lambda to Start/Stop {"{EC2instanceID}"}.</p>
-                
-                  <p>When starting / stopping, show {"<cogs/>"} component from src/app/animations/cogs.js until the Lambda returns success</p>
-                 
-                  <p>Run button invokes Lambda to start model. Pass {"{modelConfigId}"} to Lambda</p>
-                  
-                  <p>If switch is off, hide run button</p>
+            <Spacer height="50px" />
+            <div className="devnotes">
+              <h3>
+                {"<"}DeveloperNotes{">"}
+              </h3>
+              <p>Switch invokes Lambda to Start/Stop {"{EC2instanceID}"}.</p>
 
-                  <h3>{"</"}DeveloperNotes{">"}</h3>
-                  </div>
-                  <h2>Live Stream</h2>
-                  <Grid container alignItems="center" justify="center" spacing={2}>
-                    <img alt="stream" src="https://via.placeholder.com/640x460.png?text=Live+Stream" />
-                    </Grid>
-                    <p>Comes from {publicIP}:5000/0/mjpeg</p>
-                    </Grid>
-                </Grid>
-                <Spacer height="100px"/>
-            </Box>
+              <p>
+                When starting / stopping, show {"<cogs/>"} component from
+                src/app/animations/cogs.js until the Lambda returns success
+              </p>
+
+              <p>
+                Run button invokes Lambda to start model. Pass{" "}
+                {"{modelConfigId}"} to Lambda
+              </p>
+
+              <p>If switch is off, hide run button</p>
+
+              <h3>
+                {"</"}DeveloperNotes{">"}
+              </h3>
             </div>
-
-   )
-   }
+            <h2>Live Stream</h2>
+            <Grid container alignItems="center" justify="center" spacing={2}>
+              <img
+                alt="stream"
+                src="https://via.placeholder.com/640x460.png?text=Live+Stream"
+              />
+            </Grid>
+            <p>Comes from {publicIP}:5000/0/mjpeg</p>
+          </Grid>
+        </Grid>
+        <Spacer height="100px" />
+      </Box>
+    </div>
+  );
+}
