@@ -58,12 +58,10 @@ type modelUsage @model {
 
 
 
-type ModelResults @model @key(name: "byStream", fields:  ["streamID"] ) { 
+type ModelResults @model  { 
   id: ID!
   modelID: ID!
   model: Model @connection(fields: ["modelID"])
-  streamID: ID!
-  stream: Stream @connection(fields: ["streamID"])
   classID: ID!
   class: Class @connection(fields: ["classID"])
   insertedAt: String!
