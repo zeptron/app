@@ -20,7 +20,7 @@ export default function Library() {
             listModels: { items },
           },
         } = rdata;
-        console.log("items: ", items);
+        console.log("Models: ", items);
         setModels(items);
       } catch (err) {
         console.log("error: ", err);
@@ -30,11 +30,7 @@ export default function Library() {
     fetchLibraryModelsAPI();
   }, []);
 
-  let output = (
-    <Box flex align="center" justify="center">
-      No models
-    </Box>
-  );
+  let output = <p>Loading...</p>;
 
   if (models.length !== 0) {
     output = models.map((model) => <ModelCard key={model.id} model={model} />);
@@ -50,7 +46,6 @@ export default function Library() {
 
       <Spacer height="100px" />
       <Grid container alignItems="center" justify="center">
-        <Grid item md={8}></Grid>
         {output}
       </Grid>
       <Spacer height="100px" />
