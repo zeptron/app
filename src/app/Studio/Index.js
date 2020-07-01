@@ -65,6 +65,7 @@ export default function Studio() {
         <Grid item></Grid>
         <Spacer height="50px" />
         {output}
+
         <Spacer height="100px" />
       </Box>
     </div>

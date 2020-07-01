@@ -370,6 +370,7 @@ export const createModelConfig = /* GraphQL */ `
           type
           video
         }
+<<<<<<< HEAD
         stream {
           id
           userID
@@ -378,6 +379,8 @@ export const createModelConfig = /* GraphQL */ `
           url
           createdAt
         }
+=======
+>>>>>>> 1f0ebf3a2508f9cbe1c4b2e610054b25c6a8c849
         classID
         class {
           id
@@ -460,15 +463,6 @@ export const updateModelConfig = /* GraphQL */ `
           rating
           type
           video
-        }
-        streamID
-        stream {
-          id
-          userID
-          name
-          location
-          url
-          createdAt
         }
         classID
         class {
@@ -553,15 +547,6 @@ export const deleteModelConfig = /* GraphQL */ `
           type
           video
         }
-        streamID
-        stream {
-          id
-          userID
-          name
-          location
-          url
-          createdAt
-        }
         classID
         class {
           id
@@ -606,48 +591,141 @@ export const deleteModelConfig = /* GraphQL */ `
     }
   }
 `;
-export const createStream = /* GraphQL */ `
-  mutation CreateStream(
-    $input: CreateStreamInput!
-    $condition: ModelStreamConditionInput
+export const createModelUsage = /* GraphQL */ `
+  mutation CreateModelUsage(
+    $input: CreateModelUsageInput!
+    $condition: ModelmodelUsageConditionInput
   ) {
-    createStream(input: $input, condition: $condition) {
+    createModelUsage(input: $input, condition: $condition) {
       id
+      modelID
       userID
-      name
-      location
-      url
-      createdAt
+      modelConfigID
+      startTime
+      stopTime
+      usage
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
-export const updateStream = /* GraphQL */ `
-  mutation UpdateStream(
-    $input: UpdateStreamInput!
-    $condition: ModelStreamConditionInput
+export const updateModelUsage = /* GraphQL */ `
+  mutation UpdateModelUsage(
+    $input: UpdateModelUsageInput!
+    $condition: ModelmodelUsageConditionInput
   ) {
-    updateStream(input: $input, condition: $condition) {
+    updateModelUsage(input: $input, condition: $condition) {
       id
+      modelID
       userID
-      name
-      location
-      url
-      createdAt
+      modelConfigID
+      startTime
+      stopTime
+      usage
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
-export const deleteStream = /* GraphQL */ `
-  mutation DeleteStream(
-    $input: DeleteStreamInput!
-    $condition: ModelStreamConditionInput
+export const deleteModelUsage = /* GraphQL */ `
+  mutation DeleteModelUsage(
+    $input: DeleteModelUsageInput!
+    $condition: ModelmodelUsageConditionInput
   ) {
-    deleteStream(input: $input, condition: $condition) {
+    deleteModelUsage(input: $input, condition: $condition) {
       id
+      modelID
       userID
-      name
-      location
-      url
-      createdAt
+      modelConfigID
+      startTime
+      stopTime
+      usage
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
@@ -688,15 +766,6 @@ export const createModelResults = /* GraphQL */ `
           type
           video
         }
-      }
-      streamID
-      stream {
-        id
-        userID
-        name
-        location
-        url
-        createdAt
       }
       classID
       class {
@@ -761,15 +830,6 @@ export const updateModelResults = /* GraphQL */ `
           video
         }
       }
-      streamID
-      stream {
-        id
-        userID
-        name
-        location
-        url
-        createdAt
-      }
       classID
       class {
         id
@@ -832,15 +892,6 @@ export const deleteModelResults = /* GraphQL */ `
           type
           video
         }
-      }
-      streamID
-      stream {
-        id
-        userID
-        name
-        location
-        url
-        createdAt
       }
       classID
       class {

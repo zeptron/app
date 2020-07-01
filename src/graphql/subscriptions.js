@@ -349,15 +349,6 @@ export const onCreateModelConfig = /* GraphQL */ `
           type
           video
         }
-        streamID
-        stream {
-          id
-          userID
-          name
-          location
-          url
-          createdAt
-        }
         classID
         class {
           id
@@ -437,15 +428,6 @@ export const onUpdateModelConfig = /* GraphQL */ `
           rating
           type
           video
-        }
-        streamID
-        stream {
-          id
-          userID
-          name
-          location
-          url
-          createdAt
         }
         classID
         class {
@@ -527,15 +509,6 @@ export const onDeleteModelConfig = /* GraphQL */ `
           type
           video
         }
-        streamID
-        stream {
-          id
-          userID
-          name
-          location
-          url
-          createdAt
-        }
         classID
         class {
           id
@@ -580,39 +553,132 @@ export const onDeleteModelConfig = /* GraphQL */ `
     }
   }
 `;
-export const onCreateStream = /* GraphQL */ `
-  subscription OnCreateStream {
-    onCreateStream {
+export const onCreateModelUsage = /* GraphQL */ `
+  subscription OnCreateModelUsage {
+    onCreateModelUsage {
       id
+      modelID
       userID
-      name
-      location
-      url
-      createdAt
+      modelConfigID
+      startTime
+      stopTime
+      usage
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
-export const onUpdateStream = /* GraphQL */ `
-  subscription OnUpdateStream {
-    onUpdateStream {
+export const onUpdateModelUsage = /* GraphQL */ `
+  subscription OnUpdateModelUsage {
+    onUpdateModelUsage {
       id
+      modelID
       userID
-      name
-      location
-      url
-      createdAt
+      modelConfigID
+      startTime
+      stopTime
+      usage
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
-export const onDeleteStream = /* GraphQL */ `
-  subscription OnDeleteStream {
-    onDeleteStream {
+export const onDeleteModelUsage = /* GraphQL */ `
+  subscription OnDeleteModelUsage {
+    onDeleteModelUsage {
       id
+      modelID
       userID
-      name
-      location
-      url
-      createdAt
+      modelConfigID
+      startTime
+      stopTime
+      usage
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
@@ -650,15 +716,6 @@ export const onCreateModelResults = /* GraphQL */ `
           type
           video
         }
-      }
-      streamID
-      stream {
-        id
-        userID
-        name
-        location
-        url
-        createdAt
       }
       classID
       class {
@@ -720,15 +777,6 @@ export const onUpdateModelResults = /* GraphQL */ `
           video
         }
       }
-      streamID
-      stream {
-        id
-        userID
-        name
-        location
-        url
-        createdAt
-      }
       classID
       class {
         id
@@ -788,15 +836,6 @@ export const onDeleteModelResults = /* GraphQL */ `
           type
           video
         }
-      }
-      streamID
-      stream {
-        id
-        userID
-        name
-        location
-        url
-        createdAt
       }
       classID
       class {
