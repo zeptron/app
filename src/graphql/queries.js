@@ -211,15 +211,6 @@ export const getModelConfig = /* GraphQL */ `
           type
           video
         }
-        streamID
-        stream {
-          id
-          userID
-          name
-          location
-          url
-          createdAt
-        }
         classID
         class {
           id
@@ -293,7 +284,6 @@ export const listModelConfigs = /* GraphQL */ `
         ModelResults {
           id
           modelID
-          streamID
           classID
           insertedAt
           count
@@ -316,32 +306,76 @@ export const listModelConfigs = /* GraphQL */ `
     }
   }
 `;
-export const getStream = /* GraphQL */ `
-  query GetStream($id: ID!) {
-    getStream(id: $id) {
+export const getModelUsage = /* GraphQL */ `
+  query GetModelUsage($id: ID!) {
+    getModelUsage(id: $id) {
       id
+      modelID
       userID
-      name
-      location
-      url
-      createdAt
+      modelConfigID
+      startTime
+      stopTime
+      usage
+      model {
+        id
+        FPS
+        description
+        image
+        mAP
+        name
+        notes
+        rating
+        type
+        video
+        class {
+          id
+          modelID
+          name
+          number
+        }
+        modelConfig {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
+      }
     }
   }
 `;
-export const listStreams = /* GraphQL */ `
-  query ListStreams(
-    $filter: ModelStreamFilterInput
+export const listModelUsages = /* GraphQL */ `
+  query ListModelUsages(
+    $filter: ModelmodelUsageFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listStreams(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listModelUsages(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        modelID
         userID
-        name
-        location
-        url
-        createdAt
+        modelConfigID
+        startTime
+        stopTime
+        usage
+        model {
+          id
+          FPS
+          description
+          image
+          mAP
+          name
+          notes
+          rating
+          type
+          video
+        }
       }
       nextToken
     }
@@ -381,15 +415,6 @@ export const getModelResults = /* GraphQL */ `
           type
           video
         }
-      }
-      streamID
-      stream {
-        id
-        userID
-        name
-        location
-        url
-        createdAt
       }
       classID
       class {
@@ -437,15 +462,6 @@ export const listModelResultss = /* GraphQL */ `
           rating
           type
           video
-        }
-        streamID
-        stream {
-          id
-          userID
-          name
-          location
-          url
-          createdAt
         }
         classID
         class {

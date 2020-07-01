@@ -51,35 +51,31 @@ const modelDescription = "{modelDescription}";
 
 export default function Studio() {
   const classes = useStyles();
+   return (
+            <div>
+            <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
+                <h1  className={s.header} style={{textAlign: 'center'}}>
+                Vision Studio                
+                </h1>
+                
+                </Box>
+                <Box>
+                <Spacer height="50px"/>
+                <Grid item>
+                <h1>Undergoing system maintenance</h1>
+                  </Grid>
+                  <Spacer height="50px"/>
+                {/* <Grid container alignItems="center" justify="center">
+                  <Grid item md={8}>
+                  <div className="devnotes">
+                  <h3>{"<"}DeveloperNotes{">"}</h3>
+                  <p>Display every modelConfig instance associated with current {"userID"} as a card </p>
+                  <h3>{"</"}DeveloperNotes{">"}</h3>
+                </div>
+                  <Grid container alignItems="center" justify="center" spacing={2}>
 
-  return (
-    <div>
-      <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <h1 className={s.header} style={{ textAlign: "center" }}>
-          Vision Studio
-        </h1>
-      </Box>
-      <Box>
-        <Spacer height="50px" />
-        <Grid item></Grid>
-        <Spacer height="50px" />
-        <Grid container alignItems="center" justify="center">
-          <Grid item md={8}>
-            <div className="devnotes">
-              <h3>
-                {"<"}DeveloperNotes{">"}
-              </h3>
-              <p>
-                Display every modelConfig instance associated with current{" "}
-                {"userID"} as a card{" "}
-              </p>
-              <h3>
-                {"</"}DeveloperNotes{">"}
-              </h3>
-            </div>
-            <Grid container alignItems="center" justify="center" spacing={2}>
-              <Link to="/library">
-                <Card className={classes.card}>
+                  <Link to="/library">
+                  <Card className={classes.card}>
                   <CardContent className={classes.cardInner}>
                     <AddIcon style={{ fontSize: 50 }} />
                   </CardContent>
@@ -126,9 +122,17 @@ export default function Studio() {
                     </CardContent>
                     <Button href={`/studio/${modelConfigID}`}>View</Button>
                   </CardActionArea>
-                </Card>
-              </Link>
+                  </Card>
+                  </Link>
 
+                  <Spacer height="25px"/>
+               
+                    </Grid>
+                    </Grid>
+                </Grid>
+                <Spacer height="100px"/> */}
+            </Box>
+            </div>
               <Spacer height="25px" />
             </Grid>
           </Grid>
