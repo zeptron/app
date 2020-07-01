@@ -1,60 +1,59 @@
-import React from 'react'
+import React from "react";
 import {
   withRouter,
   Switch,
   Route,
   Redirect,
-  BrowserRouter as Router
-} from 'react-router-dom'
-import UserContext from './UserContext'
-import Header from './Menu'
-import Footer from './Footer'
-import Authenticator from './Authenticator'
-import Home from './pages/Home/Index'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Privacy from './pages/Privacy'
-import Terms from './pages/Terms'
+  BrowserRouter as Router,
+} from "react-router-dom";
+import UserContext from "./UserContext";
+import Header from "./Menu";
+import Footer from "./Footer";
+import Authenticator from "./Authenticator";
+import Home from "./pages/Home/Index";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
-import Account from './app/Account'
-import Billing from './app/Billing'
+import Account from "./app/Account";
+import Billing from "./app/Billing";
 
-import Library from './app/Library/Index'
-import LibTemplate from './app/Library/{template}'
+import Library from "./app/Library/Index";
+import LibTemplate from "./app/Library/{template}";
 
-import Studio from './app/Studio/Index'
-import Instance from './app/Studio/Instance'
-import Analytics from './app/Studio/Instance/analytics'
-import Provision from './app/Studio/Provision'
-import Start from './app/Studio/Start'
-import Actions from './app/Studio/Actions'
-
-
+import Studio from "./app/Studio/Index";
+import Instance from "./app/Studio/Instance";
+import Analytics from "./app/Studio/Instance/analytics";
+import Provision from "./app/Studio/Provision";
+import Start from "./app/Studio/Start";
+import Actions from "./app/Studio/Actions";
 
 class PrivateRoute extends React.Component {
   state = {
     loaded: false,
-    isAuthenticated: false
-  }
-  static contextType = UserContext
+    isAuthenticated: false,
+  };
+  static contextType = UserContext;
   componentDidMount() {
     this.unlisten = this.props.history.listen(() => {
-      this.context.updateCurrentUser()
-    })
+      this.context.updateCurrentUser();
+    });
   }
   componentWillUnmount() {
-    this.unlisten()
+    this.unlisten();
   }
   render() {
-    const { component: Component, ...rest } = this.props
-    const isAuthenticated = this.context.user && this.context.user.username ? true : false
-    const isLoaded = this.context.isLoaded
-    if (!isLoaded) return null
+    const { component: Component, ...rest } = this.props;
+    const isAuthenticated =
+      this.context.user && this.context.user.username ? true : false;
+    const isLoaded = this.context.isLoaded;
+    if (!isLoaded) return null;
 
     return (
       <Route
         {...rest}
-        render={props => {
+        render={(props) => {
           return isAuthenticated ? (
             <Component {...props} />
           ) : (
@@ -63,47 +62,49 @@ class PrivateRoute extends React.Component {
                 pathname: "/auth",
               }}
             />
-          )
+          );
         }}
       />
-    )
+    );
   }
 }
 
 const NoMatch = ({ location }) => (
   <div>
-    <h3>No match for <code>{location.pathname}</code></h3>
+    <h3>
+      No match for <code>{location.pathname}</code>
+    </h3>
   </div>
-)
+);
 
-PrivateRoute = withRouter(PrivateRoute)
+PrivateRoute = withRouter(PrivateRoute);
 
 const Routes = () => (
   <Router>
     <div>
       <Header />
       <Switch>
-        <Route path='/auth' exact component={Authenticator} />
-        <Route path='/' exact component={Home} />
-        <Route path='/about' exact component={About} />
-        <Route path='/contact' exact component={Contact} />
-        <Route path='/privacy' exact component={Privacy} />
-        <Route path='/terms' exact component={Terms} />
-        <PrivateRoute path='/library' exact component={Library} />
-        <PrivateRoute path='/library/template' exact component={LibTemplate} />
-        <PrivateRoute path='/studio' exact component={Studio} />
-        <PrivateRoute path='/studio/{id}/' component={Instance} />
-        <PrivateRoute path='/studio/{id}/analytics' component={Analytics} />
-        <PrivateRoute path='/studio/provision/' component={Provision} />
-        <PrivateRoute path='/studio/start'component={Start}/>
-        <PrivateRoute path='/studio/actions'component={Actions}/>
-        <PrivateRoute path='/account'  component={Account} />
-        <PrivateRoute path='/billing'   component={Billing} />
+        <Route path="/auth" exact component={Authenticator} />
+        <Route path="/" exact component={Home} />
+        <Route path="/about" exact component={About} />
+        <Route path="/contact" exact component={Contact} />
+        <Route path="/privacy" exact component={Privacy} />
+        <Route path="/terms" exact component={Terms} />
+        <PrivateRoute path="/library" exact component={Library} />
+        <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
+        <PrivateRoute path="/studio" exact component={Studio} />
+        <PrivateRoute path="/studio/:id/" component={Instance} />
+        <PrivateRoute path="/studio/:id/analytics" component={Analytics} />
+        <PrivateRoute path="/studio/provision/" component={Provision} />
+        <PrivateRoute path="/studio/start" component={Start} />
+        <PrivateRoute path="/studio/actions" component={Actions} />
+        <PrivateRoute path="/account" component={Account} />
+        <PrivateRoute path="/billing" component={Billing} />
         <Route component={NoMatch} />
       </Switch>
-      <Footer/>
+      <Footer />
     </div>
   </Router>
-)
+);
 
-export default Routes
+export default Routes;
