@@ -12,6 +12,7 @@ export default function Studio() {
   const [configModels, setConfigModels] = useState([]);
 
   async function fetchConfigModelsAPI(id) {
+    id = id.split(":")[1];
     try {
       const rconfigs = await API.graphql(
         graphqlOperation(queries.listModelConfigs, {
@@ -40,6 +41,7 @@ export default function Studio() {
       bypassCache: false, // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
     })
       .then((user) => {
+        console.log("Current user id: ", user.id);
         fetchConfigModelsAPI(user.id);
       })
       .catch((err) => console.log(err));
@@ -49,7 +51,7 @@ export default function Studio() {
 
   if (configModels.length !== 0) {
     output = configModels.map((configModel) => (
-      <ModelSettings key={configModel.id} model={configModel} />
+      <ModelSettings key={configModel.id} modelConfig={configModel} />
     ));
   }
 

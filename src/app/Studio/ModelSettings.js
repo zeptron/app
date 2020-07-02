@@ -50,7 +50,10 @@ export const ModelSettings = ({ modelConfig }) => {
               </Card>
             </Link>
 
-            <Link to={`/studio/${modelConfig.id}`}>
+            <Link
+              to={`/studio/${modelConfig.id}`}
+              style={{ textDecoration: "none" }}
+            >
               <Card className={classes.card}>
                 <CardActionArea>
                   <CardMedia
@@ -85,7 +88,7 @@ export const ModelSettings = ({ modelConfig }) => {
                       color="textSecondary"
                       component="p"
                     >
-                      State: {modelConfig.instanceState}
+                      State: {modelConfig.instanceState.toString()}
                     </Typography>
                   </CardContent>
                   <Button href={`/studio/${modelConfig.id}`}>View</Button>
