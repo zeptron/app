@@ -32,7 +32,7 @@ import { Button } from "../../containers/Auth.style";
             </Grid> 
             <Grid container alignItems="center" justify="center">
                 <Grid item md={4} sm={8} xs={12}>
-        <Button
+        {/* <Button
           fullwidth
           title={'Sign up with Google'}
           className='google'
@@ -42,17 +42,17 @@ import { Button } from "../../containers/Auth.style";
           intlButtonId='continueGoogleBtn'
           onClick={thisGoogle}
           style={{ color: '#fff' }}
-        />
+        /> */}
          <Button
           fullwidth
-          title={'Sign up with Email'}
+          title={'Contact Us to Start'}
           className='email'
-          icon={< MdEmail/>}
+          // icon={< MdEmail/>}
           iconPosition='left'
           iconStyle={{ color: '#ffffff', marginRight: 5 }}
           intlButtonId='continueFacebookBtn'
           style={{ color: '#fff' }}
-          onClick={event =>  window.location.href='/auth'}
+          onClick={event =>  window.location.href='/contact'}
         />
         </Grid> 
             </Grid>

@@ -17,7 +17,7 @@ import Results from './animations/results'
         <Grid container alignItems="center" justify="center">
             <Grid item md={8} xs={12}>
                    <h1  className={s.header} style={{textAlign: 'center'}}>
-                    A marketplace for AI
+                    A model-agnostic app for controlling AI
                     </h1>
             </Grid>
         </Grid>

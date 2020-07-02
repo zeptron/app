@@ -19,7 +19,7 @@ class Header extends React.Component {
         <Link to='/' {...css(styles.link)}>
         <img
           style={styles.amplifyLogo}
-          src={require('./assets/deep_icon_alt.png')}
+          src={require('./assets/deep_icon_alt.png')}/>
           <h2 className={s.title}>Zeptron</h2>
         </Link>
 
