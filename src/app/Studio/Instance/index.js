@@ -43,10 +43,7 @@ export default function Instance({ match }) {
     })
       .then((user) => {
         console.log("Current user id: ", user.username);
-        fetchLibrarySingleModelAPI(
-          "0c50edbb-0fe2-41c1-b7b8-26dc6e5fe4ee",
-          match.params.id
-        );
+        fetchLibrarySingleModelAPI(user.username, match.params.id);
       })
       .catch((err) => console.log(err));
   }, []);
