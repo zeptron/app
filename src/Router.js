@@ -90,14 +90,14 @@ const Routes = () => (
         <Route path="/contact" exact component={Contact} />
         <Route path="/privacy" exact component={Privacy} />
         <Route path="/terms" exact component={Terms} />
-        <PrivateRoute path="/library" exact component={Library} />
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
-        <PrivateRoute path="/studio" exact component={Studio} />
-        <PrivateRoute path="/studio/:id/" component={Instance} />
-        <PrivateRoute path="/studio/:id/analytics" component={Analytics} />
-        <PrivateRoute path="/studio/provision/" exact component={Provision} />
-        <PrivateRoute path="/studio/start" exact component={Start} />
+        <PrivateRoute path="/library" exact component={Library} />
+        <PrivateRoute path="/studio/provision/" component={Provision} />
+        <PrivateRoute path="/studio/start" component={Start} />
         <PrivateRoute path="/studio/actions" component={Actions} />
+        <PrivateRoute path="/studio/:id/analytics" component={Analytics} />
+        <PrivateRoute path="/studio/:id/" component={Instance} />
+        <PrivateRoute path="/studio" exact component={Studio} />
         <PrivateRoute path="/account" component={Account} />
         <PrivateRoute path="/billing" component={Billing} />
         <Route component={NoMatch} />
