@@ -1,93 +1,62 @@
-import React from "react";
-import Spacer from "react-spacer";
-import { Box, Button, Grid } from "@material-ui/core";
-import s from "../../../styles/styles.module.css";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
+import React, { useEffect, useState } from "react";
 
-export default function Instance({ modelConfig }) {
-  const [state, setState] = React.useState({
-    Started: modelConfig.instanceState,
-  });
+import { API, graphqlOperation } from "aws-amplify";
+import * as queries from "../../../graphql/queries";
+import { Auth } from "aws-amplify";
+import { SingleInstance } from "./SingleInstance";
 
-  const instanceSwitch = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
+export default function Instance({ match }) {
+  const [modelConfig, setModelConfig] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
-  return (
-    <div>
-      <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <h1 className={s.header} style={{ textAlign: "center" }}>
-          {modelConfig.instanceName}
-        </h1>
-      </Box>
+  async function fetchLibrarySingleModelAPI(userId, id) {
+    try {
+      const rconfig = await API.graphql(
+        graphqlOperation(queries.listModelConfigs, {
+          filter: {
+            userID: {
+              eq: userId,
+            },
+            id: {
+              eq: id,
+            },
+          },
+        })
+      );
+      const {
+        data: {
+          listModelConfigs: { items },
+        },
+      } = rconfig;
 
-      <Box>
-        <Spacer height="100px" />
-        <Grid container alignItems="center" justify="center">
-          <Grid item md={8}>
-            <FormGroup row>
-              <FormControlLabel
-                control={
-                  <Switch
-                    checked={state.Started}
-                    onChange={instanceSwitch}
-                    name="Started"
-                  />
-                }
-                label="Instance Switch"
-              />
+      console.log("Model config: ", items[0]);
+      setModelConfig(items[0]);
+      setIsLoading(false);
+    } catch (err) {
+      console.log("error: ", err);
+    }
+  }
 
-              <Button variant="contained" color="secondary" size="large">
-                Run
-              </Button>
+  useEffect(() => {
+    Auth.currentUserInfo({
+      bypassCache: false, // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+    })
+      .then((user) => {
+        console.log("Current user id: ", user.username);
+        fetchLibrarySingleModelAPI(user.username, match.params.id);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-              <Button
-                href="/studio/{id}/analytics"
-                variant="contained"
-                color="primary"
-                size="large"
-              >
-                Analytics
-              </Button>
-            </FormGroup>
+  let output;
 
-            <Spacer height="50px" />
-            <div className="devnotes">
-              <h3>
-                {"<"}DeveloperNotes{">"}
-              </h3>
-              <p>Switch invokes Lambda to Start/Stop {"{EC2instanceID}"}.</p>
+  if (!modelConfig && isLoading === false) {
+    output = <p>Not found</p>;
+  } else if (!modelConfig && isLoading === true) {
+    output = <p>Loading...</p>;
+  } else {
+    output = <SingleInstance modelConfig={modelConfig} />;
+  }
 
-              <p>
-                When starting / stopping, show {"<cogs/>"} component from
-                src/app/animations/cogs.js until the Lambda returns success
-              </p>
-
-              <p>
-                Run button invokes Lambda to start model. Pass{" "}
-                {"{modelConfigId}"} to Lambda
-              </p>
-
-              <p>If switch is off, hide run button</p>
-
-              <h3>
-                {"</"}DeveloperNotes{">"}
-              </h3>
-            </div>
-            <h2>Live Stream</h2>
-            <Grid container alignItems="center" justify="center" spacing={2}>
-              <img
-                alt="stream"
-                src="https://via.placeholder.com/640x460.png?text=Live+Stream"
-              />
-            </Grid>
-            <p>Comes from {modelConfig.publicIP}</p>
-          </Grid>
-        </Grid>
-        <Spacer height="100px" />
-      </Box>
-    </div>
-  );
+  return <div>{output}</div>;
 }

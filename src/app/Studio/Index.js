@@ -7,11 +7,13 @@ import { API, graphqlOperation } from "aws-amplify";
 import * as queries from "../../graphql/queries";
 import { Auth } from "aws-amplify";
 import ModelSettings from "./ModelSettings";
+import NewModelConfig from "./NewModelConfig";
 
 export default function Studio() {
   const [configModels, setConfigModels] = useState([]);
 
   async function fetchConfigModelsAPI(id) {
+    //id = id.split(":")[1];
     try {
       const rconfigs = await API.graphql(
         graphqlOperation(queries.listModelConfigs, {
@@ -40,16 +42,17 @@ export default function Studio() {
       bypassCache: false, // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
     })
       .then((user) => {
-        fetchConfigModelsAPI(user.id);
+        console.log("Current user id: ", user.username);
+        fetchConfigModelsAPI(user.username);
       })
       .catch((err) => console.log(err));
   }, []);
 
-  let output = <p>No model configs</p>;
+  let output = <NewModelConfig />;
 
   if (configModels.length !== 0) {
     output = configModels.map((configModel) => (
-      <ModelSettings key={configModel.id} model={configModel} />
+      <ModelSettings key={configModel.id} modelConfig={configModel} />
     ));
   }
 
