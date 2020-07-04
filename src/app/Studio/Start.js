@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Spacer from "react-spacer";
 import { Box, Button, Grid } from "@material-ui/core";
 import s from "../../styles/styles.module.css";
 import TextField from "@material-ui/core/TextField";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +17,27 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Start() {
   const classes = useStyles();
-  const modelName = "{modelName}";
+  const modelName = "test";
+
+  const initialFormData = Object.freeze({
+    instanceName: "",
+    instanceLocation: "",
+    instancePod: "",
+  });
+
+  const [formData, updateFormData] = React.useState(initialFormData);
+
+  const handleChange = (e) => {
+    updateFormData({
+      ...formData,
+      [e.target.name]: e.target.value.trim(),
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
 
   return (
     <div>
@@ -26,9 +47,7 @@ export default function Start() {
         </h1>
         <p className={s.subheader}>Create New Instance</p>
       </Box>
-
       <Spacer height="100px" />
-
       <Grid container alignItems="center" justify="center">
         <Grid item xs={12}>
           <form className={classes.root} noValidate autoComplete="off">
@@ -38,6 +57,8 @@ export default function Start() {
               label="Instance Name"
               defaultValue="My Model"
               variant="outlined"
+              name="instanceName"
+              onChange={handleChange}
             />
             <TextField
               required
@@ -45,6 +66,8 @@ export default function Start() {
               label="Location"
               defaultValue="City Near Me"
               variant="outlined"
+              name="instanceLocation"
+              onChange={handleChange}
             />
             <TextField
               required
@@ -52,22 +75,32 @@ export default function Start() {
               label="Location"
               defaultValue="Place Near Me"
               variant="outlined"
+              name="instancePod"
+              onChange={handleChange}
             />
           </form>
         </Grid>
         <Spacer height="25px" />
         <Grid item xs={12}>
-          <Button
-            href="/studio/actions"
-            variant="contained"
-            color="primary"
-            size="large"
+          <Link
+            to={{
+              pathname: "/studio/actions",
+              aboutProps: {
+                modelConfig,
+              },
+            }}
           >
-            Next
-          </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              onClick={handleSubmit}
+            >
+              Next
+            </Button>
+          </Link>
         </Grid>
       </Grid>
-
       <Spacer height="100px" />
     </div>
   );

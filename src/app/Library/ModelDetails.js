@@ -12,6 +12,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,12 +63,11 @@ export const ModelDetails = ({ model, rows }) => {
             <p className={s.subheader}>{model.description}</p>
 
             <Spacer height="25px" />
-
             <Button
+              href={`/studio/start/${model.id}`}
               size="large"
               variant="contained"
               color="secondary"
-              href={`/studio/start/${model.id}`}
             >
               <span className={s.ctabutton}>Start with this model</span>
             </Button>
