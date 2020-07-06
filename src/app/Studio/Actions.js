@@ -63,6 +63,7 @@ function getStyles(name, classNames, theme) {
 
 export default function Actions() {
   const currentModel = useSelector((state) => state.currentModel.model);
+  const currentClasses = useSelector((state) => state.currentModel.classes);
 
   //const modelName = currentModel.name;
 
@@ -87,10 +88,10 @@ export default function Actions() {
   // Count classes
 
   const handleCountSwitch = (event) => {
-    setclassNames(event.target.value);
+    setClassNames(event.target.value);
   };
 
-  const [classNames, setclassNames] = React.useState([]);
+  const [classNames, setClassNames] = React.useState([]);
 
   //
   // Notify classes
@@ -166,13 +167,13 @@ export default function Actions() {
                 )}
                 MenuProps={MenuProps}
               >
-                {names.map((name) => (
+                {currentClasses.map((currentClass) => (
                   <MenuItem
-                    key={name}
-                    value={name}
-                    style={getStyles(name, classNames, theme)}
+                    key={currentClass.id}
+                    value={currentClass.name}
+                    style={getStyles(currentClass.name, classNames, theme)}
                   >
-                    {name}
+                    {currentClass.name}
                   </MenuItem>
                 ))}
               </Select>
@@ -232,13 +233,13 @@ export default function Actions() {
                 )}
                 MenuProps={MenuProps}
               >
-                {names.map((name) => (
+                {currentClasses.map((currentClass) => (
                   <MenuItem
-                    key={name}
-                    value={name}
-                    style={getStyles(name, className, theme)}
+                    key={currentClass.id}
+                    value={currentClass.name}
+                    style={getStyles(currentClass.name, classNames, theme)}
                   >
-                    {name}
+                    {currentClass.name}
                   </MenuItem>
                 ))}
               </Select>
@@ -248,14 +249,14 @@ export default function Actions() {
 
         <Grid item xs={12}>
           <Spacer height="50px" />
-          <Button
-            href="/studio/provision"
-            variant="contained"
-            color="primary"
-            size="large"
+          <Link
+            to={`/studio/provision/${currentModel.id}`}
+            style={{ textDecoration: "none" }}
           >
-            Next
-          </Button>
+            <Button variant="contained" color="primary" size="large">
+              Next
+            </Button>
+          </Link>
         </Grid>
       </Grid>
 
