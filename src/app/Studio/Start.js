@@ -4,7 +4,9 @@ import Spacer from "react-spacer";
 import { Box, Button, Grid } from "@material-ui/core";
 import s from "../../styles/styles.module.css";
 import TextField from "@material-ui/core/TextField";
-import { Link } from "react-router-dom";
+
+import { useSelector, useDispatch } from "react-redux";
+import allActions from "../../actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,8 +18,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Start() {
+  const currentModel = useSelector((state) => state.currentModel.model);
+
   const classes = useStyles();
-  const modelName = "test";
+  const modelName = currentModel.name;
+
+  const dispatch = useDispatch();
 
   const initialFormData = Object.freeze({
     instanceName: "",
@@ -37,6 +43,7 @@ export default function Start() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    dispatch(allActions.modelConfigActions.setModelConfig(formData));
   };
 
   return (
@@ -82,23 +89,15 @@ export default function Start() {
         </Grid>
         <Spacer height="25px" />
         <Grid item xs={12}>
-          <Link
-            to={{
-              pathname: "/studio/actions",
-              aboutProps: {
-                modelConfig,
-              },
-            }}
+          <Button
+            href="/studio/actions"
+            variant="contained"
+            color="primary"
+            size="large"
+            onClick={handleSubmit}
           >
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              onClick={handleSubmit}
-            >
-              Next
-            </Button>
-          </Link>
+            Next
+          </Button>
         </Grid>
       </Grid>
       <Spacer height="100px" />

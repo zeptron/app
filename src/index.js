@@ -12,7 +12,10 @@ import config from "./aws-exports";
 import Amplify from "aws-amplify";
 Amplify.configure(config);
 
-const store = createStore(rootReducer);
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Button, Grid, Paper } from "@material-ui/core";
 import Spacer from "react-spacer";
 import s from "../../styles/styles.module.css";
@@ -13,6 +13,9 @@ import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 import { Link } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import allActions from "../../actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,6 +43,8 @@ export const ModelDetails = ({ model, rows }) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
+  const dispatch = useDispatch();
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -48,6 +53,10 @@ export const ModelDetails = ({ model, rows }) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  useEffect(() => {
+    dispatch(allActions.modelActions.setModel(model));
+  }, []);
 
   return (
     <div>
@@ -63,15 +72,11 @@ export const ModelDetails = ({ model, rows }) => {
             <p className={s.subheader}>{model.description}</p>
 
             <Spacer height="25px" />
-            <Button
-              href={`/studio/start/${model.id}`}
-              size="large"
-              variant="contained"
-              color="secondary"
-            >
-              <span className={s.ctabutton}>Start with this model</span>
-            </Button>
-
+            <Link to={`/studio/start/${model.id}`}>
+              <Button size="large" variant="contained" color="secondary">
+                <span className={s.ctabutton}>Start with this model</span>
+              </Button>
+            </Link>
             <Spacer height="25px" />
           </Grid>
         </Grid>
