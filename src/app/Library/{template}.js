@@ -74,7 +74,9 @@ export default function Currency({ match }) {
   if (!model) {
     output = <p>Loading...</p>;
   } else {
-    output = <ModelDetails model={model} rows={rows} />;
+    output = (
+      <ModelDetails model={model} rows={rows} modelClasses={modelClasses} />
+    );
   }
 
   return <div>{output}</div>;

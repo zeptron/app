@@ -38,7 +38,8 @@ const columns = [
   { id: "number", label: "Number", minWidth: 100 },
 ];
 
-export const ModelDetails = ({ model, rows }) => {
+export const ModelDetails = ({ model, rows, modelClasses }) => {
+  console.log(modelClasses);
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -54,9 +55,8 @@ export const ModelDetails = ({ model, rows }) => {
     setPage(0);
   };
 
-  useEffect(() => {
-    dispatch(allActions.modelActions.setModel(model));
-  }, []);
+  dispatch(allActions.modelActions.setModel(model));
+  dispatch(allActions.modelActions.setClasses(modelClasses));
 
   return (
     <div>
@@ -72,7 +72,10 @@ export const ModelDetails = ({ model, rows }) => {
             <p className={s.subheader}>{model.description}</p>
 
             <Spacer height="25px" />
-            <Link to={`/studio/start/${model.id}`}>
+            <Link
+              to={`/studio/start/${model.id}`}
+              style={{ textDecoration: "none" }}
+            >
               <Button size="large" variant="contained" color="secondary">
                 <span className={s.ctabutton}>Start with this model</span>
               </Button>

@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Spacer from "react-spacer";
 import { Box, Button, Grid } from "@material-ui/core";
 import s from "../../styles/styles.module.css";
 import TextField from "@material-ui/core/TextField";
+import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
@@ -29,6 +30,7 @@ export default function Start() {
     instanceName: "",
     instanceLocation: "",
     instancePod: "",
+    modelID: currentModel.id,
   });
 
   const [formData, updateFormData] = React.useState(initialFormData);
@@ -41,7 +43,6 @@ export default function Start() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     console.log(formData);
     dispatch(allActions.modelConfigActions.setModelConfig(formData));
   };
@@ -89,15 +90,19 @@ export default function Start() {
         </Grid>
         <Spacer height="25px" />
         <Grid item xs={12}>
-          <Button
-            href="/studio/actions"
-            variant="contained"
-            color="primary"
-            size="large"
-            onClick={handleSubmit}
+          <Link
+            to={`/studio/actions/${currentModel.id}`}
+            style={{ textDecoration: "none" }}
           >
-            Next
-          </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              onClick={handleSubmit}
+            >
+              <span>Next</span>
+            </Button>
+          </Link>
         </Grid>
       </Grid>
       <Spacer height="100px" />
