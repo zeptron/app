@@ -2,10 +2,12 @@ import React from 'react'
 import UserContext from '../../UserContext'
 import Hero from './Hero'
 import Below from './Below'
+import Configure from './Configure'
+import Stream from './Stream'
 import Results from './Results'
 import Pricing from './Pricing'
 import Start from './Start'
-import Library from '../../app/Library/Index'
+import Studio from '../../app/Studio/Index'
 
 class Home extends React.Component {
 
@@ -21,12 +23,14 @@ class Home extends React.Component {
           isAuthenticated ? (
             
             <>
-            <Library/>
+            <Studio/>
             </>
             ) : (
             <div>
             <Hero/>
             <Below/>
+            <Configure/>
+            <Stream/>
             <Results/>
             <Pricing/>
             <Start/>

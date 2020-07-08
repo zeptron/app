@@ -47,17 +47,17 @@ const useStyles = makeStyles((theme) => ({
    return (
     <Box p={2} bgcolor="primary.dark" color="primary.contrastText" >
          <Grid container justify="center" spacing={spacing}>
-            <Grid item md={8} sm={10} xs={12}>
+            <Grid item md={10} sm={10} xs={12}>
         <Grid container justify="center" spacing={spacing}>
             <Grid item xs={12}>
             <Spacer height="40px"/>
-            <h2 className={s.header} style={{textAlign: 'center'}}>
-            Use our platform to get instant results
+            <h2 className={s.header} style={{textAlign: 'left'}}>
+            Receive results in real time on any device
             </h2>
-            <p className={s.subheader}>Start and stop models easily, schedule run times, and set up dashboards, counting algorithms, and notification systems through our friendly UI </p>
+            <p className={s.subheader} style={{textAlign: 'left'}}>Get live streaming inference feeds, charts, and notifications through our user-friendly app</p>
             <Spacer height="40px"/>
             </Grid> 
-            <Grid item>
+            {/* <Grid item>
                 <Paper className={`${classes.paper}`} >
                 <VideocamIcon color="primary" fontSize="large"/>
                 <hr/>
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
                 <Notes>Get FREE unlimited streaming from Raspberry Pi, Mac, PC or Linux with near-zero latency</Notes>
                 <Notes>Also access satellite feeds & CCTV with automatic configuration</Notes>
                 </Paper>
-            </Grid>
+            </Grid> */}
             <Grid item>
                 <Paper className={`${classes.paper}`} >
                 <FormatListNumberedIcon color="primary"  fontSize="large"/>
@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
                 <hr/>
                 <BoxHeading>Custom notifications</BoxHeading>
                 <br/>
-                <Notes>Set up notifications for when a tracked object appears in the frame for more than x seconds or x frames, or when a tagged object appears in the feed</Notes>
+                <Notes>Set up notifications for when a tracked object appears in the frame, or when a tagged object appears in the feed</Notes>
 
                 </Paper>
             </Grid>
@@ -103,11 +103,11 @@ const useStyles = makeStyles((theme) => ({
                 <hr/>
                 <BoxHeading>JSON & CSV Data Feeds</BoxHeading>
                 <br/>
-                <Notes>Export your data to JSON and CSV so that you can manipulate it and import it into other programmes or save it for your records</Notes>
+                <Notes>Export your data to JSON and CSV so that you can manipulate it and import it into other programs or save it for your records</Notes>
 
                 </Paper>
             </Grid>
-            <Grid item>
+            {/* <Grid item>
                 <Paper className={`${classes.paper}`} >
                 <MonetizationOnIcon color="primary" fontSize="large"/>
                 <hr/>
@@ -116,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
                 <Notes>Zeptron exists to put AI in the hands of people who need it. As such, we keep our fees as low as possible to remove barriers to entry and ensure you see value</Notes>
 
                 </Paper>
-            </Grid>
+            </Grid> */}
             </Grid> 
             <Spacer height="80px"/>
             <Button size="large" variant="contained" color="secondary" href="/auth">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Button, Grid, Paper } from "@material-ui/core";
 import Spacer from "react-spacer";
 import s from "../../styles/styles.module.css";
@@ -12,6 +12,10 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
+import { Link } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import allActions from "../../actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,10 +38,13 @@ const columns = [
   { id: "number", label: "Number", minWidth: 100 },
 ];
 
-export const ModelDetails = ({ model, rows }) => {
+export const ModelDetails = ({ model, rows, modelClasses }) => {
+  console.log(modelClasses);
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const dispatch = useDispatch();
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -47,6 +54,9 @@ export const ModelDetails = ({ model, rows }) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  dispatch(allActions.modelActions.setModel(model));
+  dispatch(allActions.modelActions.setClasses(modelClasses));
 
   return (
     <div>
@@ -62,16 +72,14 @@ export const ModelDetails = ({ model, rows }) => {
             <p className={s.subheader}>{model.description}</p>
 
             <Spacer height="25px" />
-
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              href={`/studio/start/${model.id}`}
+            <Link
+              to={`/studio/start/${model.id}`}
+              style={{ textDecoration: "none" }}
             >
-              <span className={s.ctabutton}>Start with this model</span>
-            </Button>
-
+              <Button size="large" variant="contained" color="secondary">
+                <span className={s.ctabutton}>Start with this model</span>
+              </Button>
+            </Link>
             <Spacer height="25px" />
           </Grid>
         </Grid>

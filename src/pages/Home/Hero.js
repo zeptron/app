@@ -15,46 +15,20 @@ import Results from './animations/results'
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
        <Spacer height="10px"/>
         <Grid container alignItems="center" justify="center">
-            <Grid item md={8} xs={12}>
-                   <h1  className={s.header} style={{textAlign: 'center'}}>
-                    A model-agnostic app for controlling AI
+            <Grid item md={10} xs={12} style={{textAlign: 'left'}}>
+                   <h1  className={s.header} style={{textAlign: 'left'}}>
+                    Artificial intelligence that works for you
                     </h1>
+                    <p className={s.subheader} style={{textAlign: 'left'}}>
+                      Provision, configure and run complicated models without touching a single line of code
+                    </p>
+                    <Spacer height="40px"/>
+                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <span className={s.ctabutton}>Start Now for FREE</span>
+                    </Button>
             </Grid>
         </Grid>
-                
-      <Box>
-        <Grid container justify="center" spacing={spacing}>
-          <Grid item md={8}>
-            <Grid container justify="center" spacing={spacing}>
-              <Grid item md={3} xs={10}>
-                <Data/>
-                <h3 className={s.heroh3}>Connect your data </h3>
-              </Grid>
-              <Grid item md={3} xs={10}>
-                <Brain/>
-                <h3 className={s.heroh3}>Choose a model</h3>
-              </Grid>
-              <Grid item md={3} xs={10}>
-                <Results/>
-                <h3 className={s.heroh3}>Get results</h3>
-              </Grid>
-            </Grid>
-      </Grid> 
-      </Grid>
-      </Box>
-             
-      <Spacer height="120px"/>
-           
-      <Box>
-      <Grid container justify="center">
-      <Grid item xs={12}>
-      <Button size="large" variant="contained" color="secondary" href="/auth">
-      <span className={s.ctabutton}>Start Now for FREE</span>
-      </Button>
-      </Grid>
-      </Grid>
-      <Spacer height="80px"/>
-      </Box>
+      <Spacer height="60px"/>
     </Box>  
   )
 }
