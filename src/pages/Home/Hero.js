@@ -17,7 +17,7 @@ import Results from './animations/results'
         <Grid container alignItems="center" justify="center">
             <Grid item md={10} xs={12} style={{textAlign: 'left'}}>
                    <h1  className={s.header} style={{textAlign: 'left'}}>
-                    Artificial intelligence that works for you
+                    Artificial intelligence made simple
                     </h1>
                     <p className={s.subheader} style={{textAlign: 'left'}}>
                       Provision, configure and run complicated models without touching a single line of code
