@@ -5,7 +5,7 @@ import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
-
+import StorageIcon from '@material-ui/icons/Storage';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -57,18 +57,6 @@ const useStyles = makeStyles((theme) => ({
             </Grid>
             <Grid item>
               <Paper className={`${classes.paper}`} >
-              <Price>$0</Price>
-              
-              <Spacer height="25px"/>
-              <BoxHeading>5 hours / month </BoxHeading>
-              <Spacer height="25px"/>
-              <Button href="/auth" variant="contained" color="primary" size="large">
-                  <span className={s.ctabutton}>Start</span>
-              </Button>
-              </Paper>
-            </Grid>
-            <Grid item>
-              <Paper className={`${classes.paper}`} >
               <Price>$5</Price>
               
               <Spacer height="25px"/>
@@ -88,6 +76,18 @@ const useStyles = makeStyles((theme) => ({
               <Spacer height="12px"/>
               <Button href="/auth" variant="contained" color="primary" size="large">
                   <span className={s.ctabutton}>Start</span>
+              </Button>
+              </Paper>
+            </Grid>
+            <Grid item>
+              <Paper className={`${classes.paper}`} >
+              <Price><StorageIcon style={{fontSize: '66px'}}/></Price>
+              
+              <Spacer height="12px"/>
+              <BoxHeading>one-click AWS / GCP organisation install</BoxHeading>
+              <Spacer height="12px"/>
+              <Button href="/contact" variant="contained" color="primary" size="large">
+                  <span className={s.ctabutton}>Enquire</span>
               </Button>
               </Paper>
             </Grid>

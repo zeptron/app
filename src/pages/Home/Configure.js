@@ -5,7 +5,7 @@ import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
-import Provision from '../../assets/provision.png'
+import Touch from '../../assets/touch.png'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,21 +41,23 @@ const useStyles = makeStyles((theme) => ({
     `
    return (
 
-          <Box p={2} style={{backgroundColor: "#a0bf88"}}>
+          <Box p={2} style={{backgroundColor: "#e4c38f"}}>
           <Grid container justify="center" spacing={spacing}>
             <Grid item md={10} sm={10} xs={12}>
+            <Spacer height="40px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
+            <Grid item md={6} xs={12}>
+              <img style={{maxWidth: '100%'}} src={Touch}/>
+              </Grid>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Provision a library of AI models with one click
+              Set up model actions easily
               </h2>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Automatically provision cloud resources based on your model's requirements</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Configure tracking, multi-directional counting, and smart detection alerts for your models</p>
               <Spacer height="40px"/>
             </Grid> 
-            <Grid item md={6} xs={12}>
-            <img style={{maxWidth: '100%'}} src={Provision} />
-            </Grid>
+            
             </Grid>
             <Spacer height="80px"/>
             </Grid>
