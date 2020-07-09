@@ -20,9 +20,8 @@ class Header extends React.Component {
           <img
             alt="icon"
             style={styles.amplifyLogo}
-            src={require("./assets/deep_icon_alt.png")}
+            src={require("./assets/logo_white.svg")}
           />
-          <h2 className={s.title}>Zeptron</h2>
         </Link>
 
         <div {...css(styles.navContainer)}>
