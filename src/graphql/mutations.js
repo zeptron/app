@@ -370,17 +370,6 @@ export const createModelConfig = /* GraphQL */ `
           type
           video
         }
-<<<<<<< HEAD
-        stream {
-          id
-          userID
-          name
-          location
-          url
-          createdAt
-        }
-=======
->>>>>>> 1f0ebf3a2508f9cbe1c4b2e610054b25c6a8c849
         classID
         class {
           id
