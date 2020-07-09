@@ -13,6 +13,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Switch from "@material-ui/core/Switch";
 import Chip from "@material-ui/core/Chip";
 import { Link } from "react-router-dom";
+import { API, Auth, graphqlOperation } from 'aws-amplify';
+import * as queries from '../../graphql/queries';
 
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
@@ -50,7 +52,14 @@ const MenuProps = {
 // This should come from the Classes table for classes associated with modelID
 // The value of classes is their associated number in the table, e.g. 1 Person,
 
-const names = ["Person", "Car", "Bicycle", "Truck", "Dog", "Cat"];
+const names = [
+  'Person',
+  'Car',
+  'Bicycle',
+  'Truck',
+  'Dog',
+  'Cat'
+];
 
 function getStyles(name, classNames, theme) {
   return {
@@ -153,7 +162,7 @@ export default function Actions() {
                 multiple
                 value={classNames}
                 onChange={handleCountSwitch}
-                input={<Input id="select-multiple-chip" />}
+                input={<Input id="select-multiple-chip"/>}
                 renderValue={(selected) => (
                   <div className={classes.chips}>
                     {selected.map((value) => (
