@@ -7,6 +7,14 @@ import Router from "./Router";
 import UserContext from "./UserContext";
 import theme from "./styles/theme.js";
 
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-TSP53SW'
+}
+
+TagManager.initialize(tagManagerArgs)
+
 class App extends Component {
   state = {
     currentUser: {},
