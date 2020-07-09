@@ -6,8 +6,11 @@ import "./App.css";
 import Router from "./Router";
 import UserContext from "./UserContext";
 import theme from "./styles/theme.js";
-
 import TagManager from 'react-gtm-module'
+import LogRocket from 'logrocket';
+LogRocket.init('zeptron-v4dwl/zeptron');
+
+
 
 const tagManagerArgs = {
   gtmId: 'GTM-TSP53SW'
