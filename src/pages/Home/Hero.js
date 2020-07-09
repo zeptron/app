@@ -24,7 +24,7 @@ import Results from './animations/results'
                     </p>
                     <Spacer height="40px"/>
                     <Button size="large" variant="contained" color="secondary" href="/auth">
-                    <span className={s.ctabutton}>Start Now for FREE</span>
+                    <span className={s.ctabutton}>Get Started Now</span>
                     </Button>
             </Grid>
         </Grid>
