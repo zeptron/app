@@ -1,33 +1,42 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Spacer from "react-spacer";
-import { Box, Button, Grid } from "@material-ui/core";
-import s from "../../styles/styles.module.css";
-import TextField from "@material-ui/core/TextField";
+import React, { useEffect, useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Spacer from 'react-spacer';
+import { Box, Button, Grid } from '@material-ui/core';
+import s from '../../styles/styles.module.css';
+import TextField from '@material-ui/core/TextField';
+import { API, graphqlOperation } from 'aws-amplify';
+
+import * as queries from '../../graphql/queries';
+import useQuery from '../../graphql/useQuery';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > *": {
+    '& > *': {
       margin: theme.spacing(1),
-      width: "25ch",
+      width: '25ch',
     },
   },
 }));
 
-export default function Start() {
+export default function Start({ match }) {
+  const modelQuery = useQuery(queries.getModel);
+
   const classes = useStyles();
-  const modelName = "{modelName}";
+
+  useEffect(() => {
+    modelQuery.fetch({ id: match.params.id });
+  }, []);
 
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <h1 className={s.header} style={{ textAlign: "center" }}>
-          {modelName}
+        <h1 className={s.header} style={{ textAlign: 'center' }}>
+          {modelQuery.data?.getModel?.name ?? '...'}
         </h1>
         <p className={s.subheader}>Create New Instance</p>
       </Box>
 
-      <Spacer height="100px" />
+      <Spacer height="100px"/>
 
       <Grid container alignItems="center" justify="center">
         <Grid item xs={12}>
@@ -55,10 +64,10 @@ export default function Start() {
             />
           </form>
         </Grid>
-        <Spacer height="25px" />
+        <Spacer height="25px"/>
         <Grid item xs={12}>
           <Button
-            href="/studio/actions"
+            href={`/studio/actions/${match.params.id}`}
             variant="contained"
             color="primary"
             size="large"
@@ -68,7 +77,7 @@ export default function Start() {
         </Grid>
       </Grid>
 
-      <Spacer height="100px" />
+      <Spacer height="100px"/>
     </div>
   );
 }
