@@ -22,7 +22,7 @@ import Results from './animations/results'
           </video>
        <div {...css(styles.coverOpacity)}></div>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
-            <Grid item md={10} xs={12} style={{textAlign: 'left', "paddingTop": "80px"}}>
+            <Grid item md={10} xs={10} style={{textAlign: 'left', "paddingTop": "80px"}}>
                    <h1  className={s.header} style={{textAlign: 'left'}}>
                     Artificial intelligence made simple
                     </h1>
