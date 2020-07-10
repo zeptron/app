@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Spacer from "react-spacer";
 import { Box, Button, Grid } from "@material-ui/core";
@@ -13,6 +13,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Switch from "@material-ui/core/Switch";
 import Chip from "@material-ui/core/Chip";
 import { Link } from "react-router-dom";
+import { API, Auth, graphqlOperation } from 'aws-amplify';
+import * as queries from '../../graphql/queries';
+
+import useQuery from '../../graphql/useQuery';
 
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
@@ -50,7 +54,14 @@ const MenuProps = {
 // This should come from the Classes table for classes associated with modelID
 // The value of classes is their associated number in the table, e.g. 1 Person,
 
-const names = ["Person", "Car", "Bicycle", "Truck", "Dog", "Cat"];
+const names = [
+  'Person',
+  'Car',
+  'Bicycle',
+  'Truck',
+  'Dog',
+  'Cat'
+];
 
 function getStyles(name, classNames, theme) {
   return {
@@ -61,13 +72,22 @@ function getStyles(name, classNames, theme) {
   };
 }
 
-export default function Actions() {
-  const currentModel = useSelector((state) => state.currentModel.model);
-  const currentClasses = useSelector((state) => state.currentModel.classes);
+export default function Actions({ match }) {
+  const modelQuery = useQuery(queries.getModel);
+  const classesQuery = useQuery(queries.listClasss);
 
-  //const modelName = currentModel.name;
+  useEffect(() => {
+    modelQuery.fetch({ id: match.params.id });
+    classesQuery.fetch({
+      filter: {
+        modelID: {
+          eq: match.params.id,
+        },
+      },
+    });
+  }, []);
 
-  const modelName = "test";
+  const modelName = modelQuery;
 
   const classes = useStyles();
   const theme = useTheme();
@@ -124,7 +144,7 @@ export default function Actions() {
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
         <h1 className={s.header} style={{ textAlign: "center" }}>
-          {modelName}
+          {modelQuery.data?.getModel?.name ?? '...'}
         </h1>
         <p className={s.subheader}>Configure Actions</p>
       </Box>
@@ -167,15 +187,20 @@ export default function Actions() {
                 )}
                 MenuProps={MenuProps}
               >
-                {currentClasses.map((currentClass) => (
-                  <MenuItem
-                    key={currentClass.id}
-                    value={currentClass.name}
-                    style={getStyles(currentClass.name, classNames, theme)}
-                  >
-                    {currentClass.name}
-                  </MenuItem>
-                ))}
+                {(classesQuery.loading || !classesQuery.data)
+                  ? (
+                    <p>Loading...</p>
+                  ) :
+                  classesQuery.data?.listClasss.items.map((currentClass) => (
+                    <MenuItem
+                      key={currentClass.id}
+                      value={currentClass.name}
+                      style={getStyles(currentClass.name, classNames, theme)}
+                    >
+                      {currentClass.name}
+                    </MenuItem>
+                  ))
+                }
               </Select>
             </FormControl>
             <FormControl className={classes.formControl}>
@@ -233,15 +258,20 @@ export default function Actions() {
                 )}
                 MenuProps={MenuProps}
               >
-                {currentClasses.map((currentClass) => (
-                  <MenuItem
-                    key={currentClass.id}
-                    value={currentClass.name}
-                    style={getStyles(currentClass.name, classNames, theme)}
-                  >
-                    {currentClass.name}
-                  </MenuItem>
-                ))}
+                {(classesQuery.loading || !classesQuery.data)
+                  ? (
+                    <p>Loading...</p>
+                  ) :
+                  classesQuery?.data?.listClasss.items.map((currentClass) => (
+                    <MenuItem
+                      key={currentClass.id}
+                      value={currentClass.name}
+                      style={getStyles(currentClass.name, classNames, theme)}
+                    >
+                      {currentClass.name}
+                    </MenuItem>
+                  ))
+                }
               </Select>
             </FormControl>
           </FormGroup>
@@ -250,7 +280,7 @@ export default function Actions() {
         <Grid item xs={12}>
           <Spacer height="50px" />
           <Link
-            to={`/studio/provision/${currentModel.id}`}
+            to={`/studio/provision/${match.params.id}`}
             style={{ textDecoration: "none" }}
           >
             <Button variant="contained" color="primary" size="large">
