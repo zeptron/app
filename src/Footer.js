@@ -13,11 +13,13 @@ export default function Footer() {
         <Grid item md={8}>
           <Grid container alignItems="center" justify="center">
             <Grid item xs={12}>
-              <Link to="/" {...css(styles.link)}>
-                <h2 style={{ marginLeft: "0px" }} className={s.title}>
-                  Zeptron
-                </h2>
-              </Link>
+            <Link to="/" {...css(styles.link)}>
+          <img
+            alt="icon"
+            style={styles.amplifyLogo}
+            src={require("./assets/logo_white.svg")}
+          />
+        </Link>
             </Grid>
             <Grid item xs={12}>
               <Spacer height="40px" />

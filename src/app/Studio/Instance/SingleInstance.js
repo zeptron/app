@@ -54,7 +54,7 @@ export const SingleInstance = ({ modelConfig }) => {
             </FormGroup>
 
             <Spacer height="50px" />
-            <div className="devnotes">
+            {/* <div className="devnotes">
               <h3>
                 {"<"}DeveloperNotes{">"}
               </h3>
@@ -75,7 +75,7 @@ export const SingleInstance = ({ modelConfig }) => {
               <h3>
                 {"</"}DeveloperNotes{">"}
               </h3>
-            </div>
+            </div> */}
             <h2>Live Stream</h2>
             <Grid container alignItems="center" justify="center" spacing={2}>
               <img

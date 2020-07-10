@@ -5,9 +5,34 @@ import UserContext from "./UserContext";
 import s from "./styles/styles.module.css";
 import AppBar from "./components/Nav/AppBar";
 import Button from "@material-ui/core/Button";
+import { background } from "styled-system";
 
 class Header extends React.Component {
+  state = {
+    isScrolled : false
+  };
   static contextType = UserContext;
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.listenScrollEvent)
+  }
+
+  listenScrollEvent = e => {
+    if (window.scrollY > 400) {
+      this.setState({isScrolled: true})
+    } else {
+      this.setState({isScrolled: false})
+    }
+  }
+
+  checkbackgroung = () => {
+    if(this.state.isScrolled){
+      return {backgroundColor: '#000a12'}
+    } else {
+      return {backgroundColor: 'transparent'}
+    }
+  }
+
 
   render() {
     const isAuthenticated =
@@ -15,14 +40,13 @@ class Header extends React.Component {
     const isLoaded = this.context.isLoaded;
 
     return (
-      <div {...css(styles.container)}>
+      <div {...css(styles.container, this.checkbackgroung())}>
         <Link to="/" {...css(styles.link)}>
           <img
             alt="icon"
             style={styles.amplifyLogo}
-            src={require("./assets/deep_icon_alt.png")}
+            src={require("./assets/logo_white.svg")}
           />
-          <h2 className={s.title}>Zeptron</h2>
         </Link>
 
         <div {...css(styles.navContainer)}>
@@ -35,14 +59,12 @@ class Header extends React.Component {
               <div>
                 <Button
                   href="/about"
-                  variant="outlined"
                   style={{ color: "white" }}
                 >
                   About
                 </Button>
                 <Button
                   href="/auth"
-                  variant="outlined"
                   style={{ color: "white", marginRight: "15px" }}
                 >
                   Sign In
@@ -78,8 +100,10 @@ const styles = {
     height: "80px",
     alignItems: "center",
     width: "100%",
-    backgroundColor: "#000a12",
+    backgroundColor: "transparent",
     display: "flex",
+    position: "fixed",
+    zIndex: 1
   },
 };
 

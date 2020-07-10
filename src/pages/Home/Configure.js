@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
 import Touch from '../../assets/touch.png'
+import Hidden from '@material-ui/core/Hidden';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -46,9 +47,11 @@ const useStyles = makeStyles((theme) => ({
             <Grid item md={10} sm={10} xs={12}>
             <Spacer height="40px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
+             <Hidden smDown>
             <Grid item md={6} xs={12}>
               <img style={{maxWidth: '100%'}} src={Touch}/>
               </Grid>
+              </Hidden>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
@@ -57,7 +60,11 @@ const useStyles = makeStyles((theme) => ({
                <p className={s.subheader} style={{textAlign: 'left'}}>Configure tracking, multi-directional counting, and smart detection alerts for your models</p>
               <Spacer height="40px"/>
             </Grid> 
-            
+            <Hidden mdUp>
+            <Grid item md={6} xs={12}>
+              <img style={{maxWidth: '100%'}} src={Touch}/>
+              </Grid>
+              </Hidden>
             </Grid>
             <Spacer height="80px"/>
             </Grid>
