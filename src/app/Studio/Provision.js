@@ -105,13 +105,13 @@ class Provision extends Component {
 
         <Box>
 
-          <div className="devnotes">
+          {/* <div className="devnotes">
             <h3>{'<'}DeveloperNotes{'>'}</h3>
             <p>Call the CloudFormation template and display public IP, private IP adress</p>
             <p>While stack creation in progress, show {'{<cogs/>}'} from src/app/animations/cogs.js </p>
             <p>Save public IP, private IP adress, ec2 instance ID in modelConfig table</p>
             <h3>{'</'}DeveloperNotes{'>'}</h3>
-          </div>
+          </div> */}
 
           <Spacer height="50px"/>
           <Grid container alignItems="center" justify="center">
