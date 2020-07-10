@@ -42,7 +42,8 @@ import Results from './animations/results'
 
 const styles = {
   vidDiv:{
-    width: "100%",
+    minHeight: "120%",
+    minWidth: "100%",
     position: "absolute",
     left: 0,
     top: "-80px"
