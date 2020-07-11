@@ -18,41 +18,41 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
             #!/bin/bash -xe
-            sudo apt-get upgrade 
+            sudo apt-get upgrade
             sudo apt-get update
     Metadata:
       'AWS::CloudFormation::Designer':
         id: d0fea2e2-2dc2-4ad0-8167-f6778963aaad
 
     Type: AWS::DynamoDB::Table
-    Properties: 
-      AttributeDefinitions: 
+    Properties:
+      AttributeDefinitions:
         -
           AttributeName: timestamp
           AttributeType: S
       BillingMode: PAY_PER_REQUEST
-      GlobalSecondaryIndexes: 
+      GlobalSecondaryIndexes:
         - GlobalSecondaryIndex
-      KeySchema: 
-        - 
+      KeySchema:
+        -
             AttributeName: timestamp
             KeyType: String
-      LocalSecondaryIndexes: 
+      LocalSecondaryIndexes:
         - LocalSecondaryIndex
-      PointInTimeRecoverySpecification: 
+      PointInTimeRecoverySpecification:
         PointInTimeRecoverySpecification
-      ProvisionedThroughput: 
+      ProvisionedThroughput:
         ProvisionedThroughput
-      SSESpecification: 
+      SSESpecification:
         SSESpecification
-      StreamSpecification: 
+      StreamSpecification:
         StreamSpecification
       TableName: String
-      Tags: 
+      Tags:
         - Tag
-      TimeToLiveSpecification: 
+      TimeToLiveSpecification:
         TimeToLiveSpecification
-  
+
 Outputs:
   EC2I2VQQ4PublicIP:
     Value: !GetAtt EC2I2VQQ4.PublicIp

@@ -27,6 +27,9 @@ export const SingleInstance = ({ modelConfig }) => {
         <Spacer height="100px" />
         <Grid container alignItems="center" justify="center">
           <Grid item md={8}>
+
+            <Grid container alignItems="center" justify="center"> 
+            <Grid item md={5 }>
             <FormGroup row>
               <FormControlLabel
                 control={
@@ -52,6 +55,8 @@ export const SingleInstance = ({ modelConfig }) => {
                 Analytics
               </Button>
             </FormGroup>
+            </Grid>
+            </Grid>
 
             <Spacer height="50px" />
             {/* <div className="devnotes">
