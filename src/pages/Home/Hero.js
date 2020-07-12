@@ -3,13 +3,10 @@ import { css } from "glamor";
 import {Box, Button, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Data from './animations/data'
-import Brain from './animations/brain'
-import Results from './animations/results'
+
 
 
   export default function Hero() {
-    const [spacing] = React.useState(8);
 
     console.log(`require("./../../assets/herobg.mp4")`, require("./../../assets/herobg.mp4"))
   
