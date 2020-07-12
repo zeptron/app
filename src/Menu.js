@@ -2,10 +2,8 @@ import React from "react";
 import { css } from "glamor";
 import { Link } from "react-router-dom";
 import UserContext from "./UserContext";
-import s from "./styles/styles.module.css";
 import AppBar from "./components/Nav/AppBar";
 import Button from "@material-ui/core/Button";
-import { background } from "styled-system";
 
 class Header extends React.Component {
   state = {

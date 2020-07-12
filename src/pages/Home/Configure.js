@@ -1,45 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
 import Touch from '../../assets/touch.png'
 import Hidden from '@material-ui/core/Hidden';
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-      
-    },
-    paper: {
-      height: 350,
-      width: 250,
-      padding: theme.spacing(2),
-      textAlign: 'center',
-
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
-  }));
-
-
   export default function Hero() {
     const [spacing] = React.useState(2);
-    const classes = useStyles();
+   
     
-    const BoxHeading = styled.h3`
-    text-transform: uppercase;
-    text-align: left;
-    margin-bottom: 5px;
-    `
-    const Notes = styled.p`
-    text-align: left;
-    margin: 0px 0px 10px 0px;
-    `
    return (
 
           <Box p={2} style={{backgroundColor: "#e4c38f"}}>

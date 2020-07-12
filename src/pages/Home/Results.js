@@ -5,12 +5,10 @@ import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
-import VideocamIcon from '@material-ui/icons/Videocam';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import PieChartIcon from '@material-ui/icons/PieChart';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
-import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 const useStyles = makeStyles((theme) => ({
     root: {

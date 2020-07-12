@@ -1,44 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
 import Provision from '../../assets/provision.png'
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-      
-    },
-    paper: {
-      height: 350,
-      width: 250,
-      padding: theme.spacing(2),
-      textAlign: 'center',
-
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
-  }));
-
 
   export default function Hero() {
     const [spacing] = React.useState(2);
-    const classes = useStyles();
-    
-    const BoxHeading = styled.h3`
-    text-transform: uppercase;
-    text-align: left;
-    margin-bottom: 5px;
-    `
-    const Notes = styled.p`
-    text-align: left;
-    margin: 0px 0px 10px 0px;
-    `
+ 
    return (
 
           <Box p={2} style={{backgroundColor: "#a0bf88"}}>
@@ -54,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
               <Spacer height="40px"/>
             </Grid> 
             <Grid item md={6} xs={12}>
-            <img style={{maxWidth: '100%'}} src={Provision} />
+            <img alt="provision AI models" style={{maxWidth: '100%'}} src={Provision} />
             </Grid>
             </Grid>
             <Spacer height="80px"/>
