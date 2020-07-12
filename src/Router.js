@@ -25,10 +25,10 @@ import LibTemplate from "./app/Library/{template}";
 import Studio from "./app/Studio/Index";
 import Instance from "./app/Studio/Instance";
 import Analytics from "./app/Studio/Instance/analytics";
-import Provision from "./app/Studio/Provision";
-import Start from "./app/Studio/Start";
-import Actions from "./app/Studio/Actions";
+
 import ConfigurationSteps from './app/Studio/ConfigurationSteps';
+
+import Streaming from './pages/Streaming'
 
 class PrivateRoute extends React.Component {
   state = {
@@ -102,6 +102,7 @@ const Routes = () => (
         <PrivateRoute path="/studio" exact component={Studio} />
         <PrivateRoute path="/account" component={Account} />
         <PrivateRoute path="/billing" component={Billing} />
+        <Route path="/streaming" exact component={Streaming} />
         <Route component={NoMatch} />
       </Switch>
       <Footer />
