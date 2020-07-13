@@ -1,61 +1,31 @@
 import React from 'react';
-import styled from 'styled-components';
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
 import Provision from '../../assets/provision.png'
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-      
-    },
-    paper: {
-      height: 350,
-      width: 250,
-      padding: theme.spacing(2),
-      textAlign: 'center',
-
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
-  }));
-
 
   export default function Hero() {
     const [spacing] = React.useState(2);
-    const classes = useStyles();
-    
-    const BoxHeading = styled.h3`
-    text-transform: uppercase;
-    text-align: left;
-    margin-bottom: 5px;
-    `
-    const Notes = styled.p`
-    text-align: left;
-    margin: 0px 0px 10px 0px;
-    `
+ 
    return (
 
-          <Box p={2} style={{backgroundColor: "#a0bf88"}}>
+          <Box p={2} style={{backgroundColor: '#253337', color: 'white'}} >
           <Grid container justify="center" spacing={spacing}>
-            <Grid item md={10} sm={10} xs={12}>
+            <Grid item md={9} sm={10} xs={12}>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
-            <Grid item md={6} xs={12}>
+            <Grid item md={8} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Provision a library of AI models with one click
+              Our mission
               </h2>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Automatically provision cloud resources based on your model's requirements</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Zeptron makes it easy for anyone to use computer vision without requiring technical skills.</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Our platform makes work safer and more efficient for organisations and professionals of all kinds.</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>We are committed to using AI as a tool for the betterment of humankind.</p>
               <Spacer height="40px"/>
             </Grid> 
-            <Grid item md={6} xs={12}>
-            <img style={{maxWidth: '100%'}} src={Provision} />
-            </Grid>
+            
             </Grid>
             <Spacer height="80px"/>
             </Grid>

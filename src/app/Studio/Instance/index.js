@@ -48,6 +48,7 @@ export default function Instance({ match }) {
       .catch((err) => console.log(err));
   }, []);
 
+  console.log(modelConfig);
   let output;
 
   if (!modelConfig && isLoading === false) {

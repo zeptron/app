@@ -73,7 +73,7 @@ export const ModelDetails = ({ model, rows, modelClasses }) => {
 
             <Spacer height="25px" />
             <Link
-              to={`/studio/start/${model.id}`}
+              to={`/studio/configuration/${model.id}`}
               style={{ textDecoration: "none" }}
             >
               <Button size="large" variant="contained" color="secondary">

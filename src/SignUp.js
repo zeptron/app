@@ -78,7 +78,7 @@ class SignUp extends React.Component {
             />
             <input
               {...css(styles.input)}
-              placeholder="Given name"
+              placeholder="Family name"
               onChange={(evt) => this.onChange("family_name", evt.target.value)}
             />
             <input
