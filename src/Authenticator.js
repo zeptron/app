@@ -85,9 +85,9 @@ const styles = {
   linkContainer: {
     marginTop: 30,
   },
-  container: {
-    marginTop: 50,
-  },
+  // container: {
+  //   marginTop: 50,
+  // },
   buttonContainer: {
     display: "flex",
     justifyContent: "center",

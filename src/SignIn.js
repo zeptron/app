@@ -158,7 +158,7 @@ const styles = {
   },
   container: {
     flex: 1,
-    paddingTop: "15px",
+    paddingTop: "80px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",

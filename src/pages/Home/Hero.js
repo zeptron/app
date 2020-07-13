@@ -10,11 +10,7 @@ import Results from './animations/results'
 
   export default function Hero() {
     const [spacing] = React.useState(8);
-
-    console.log(`require("./../../assets/herobg.mp4")`, require("./../../assets/herobg.mp4"))
-  
    return (
-      
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
           <video loop autoPlay {...css(styles.vidDiv)}>
             <source src={require("./../../assets/herobg.mp4")} type="video/mp4" />

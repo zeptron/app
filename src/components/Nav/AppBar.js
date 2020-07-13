@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
+import { useLocation } from 'react-router-dom';
+import Toolbar from "@material-ui/core/Toolbar";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
@@ -22,14 +24,64 @@ const useStyles = makeStyles({
   },
   fullList: {
     width: "auto"
+  },
+  menuOptions: {
+    fontSize: "14px",
+    fontWeight: 700,
+    letterSpacing: "1px"
+  },
+  flexContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    padding: 0,
+  },
+  listMenu: {
+    paddingLeft: "5px",
+    paddingRight: "5px"
   }
 });
 
-export default function SwipeableTemporaryDrawer() {
+export default function SwipeableTemporaryDrawer(props) {
   const classes = useStyles();
+  const location = useLocation();
   const [state, setState] = React.useState({
     right: false
   });
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [routeLoction, setRouteLoction] = React.useState('');
+
+  useEffect(() => {
+    if(window.innerWidth <= 720){
+      setIsMobile(true)
+    }
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    let currentPath = location.pathname;
+    currentPath = currentPath.split("/")
+    currentPath = currentPath[1]
+    setRouteLoction(currentPath)
+  }, [location]);
+
+  const getActiveTab = (checkTabText) => {
+    if(checkTabText === routeLoction){
+      return {color : "#f57f17"}
+    } else {
+      return {color : "#ffffff"}
+    }
+  }
+
+  const handleResize = (value) => {
+    if(window.innerWidth <= 720){
+      setIsMobile(true)
+    } else {
+      setIsMobile(false)
+    }
+  }
+
 
   const toggleDrawer = (anchor, open) => event => {
     if (
@@ -90,11 +142,36 @@ export default function SwipeableTemporaryDrawer() {
     </div>
   );
 
-  return (
-    <div>
-      {["right"].map(anchor => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}><span style={{color: 'white', marginRight: 10}}><AppsIcon/></span></Button>
+  const getMenu = (anchor) =>{
+    if(!isMobile){
+      return(
+        <List className= {clsx(classes.flexContainer)}>
+            {["Studio", "Library","Account", "Billing"].map((text, index) => (
+            <ListItem key={text} className= {clsx(classes.listMenu)}>
+              <Button
+                  href={`/${text.toLowerCase()}`}
+                  className= {clsx(classes.menuOptions)}
+                  style= {getActiveTab(text.toLowerCase())}
+                >
+                  {text}
+                </Button>
+            </ListItem>
+          ))}
+          <ListItem className= {clsx(classes.listMenu)}>
+              <Button
+                  href="https://zeptron.github.io"
+                  className= {clsx(classes.menuOptions)}
+                  style= {{color: "#ffffff"}}
+                >
+                  Help
+                </Button>
+            </ListItem>
+          </List>
+      )
+    } else {
+      return (
+        <div>
+          <Button onClick={toggleDrawer(anchor, true)}><span style={{color: 'white'}}><AppsIcon/></span></Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
@@ -103,6 +180,15 @@ export default function SwipeableTemporaryDrawer() {
           >
             {list(anchor)}
           </SwipeableDrawer>
+        </div>)
+    }
+  }
+
+  return (
+    <div>
+      {["right"].map(anchor => (
+        <React.Fragment key={anchor}>
+          {getMenu(anchor)}
         </React.Fragment>
       ))}
     </div>

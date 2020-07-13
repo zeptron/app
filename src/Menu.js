@@ -5,8 +5,6 @@ import UserContext from "./UserContext";
 import s from "./styles/styles.module.css";
 import AppBar from "./components/Nav/AppBar";
 import Button from "@material-ui/core/Button";
-import { background } from "styled-system";
-
 class Header extends React.Component {
   state = {
     isScrolled : false
@@ -18,14 +16,14 @@ class Header extends React.Component {
   }
 
   listenScrollEvent = e => {
-    if (window.scrollY > 400) {
+    if (window.scrollY > 80) {
       this.setState({isScrolled: true})
     } else {
       this.setState({isScrolled: false})
     }
   }
 
-  checkbackgroung = () => {
+  checkbackground = () => {
     if(this.state.isScrolled){
       return {backgroundColor: '#000a12'}
     } else {
@@ -40,7 +38,7 @@ class Header extends React.Component {
     const isLoaded = this.context.isLoaded;
 
     return (
-      <div {...css(styles.container, this.checkbackgroung())}>
+      <div {...css(styles.container, this.checkbackground())}>
         <Link to="/" {...css(styles.link)}>
           <img
             alt="icon"
@@ -52,8 +50,8 @@ class Header extends React.Component {
         <div {...css(styles.navContainer)}>
           {isLoaded ? (
             isAuthenticated ? (
-              <div>
-                <AppBar />
+              <div {...css(styles.menuContainer)}>
+                <AppBar/>
               </div>
             ) : (
               <div>
@@ -95,7 +93,6 @@ const styles = {
     textDecoration: "none",
     display: "inline-flex",
   },
-
   container: {
     height: "80px",
     alignItems: "center",
@@ -105,6 +102,10 @@ const styles = {
     position: "fixed",
     zIndex: 1
   },
+  menuContainer: {
+    marginRight: "45px"
+  }
 };
+
 
 export default Header;
