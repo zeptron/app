@@ -21,7 +21,7 @@ import Provision from '../../assets/provision.png'
               Our mission
               </h2>
                <p className={s.subheader} style={{textAlign: 'left'}}>Zeptron makes it easy for anyone to use computer vision without requiring technical skills.</p>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Every day, people like manufacturers, property managers, local government bodies, farmers, and construction managers use Zeptron to make the world better, safer, and more efficient.</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Every day, people use Zeptron for tasks like improving quality control during manufacturing, analysing waste to inform policy, counting cash to prevent fraud, and detecting threats to improve safety.</p>
                <p className={s.subheader} style={{textAlign: 'left'}}>We support the open and safe use of AI as a tool for the betterment of humankind.</p>
                <p className={s.subheader} style={{textAlign: 'left'}}>We are deeply conscious of privacy and oppose any use of our product that violates this basic human right.</p>
               <Spacer height="40px"/>
