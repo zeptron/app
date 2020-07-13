@@ -236,7 +236,7 @@ const ConfigurationSteps = ({ match }) => {
                   </FormControl>
                   <FormControl className={classes.formControl}>
                     <InputLabel id="demo-controlled-open-select-label">
-                      Line Position
+                      Direction
                     </InputLabel>
                     <Select
                       labelId="demo-controlled-open-select-label"

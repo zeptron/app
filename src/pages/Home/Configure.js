@@ -4,6 +4,7 @@ import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Touch from '../../assets/touch.png'
 import Hidden from '@material-ui/core/Hidden';
+import Tracking from '../../assets/tracking.png'
 
 
   export default function Hero() {
@@ -12,7 +13,7 @@ import Hidden from '@material-ui/core/Hidden';
     
    return (
 
-          <Box p={2} style={{backgroundColor: "#e4c38f"}}>
+          <Box p={2} >
           <Grid container justify="center" spacing={spacing}>
             <Grid item md={10} sm={10} xs={12}>
             <Spacer height="40px"/>
@@ -25,9 +26,11 @@ import Hidden from '@material-ui/core/Hidden';
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Set up model actions easily
+              Set up actions and notifications in one click
               </h2>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Configure tracking, multi-directional counting, and smart detection alerts for your models</p>
+              <p className={s.subheader} style={{textAlign: 'left'}}>Get video analysis with up to 99% accuracy</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Configure tracking, multi-directional counting, and detection alerts through SMS or Slack</p>
+              <Spacer height="20px"/>
               <Spacer height="40px"/>
             </Grid> 
             <Hidden mdUp>

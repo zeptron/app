@@ -18,7 +18,7 @@ import Provision from '../../assets/provision.png'
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Provision a library of AI models with one click
+              Manage model instances and run time easily
               </h2>
                <p className={s.subheader} style={{textAlign: 'left'}}>Automatically provision cloud resources based on your model's requirements</p>
               <Spacer height="40px"/>
