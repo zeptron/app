@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "glamor";
-
+import {Box} from '@material-ui/core'
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ForgotPassword from "./ForgotPassword";
@@ -21,6 +21,7 @@ class Authenticator extends React.Component {
   render() {
     const { currentState } = this.state;
     return (
+      <div>
       <div style={styles.container}>
         {currentState === "showSignIn" && (
           <SignIn
@@ -75,6 +76,7 @@ class Authenticator extends React.Component {
           </div>
         )}
       </div>
+      </div>
     );
   }
 }
@@ -85,9 +87,9 @@ const styles = {
   linkContainer: {
     marginTop: 30,
   },
-  container: {
-    marginTop: 50,
-  },
+  // container: {
+  //   marginTop: 50,
+  // },
   buttonContainer: {
     display: "flex",
     justifyContent: "center",

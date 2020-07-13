@@ -43,9 +43,9 @@ import Spacer from 'react-spacer'
             </Box>
             <Box p={2}>
 
-            <Grid container justify="center" spacing={spacing}>
-              <Grid item md={6} sm={10} xs={12}>
-              <Grid container justify="center" spacing={spacing}>
+            <Grid container justify="center" >
+              <Grid item md={6} sm={10} xs={10}>
+              <Grid container justify="center" >
               <Spacer height="80px"/>
               <p className={s.subheader}>While working on a computer vision project, we discovered that there was no way to use our model without getting deeply immersed code. So we made a better way.</p>
               <p className={s.subheader}>It's now super easy to add a model to your library, provision it, configure it, and start using it. </p>
