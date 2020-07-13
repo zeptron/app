@@ -49,27 +49,10 @@ class Header extends React.Component {
 
         <div {...css(styles.navContainer)}>
           {isLoaded ? (
-            isAuthenticated ? (
               <div {...css(styles.menuContainer)}>
-                <AppBar/>
+                <AppBar isAuthenticated={isAuthenticated}/>
               </div>
-            ) : (
-              <div>
-                <Button
-                  href="/about"
-                  style={{ color: "white" }}
-                >
-                  About
-                </Button>
-                <Button
-                  href="/auth"
-                  style={{ color: "white", marginRight: "15px" }}
-                >
-                  Sign In
-                </Button>
-              </div>
-            )
-          ) : null}
+            ) : null}
         </div>
       </div>
     );

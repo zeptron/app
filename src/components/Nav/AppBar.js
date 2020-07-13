@@ -49,13 +49,49 @@ export default function SwipeableTemporaryDrawer(props) {
   });
   const [isMobile, setIsMobile] = React.useState(false);
   const [routeLoction, setRouteLoction] = React.useState('');
+  const [menuItems, setMenuItems] = React.useState([]);
+
+  const AuthItems = [{
+    name : "Studio",
+    route: "/studio",
+    icon: <DashboardIcon/>
+  },{
+    name : "Library",
+    route: "/library",
+    icon: <DynamicFeedIcon/>
+  },{
+    name : "Account",
+    route: "/account",
+    icon: <AccountBoxIcon/>
+  },{
+    name : "Billing",
+    route: "/billing",
+    icon: <AccountBalanceIcon/>
+  }]
+
+  const items = [{
+    name : "About",
+    route: "/about",
+    icon: ''
+  },{
+    name : "FAQ",
+    route: "/privacy",
+    icon: ""
+  },{
+    name : "Contact",
+    route: "/contact",
+    icon: ""
+  },{
+    name : "Signin",
+    route: "/auth",
+    icon: ''
+  }]
 
   useEffect(() => {
     if(window.innerWidth <= 720){
       setIsMobile(true)
     }
     window.addEventListener('resize', handleResize);
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -65,6 +101,14 @@ export default function SwipeableTemporaryDrawer(props) {
     currentPath = currentPath[1]
     setRouteLoction(currentPath)
   }, [location]);
+
+  useEffect(()=>{
+    if(props.isAuthenticated){
+      setMenuItems(AuthItems)
+    } else {
+      setMenuItems(items)
+    }
+  },[props.isAuthenticated])
 
   const getActiveTab = (checkTabText) => {
     if(checkTabText === routeLoction){
@@ -105,25 +149,12 @@ export default function SwipeableTemporaryDrawer(props) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Studio", "Library"].map((text, index) => (
-          <ListItem button component="a" href={`/${text.toLowerCase()}`} key={text}>
+        {menuItems.map((val, index) => (
+          <ListItem button component="a" href={`${val.route}`} key={val.name}>
             <ListItemIcon>
-            {index === 0 && <DashboardIcon/>}
-            {index === 1 && <DynamicFeedIcon/>}
+              {val.icon}
             </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["Account", "Billing"].map((text, index) => (
-          <ListItem button component="a" href={`/${text.toLowerCase()}`} key={text}>
-           <ListItemIcon>
-            {index === 0 && <AccountBoxIcon/>}
-            {index === 1 && <AccountBalanceIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary={val.name} />
           </ListItem>
         ))}
       </List>
@@ -145,14 +176,14 @@ export default function SwipeableTemporaryDrawer(props) {
     if(!isMobile){
       return(
         <List className= {clsx(classes.flexContainer)}>
-            {["Studio", "Library","Account", "Billing"].map((text, index) => (
-            <ListItem key={text} className= {clsx(classes.listMenu)}>
+            {menuItems.map((val, index) => (
+            <ListItem key={val.name} className= {clsx(classes.listMenu)}>
               <Button
-                  href={`/${text.toLowerCase()}`}
+                  href={`${val.route}`}
                   className= {clsx(classes.menuOptions)}
-                  style= {getActiveTab(text.toLowerCase())}
+                  style= {getActiveTab(val.name.toLowerCase())}
                 >
-                  {text}
+                  {val.name}
                 </Button>
             </ListItem>
           ))}
