@@ -2,6 +2,7 @@ import React from 'react'
 import UserContext from '../../UserContext'
 import Hero from './Hero'
 import Below from './Below'
+import Provision from './Provision'
 import Configure from './Configure'
 import Stream from './Stream'
 import Results from './Results'
@@ -29,6 +30,7 @@ class Home extends React.Component {
             <div>
             <Hero/>
             <Below/>
+            <Provision/>
             <Configure/>
             <Stream/>
             <Results/>

@@ -13,9 +13,9 @@ import Tracking from '../../assets/tracking.png'
     
    return (
 
-          <Box p={2} >
+          <Box p={2} style={{backgroundColor: '#e0e4e0'}}>
           <Grid container justify="center" spacing={spacing}>
-            <Grid item md={10} sm={10} xs={12}>
+            <Grid item md={9} sm={10} xs={12}>
             <Spacer height="40px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
              <Hidden smDown>
@@ -26,7 +26,7 @@ import Tracking from '../../assets/tracking.png'
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Set up actions and notifications in one click
+              Set up tracking and notifications
               </h2>
               <p className={s.subheader} style={{textAlign: 'left'}}>Get video analysis with up to 99% accuracy</p>
                <p className={s.subheader} style={{textAlign: 'left'}}>Configure tracking, multi-directional counting, and detection alerts through SMS or Slack</p>
