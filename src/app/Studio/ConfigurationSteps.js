@@ -15,6 +15,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormLabel from '@material-ui/core/FormLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
+import Typography from '@material-ui/core/Typography';
 
 import useInput from '../../utils/hooks/useInput';
 import useQuery from '../../graphql/useQuery';
@@ -28,6 +29,7 @@ import Success from './Components/ProvisionHelper';
 import Cogs from '../animations/cogs';
 
 import s from '../../styles/styles.module.css';
+import { sleep } from '../../utils/sleep';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -103,6 +105,8 @@ const ConfigurationSteps = ({ match }) => {
   const [line, { setWrap: setLine }] = useInput('');
   const [instanceType, { setWrap: setInstanceType }] = useInput(null);
   const [fileUrl, { setWrap: setFileUrl }] = useInput('');
+  const [loadingStack, setLoadingStack] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const disabledStartButton = useMemo(() => {
     return !instanceName.length || !instanceLocation.length || !instancePod.length;
@@ -117,7 +121,7 @@ const ConfigurationSteps = ({ match }) => {
 
   const disabledProvisionButton = useMemo(() => {
     return !(instanceType === 'live' || (instanceType === 'file' && fileUrl.length > 0));
-  }, [instanceType, fileUrl]);
+  }, [instanceType, fileUrl, loadingStack]);
 
   const subheaders = {
     start: 'Create New Instance',
@@ -336,57 +340,89 @@ const ConfigurationSteps = ({ match }) => {
             <Spacer height="100px"/>
 
             <Grid container alignItems="center" justify="center">
-              <Grid item xs={12}>
-                <FormControl component="fieldset">
-                  <FormLabel component="legend">Instance Type</FormLabel>
-                  <RadioGroup
-                    aria-label="type"
-                    value={instanceType}
-                    onChange={setInstanceType}
-                  >
-                    <FormControlLabel value="live" control={<Radio/>} label="Live"/>
-                    <FormControlLabel value="file" control={<Radio/>} label="From File"/>
-                  </RadioGroup>
-                </FormControl>
-              </Grid>
+              {!success
+                ? (
+                  <>
+                    <Grid item xs={12}>
+                      <FormControl component="fieldset">
+                        <FormLabel component="legend">Instance Type</FormLabel>
+                        <RadioGroup
+                          aria-label="type"
+                          value={instanceType}
+                          onChange={setInstanceType}
+                        >
+                          <FormControlLabel value="live" control={<Radio/>} label="Live"/>
+                          <FormControlLabel value="file" control={<Radio/>} label="From File"/>
+                        </RadioGroup>
+                      </FormControl>
+                    </Grid>
 
-              <Spacer height="50px"/>
+                    <Spacer height="50px"/>
 
-              <Grid item xs={12}>
-                <form className={classes.root} noValidate autoComplete="off">
-                  <TextField
-                    required
-                    id="outlined-required"
-                    label="Public Amazon S3 Link"
-                    variant="outlined"
-                    value={fileUrl}
-                    onChange={setFileUrl}
+                    <Grid item xs={12}>
+                      <form className={classes.root} noValidate autoComplete="off">
+                        <TextField
+                          required
+                          id="outlined-required"
+                          label="Public Amazon S3 Link"
+                          variant="outlined"
+                          value={fileUrl}
+                          onChange={setFileUrl}
+                        />
+                      </form>
+                    </Grid>
+
+                    <Spacer height="50px"/>
+
+                    <Grid item xs={12}>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                        onClick={() => setStep('actions')}
+                      >
+                        Back
+                      </Button>
+                      <div style={{ width: '20px', display: 'inline-flex' }}/>
+                      <Button
+                        variant="outlined"
+                        color="primary"
+                        size="large"
+                        disabled={disabledProvisionButton || loadingStack}
+                        onClick={onSubmit}
+                      >
+                        Provision
+                      </Button>
+                    </Grid>
+
+                    <Spacer height="50px"/>
+                  </>
+                )
+                : (
+                  <Success
+                    id={updateModelConfigQuery.data?.updateModelConfig?.id}
+                    ip={updateModelConfigQuery.data?.updateModelConfig?.publicIP}
                   />
-                </form>
-              </Grid>
+                )
+              }
 
-              <Spacer height="50px"/>
+              {setModelConfigQuery.loading && (
+                <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
+                  <Typography align='center'>
+                    Saving model configuration...
+                  </Typography>
+                  <Cogs/>
+                </div>
+              )}
 
-              <Grid item xs={12}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="large"
-                  onClick={() => setStep('actions')}
-                >
-                  Back
-                </Button>
-                <div style={{ width: '20px', display: 'inline-flex' }}/>
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  size="large"
-                  disabled={disabledProvisionButton}
-                  onClick={onSubmit}
-                >
-                  Provision
-                </Button>
-              </Grid>
+              {loadingStack && (
+                <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
+                  <Typography align='center'>
+                    Provisioning resources...
+                  </Typography>
+                  <Cogs/>
+                </div>
+              )}
             </Grid>
 
             <Spacer height='100px'/>
@@ -398,17 +434,58 @@ const ConfigurationSteps = ({ match }) => {
   };
 
   const setModelConfigQuery = useQuery(mutations.createModelConfig, {
-    onSuccess: (data) => {
-      console.log(data);
+    onSuccess: async (data) => {
+      AWS.config.update({
+        region: process.env.REACT_APP_AWS_REGION,
+        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+      });
 
-      AWS.CloudFormation.createStack({
-        StackName: 'test',
+      const AWSCloudFormation = new AWS.CloudFormation();
+
+      setLoadingStack(true);
+
+      const stack = await AWSCloudFormation.createStack({
+        StackName: `stack${data?.data?.createModelConfig?.id}`,
         TemplateBody: template,
-      }, (err, data) => {
-        console.error(err);
-        console.log(data);
+        Parameters: [
+          {
+            ParameterKey: 'tableName',
+            ParameterValue: `tableName${data?.data?.createModelConfig?.id}`,
+          },
+        ],
+      }).promise();
+
+      let stackDescription = null;
+
+      while (stackDescription === null || stackDescription?.Stacks[0].StackStatus === 'CREATE_IN_PROGRESS') {
+        await sleep(5000);
+
+        stackDescription = await AWSCloudFormation.describeStacks({
+          StackName: stack.StackId,
+        }).promise();
+      }
+
+      const publicIP = stackDescription?.Stacks[0].Outputs.find(({OutputKey}) => OutputKey === 'EC2I2VQQ4PublicIP')?.OutputValue;
+      const privateIP = stackDescription?.Stacks[0].Outputs.find(({OutputKey}) => OutputKey === 'EC2I2VQQ4PrivateIP')?.OutputValue;
+      const EC2instanceID = stackDescription?.Stacks[0].Outputs.find(({OutputKey}) => OutputKey === 'EC2I2VQQ4ID')?.OutputValue;
+
+      updateModelConfigQuery.fetch({
+        input: {
+          id: data?.data?.createModelConfig?.id,
+          instanceState: true,
+          publicIP,
+          privateIP,
+          EC2instanceID,
+          tableName: `tableName${data?.data?.createModelConfig?.id}`,
+        }
       });
     },
+  });
+
+  const updateModelConfigQuery = useQuery(mutations.updateModelConfig, {
+    onComplete: () => setLoadingStack(false),
+    onSuccess: () => setSuccess(true),
   });
 
   const onSubmit = async () => {
@@ -426,10 +503,15 @@ const ConfigurationSteps = ({ match }) => {
         fromFile: instanceType === 'file',
         fileUrl,
         instanceState: false,
+        publicIP: '',
+        privateIP: '',
+        port: '',
+        EC2instanceID: '',
+        ModelResultsID: '',
+        tableName: '',
       }
     });
   };
-  console.log(setModelConfigQuery);
 
   return (
     <div>

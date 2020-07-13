@@ -1,27 +1,23 @@
 import React from 'react'
-import {Button} from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import s from '../../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import { Alert, AlertTitle } from '@material-ui/lab';
 
-  
-export default function Server () {
-    
-const id = "{id}"
-
-    return (
-      
-    <div>   
-        <Alert severity="success">
+const Server = ({ id, ip }) => {
+  return (
+    <div>
+      <Alert severity="success">
         <AlertTitle>Success</AlertTitle>
         Model instance provisioned.<strong><br/> Model timer is running</strong>
       </Alert>
-        <p className={s.subclass}>IP: 13.89.144.34<br/><br/>PORT: 5342</p>
-            <Spacer height="50px"/>
-            <Button href={`/studio/${id}`} variant="contained" color="primary" size="large">
-                <span className={s.ctabutton}>Proceed</span>
-            </Button>
+      <p className={s.subclass}>IP: {ip}<br/></p>
+      <Spacer height="50px"/>
+      <Button href={`/studio/${id}`} variant="contained" color="primary" size="large">
+        <span className={s.ctabutton}>Proceed</span>
+      </Button>
     </div>
-    )
-}
+  );
+};
 
+export default Server;
