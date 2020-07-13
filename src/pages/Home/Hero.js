@@ -21,7 +21,7 @@ import Spacer from 'react-spacer'
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
             <Grid item md={10} xs={10} style={{textAlign: 'left', "paddingTop": "80px"}}>
                    <h1  className={s.header} style={{textAlign: 'left'}}>
-                    Computer vision at your fingertips
+                    Computer vision made easy
                     </h1>
                     <p className={s.subheader} style={{textAlign: 'left'}}>
                       Provision, configure and run complicated models without a single line of code
