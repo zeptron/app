@@ -11,21 +11,22 @@ import Provision from '../../assets/provision.png'
  
    return (
 
-          <Box p={2} style={{backgroundColor: "#a0bf88"}}>
+          <Box p={2} style={{backgroundColor: '#253337', color: 'white'}} >
           <Grid container justify="center" spacing={spacing}>
-            <Grid item md={10} sm={10} xs={12}>
+            <Grid item md={9} sm={10} xs={12}>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
-            <Grid item md={6} xs={12}>
+            <Grid item md={8} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Manage model instances and run time easily
+              Our mission
               </h2>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Automatically provision cloud resources based on your model's requirements</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Zeptron makes it easy for anyone to use computer vision without requiring technical skills.</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Every day, people like manufacturers, property managers, local government bodies, farmers, and construction managers use Zeptron to make the world better, safer, and more efficient.</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>We support the open and safe use of AI as a tool for the betterment of humankind.</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>We are deeply conscious of privacy and oppose any use of our product that violates this basic human right.</p>
               <Spacer height="40px"/>
             </Grid> 
-            <Grid item md={6} xs={12}>
-            <img alt="provision AI models" style={{maxWidth: '100%'}} src={Provision} />
-            </Grid>
+            
             </Grid>
             <Spacer height="80px"/>
             </Grid>

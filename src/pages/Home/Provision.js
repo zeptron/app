@@ -2,33 +2,29 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Stream from '../../assets/stream.png'
+import Provision from '../../assets/provision.png'
 
 
 
   export default function Hero() {
     const [spacing] = React.useState(2);
-   
+ 
    return (
 
           <Box p={2} >
           <Grid container justify="center" spacing={spacing}>
             <Grid item md={9} sm={10} xs={12}>
-            <Spacer height="40px"/>
-            <Grid container justify="center" alignItems="center" spacing={spacing}>
+            <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Stream data to your model for free
+              Manage model instances and run time easily
               </h2>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Use our free streaming service to send live video, images, or bytes to your model</p>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Our camera hardware provides video feeds to the cloud with 20ms or lower latency</p>
-             
-              {/* <p className={s.subheader} style={{textAlign: 'left'}}><a style={{color: 'black'}} href="/streaming">Learn more</a></p> */}
+               <p className={s.subheader} style={{textAlign: 'left'}}>Automatically provision cloud resources based on your model's requirements</p>
               <Spacer height="40px"/>
             </Grid> 
             <Grid item md={6} xs={12}>
-             <img alt="free low-latency video streaming" style={{maxWidth: '100%'}} src={Stream}/>
+            <img alt="provision AI models" style={{maxWidth: '100%'}} src={Provision} />
             </Grid>
             </Grid>
             <Spacer height="80px"/>

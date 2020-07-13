@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 0px 0px 5px 0px;
     `
    return (
-    <Box p={2} bgcolor="primary.dark" color="primary.contrastText" >
+    <Box p={2} style={{backgroundColor: 'rgb(37, 51, 55)'}} color="primary.contrastText" >
          <Grid container justify="center" spacing={spacing}>
             <Grid item md={10} sm={10} xs={12}>
         <Grid container justify="center" spacing={spacing}>

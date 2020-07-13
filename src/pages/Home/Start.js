@@ -21,7 +21,7 @@ import { Button } from "../../containers/Auth.style";
             <Grid item xs={12}>
             <Spacer height="40px"/>
             <h2 className={s.header} style={{textAlign: 'center'}}>
-            Start browsing AI models
+            Start browsing AI models now
             </h2>
             <p className={s.subheader}>Sign up now for FREE and start browsing models</p>
            
