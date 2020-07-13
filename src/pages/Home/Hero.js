@@ -24,7 +24,7 @@ import Spacer from 'react-spacer'
                     Computer vision at your fingertips
                     </h1>
                     <p className={s.subheader} style={{textAlign: 'left'}}>
-                      Provision, configure and run complicated models without touching a single line of code
+                      Provision, configure and run complicated models without a single line of code
                     </p>
                     <Spacer height="40px"/>
                     <Button size="large" variant="contained" color="secondary" href="/auth">
