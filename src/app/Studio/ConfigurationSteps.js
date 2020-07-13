@@ -103,6 +103,7 @@ const ConfigurationSteps = ({ match }) => {
   const [line, { setWrap: setLine }] = useInput('');
   const [instanceType, { setWrap: setInstanceType }] = useInput(null);
   const [fileUrl, { setWrap: setFileUrl }] = useInput('');
+  const [loadingStack, setLoadingStack] = useState(false);
 
   const disabledStartButton = useMemo(() => {
     return !instanceName.length || !instanceLocation.length || !instancePod.length;
@@ -117,7 +118,7 @@ const ConfigurationSteps = ({ match }) => {
 
   const disabledProvisionButton = useMemo(() => {
     return !(instanceType === 'live' || (instanceType === 'file' && fileUrl.length > 0));
-  }, [instanceType, fileUrl]);
+  }, [instanceType, fileUrl, loadingStack]);
 
   const subheaders = {
     start: 'Create New Instance',
@@ -381,7 +382,7 @@ const ConfigurationSteps = ({ match }) => {
                   variant="outlined"
                   color="primary"
                   size="large"
-                  disabled={disabledProvisionButton}
+                  disabled={disabledProvisionButton || loadingStack}
                   onClick={onSubmit}
                 >
                   Provision
@@ -398,16 +399,24 @@ const ConfigurationSteps = ({ match }) => {
   };
 
   const setModelConfigQuery = useQuery(mutations.createModelConfig, {
-    onSuccess: (data) => {
-      console.log(data);
-
-      AWS.CloudFormation.createStack({
-        StackName: 'test',
-        TemplateBody: template,
-      }, (err, data) => {
-        console.error(err);
-        console.log(data);
+    onSuccess: async (data) => {
+      AWS.config.update({
+        region: process.env.REACT_APP_AWS_REGION,
+        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
       });
+
+      const AWSCloudFormation = new AWS.CloudFormation();
+
+      setLoadingStack(true);
+
+      const stack = await AWSCloudFormation.createStack({
+        StackName: `stack${data?.data?.createModelConfig?.id}`,
+        TemplateBody: template.replace('{{tableName}}', `tableName${data?.data?.createModelConfig?.id}`),
+      }).promise();
+
+      setLoadingStack(false);
+      console.log('stack', stack);
     },
   });
 
@@ -426,10 +435,14 @@ const ConfigurationSteps = ({ match }) => {
         fromFile: instanceType === 'file',
         fileUrl,
         instanceState: false,
+        publicIP: '',
+        privateIP: '',
+        port: '',
+        EC2instanceID: '',
+        ModelResultsID: '',
       }
     });
   };
-  console.log(setModelConfigQuery);
 
   return (
     <div>
