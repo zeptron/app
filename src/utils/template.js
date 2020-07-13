@@ -10,8 +10,11 @@ Metadata:
         x: 170
         'y': 70
       z: 0
+Parameters:
+  tableName:
+    Type: String
 Resources:
-  EC2I2VQR4:
+  EC2I2VQQ4:
     Type: 'AWS::EC2::Instance'
     Properties:
       ImageId: ami-021e4d943dd020a86
@@ -24,24 +27,23 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: d0fea2e2-2dc2-4ad0-8167-f6778963aaad
-
   EC2I2VQK4:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
-        - AttributeName: "timestamp"
-          AttributeType: "S"
-      BillingMode: "PAY_PER_REQUEST"
+        - AttributeName: timestamp
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
       KeySchema:
-        - AttributeName: "timestamp"
-          KeyType: "HASH"
-      TableName: {{tableName}}
-
+        - AttributeName: timestamp
+          KeyType: HASH
+      TableName:
+        Ref: tableName
 Outputs:
-  EC2I2VQR4PublicIP:
-    Value: !GetAtt EC2I2VQR4.PublicIp
-  EC2I2VQR4PrivateIP:
-    Value: !GetAtt EC2I2VQR4.PrivateIp
-  EC2I2VQR4ID:
-    Value: !Ref EC2I2VQR4
+  EC2I2VQQ4PublicIP:
+    Value: !GetAtt EC2I2VQQ4.PublicIp
+  EC2I2VQQ4PrivateIP:
+    Value: !GetAtt EC2I2VQQ4.PrivateIp
+  EC2I2VQQ4ID:
+    Value: !Ref EC2I2VQQ4
 `;
