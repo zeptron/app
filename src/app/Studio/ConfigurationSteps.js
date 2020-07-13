@@ -94,7 +94,7 @@ const ConfigurationSteps = ({ match }) => {
     });
   }, []);
 
-  const [step, setStep] = useState('provision');
+  const [step, setStep] = useState('start');
   const [instanceName, { setWrap: setInstanceName }] = useInput('');
   const [instanceLocation, { setWrap: setInstanceLocation }] = useInput('');
   const [instancePod, { setWrap: setInstancePod }] = useInput('');

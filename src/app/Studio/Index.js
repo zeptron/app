@@ -3,9 +3,9 @@ import Spacer from "react-spacer";
 import { Box, Grid } from "@material-ui/core";
 import s from "../../styles/styles.module.css";
 
-import { API, Auth, graphqlOperation } from "aws-amplify";
+import { API, graphqlOperation } from "aws-amplify";
 import * as queries from "../../graphql/queries";
-
+import { Auth } from "aws-amplify";
 import ModelSettings from "./ModelSettings";
 import NewModelConfig from "./NewModelConfig";
 
