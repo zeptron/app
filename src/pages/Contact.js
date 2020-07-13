@@ -23,8 +23,8 @@ import Spacer from 'react-spacer'
             <Spacer height="30px"/>
             <Grid container alignItems="center" justify="center">
                    <Grid item md={8} xs={12}>
-                   <p style={{color: 'white'}} className={s.subheader}>Need a new model? Send us a message. We'd love to talk</p>
-
+                   <p style={{color: 'white'}} className={s.subheader}>Need a new model? Want to use your own AWS resources?</p>
+                  <p style={{color: 'white'}} className={s.subheader}>Send us a message. We'd love to talk</p>
                    </Grid>
                </Grid>
 
