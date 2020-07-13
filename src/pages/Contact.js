@@ -23,7 +23,7 @@ import Spacer from 'react-spacer'
             <Spacer height="30px"/>
             <Grid container alignItems="center" justify="center">
                    <Grid item md={8} xs={12}>
-                   <p style={{color: 'white'}} className={s.subheader}>With a presence in Singapore, Australia, and New Zealand, we are always open to hearing feedback, suggestions, or requests for new models</p>
+                   <p style={{color: 'white'}} className={s.subheader}>Need a new model? Send us a message. We'd love to talk</p>
 
                    </Grid>
                </Grid>
@@ -37,19 +37,19 @@ import Spacer from 'react-spacer'
               <Grid item md={8} sm={10} xs={12}>
               <Grid container justify="center" spacing={spacing}>
               
-              <Grid item md={4}>
+              <Grid item md={6}>
                 <h3 className={s.subheader} >Australia</h3>
                 <p className={s.subheader}><a style={{color: 'black'}} href="mailto:sydney@zeptron.co">sydney@zeptron.co</a></p>
                 <p className={s.subheader}>354 Darling Street <br/> Balmain, NSW<br/> 2158 Australia</p>
 
               </Grid>
-              <Grid item md={4}>
+              {/* <Grid item md={4}>
                 <h3 className={s.subheader} >Singapore</h3>
                 <p className={s.subheader}><a style={{color: 'black'}} href="mailto:singapore@zeptron.co">singapore@zeptron.co</a></p>
                 <p className={s.subheader}>PO Box 3142<br/>447 Geylang Road<br/>389406 Singapore </p>
 
-              </Grid>
-              <Grid item md={4}>
+              </Grid> */}
+              <Grid item md={6}>
                 <h3 className={s.subheader} >New Zealand</h3>
                 <p className={s.subheader}><a style={{color: 'black'}} href="mailto:auckland@zeptron.co">auckland@zeptron.co</a></p>
                 <p className={s.subheader}>430 Queen Street <br/> Auckland Central<br/> 1010 New Zealand</p>
