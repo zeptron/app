@@ -5,12 +5,10 @@ import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Spacer from 'react-spacer'
-import VideocamIcon from '@material-ui/icons/Videocam';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import PieChartIcon from '@material-ui/icons/PieChart';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
-import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 0px 0px 5px 0px;
     `
    return (
-    <Box p={2} bgcolor="primary.dark" color="primary.contrastText" >
+    <Box p={2} style={{backgroundColor: 'rgb(37, 51, 55)'}} color="primary.contrastText" >
          <Grid container justify="center" spacing={spacing}>
             <Grid item md={10} sm={10} xs={12}>
         <Grid container justify="center" spacing={spacing}>

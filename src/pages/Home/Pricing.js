@@ -69,10 +69,10 @@ const useStyles = makeStyles((theme) => ({
             </Grid>
             <Grid item>
               <Paper className={`${classes.paper}`} >
-              <Price>$49</Price>
+              <Price>$59</Price>
               
               <Spacer height="12px"/>
-              <BoxHeading>per month <br/>+ $1 / hour </BoxHeading>
+              <BoxHeading>per month <br/>+ per camera</BoxHeading>
               <Spacer height="12px"/>
               <Button href="/auth" variant="contained" color="primary" size="large">
                   <span className={s.ctabutton}>Start</span>
@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
               <Price><StorageIcon style={{fontSize: '66px'}}/></Price>
               
               <Spacer height="12px"/>
-              <BoxHeading>one-click AWS / GCP organisation install</BoxHeading>
+              <BoxHeading>use your own AWS resources</BoxHeading>
               <Spacer height="12px"/>
               <Button href="/contact" variant="contained" color="primary" size="large">
                   <span className={s.ctabutton}>Enquire</span>

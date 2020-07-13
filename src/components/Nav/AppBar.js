@@ -11,7 +11,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import VideocamIcon from '@material-ui/icons/Videocam';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';

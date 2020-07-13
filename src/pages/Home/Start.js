@@ -2,16 +2,14 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import { IoLogoGoogle } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
-import { Auth } from 'aws-amplify'
+// import { Auth } from 'aws-amplify'
 import { Button } from "../../containers/Auth.style";
 
 
   export default function Start() {
-    const thisGoogle = () => {
-        Auth.federatedSignIn({ provider: "Google" });
-      };
+    // const thisGoogle = () => {
+    //     Auth.federatedSignIn({ provider: "Google" });
+    //   };
    
     const [spacing] = React.useState(2);
    
@@ -23,9 +21,9 @@ import { Button } from "../../containers/Auth.style";
             <Grid item xs={12}>
             <Spacer height="40px"/>
             <h2 className={s.header} style={{textAlign: 'center'}}>
-            Start browsing AI models
+            Start browsing AI models now
             </h2>
-            <p className={s.subheader}>Sign up now for FREE and start browsing models.<br/> No credit card required!</p>
+            <p className={s.subheader}>Sign up now for FREE and start browsing models</p>
            
             </Grid> 
             

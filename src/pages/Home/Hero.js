@@ -3,13 +3,17 @@ import { css } from "glamor";
 import {Box, Button, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Data from './animations/data'
-import Brain from './animations/brain'
-import Results from './animations/results'
+
 
 
   export default function Hero() {
+
     const [spacing] = React.useState(8);
+
+
+    console.log(`require("./../../assets/herobg.mp4")`, require("./../../assets/herobg.mp4"))
+  
+
    return (
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
           <video loop autoPlay {...css(styles.vidDiv)}>
@@ -18,12 +22,12 @@ import Results from './animations/results'
           </video>
        <div {...css(styles.coverOpacity)}></div>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
-            <Grid item md={10} xs={12} style={{textAlign: 'left', "paddingTop": "80px"}}>
+            <Grid item md={10} xs={10} style={{textAlign: 'left', "paddingTop": "80px"}}>
                    <h1  className={s.header} style={{textAlign: 'left'}}>
-                    Artificial intelligence made simple
+                    Computer vision for a better today
                     </h1>
                     <p className={s.subheader} style={{textAlign: 'left'}}>
-                      Provision, configure and run complicated models without touching a single line of code
+                      Provision, configure and run computer vision models with a single tap
                     </p>
                     <Spacer height="40px"/>
                     <Button size="large" variant="contained" color="secondary" href="/auth">
@@ -38,7 +42,8 @@ import Results from './animations/results'
 
 const styles = {
   vidDiv:{
-    width: "100%",
+    minHeight: "120%",
+    minWidth: "100%",
     position: "absolute",
     left: 0,
     top: "-80px"

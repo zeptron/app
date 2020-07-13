@@ -2,9 +2,10 @@ import React from "react";
 import { css } from "glamor";
 import { Link } from "react-router-dom";
 import UserContext from "./UserContext";
-import s from "./styles/styles.module.css";
 import AppBar from "./components/Nav/AppBar";
 import Button from "@material-ui/core/Button";
+
+
 class Header extends React.Component {
   state = {
     isScrolled : false

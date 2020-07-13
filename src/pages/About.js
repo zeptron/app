@@ -13,8 +13,9 @@ import Spacer from 'react-spacer'
                 <Spacer height="10px"/>
                 <Grid container alignItems="center" justify="center">
                    <Grid item md={8} xs={12}>
+                   <Spacer height="100px"/>
                     <h1  className={s.header} style={{textAlign: 'center'}}>
-                        We put AI in the hands of people who need it without requiring technical skills
+                        Easy acccess to computer vision for good
                     </h1>
                     </Grid>
                     </Grid>
@@ -22,7 +23,7 @@ import Spacer from 'react-spacer'
             <Spacer height="30px"/>
             <Grid container alignItems="center" justify="center">
                    <Grid item md={8} xs={12}>
-                   <p style={{color: 'white'}} className={s.subheader}>Zeptron provides you with a user-friendly platform for working with AI models as well as a library of pre-trained 'frozen' models.</p>
+                   <p style={{color: 'white'}} className={s.subheader}>Zeptron provides you with a user-friendly platform for working with computer vision as well as a library of pre-trained models</p>
 
                    </Grid>
                </Grid>
@@ -43,21 +44,13 @@ import Spacer from 'react-spacer'
             <Box p={2}>
 
             <Grid container justify="center" spacing={spacing}>
-              <Grid item md={8} sm={10} xs={12}>
+              <Grid item md={6} sm={10} xs={12}>
               <Grid container justify="center" spacing={spacing}>
-              <Grid item xs={12}>
-              <Spacer height="40px"/>
-                <h2 className={s.header} style={{textAlign: 'center'}}>
-                Why do we exist?
-                </h2>
-                <p className={s.subheader}>As AI innovation has accelerated, the market for artificial intelligence models has become increasingly fractured. </p>
-                <p className={s.subheader}>Models come in all shapes and sizes, and the frameworks they're written in vary wildly. It's challenging enough for developers to use them, let alone people with no technical skills! </p>
-                <p className={s.subheader}>Even with the advent of model builders, it is still difficult and expensive to generate and annotate data, train the model, and deploy it.</p>
-                <p className={s.subheader}>Zeptron removes those obstacles.</p>
-                <p className={s.subheader}>We believe in a world where AI is open and accessible to everyone, even and especially for those with limited technical skills. </p>
-                <p className={s.subheader}>Zeptron freezes the platform configuration along with the model graph so that the platform can change shape and adapt to any model.</p>
-                <p className={s.subheader}>This allows you to just start using the model without thinking about a single line of code, or if you're a developer, configure a model via the UI and get instant API access to its data feed.</p>
-                </Grid>
+              <Spacer height="80px"/>
+              <p className={s.subheader}>While working on a computer vision project, we discovered that there was no way to use our model without getting deeply immersed code. So we made a better way.</p>
+              <p className={s.subheader}>It's now super easy to add a model to your library, provision it, configure it, and start using it. </p>
+              <p className={s.subheader}>You can get notifications for detections in Slack, iOS push notifications, email, or through SMS.</p>
+              <p className={s.subheader}>It's very affordable and super easy to use. Give it a try!</p>
               </Grid>
                 <Spacer height="80px"/>
                 <Button size="large" variant="contained" color="secondary" href="/auth">
