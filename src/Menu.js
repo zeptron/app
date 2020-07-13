@@ -27,7 +27,7 @@ class Header extends React.Component {
     if(this.state.isScrolled){
       return {backgroundColor: '#000a12'}
     } else {
-      return {backgroundColor: 'transparent'}
+      return {backgroundColor: 'rgb(0, 10, 18)'}
     }
   }
 
@@ -80,9 +80,9 @@ const styles = {
     height: "80px",
     alignItems: "center",
     width: "100%",
-    backgroundColor: "transparent",
+    backgroundColor: "rgb(0, 10, 18)",
     display: "flex",
-    position: "fixed",
+    // position: "fixed",
     zIndex: 1
   },
   menuContainer: {

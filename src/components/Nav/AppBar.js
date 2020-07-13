@@ -148,7 +148,7 @@ export default function SwipeableTemporaryDrawer(props) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <List >
         {menuItems.map((val, index) => (
           <ListItem button component="a" href={`${val.route}`} key={val.name}>
             <ListItemIcon>
@@ -175,7 +175,7 @@ export default function SwipeableTemporaryDrawer(props) {
   const getMenu = (anchor) =>{
     if(!isMobile){
       return(
-        <List className= {clsx(classes.flexContainer)}>
+        <List className= {clsx(classes.flexContainer)} >
             {menuItems.map((val, index) => (
             <ListItem key={val.name} className= {clsx(classes.listMenu)}>
               <Button
@@ -207,6 +207,7 @@ export default function SwipeableTemporaryDrawer(props) {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
+            style={{backgroundColor: 'rgb(0, 10, 18)'}}
           >
             {list(anchor)}
           </SwipeableDrawer>
