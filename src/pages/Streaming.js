@@ -3,7 +3,7 @@ import {Box, Grid} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Top from '../assets/top.jpg'
-import IPad from '../assets/ipad.png'
+import IPad from '../assets/streaming.png'
 
 export default function Streaming() {
 
