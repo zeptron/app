@@ -188,6 +188,7 @@ export const getModelConfig = /* GraphQL */ `
       notify
       countClasses
       notifyClasses
+      line
       fromFile
       fileUrl
       publicIP
@@ -273,6 +274,7 @@ export const listModelConfigs = /* GraphQL */ `
         notify
         countClasses
         notifyClasses
+        line
         fromFile
         fileUrl
         publicIP
