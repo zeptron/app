@@ -37,6 +37,10 @@ const useStyles = makeStyles({
   listMenu: {
     paddingLeft: "5px",
     paddingRight: "5px"
+  },
+  paper: {
+    background: "rgb(37, 51, 55)",
+    color: "#fff",
   }
 });
 
@@ -150,21 +154,21 @@ export default function SwipeableTemporaryDrawer(props) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List >
+      <List>
         {menuItems.map((val, index) => (
           <ListItem button component="a" href={`${val.route}`} key={val.name}>
             <ListItemIcon>
               {val.icon}
             </ListItemIcon>
-            <ListItemText primary={val.name} />
+            <ListItemText primary={val.name}/>
           </ListItem>
         ))}
       </List>
       <Divider />
       <List>
           <ListItem button component="a" href="https://zeptron.github.io" >
-           <ListItemIcon>
-             <HelpOutlineIcon/>
+           <ListItemIcon className={clsx(classes.menuOptions)}>
+             <HelpOutlineIcon style={{color: "#fff"}}/>
             </ListItemIcon>
             <ListItemText>
               Help
@@ -203,13 +207,14 @@ export default function SwipeableTemporaryDrawer(props) {
     } else {
       return (
         <div>
-          <Button onClick={toggleDrawer(anchor, true)}><span style={{color: 'white'}}><AppsIcon/></span></Button>
+          <Button onClick={toggleDrawer(anchor, true)}><span style={{color: '#fff'}}><AppsIcon/></span></Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
-            style={{backgroundColor: 'rgb(0, 10, 18)'}}
+            classes={{ paper: classes.paper }}
+            style={{backgroundColor: 'rgb(37, 51, 55)'}}
           >
             {list(anchor)}
           </SwipeableDrawer>
