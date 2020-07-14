@@ -6650,7 +6650,7 @@ lottie-react-web@^2.2.2:
     lottie-api "^1.0.2"
     lottie-web "^5.6.1"
 
-lottie-web@^5.6.1, lottie-web@^5.6.10:
+lottie-web@^5.6.1, lottie-web@^5.7.0:
   version "5.7.0"
   resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.7.0.tgz#628421df7a43c20a5171ac65bdc7bb4c499f8f37"
 
