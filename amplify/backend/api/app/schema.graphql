@@ -32,6 +32,7 @@ type modelConfig @model  {
   notify: Boolean!
   countClasses: String!
   notifyClasses: String!
+  line: String!
   fromFile: Boolean!
   fileUrl: String!
   publicIP: String!
