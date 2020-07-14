@@ -7,25 +7,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import green from "@material-ui/core/colors/green";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  palette: {
-    tertiary: green[500],
-  },
   card: {
     width: 300,
     margin: 4,
-  },
-  media: {
-    height: 140,
+    height: 330,
   },
   cardInner: {
-    marginTop: "41%",
-    marginBottom: "41%",
-  },
-  control: {
-    padding: theme.spacing(4),
+    marginTop: "40%",
+    marginBottom: "40%",
   },
 }));
 
@@ -34,7 +23,7 @@ export const NewModelConfig = () => {
 
   return (
     <div>
-      <Grid container alignItems="center" justify="center" spacing={2}>
+        <Grid item md={4}>
         <Link to="/library">
           <Card className={classes.card}>
             <CardContent className={classes.cardInner}>
@@ -42,7 +31,7 @@ export const NewModelConfig = () => {
             </CardContent>
           </Card>
         </Link>
-      </Grid>
+        </Grid>
     </div>
   );
 };
