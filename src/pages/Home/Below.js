@@ -21,8 +21,7 @@ import Provision from '../../assets/provision.png'
               Our mission
               </h2>
                <p className={s.subheader} style={{textAlign: 'left'}}>Zeptron makes it easy for anyone to use computer vision without requiring technical skills.</p>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Our platform makes work safer and more efficient for organisations and professionals of all kinds.</p>
-               <p className={s.subheader} style={{textAlign: 'left'}}>We are committed to using AI as a tool for the betterment of humankind.</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>We enable people to use AI as a tool for improving safety, efficiency, planning, and productivity.</p>
               <Spacer height="40px"/>
             </Grid> 
             

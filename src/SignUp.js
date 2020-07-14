@@ -6,7 +6,6 @@ import { Auth } from "aws-amplify";
 
 class SignUp extends React.Component {
   state = {
-    username: "",
     password: "",
     email: "",
     // phone_number: '',
@@ -19,9 +18,9 @@ class SignUp extends React.Component {
     });
   };
   signUp = () => {
-    const { username, password, given_name, family_name, email } = this.state;
+    const { password, given_name, family_name, email } = this.state;
     Auth.signUp({
-      username,
+      username: email,
       password,
       attributes: {
         given_name,
@@ -37,7 +36,7 @@ class SignUp extends React.Component {
       });
   };
   confirmSignUp = () => {
-    Auth.confirmSignUp(this.state.username, this.state.authCode)
+    Auth.confirmSignUp(this.state.email, this.state.authCode)
       .then(() => this.props.switchState("showSignIn"))
       .catch((err) => console.log("error confirming signing up: ", err));
   };
@@ -80,11 +79,6 @@ class SignUp extends React.Component {
               {...css(styles.input)}
               placeholder="Family name"
               onChange={(evt) => this.onChange("family_name", evt.target.value)}
-            />
-            <input
-              {...css(styles.input)}
-              placeholder="Username"
-              onChange={(evt) => this.onChange("username", evt.target.value)}
             />
             <input
               {...css(styles.input)}
