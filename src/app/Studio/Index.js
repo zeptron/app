@@ -48,7 +48,7 @@ export default function Studio() {
       .catch((err) => console.log(err));
   }, []);
 
-  let output = <NewModelConfig />;
+  let output = '';
 
   if (configModels.length !== 0) {
     output = configModels.map((configModel) => (
