@@ -26,7 +26,11 @@
     "react-gtm-module": "^2.0.10",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
+<<<<<<< HEAD
+    "react-intl": "^4.7.6",
+=======
     "react-intl": "^5.1.0",
+>>>>>>> master
     "react-p5-wrapper": "^2.0.0",
     "react-particles-js": "^3.2.1",
     "react-posenet": "^0.1.3",
