@@ -87,7 +87,7 @@ export default function SwipeableTemporaryDrawer(props) {
     route: "/contact",
     icon: ""
   },{
-    name : "Sign In",
+    name : "Sign-In",
     route: "/auth",
     icon: ''
   }]
