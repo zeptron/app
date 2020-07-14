@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   card: {
     width: 300,
     margin: 4,
+    height: 330,
   },
   media: {
     height: 140,
@@ -39,17 +40,7 @@ export const ModelSettings = ({ modelConfig }) => {
 
   return (
     <div>
-      <Grid container alignItems="center" justify="center">
-        <Grid item md={8}>
-          <Grid container alignItems="center" justify="center" spacing={2}>
-            <Link to="/library">
-              <Card className={classes.card}>
-                <CardContent className={classes.cardInner}>
-                  <AddIcon style={{ fontSize: 50 }} />
-                </CardContent>
-              </Card>
-            </Link>
-
+          <Grid item md={4}>
             <Link
               to={`/studio/${modelConfig.id}`}
               style={{ textDecoration: "none" }}
@@ -95,10 +86,8 @@ export const ModelSettings = ({ modelConfig }) => {
                 </CardActionArea>
               </Card>
             </Link>
+            </Grid>
             <Spacer height="25px" />
-          </Grid>
-        </Grid>
-      </Grid>
     </div>
   );
 };

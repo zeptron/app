@@ -64,11 +64,11 @@ export default function Studio() {
         </h1>
       </Box>
       <Box>
-        <Spacer height="50px" />
-        <Grid item></Grid>
-        <Spacer height="50px" />
+        <Spacer height="100px" />
+        <Grid container justify="center">
+        <NewModelConfig />
         {output}
-
+        </Grid>
         <Spacer height="100px" />
       </Box>
     </div>
