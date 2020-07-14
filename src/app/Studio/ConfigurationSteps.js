@@ -498,6 +498,7 @@ const ConfigurationSteps = ({ match }) => {
         instancePod,
         count,
         countClasses,
+        line,
         notify,
         notifyClasses,
         fromFile: instanceType === 'file',

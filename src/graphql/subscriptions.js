@@ -326,6 +326,7 @@ export const onCreateModelConfig = /* GraphQL */ `
       notify
       countClasses
       notifyClasses
+      line
       fromFile
       fileUrl
       publicIP
@@ -406,6 +407,7 @@ export const onUpdateModelConfig = /* GraphQL */ `
       notify
       countClasses
       notifyClasses
+      line
       fromFile
       fileUrl
       publicIP
@@ -486,6 +488,7 @@ export const onDeleteModelConfig = /* GraphQL */ `
       notify
       countClasses
       notifyClasses
+      line
       fromFile
       fileUrl
       publicIP

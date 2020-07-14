@@ -17,7 +17,7 @@ Resources:
   EC2I2VQQ4:
     Type: 'AWS::EC2::Instance'
     Properties:
-      ImageId: ami-021e4d943dd020a86
+      ImageId: ami-0192d76f155f6c406
       InstanceType: t2.micro
       UserData:
         Fn::Base64: !Sub |
