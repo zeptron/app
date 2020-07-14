@@ -98,8 +98,6 @@ export default function SwipeableTemporaryDrawer(props) {
 
   useEffect(() => {
     let currentPath = location.pathname;
-    currentPath = currentPath.split("/")
-    currentPath = currentPath[1]
     setRouteLoction(currentPath)
   }, [location]);
 
@@ -112,7 +110,10 @@ export default function SwipeableTemporaryDrawer(props) {
   },[props.isAuthenticated])
 
   const getActiveTab = (checkTabText) => {
-    if(checkTabText === routeLoction){
+    let selectedItem = menuItems.filter(item => {
+      return item.name === checkTabText;
+    });
+    if(selectedItem && selectedItem[0].route === routeLoction){
       return {color : "#f57f17"}
     } else {
       return {color : "#ffffff"}
@@ -182,7 +183,7 @@ export default function SwipeableTemporaryDrawer(props) {
               <Button
                   href={`${val.route}`}
                   className= {clsx(classes.menuOptions)}
-                  style= {getActiveTab(val.name.toLowerCase())}
+                  style= {getActiveTab(val.name)}
                 >
                   {val.name}
                 </Button>
