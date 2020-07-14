@@ -37,6 +37,10 @@ const useStyles = makeStyles({
   listMenu: {
     paddingLeft: "5px",
     paddingRight: "5px"
+  },
+  paper: {
+    background: "rgb(37, 51, 55)",
+    color: "#fff",
   }
 });
 
@@ -53,19 +57,19 @@ export default function SwipeableTemporaryDrawer(props) {
   const AuthItems = [{
     name : "Studio",
     route: "/studio",
-    icon: <DashboardIcon/>
+    icon: <DashboardIcon style={{color: "#fff"}}/>
   },{
     name : "Library",
     route: "/library",
-    icon: <DynamicFeedIcon/>
+    icon: <DynamicFeedIcon style={{color: "#fff"}}/>
   },{
     name : "Account",
     route: "/account",
-    icon: <AccountBoxIcon/>
+    icon: <AccountBoxIcon style={{color: "#fff"}}/>
   },{
     name : "Billing",
     route: "/billing",
-    icon: <AccountBalanceIcon/>
+    icon: <AccountBalanceIcon style={{color: "#fff"}}/>
   }]
 
   const items = [{
@@ -98,8 +102,6 @@ export default function SwipeableTemporaryDrawer(props) {
 
   useEffect(() => {
     let currentPath = location.pathname;
-    currentPath = currentPath.split("/")
-    currentPath = currentPath[1]
     setRouteLoction(currentPath)
   }, [location]);
 
@@ -112,7 +114,10 @@ export default function SwipeableTemporaryDrawer(props) {
   },[props.isAuthenticated])
 
   const getActiveTab = (checkTabText) => {
-    if(checkTabText === routeLoction){
+    let selectedItem = menuItems.filter(item => {
+      return item.name === checkTabText;
+    });
+    if(selectedItem && selectedItem[0].route === routeLoction){
       return {color : "#f57f17"}
     } else {
       return {color : "#ffffff"}
@@ -149,13 +154,13 @@ export default function SwipeableTemporaryDrawer(props) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List >
+      <List>
         {menuItems.map((val, index) => (
           <ListItem button component="a" href={`${val.route}`} key={val.name}>
             <ListItemIcon>
               {val.icon}
             </ListItemIcon>
-            <ListItemText primary={val.name} />
+            <ListItemText primary={val.name}/>
           </ListItem>
         ))}
       </List>
@@ -163,7 +168,7 @@ export default function SwipeableTemporaryDrawer(props) {
       <List>
           <ListItem button component="a" href="https://zeptron.github.io" >
            <ListItemIcon>
-             <HelpOutlineIcon/>
+             <HelpOutlineIcon style={{color: "#fff", fontWeight:700}}/>
             </ListItemIcon>
             <ListItemText>
               Help
@@ -182,7 +187,7 @@ export default function SwipeableTemporaryDrawer(props) {
               <Button
                   href={`${val.route}`}
                   className= {clsx(classes.menuOptions)}
-                  style= {getActiveTab(val.name.toLowerCase())}
+                  style= {getActiveTab(val.name)}
                 >
                   {val.name}
                 </Button>
@@ -202,13 +207,14 @@ export default function SwipeableTemporaryDrawer(props) {
     } else {
       return (
         <div>
-          <Button onClick={toggleDrawer(anchor, true)}><span style={{color: 'white'}}><AppsIcon/></span></Button>
+          <Button onClick={toggleDrawer(anchor, true)}><span style={{color: '#fff'}}><AppsIcon/></span></Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
-            style={{backgroundColor: 'rgb(0, 10, 18)'}}
+            classes={{ paper: classes.paper }}
+            style={{backgroundColor: 'rgb(37, 51, 55)'}}
           >
             {list(anchor)}
           </SwipeableDrawer>
