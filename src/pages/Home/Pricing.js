@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
               <Price>$59</Price>
               
               <Spacer height="12px"/>
-              <BoxHeading>per month <br/>+ per camera</BoxHeading>
+              <BoxHeading>per month <br/>per camera</BoxHeading>
               <Spacer height="12px"/>
               <Button href="/auth" variant="contained" color="primary" size="large">
                   <span className={s.ctabutton}>Start</span>
