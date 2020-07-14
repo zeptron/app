@@ -26,7 +26,7 @@
     "react-gtm-module": "^2.0.10",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
-    "react-intl": "^4.6.10",
+    "react-intl": "^5.1.0",
     "react-p5-wrapper": "^2.0.0",
     "react-particles-js": "^3.2.1",
     "react-posenet": "^0.1.3",
