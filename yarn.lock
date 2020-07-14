@@ -6627,7 +6627,7 @@ logrocket-react@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/logrocket-react/-/logrocket-react-4.0.1.tgz#e8e5405ee5f47f2c25b511931e360713a623f927"
 
-logrocket@^1.0.8:
+logrocket@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-1.0.9.tgz#0b4cab2535e0dcdf3c802eb604b109662a403d38"
 
