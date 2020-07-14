@@ -57,19 +57,19 @@ export default function SwipeableTemporaryDrawer(props) {
   const AuthItems = [{
     name : "Studio",
     route: "/studio",
-    icon: <DashboardIcon/>
+    icon: <DashboardIcon style={{color: "#fff"}}/>
   },{
     name : "Library",
     route: "/library",
-    icon: <DynamicFeedIcon/>
+    icon: <DynamicFeedIcon style={{color: "#fff"}}/>
   },{
     name : "Account",
     route: "/account",
-    icon: <AccountBoxIcon/>
+    icon: <AccountBoxIcon style={{color: "#fff"}}/>
   },{
     name : "Billing",
     route: "/billing",
-    icon: <AccountBalanceIcon/>
+    icon: <AccountBalanceIcon style={{color: "#fff"}}/>
   }]
 
   const items = [{
@@ -167,8 +167,8 @@ export default function SwipeableTemporaryDrawer(props) {
       <Divider />
       <List>
           <ListItem button component="a" href="https://zeptron.github.io" >
-           <ListItemIcon className={clsx(classes.menuOptions)}>
-             <HelpOutlineIcon style={{color: "#fff"}}/>
+           <ListItemIcon>
+             <HelpOutlineIcon style={{color: "#fff", fontWeight:700}}/>
             </ListItemIcon>
             <ListItemText>
               Help
