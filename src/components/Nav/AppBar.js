@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   menuOptions: {
     fontSize: "14px",
     fontWeight: 700,
-    letterSpacing: "1px"
+    letterSpacing: "1px"  
   },
   flexContainer: {
     display: 'flex',
