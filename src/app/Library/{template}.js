@@ -17,6 +17,8 @@ export default function Currency({ match }) {
           eq: match.params.id,
         },
       },
+      limit: 100000,
+      nextToken: null,
     });
   }, []);
 
