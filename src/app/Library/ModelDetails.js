@@ -39,7 +39,6 @@ const columns = [
 ];
 
 export const ModelDetails = ({ model, rows, modelClasses }) => {
-  console.log(modelClasses);
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);

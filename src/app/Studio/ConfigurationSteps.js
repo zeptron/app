@@ -91,6 +91,8 @@ const ConfigurationSteps = ({ match }) => {
           eq: match.params.id,
         },
       },
+      limit: 100000,
+      nextToken: null,
     });
   }, []);
 
