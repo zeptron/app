@@ -94,6 +94,15 @@ const ConfigurationSteps = ({ match }) => {
     });
   }, []);
 
+  const classNumbers = useMemo(() => {
+    const numbers = {};
+    const items = classesQuery.data?.listClasss.items ?? [];
+
+    items.forEach(({name, number}) => numbers[name] = number);
+
+    return numbers;
+  }, [classesQuery.data?.listClasss.items]);
+
   const [step, setStep] = useState('start');
   const [instanceName, { setWrap: setInstanceName }] = useInput('');
   const [instanceLocation, { setWrap: setInstanceLocation }] = useInput('');
@@ -497,10 +506,10 @@ const ConfigurationSteps = ({ match }) => {
         instanceLocation,
         instancePod,
         count,
-        countClasses,
+        countClasses: countClasses.map((item) => classNumbers[item]),
         line,
         notify,
-        notifyClasses,
+        notifyClasses: notifyClasses.map((item) => classNumbers[item]),
         fromFile: instanceType === 'file',
         fileUrl,
         instanceState: false,
