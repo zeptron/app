@@ -8,8 +8,6 @@ import Spacer from 'react-spacer'
 
   export default function Hero() {
 
-    const [spacing] = React.useState(8);
-
 
     console.log(`require("./../../assets/herobg.mp4")`, require("./../../assets/herobg.mp4"))
   

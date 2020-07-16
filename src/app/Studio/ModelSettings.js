@@ -5,7 +5,6 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import AddIcon from "@material-ui/icons/Add";
 import green from "@material-ui/core/colors/green";
 import { Button, Grid, Card } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";

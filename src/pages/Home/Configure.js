@@ -4,7 +4,6 @@ import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Touch from '../../assets/touch.png'
 import Hidden from '@material-ui/core/Hidden';
-import Tracking from '../../assets/tracking.png'
 
 
   export default function Hero() {
