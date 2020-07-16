@@ -59,7 +59,7 @@ export const ModelDetails = ({ model, rows, modelClasses }) => {
 
   return (
     <div>
-      <Box bgcolor="primary.dark" color="primary.contrastText">
+      <Box bgcolor="primary.dark" color="primary.contrastText" p={2}>
         <Spacer height="50px" />
         <Grid container alignItems="center" justify="center">
           <Grid item md={8} sm={10} xs={12}>
@@ -85,7 +85,7 @@ export const ModelDetails = ({ model, rows, modelClasses }) => {
         <Spacer height="50px" />
       </Box>
 
-      <Box bgcolor="primary.light">
+      <Box bgcolor="primary.light" p={2}>
         <Spacer height="50px" />
         <Grid container alignItems="center" justify="center">
           <Grid item md={8} sm={12} xs={12}>
@@ -168,7 +168,9 @@ export const ModelDetails = ({ model, rows, modelClasses }) => {
             <h3 className={s.subclass}>Demo Video</h3>
             <Box p={4}>
               <Spacer height="20px" />
-              <YouTube videoId={model.video} />
+              <div style={{maxWidth: '100%'}}>
+              <YouTube className={s.video} videoId={model.video} />
+              </div>
             </Box>
           </Grid>
         </Grid>

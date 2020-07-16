@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Button, Grid, Hidden} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -55,16 +55,6 @@ const useStyles = makeStyles((theme) => ({
             <p className={s.subheader} style={{textAlign: 'left'}}>Get live streaming inference feeds, charts, and notifications through our user-friendly app</p>
             <Spacer height="40px"/>
             </Grid> 
-            {/* <Grid item>
-                <Paper className={`${classes.paper}`} >
-                <VideocamIcon color="primary" fontSize="large"/>
-                <hr/>
-                <BoxHeading>5 video data sources</BoxHeading>
-                <br/>
-                <Notes>Get FREE unlimited streaming from Raspberry Pi, Mac, PC or Linux with near-zero latency</Notes>
-                <Notes>Also access satellite feeds & CCTV with automatic configuration</Notes>
-                </Paper>
-            </Grid> */}
             <Grid item>
                 <Paper className={`${classes.paper}`} >
                 <FormatListNumberedIcon color="primary"  fontSize="large"/>
@@ -105,21 +95,18 @@ const useStyles = makeStyles((theme) => ({
 
                 </Paper>
             </Grid>
-            {/* <Grid item>
-                <Paper className={`${classes.paper}`} >
-                <MonetizationOnIcon color="primary" fontSize="large"/>
-                <hr/>
-                <BoxHeading>Low Pay-Per-Use Fees</BoxHeading>
-                <br/>
-                <Notes>Zeptron exists to put AI in the hands of people who need it. As such, we keep our fees as low as possible to remove barriers to entry and ensure you see value</Notes>
-
-                </Paper>
-            </Grid> */}
             </Grid> 
             <Spacer height="80px"/>
-            <Button size="large" variant="contained" color="secondary" href="/auth">
-              <span className={s.ctabutton}>Get Started</span>
-              </Button>
+            <Hidden xsDown>
+                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <span className={s.ctabutton}>Get Started Now</span>
+                    </Button>
+                    </Hidden>
+                    <Hidden smUp>
+                    <Button size="small" variant="contained" color="secondary" href="/auth">
+                    <span className={s.ctabutton}>Get Started Now</span>
+                    </Button>
+                    </Hidden>
             <Spacer height="80px"/>
 
         </Grid> 

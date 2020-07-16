@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Button, Grid, Hidden} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -62,9 +62,16 @@ const useStyles = makeStyles((theme) => ({
               <Spacer height="25px"/>
               <BoxHeading>per hour </BoxHeading>
               <Spacer height="25px"/>
-              <Button href="/auth" variant="contained" color="primary" size="large">
-                  <span className={s.ctabutton}>Start</span>
-              </Button>
+              <Hidden xsDown>
+                    <Button size="large" variant="contained" color="primary" href="/auth">
+                    <span className={s.ctabutton}>Start</span>
+                    </Button>
+                    </Hidden>
+                    <Hidden smUp>
+                    <Button size="small" variant="contained" color="primary" href="/auth">
+                    <span className={s.ctabutton}>Start</span>
+                    </Button>
+                    </Hidden>
               </Paper>
             </Grid>
             <Grid item>
@@ -74,9 +81,16 @@ const useStyles = makeStyles((theme) => ({
               <Spacer height="12px"/>
               <BoxHeading>per month <br/>per camera</BoxHeading>
               <Spacer height="12px"/>
-              <Button href="/auth" variant="contained" color="primary" size="large">
-                  <span className={s.ctabutton}>Start</span>
-              </Button>
+              <Hidden xsDown>
+                    <Button size="large" variant="contained" color="primary" href="/auth">
+                    <span className={s.ctabutton}>Start</span>
+                    </Button>
+                    </Hidden>
+                    <Hidden smUp>
+                    <Button size="small" variant="contained" color="primary" href="/auth">
+                    <span className={s.ctabutton}>Start</span>
+                    </Button>
+                    </Hidden>
               </Paper>
             </Grid>
             <Grid item>
@@ -86,9 +100,16 @@ const useStyles = makeStyles((theme) => ({
               <Spacer height="12px"/>
               <BoxHeading>use your own AWS resources</BoxHeading>
               <Spacer height="12px"/>
-              <Button href="/contact" variant="contained" color="primary" size="large">
-                  <span className={s.ctabutton}>Enquire</span>
-              </Button>
+              <Hidden xsDown>
+                    <Button size="large" variant="contained" color="primary" href="/contact">
+                    <span className={s.ctabutton}>Enquire</span>
+                    </Button>
+                    </Hidden>
+                    <Hidden smUp>
+                    <Button size="small" variant="contained" color="primary" href="/contact">
+                    <span className={s.ctabutton}>Enquire</span>
+                    </Button>
+                    </Hidden>
               </Paper>
             </Grid>
             </Grid>

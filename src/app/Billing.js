@@ -2,7 +2,7 @@ import React from "react";
 import { Auth } from "aws-amplify";
 import UserContext from "../UserContext";
 import s from "../styles/styles.module.css";
-import { Grid, Box, Button } from "@material-ui/core";
+import { Grid, Box, Button, Hidden } from "@material-ui/core";
 import Spacer from "react-spacer";
 import styled from "styled-components";
 
@@ -29,12 +29,8 @@ class Billing extends React.Component {
             </Grid>
           </Grid>
           <Spacer height="50px" />
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            href="/account"
-          >
+          <Hidden smDown>
+          <Button variant="contained" color="primary" size="large" href="/account">
             <span className={s.ctabutton}>Go To Account</span>
           </Button>
           <Button
@@ -45,6 +41,20 @@ class Billing extends React.Component {
           >
             <span className={s.ctabutton}>Sign Out</span>
           </Button>
+          </Hidden>
+          <Hidden mdUp>
+          <Button variant="contained" color="primary" size="small" href="/account">
+            <span className={s.ctabutton}>Go To Account</span>
+          </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            size="small"
+            onClick={signOut}
+          >
+            <span className={s.ctabutton}>Sign Out</span>
+          </Button>
+          </Hidden>
           <Spacer height="50px" />
         </Box>
         <Box bgcolor="primary.light" color="primary.contrastText">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from "glamor";
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Button, Grid, Hidden} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 
@@ -30,9 +30,16 @@ import Spacer from 'react-spacer'
                       Provision, configure and run computer vision models with a single tap
                     </p>
                     <Spacer height="40px"/>
+                    <Hidden xsDown>
                     <Button size="large" variant="contained" color="secondary" href="/auth">
                     <span className={s.ctabutton}>Get Started Now</span>
                     </Button>
+                    </Hidden>
+                    <Hidden smUp>
+                    <Button size="small" variant="contained" color="secondary" href="/auth">
+                    <span className={s.ctabutton}>Get Started Now</span>
+                    </Button>
+                    </Hidden>
             </Grid>
         </Grid>
       <Spacer height="60px"/>

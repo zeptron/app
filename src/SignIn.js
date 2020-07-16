@@ -55,17 +55,6 @@ class SignIn extends React.Component {
         {!this.state.showConfirmation && (
           <div {...css(styles.formContainer)}>
             <h2 {...css(styles.signInHeader)}>Sign In</h2>
-            {/* <Button
-          fullwidth
-          title={'Sign in with Facebook'}
-          className='facebook'
-          icon={<IoLogoFacebook />}
-          iconPosition='left'
-          iconStyle={{ color: '#ffffff', marginRight: 5 }}
-          intlButtonId='continueFacebookBtn'
-          onClick={thisFacebook}
-          style={{ color: '#fff' }}
-        /> */}
             <Button
               fullwidth
               title={"Sign in with Google"}
@@ -121,9 +110,6 @@ class SignIn extends React.Component {
 const thisGoogle = () => {
   Auth.federatedSignIn({ provider: "Google" });
 };
-// const thisFacebook = () => {
-//   Auth.federatedSignIn({ provider: "Facebook" });
-// };
 
 const styles = {
   signInHeader: {
@@ -166,6 +152,7 @@ const styles = {
   formContainer: {
     padding: 20,
     width: 400,
+    maxWidth: '100%',
     display: "flex",
     flexDirection: "column",
     boxShadow: "0px 0px 2px rgba(0, 0, 0, .2)",

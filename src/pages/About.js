@@ -5,7 +5,6 @@ import Spacer from 'react-spacer'
 
 
   export default function About() {
-    const [spacing] = React.useState(8);
     
    return (
         <div>
@@ -47,14 +46,15 @@ import Spacer from 'react-spacer'
               <Grid item md={6} sm={10} xs={10}>
               <Grid container justify="center" >
               <Spacer height="80px"/>
-              <p className={s.subheader}>While working on a computer vision project, we discovered that there was no way to use our model without getting deeply immersed code. So we made a better way.</p>
-              <p className={s.subheader}>It's now super easy to add a model to your library, provision it, configure it, and start using it. </p>
-              <p className={s.subheader}>You can get notifications for detections in Slack, iOS push notifications, email, or through SMS.</p>
-              <p className={s.subheader}>It's very affordable and super easy to use. Give it a try!</p>
+              <p className={s.subheader}>While working on a computer vision project, we discovered that there was no way to use our model without getting deeply immersed in code.</p>
+              <p className={s.subheader}>So we created a better way.</p>
+              <p className={s.subheader}>In less than a minute, add a model to your library, provision it, configure it, and start getting results. </p>
+              <p className={s.subheader}>Zeptron enables anyone to use computer vision as a useful tool without needing a single line of code.</p>
+              <p className={s.subheader}>Powerful cloud-based AI is one tap away.</p>
               </Grid>
                 <Spacer height="80px"/>
                 <Button size="large" variant="contained" color="secondary" href="/auth">
-                <span className={s.ctabutton}>Get Started</span>
+                <span className={s.ctabutton}>Start Now</span>
                 </Button>
                 <Spacer height="80px"/>
               </Grid>
