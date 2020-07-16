@@ -70,18 +70,23 @@ export default function SwipeableTemporaryDrawer(props) {
     name : "Billing",
     route: "/billing",
     icon: <AccountBalanceIcon style={{color: "#fff"}}/>
-  }]
+  },{
+    name : "Help",
+    route: "https://zeptron.github.io",
+    icon: <HelpOutlineIcon style={{color: "#fff"}}/>
+  }
+]
 
   const items = [{
     name : "About",
     route: "/about",
     icon: ''
   },
-  // {
-  //   name : "FAQ",
-  //   route: "/privacy",
-  //   icon: ""
-  // },
+  {
+    name : "FAQ",
+    route: "/faq",
+    icon: ""
+  },
   {
     name : "Contact",
     route: "/contact",
@@ -165,16 +170,6 @@ export default function SwipeableTemporaryDrawer(props) {
         ))}
       </List>
       <Divider />
-      <List>
-          <ListItem button component="a" href="https://zeptron.github.io" >
-           <ListItemIcon>
-             <HelpOutlineIcon style={{color: "#fff", fontWeight:700}}/>
-            </ListItemIcon>
-            <ListItemText>
-              Help
-            </ListItemText>
-          </ListItem>
-      </List>
     </div>
   );
 
@@ -193,15 +188,6 @@ export default function SwipeableTemporaryDrawer(props) {
                 </Button>
             </ListItem>
           ))}
-          <ListItem className= {clsx(classes.listMenu)}>
-              <Button
-                  href="https://zeptron.github.io"
-                  className= {clsx(classes.menuOptions)}
-                  style= {{color: "#ffffff"}}
-                >
-                  Help
-                </Button>
-            </ListItem>
           </List>
       )
     } else {
