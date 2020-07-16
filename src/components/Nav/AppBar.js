@@ -19,7 +19,8 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 const useStyles = makeStyles({
   list: {
-    width: 250
+    width: 250,
+    textTransform: 'uppercase'
   },
   fullList: {
     width: "auto"

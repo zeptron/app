@@ -155,6 +155,7 @@ const styles = {
   formContainer: {
     padding: 20,
     width: 400,
+    maxWidth: '100%',
     display: "flex",
     flexDirection: "column",
     boxShadow: "0px 0px 2px rgba(0, 0, 0, .2)",

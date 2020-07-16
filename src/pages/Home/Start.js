@@ -2,14 +2,16 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-// import { Auth } from 'aws-amplify'
+import { IoLogoGoogle } from "react-icons/io";
+
+import { Auth } from 'aws-amplify'
 import { Button } from "../../containers/Auth.style";
 
 
   export default function Start() {
-    // const thisGoogle = () => {
-    //     Auth.federatedSignIn({ provider: "Google" });
-    //   };
+    const thisGoogle = () => {
+        Auth.federatedSignIn({ provider: "Google" });
+      };
    
     const [spacing] = React.useState(2);
    
@@ -30,7 +32,7 @@ import { Button } from "../../containers/Auth.style";
             </Grid> 
             <Grid container alignItems="center" justify="center">
                 <Grid item md={4} sm={8} xs={12}>
-        {/* <Button
+        <Button
           fullwidth
           title={'Sign up with Google'}
           className='google'
@@ -40,10 +42,10 @@ import { Button } from "../../containers/Auth.style";
           intlButtonId='continueGoogleBtn'
           onClick={thisGoogle}
           style={{ color: '#fff' }}
-        /> */}
+        />
          <Button
           fullwidth
-          title={'Contact Us to Start'}
+          title={'Start with Email'}
           className='email'
           // icon={< MdEmail/>}
           iconPosition='left'

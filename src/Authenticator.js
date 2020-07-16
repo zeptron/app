@@ -22,7 +22,8 @@ class Authenticator extends React.Component {
     const { currentState } = this.state;
     return (
       <div>
-      <div style={styles.container}>
+        <Box p={2}>
+          <div style={styles.container}>
         {currentState === "showSignIn" && (
           <SignIn
             {...this.props}
@@ -76,6 +77,7 @@ class Authenticator extends React.Component {
           </div>
         )}
       </div>
+      </Box>
       </div>
     );
   }

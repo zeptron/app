@@ -29,9 +29,10 @@ export const SingleInstance = ({ modelConfig }) => {
           <Grid item md={8}>
 
             <Grid container alignItems="center" justify="center"> 
-            <Grid item md={5 }>
+            <Grid item md={5} xs={12}>
+              <Box p={2}>
             <FormGroup row>
-              <FormControlLabel
+            <FormControlLabel
                 control={
                   <Switch
                     checked={state.Started}
@@ -39,53 +40,34 @@ export const SingleInstance = ({ modelConfig }) => {
                     name="Started"
                   />
                 }
-                label="Instance Switch"
+                label="Power"
               />
-
               <Button variant="contained" color="secondary" size="large">
                 Run
               </Button>
-
               <Button
                 href="/studio/{id}/analytics"
                 variant="contained"
                 color="primary"
                 size="large"
               >
-                Analytics
+                Analyse
               </Button>
+  
             </FormGroup>
+            </Box>
+            
             </Grid>
             </Grid>
 
             <Spacer height="50px" />
-            {/* <div className="devnotes">
-              <h3>
-                {"<"}DeveloperNotes{">"}
-              </h3>
-              <p>Switch invokes Lambda to Start/Stop {"{EC2instanceID}"}.</p>
-
-              <p>
-                When starting / stopping, show {"<cogs/>"} component from
-                src/app/animations/cogs.js until the Lambda returns success
-              </p>
-
-              <p>
-                Run button invokes Lambda to start model. Pass{" "}
-                {"{modelConfigId}"} to Lambda
-              </p>
-
-              <p>If switch is off, hide run button</p>
-
-              <h3>
-                {"</"}DeveloperNotes{">"}
-              </h3>
-            </div> */}
+            
             <h2>Live Stream</h2>
-            <Grid container alignItems="center" justify="center" spacing={2}>
+            <Grid container alignItems="center" justify="center" >
               <img
                 alt="stream"
                 src="https://via.placeholder.com/640x460.png?text=Live+Stream"
+                style={{maxWidth: '90%'}}
               />
             </Grid>
             <p>Comes from {modelConfig.publicIP}</p>

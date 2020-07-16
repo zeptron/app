@@ -145,3 +145,7 @@ background-position: center;
     color: black;
     text-transform: center;
 }
+
+iframe.video  {
+    max-width: 100%;
+}

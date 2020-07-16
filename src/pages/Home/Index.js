@@ -8,6 +8,7 @@ import Stream from './Stream'
 import Results from './Results'
 import Pricing from './Pricing'
 import Start from './Start'
+import Privacy from './Privacy'
 import Studio from '../../app/Studio/Index'
 
 class Home extends React.Component {
@@ -34,6 +35,7 @@ class Home extends React.Component {
             <Configure/>
             <Stream/>
             <Results/>
+            <Privacy/>
             <Pricing/>
             <Start/>
             </div>
