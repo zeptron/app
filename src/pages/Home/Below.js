@@ -2,7 +2,6 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Provision from '../../assets/provision.png'
 
 
 

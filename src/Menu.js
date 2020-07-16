@@ -3,7 +3,6 @@ import { css } from "glamor";
 import { Link } from "react-router-dom";
 import UserContext from "./UserContext";
 import AppBar from "./components/Nav/AppBar";
-import Button from "@material-ui/core/Button";
 
 
 class Header extends React.Component {
