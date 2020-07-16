@@ -29,7 +29,7 @@ export const SingleInstance = ({ modelConfig }) => {
           <Grid item md={8}>
 
             <Grid container alignItems="center" justify="center"> 
-            <Grid item md={5} xs={12}>
+            <Grid item md={6} xs={12}>
               <Box p={2}>
             <FormGroup row>
             <FormControlLabel
