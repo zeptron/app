@@ -6,6 +6,11 @@ import s from "../../../styles/styles.module.css";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
+import AWS from 'aws-sdk';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const SingleInstance = ({ modelConfig }) => {
   const [state, setState] = React.useState({
@@ -15,6 +20,11 @@ export const SingleInstance = ({ modelConfig }) => {
   const instanceSwitch = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
+
+  const notify = () => toast("Wow so easy !");
+
+
+  
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
@@ -24,6 +34,19 @@ export const SingleInstance = ({ modelConfig }) => {
       </Box>
 
       <Box>
+      <button onClick={notify}>Notify !</button>
+        <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        />
+
         <Spacer height="100px" />
         <Grid container alignItems="center" justify="center">
           <Grid item md={8}>

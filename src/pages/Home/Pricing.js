@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
             </Grid>
             <Grid item>
               <Paper className={`${classes.paper}`} >
-              <Price>$5</Price>
+              <Price>$1</Price>
               
               <Spacer height="25px"/>
               <BoxHeading>per hour </BoxHeading>
@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
             </Grid>
             <Grid item>
               <Paper className={`${classes.paper}`} >
-              <Price>$59</Price>
+              <Price>$49</Price>
               
               <Spacer height="12px"/>
               <BoxHeading>per month <br/>per camera</BoxHeading>
