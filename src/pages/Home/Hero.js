@@ -25,7 +25,7 @@ import Spacer from 'react-spacer'
                    Robust deployment <br/>for computer vision
                     </h1>
                     <p className={s.subheader} style={{textAlign: 'center'}}>
-                      Add a model to your library, set up video streams and get results in less than 2 minutes
+                      Import a model and connect it to video streams in less than 2 minutes
                     </p>
                     <Spacer height="40px"/>
                     <div style={{textAlign: 'center'}}>
