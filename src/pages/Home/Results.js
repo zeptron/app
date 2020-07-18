@@ -47,16 +47,18 @@ const useStyles = makeStyles((theme) => ({
    return (
     <Box p={2} style={{backgroundColor: 'rgb(37, 51, 55)'}} color="primary.contrastText" >
          <Grid container justify="center" spacing={spacing}>
-            <Grid item md={10} sm={10} xs={12}>
-        <Grid container justify="center" spacing={spacing}>
-            <Grid item xs={12}>
+         <Grid item md={10} xs={12}>
             <Spacer height="40px"/>
             <h2 className={s.header} style={{textAlign: 'left'}}>
-            Receive results in real time on any device
+            See results in real time 
             </h2>
-            <p className={s.subheader} style={{textAlign: 'left'}}>Get live streaming inference feeds, charts, and notifications through our user-friendly app</p>
+            <p className={s.subheader} style={{textAlign: 'left'}}>Process model data and serve inference feeds automatically</p>
             <Spacer height="40px"/>
             </Grid> 
+          
+            <Grid item xs={12}>
+        <Grid container justify="center" spacing={spacing}>
+            
             <Grid item>
                 <Paper className={`${classes.paper}`} >
                 <MovieIcon color="primary"  fontSize="large"/>
@@ -110,9 +112,11 @@ const useStyles = makeStyles((theme) => ({
                     </Button>
                     </Hidden>
             <Spacer height="80px"/>
-
+            
         </Grid> 
+        
         </Grid>
+       
     </Box>
 
 )
