@@ -17,10 +17,11 @@ import Spacer from 'react-spacer'
             <Grid item md={8} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Our mission
+              what we do
               </h2>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Zeptron makes it easy for anyone to use computer vision without requiring technical skills.</p>
-               <p className={s.subheader} style={{textAlign: 'left'}}>We enable people to use AI as a tool for improving safety, efficiency, planning, and productivity.</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Zeptron makes it easy to deploy computer vision</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Complete with low-latency cameras and an interface that works with any computer vision model, Zeptron helps you start using computer vision faster</p>
+
               <Spacer height="40px"/>
             </Grid> 
             

@@ -21,8 +21,7 @@ import Spacer from 'react-spacer'
               <h2 className={s.header} style={{textAlign: 'left'}}>
               Built-in privacy controls
               </h2>
-              <p className={s.subheader} style={{textAlign: 'left'}}>Streamed footage is kept on ephemeral storage and destroyed after inference, unless you elect to keep it</p>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Model instances and results databases are isolated to eliminate risk of data mixing</p>
+              <p className={s.subheader} style={{textAlign: 'left'}}>Streamed footage is kept on ephemeral storage and destroyed after inference</p>
               <Spacer height="20px"/>
               <Spacer height="40px"/>
             </Grid> 

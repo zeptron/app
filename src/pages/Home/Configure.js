@@ -27,7 +27,6 @@ import Hidden from '@material-ui/core/Hidden';
               <h2 className={s.header} style={{textAlign: 'left'}}>
               Set up tracking and notifications
               </h2>
-              <p className={s.subheader} style={{textAlign: 'left'}}>Live video analysis with up to 99% accuracy</p>
                <p className={s.subheader} style={{textAlign: 'left'}}>Configure tracking, multi-directional counting, and detection alerts through SMS or Slack</p>
               <Spacer height="20px"/>
               <Spacer height="40px"/>

@@ -9,6 +9,7 @@ import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import PieChartIcon from '@material-ui/icons/PieChart';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
+import MovieIcon from '@material-ui/icons/Movie';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
       
     },
     paper: {
-        height: 250,
+        height: 225,
         width: 250,
       padding: theme.spacing(2),
       textAlign: 'center'
@@ -40,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     `
     const Notes = styled.p`
     text-align: center;
+    font-size: 1.3em;
     margin: 0px 0px 5px 0px;
     `
    return (
@@ -57,11 +59,11 @@ const useStyles = makeStyles((theme) => ({
             </Grid> 
             <Grid item>
                 <Paper className={`${classes.paper}`} >
-                <FormatListNumberedIcon color="primary"  fontSize="large"/>
+                <MovieIcon color="primary"  fontSize="large"/>
                 <hr/>
-                <BoxHeading>Built-in quick actions</BoxHeading>
+                <BoxHeading>Live inference feed</BoxHeading>
                 <br/>
-                <Notes>State of the art counting and tracking algorithms can be configured with a single tap while setting up your model</Notes>
+                <Notes>Real-time video inference feed from your model </Notes>
                
                 </Paper>
             </Grid>
@@ -69,9 +71,9 @@ const useStyles = makeStyles((theme) => ({
                 <Paper  className={`${classes.paper}`} >
                 <NotificationsActiveIcon color="primary" fontSize="large"/>
                 <hr/>
-                <BoxHeading>Custom notifications</BoxHeading>
+                <BoxHeading>Detection alets</BoxHeading>
                 <br/>
-                <Notes>Set up notifications for when a tracked object appears in the frame, or when a tagged object appears in the feed</Notes>
+                <Notes>Set up notifications to Slack, SMS, email, or Push</Notes>
 
                 </Paper>
             </Grid>
@@ -79,9 +81,9 @@ const useStyles = makeStyles((theme) => ({
               <Paper className={`${classes.paper}`} >
                 <PieChartIcon color="primary" fontSize="large"/>
                 <hr/>
-              <BoxHeading>Analytics Dashboard</BoxHeading>
+              <BoxHeading>Dynamic Charts</BoxHeading>
               <br/>
-              <Notes>FREE unlimited access to our analytics dashboard for as long as you'd like. Each model is different, so our dashboard adapts to the characteristics of each model</Notes>
+              <Notes>Inference results are charted in real time</Notes>
 
               </Paper>
             </Grid>
@@ -89,9 +91,9 @@ const useStyles = makeStyles((theme) => ({
                 <Paper className={`${classes.paper}`} >
                 <DynamicFeedIcon color="primary" fontSize="large"/>
                 <hr/>
-                <BoxHeading>JSON & CSV Data Feeds</BoxHeading>
+                <BoxHeading>JSON Output</BoxHeading>
                 <br/>
-                <Notes>Export your data to JSON and CSV so that you can manipulate it and import it into other programs or save it for your records</Notes>
+                <Notes>Get data out in JSON or streaming JSON</Notes>
 
                 </Paper>
             </Grid>

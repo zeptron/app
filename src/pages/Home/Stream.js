@@ -22,7 +22,7 @@ import Stream from '../../assets/stream.png'
               Stream data to your model for free
               </h2>
                <p className={s.subheader} style={{textAlign: 'left'}}>Use our free streaming service to send live video securely to your model</p>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Our cameras provide video streams to the cloud with 20ms or lower latency</p>
+               <p className={s.subheader} style={{textAlign: 'left'}}>Our cameras provide video streams to the cloud with up to 20ms latency</p>
              
               {/* <p className={s.subheader} style={{textAlign: 'left'}}><a style={{color: 'black'}} href="/streaming">Learn more</a></p> */}
               <Spacer height="40px"/>
