@@ -20,27 +20,29 @@ import Spacer from 'react-spacer'
           </video> */}
        <div {...css(styles.coverOpacity)}></div>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
-            <Grid item md={10} xs={10} style={{textAlign: 'left', "paddingTop": "80px"}}>
-                   <h1  className={s.header} style={{textAlign: 'left'}}>
-                   Deployment solution for computer vision
+            <Grid item md={5} xs={10} style={{textAlign: 'left', "paddingTop": "80px"}}>
+                   <h1  className={s.header} style={{textAlign: 'center'}}>
+                   Robust deployment <br/>for computer vision
                     </h1>
-                    <p className={s.subheader} style={{textAlign: 'left'}}>
-                      Provision, configure and run computer vision models with a single tap
+                    <p className={s.subheader} style={{textAlign: 'center'}}>
+                      Add a model to your library, set up video streams and get results in less than 2 minutes
                     </p>
                     <Spacer height="40px"/>
+                    <div style={{textAlign: 'center'}}>
                     <Hidden xsDown>
                     <Button size="large" variant="contained" color="secondary" href="/auth">
-                    <span className={s.ctabutton}>Get Started Now</span>
+                    <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </Hidden>
                     <Hidden smUp>
                     <Button size="small" variant="contained" color="secondary" href="/auth">
-                    <span className={s.ctabutton}>Get Started Now</span>
+                    <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </Hidden>
+                    </div>
             </Grid>
         </Grid>
-      <Spacer height="60px"/>
+      <Spacer height="100px"/>
     </Box>  
   )
 }
@@ -66,7 +68,7 @@ const styles = {
     width: "100%",
     height: "100%",
     position: "absolute",
-    backgroundColor: "black",
+    backgroundColor: "rgb(0, 10, 18)",
     opacity: 0.7
   }
 };

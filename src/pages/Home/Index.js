@@ -34,8 +34,8 @@ class Home extends React.Component {
             <Provision/>
             <Configure/>
             <Stream/>
-            <Results/>
-            <Privacy/>
+            {/* <Results/> */}
+            {/* <Privacy/> */}
             {/* <Pricing/> */}
             <Start/>
             </div>

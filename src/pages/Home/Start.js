@@ -23,7 +23,7 @@ import { Button } from "../../containers/Auth.style";
             <Grid item md={8} xs={12}>
             <Spacer height="40px"/>
             <h2 className={s.header} style={{textAlign: 'center'}}>
-            Start for free
+            Start now for free
             </h2>
             
             <p className={s.subheader}>Sign up and start building your library</p>

@@ -50,9 +50,8 @@ const useStyles = makeStyles((theme) => ({
          <Grid item md={10} xs={12}>
             <Spacer height="40px"/>
             <h2 className={s.header} style={{textAlign: 'left'}}>
-            See results in real time 
+            Real-time results
             </h2>
-            <p className={s.subheader} style={{textAlign: 'left'}}>Process model data and serve inference feeds automatically</p>
             <Spacer height="40px"/>
             </Grid> 
           
