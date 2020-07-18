@@ -34,7 +34,7 @@ export const SingleInstance = ({ modelConfig }) => {
       </Box>
 
       <Box>
-      <button onClick={notify}>Notify !</button>
+      {/* <button onClick={notify}>Notify !</button>
         <ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -45,7 +45,7 @@ export const SingleInstance = ({ modelConfig }) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        />
+        /> */}
 
         <Spacer height="100px" />
         <Grid container alignItems="center" justify="center">
