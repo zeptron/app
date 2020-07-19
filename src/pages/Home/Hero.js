@@ -3,6 +3,7 @@ import { css } from "glamor";
 import {Box, Button, Grid, Hidden} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
+import Vision from '../../assets/hero.png'
 
 
 
@@ -20,15 +21,18 @@ import Spacer from 'react-spacer'
           </video> */}
        <div {...css(styles.coverOpacity)}></div>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
-            <Grid item md={5} xs={10} style={{textAlign: 'left', "paddingTop": "80px"}}>
-                   <h1  className={s.header} style={{textAlign: 'center'}}>
+          <Grid item md={5} xs={10}>
+            <img src={Vision} style={{maxWidth: '100%'}} />
+          </Grid>
+            <Grid item md={5} xs={10} style={{textAlign: 'left'}}>
+                   <h1  className={s.header} >
                    Robust deployment <br/>for computer vision
                     </h1>
-                    <p className={s.subheader} style={{textAlign: 'center'}}>
-                      Import a model and connect it to video streams in less than 2 minutes
+                    <p className={s.subheader} >
+                      Configure and deploy computer vision models with streaming video in less than 2 minutes
                     </p>
-                    <Spacer height="40px"/>
-                    <div style={{textAlign: 'center'}}>
+                    <Spacer height="20px"/>
+                    <div >
                     <Hidden xsDown>
                     <Button size="large" variant="contained" color="secondary" href="/auth">
                     <span className={s.ctabutton}>Start Now</span>

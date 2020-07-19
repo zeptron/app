@@ -14,7 +14,7 @@ import Hidden from '@material-ui/core/Hidden';
 
           <Box p={2} style={{backgroundColor: '#e0e4e0'}}>
           <Grid container justify="center" spacing={spacing}>
-            <Grid item md={109} sm={10} xs={12}>
+            <Grid item md={109} sm={10} xs={10}>
             <Spacer height="40px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
              <Hidden smDown>
@@ -24,10 +24,10 @@ import Hidden from '@material-ui/core/Hidden';
               </Hidden>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
-              <h2 className={s.header} style={{textAlign: 'left'}}>
+              <h2 className={s.header} >
               Set up tracking and notifications
               </h2>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Configure tracking, multi-directional counting, and detection alerts through SMS or Slack</p>
+               <p className={s.subheader} >Configure tracking, directional counting, and detection alerts through SMS or Slack</p>
               <Spacer height="20px"/>
               <Spacer height="40px"/>
             </Grid> 

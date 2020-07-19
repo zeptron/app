@@ -16,11 +16,12 @@ import Spacer from 'react-spacer'
             <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Grid item md={8} xs={12}>
             <Spacer height="40px"/>
-              <h2 className={s.header} style={{textAlign: 'left'}}>
+              <h2 className={s.header} >
               what we do
               </h2>
-               <p className={s.subheader} style={{textAlign: 'left'}}>Zeptron makes it easy to deploy computer vision</p>
-               <p className={s.subheader} style={{textAlign: 'left'}}>We provide you with low-latency cameras and an interface that binds to any computer vision model</p>
+               <p className={s.subheader} >Zeptron makes it easy to deploy computer vision</p>
+               <p className={s.subheader} >We provide you with low-latency cameras and an interface that binds to any computer vision model</p>
+               <p className={s.subheader} >Get notifications, inference feeds, and charted results</p>
 
               <Spacer height="40px"/>
             </Grid> 
