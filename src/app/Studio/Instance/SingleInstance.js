@@ -6,10 +6,6 @@ import s from "../../../styles/styles.module.css";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
-import AWS from 'aws-sdk';
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 export const SingleInstance = ({ modelConfig }) => {
@@ -21,8 +17,7 @@ export const SingleInstance = ({ modelConfig }) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
-  const notify = () => toast("Wow so easy !");
-
+ 
 
   
   return (

@@ -1,6 +1,7 @@
 .header {
     font-family: Prata;
     font-size: 3em;
+    text-align: left;
 }
 .heroh3 {
     text-transform: uppercase;
@@ -8,6 +9,10 @@
 .ctabutton {
     text-transform: uppercase;
     font-weight: 900;
+}
+.subheader {
+    font-size: 2em;
+    text-align: left;
 }
 
 @media screen and (max-width:640px) {
@@ -22,12 +27,13 @@
 .ctabutton {
     font-size: 1.5em;
 }
-}
-
 .subheader {
     font-size: 1.8em;
     text-align: center;
 }
+}
+
+
 
 .subclass {
     text-transform: uppercase;

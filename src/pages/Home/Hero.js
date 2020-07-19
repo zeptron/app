@@ -34,14 +34,18 @@ import Vision from '../../assets/hero.png'
                     <Spacer height="20px"/>
                     <div >
                     <Hidden xsDown>
+                      
                     <Button size="large" variant="contained" color="secondary" href="/auth">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
+                    
                     </Hidden>
                     <Hidden smUp>
+                    <div style={{textAlign: 'center'}}>
                     <Button size="small" variant="contained" color="secondary" href="/auth">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
+                    </div>
                     </Hidden>
                     </div>
             </Grid>

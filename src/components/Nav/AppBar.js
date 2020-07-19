@@ -15,6 +15,7 @@ import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import AppsIcon from '@material-ui/icons/Apps';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import Logo from '../../assets/logo_white.svg'
 
 const useStyles = makeStyles({
   list: {
@@ -83,7 +84,7 @@ export default function SwipeableTemporaryDrawer(props) {
     icon: ''
   },
   // {
-  //   name : "FAQ",
+  //   name :"",
   //   route: "/faq",
   //   icon: ""
   // },
@@ -176,6 +177,7 @@ export default function SwipeableTemporaryDrawer(props) {
   const getMenu = (anchor) =>{
     if(!isMobile){
       return(
+        <div>
         <List className= {clsx(classes.flexContainer)} >
             {menuItems.map((val, index) => (
             <ListItem key={val.name} className= {clsx(classes.listMenu)}>
@@ -189,6 +191,7 @@ export default function SwipeableTemporaryDrawer(props) {
             </ListItem>
           ))}
           </List>
+          </div>
       )
     } else {
       return (
@@ -202,6 +205,9 @@ export default function SwipeableTemporaryDrawer(props) {
             classes={{ paper: classes.paper }}
             style={{backgroundColor: 'rgb(37, 51, 55)'}}
           >
+            <div style={{textAlign: 'left', margin: '20px 20px'}}>
+              <img src={Logo} style={{maxWidth: '50%'}} />
+            </div>
             {list(anchor)}
           </SwipeableDrawer>
         </div>)
