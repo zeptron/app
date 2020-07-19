@@ -23,7 +23,7 @@ class Billing extends React.Component {
           <Spacer height="10px" />
           <Grid container alignItems="center" justify="center">
             <Grid item md={8} xs={12}>
-              <h1 className={s.header} style={{ textAlign: "center" }}>
+              <h1 className={`${s.header} ${s.center}`}>
                 Billing
               </h1>
             </Grid>

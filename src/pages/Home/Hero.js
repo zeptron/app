@@ -24,7 +24,7 @@ import Vision from '../../assets/hero.png'
           <Grid item md={5} sm={6} xs={10}>
             <img src={Vision} style={{maxWidth: '100%'}} />
           </Grid>
-            <Grid item md={5} sm={6} xs={10} style={{textAlign: 'left'}}>
+            <Grid item md={5} sm={6} xs={10}>
                    <h1  className={s.header} >
                    Robust deployment <br/>for computer vision
                     </h1>
@@ -32,20 +32,18 @@ import Vision from '../../assets/hero.png'
                       Configure and deploy computer vision models with streaming video in less than 2 minutes
                     </p>
                     <Spacer height="20px"/>
-                    <div >
-                    <Hidden xsDown>
+                    <Hidden xsDown >
+                    <div style={{textAlign: 'left'}}>
                     <Button size="large" variant="contained" color="secondary" href="/auth">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
+                    </div>
                     </Hidden>
                     <Hidden smUp>
-                    <div style={{textAlign: 'center'}}>
                     <Button size="small" variant="contained" color="secondary" href="/auth">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
-                    </div>
                     </Hidden>
-                    </div>
             </Grid>
         </Grid>
       <Spacer height="100px"/>

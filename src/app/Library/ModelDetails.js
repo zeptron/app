@@ -81,14 +81,14 @@ export const ModelDetails = ({ model, rows, modelClasses }) => {
                     <Button size="large" variant="contained" color="secondary" >
                     <span className={s.ctabutton}>Start with this model</span>
                     </Button>
-                    </Hidden>
-                    <Hidden smUp>
-                    <div style={{textAlign: 'center'}}>
+              </Hidden>
+              <Hidden smUp>
+                    <div className={s.center}>
                     <Button size="small" variant="contained" color="secondary">
                     <span className={s.ctabutton}>Start with this model</span>
                     </Button>
                     </div>
-                    </Hidden>
+              </Hidden>
             </Link>
             <Spacer height="25px" />
           </Grid>

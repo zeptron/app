@@ -13,7 +13,7 @@ import Spacer from 'react-spacer'
                 <Grid container alignItems="center" justify="center">
                    <Grid item md={8} xs={12}>
                    <Spacer height="100px"/>
-                    <h1  className={s.header} style={{textAlign: 'center'}}>
+                    <h1  className={`${s.header} ${s.center}`}>
                         Deploy computer vision solutions in minutes
                     </h1>
                     </Grid>
@@ -22,7 +22,7 @@ import Spacer from 'react-spacer'
             <Spacer height="30px"/>
             <Grid container alignItems="center" justify="center">
                    <Grid item md={8} xs={12}>
-                   <p style={{color: 'white', textAlign: 'center'}} className={s.subheader}>Make your computer vision models useful with the tools and features you need to deploy them in the field in minutes</p>
+                   <p style={{color: 'white'}} className={`${s.subheader} ${s.center}`}>Make your computer vision models useful with the tools and features you need to deploy them in the field in minutes</p>
 
                    </Grid>
                </Grid>
@@ -38,7 +38,7 @@ import Spacer from 'react-spacer'
                     </Button>
                     </Hidden>
                     <Hidden smUp>
-                    <div style={{textAlign: 'center'}}>
+                    <div className={s.center}>
                     <Button size="small" variant="contained" color="secondary" href="/auth">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
@@ -56,10 +56,10 @@ import Spacer from 'react-spacer'
               <Grid container alignItems="center" >
               <Spacer height="80px"/>
              
-              <p style={{textAlign: 'center'}} className={s.subheader}>As computer vision enthusiasts ourselves, we created Zeptron as an an easy, scalable, and robust way to deploy computer vision applications </p>
-              <p style={{textAlign: 'center'}} className={s.subheader}>Zeptron works with any model or framework to provision, configure, and feed your cloud-based AI</p>
-              <p style={{textAlign: 'center'}} className={s.subheader}>Configure tracking, get detection alerts through SMS, iOS or Slack, and automatically chart inference results </p>
-              <p style={{textAlign: 'center'}} className={s.subheader}>Start getting value from computer vision faster with easy, code-free deployment</p>
+              <p className={`${s.subheader} ${s.center}`}>As computer vision enthusiasts ourselves, we created Zeptron as an an easy, scalable, and robust way to deploy computer vision applications </p>
+              <p className={`${s.subheader} ${s.center}`}>Zeptron works with any model or framework to provision, configure, and feed your cloud-based AI</p>
+              <p className={`${s.subheader} ${s.center}`}>Configure tracking, get detection alerts through SMS, iOS or Slack, and automatically chart inference results </p>
+              <p className={`${s.subheader} ${s.center}`}>Start getting value from computer vision faster with easy, code-free deployment</p>
              
               </Grid>
                 <Spacer height="80px"/>
@@ -69,7 +69,7 @@ import Spacer from 'react-spacer'
                     </Button>
                     </Hidden>
                     <Hidden smUp>
-                    <div style={{textAlign: 'center'}}>
+                    <div className={s.center}>
                     <Button size="small" variant="contained" color="secondary" href="/auth">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>

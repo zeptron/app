@@ -145,7 +145,7 @@ export default function Actions({ match }) {
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <h1 className={s.header} style={{ textAlign: "center" }}>
+        <h1 className={`${s.header} ${s.center}`}>
           {modelQuery.data?.getModel?.name ?? '...'}
         </h1>
         <p className={s.subheader}>Configure Actions</p>

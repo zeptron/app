@@ -14,7 +14,7 @@ import Spacer from 'react-spacer'
                 <Spacer height="10px"/>
                <Grid container alignItems="center" justify="center">
                    <Grid item md={8} xs={12}>
-                   <h1  className={s.header} style={{textAlign: 'center'}}>Terms & Conditions               </h1>
+                   <h1  className={`${s.header} ${s.center}`}>Terms & Conditions               </h1>
                    </Grid>
                </Grid>
                 

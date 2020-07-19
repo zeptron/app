@@ -39,7 +39,7 @@ export default function Faq(){
             <Spacer height="10px"/>
             <Grid container alignItems="center" justify="center">
                 <Grid item md={8} xs={12}>
-                <h1  className={s.header} style={{textAlign: 'center'}}>Frequently Asked Questions</h1>
+                <h1  className={`${s.header} ${s.center}`}>Frequently Asked Questions</h1>
                 </Grid>
             </Grid>
             </Box>

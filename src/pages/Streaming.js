@@ -13,7 +13,7 @@ export default function Streaming() {
                     <Spacer height="100px"/>
                     <Grid container alignItems="center" justify="center">
                       <Grid item md={8} xs={12}>
-                        <h1  className={s.header} style={{textAlign: 'center'}}>Free Low-Latency Video Streaming for Cloud-based Computer Vision</h1>
+                        <h1  className={`${s.header} ${s.center}`}>Free Low-Latency Video Streaming for Cloud-based Computer Vision</h1>
                       </Grid>
                       </Grid>
                       <Spacer height="100px"/>

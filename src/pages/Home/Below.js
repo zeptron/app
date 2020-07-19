@@ -21,7 +21,7 @@ import Spacer from 'react-spacer'
               </h2>
                <p className={s.subheader} >Zeptron makes it easy to deploy computer vision</p>
                <p className={s.subheader} >We provide you with low-latency cameras and an interface that binds to any computer vision model</p>
-               <p className={s.subheader} >Get notifications, inference feeds, and charted results</p>
+               <p className={s.subheader} >Start receiving notifications, live video inference feeds, and charted results in under 2 minutes</p>
               <Spacer height="40px"/>
             </Grid> 
             

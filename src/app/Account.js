@@ -16,7 +16,7 @@ class Profile extends React.Component {
           <Spacer height="10px" />
           <Grid container alignItems="center" justify="center">
             <Grid item md={8} xs={12}>
-              <h1 className={s.header} style={{ textAlign: "center" }}>
+              <h1 className={`${s.header} ${s.center}`}>
                 Hi, {this.context.user.attributes.given_name}{" "}
                 {this.context.user.attributes.family_name}
               </h1>
