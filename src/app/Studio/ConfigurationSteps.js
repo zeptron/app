@@ -531,7 +531,7 @@ const ConfigurationSteps = ({ match }) => {
         <h1 className={s.header} style={{ textAlign: 'center' }}>
           {modelQuery.data?.getModel?.name ?? '...'}
         </h1>
-        <p className={s.subheader}>
+        <p className={`${s.subheader} ${s.center}`}>
           {subheaders[step]}
         </p>
       </Box>

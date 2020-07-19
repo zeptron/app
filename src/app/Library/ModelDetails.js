@@ -5,13 +5,15 @@ import s from "../../styles/styles.module.css";
 import YouTube from "react-youtube";
 import Rating from "@material-ui/lab/Rating";
 import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TablePagination from "@material-ui/core/TablePagination";
-import TableRow from "@material-ui/core/TableRow";
+import {
+  Hidden,
+  Table, 
+  TableBody, 
+  TableCell, 
+  TableContainer, 
+  TableHead, 
+  TablePagination, 
+  TableRow} from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
@@ -67,17 +69,26 @@ export const ModelDetails = ({ model, rows, modelClasses }) => {
               <Rating name="read-only" value={model.rating} readOnly />
             </Box>
 
-            <h1 className={s.header}>{model.name}</h1>
-            <p className={s.subheader}>{model.description}</p>
+            <h1 className={`${s.header} ${s.center}`}>{model.name}</h1>
+            <p  className={`${s.subheader} ${s.center}`}>{model.description}</p>
 
             <Spacer height="25px" />
             <Link
               to={`/studio/configuration/${model.id}`}
               style={{ textDecoration: "none" }}
             >
-              <Button size="large" variant="contained" color="secondary">
-                <span className={s.ctabutton}>Start with this model</span>
-              </Button>
+              <Hidden xsDown>
+                    <Button size="large" variant="contained" color="secondary" >
+                    <span className={s.ctabutton}>Start with this model</span>
+                    </Button>
+                    </Hidden>
+                    <Hidden smUp>
+                    <div style={{textAlign: 'center'}}>
+                    <Button size="small" variant="contained" color="secondary">
+                    <span className={s.ctabutton}>Start with this model</span>
+                    </Button>
+                    </div>
+                    </Hidden>
             </Link>
             <Spacer height="25px" />
           </Grid>

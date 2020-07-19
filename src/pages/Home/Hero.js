@@ -21,10 +21,10 @@ import Vision from '../../assets/hero.png'
           </video> */}
        <div {...css(styles.coverOpacity)}></div>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
-          <Grid item md={5} xs={10}>
+          <Grid item md={5} sm={6} xs={10}>
             <img src={Vision} style={{maxWidth: '100%'}} />
           </Grid>
-            <Grid item md={5} xs={10} style={{textAlign: 'left'}}>
+            <Grid item md={5} sm={6} xs={10} style={{textAlign: 'left'}}>
                    <h1  className={s.header} >
                    Robust deployment <br/>for computer vision
                     </h1>
