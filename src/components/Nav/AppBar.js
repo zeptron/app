@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
@@ -206,7 +206,7 @@ export default function SwipeableTemporaryDrawer(props) {
             style={{backgroundColor: 'rgb(37, 51, 55)'}}
           >
             <div style={{textAlign: 'left', margin: '20px 20px'}}>
-              <img src={Logo} style={{maxWidth: '50%'}} />
+              <Link to="/"><img src={Logo} style={{maxWidth: '50%'}} /></Link>
             </div>
             {list(anchor)}
           </SwipeableDrawer>

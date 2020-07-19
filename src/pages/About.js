@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Button, Grid} from '@material-ui/core'
+import {Box, Button, Grid, Hidden} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import Spacer from 'react-spacer'
 
@@ -32,11 +32,18 @@ import Spacer from 'react-spacer'
             <Box>
             <Grid container justify="center" alignItems="center" >
                 <Grid item xs={12}>
-                 <div style={{textAlign: 'center'}}>
-                <Button size="large" variant="contained" color="secondary" href="/auth">
-                <span className={s.ctabutton}>Start Now for FREE</span>
-              </Button>
-              </div>
+                <Hidden xsDown>
+                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <span className={s.ctabutton}>Start Now</span>
+                    </Button>
+                    </Hidden>
+                    <Hidden smUp>
+                    <div style={{textAlign: 'center'}}>
+                    <Button size="small" variant="contained" color="secondary" href="/auth">
+                    <span className={s.ctabutton}>Start Now</span>
+                    </Button>
+                    </div>
+                    </Hidden>
               </Grid>
               </Grid>
               <Spacer height="80px"/>
@@ -56,11 +63,18 @@ import Spacer from 'react-spacer'
              
               </Grid>
                 <Spacer height="80px"/>
-                <div style={{textAlign: 'center'}}>
-                <Button size="large" variant="contained" color="secondary" href="/auth">
-                <span className={s.ctabutton}>Start Now</span>
-                </Button>
-                </div>
+                <Hidden xsDown>
+                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <span className={s.ctabutton}>Start Now</span>
+                    </Button>
+                    </Hidden>
+                    <Hidden smUp>
+                    <div style={{textAlign: 'center'}}>
+                    <Button size="small" variant="contained" color="secondary" href="/auth">
+                    <span className={s.ctabutton}>Start Now</span>
+                    </Button>
+                    </div>
+                    </Hidden>
                 <Spacer height="80px"/>
               </Grid>
               </Grid>
