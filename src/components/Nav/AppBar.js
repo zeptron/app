@@ -88,11 +88,12 @@ export default function SwipeableTemporaryDrawer(props) {
   //   route: "/faq",
   //   icon: ""
   // },
+  // {
+  //   name : "Contact",
+  //   route: "/contact",
+  //   icon: ""
+  // },
   {
-    name : "Contact",
-    route: "/contact",
-    icon: ""
-  },{
     name : "Login",
     route: "/auth",
     icon: ''

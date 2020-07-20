@@ -37,17 +37,18 @@ import Spacer from 'react-spacer'
               <Grid item md={8} sm={10} xs={12}>
               <Grid container justify="center" spacing={spacing}>
               
-              <Grid item md={6}>
+              {/* <Grid item md={6}>
                 <h3 className={s.subheader} >Australia</h3>
                 <p className={s.subheader}><a style={{color: 'black'}} href="mailto:sydney@zeptron.co">sydney@zeptron.co</a></p>
                 <p className={s.subheader}>354 Darling Street <br/> Balmain, NSW<br/> 2158 Australia</p>
 
               </Grid>
-              
+               */}
               <Grid item md={6}>
-                <h3 className={s.subheader} >New Zealand</h3>
+                {/* <h3 className={s.subheader} >New Zealand</h3> */}
                 <p className={s.subheader}><a style={{color: 'black'}} href="mailto:auckland@zeptron.co">auckland@zeptron.co</a></p>
-                <p className={s.subheader}>430 Queen Street <br/> Auckland Central<br/> 1010 New Zealand</p>
+                <p className={s.subheader}><a style={{color: 'black'}} href="mailto:sydney@zeptron.co">sydney@zeptron.co</a></p>=
+                <p className={s.subheader}>Level 2, 11 York Street<br/>Sydney, NSW 2000</p>
 
               </Grid>
               </Grid>

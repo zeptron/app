@@ -30,14 +30,14 @@ class Home extends React.Component {
             ) : (
             <div>
             <Hero/>
-            <Below/>
-            <Provision/>
+            {/* <Below/> */}
+            {/* <Provision/>
             <Configure/>
-            <Stream/>
+            <Stream/> */}
             {/* <Results/> */}
             {/* <Privacy/> */}
             {/* <Pricing/> */}
-            <Start/>
+            {/* <Start/> */}
             </div>
           )
         }
