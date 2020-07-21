@@ -484,7 +484,6 @@ const ConfigurationSteps = ({ match }) => {
       updateModelConfigQuery.fetch({
         input: {
           id: data?.data?.createModelConfig?.id,
-          instanceState: true,
           publicIP,
           privateIP,
           EC2instanceID,
