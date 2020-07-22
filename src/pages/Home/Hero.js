@@ -15,10 +15,10 @@ import Vision from '../../assets/hero.png'
 
    return (
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
-          {/* <video loop autoPlay {...css(styles.vidDiv)}>
-            <source src={require("./../../assets/herobg.mp4")} type="video/mp4" />
+          <video loop autoPlay {...css(styles.vidDiv)}>
+            <source src={require("./../../assets/vid.mp4")} type="video/mp4" />
             Your browser does not support the video tag.
-          </video> */}
+          </video>
        <div {...css(styles.coverOpacity)}></div>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
           <Grid item md={5} sm={6} xs={10}>
@@ -26,10 +26,10 @@ import Vision from '../../assets/hero.png'
           </Grid>
             <Grid item md={5} sm={6} xs={10}>
                    <h1  className={s.header} >
-                   Robust deployment <br/>for computer vision
+                   Fast deployment <br/>for computer vision
                     </h1>
                     <p className={s.subheader} >
-                      Configure and deploy computer vision models with streaming video in less than 2 minutes
+                      Configure and deploy computer vision with streaming video in less than 2 minutes
                     </p>
                     <Spacer height="20px"/>
                     <Hidden xsDown >
