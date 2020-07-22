@@ -26,7 +26,7 @@ import Vision from '../../assets/hero.png'
           </Grid>
             <Grid item md={5} sm={6} xs={10}>
                    <h1  className={s.header} >
-                   Fast deployment <br/>for computer vision
+                   Precise deployment <br/>for computer vision
                     </h1>
                     <p className={s.subheader} >
                       Configure and deploy computer vision with streaming video in less than 2 minutes
