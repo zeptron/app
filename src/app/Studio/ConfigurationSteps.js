@@ -459,6 +459,9 @@ const ConfigurationSteps = ({ match }) => {
       const stack = await AWSCloudFormation.createStack({
         StackName: `stack${data?.data?.createModelConfig?.id}`,
         TemplateBody: template,
+        Capabilities: [ 
+          `CAPABILITY_IAM`
+      ],
         Parameters: [
           {
             ParameterKey: 'tableName',

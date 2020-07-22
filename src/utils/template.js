@@ -14,17 +14,10 @@ Parameters:
   tableName:
     Type: String
 Resources:
-  RootInstanceProfile:
-    Type: 'AWS::IAM::InstanceProfile'
-    Properties:
-      Path: /
-      Roles:
-        -
-          "AmazonSSMRoleForInstancesQuickSetup"
   EC2I2VQQ4:
     Type: 'AWS::EC2::Instance'
     Properties:
-      IamInstanceProfile: Ref! RootInstanceProfile
+      IamInstanceProfile: "AmazonSSMRoleForInstancesQuickSetup"
       ImageId: ami-0192d76f155f6c406
       InstanceType: t2.micro
       UserData:
