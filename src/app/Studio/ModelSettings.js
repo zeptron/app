@@ -67,7 +67,8 @@ export const ModelSettings = ({ modelConfig }) => {
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                      {modelConfig.instanceName}
+                      <Box component="div" display="inline"><FiberManualRecordIcon style={getStatus(modelConfig.instanceState)}/></Box>
+                      <Box component="div" display="inline" className={classes.statusText}>{modelConfig.instanceName}</Box>
                     </Typography>
                     <Spacer height="10px" />
                     <Typography
@@ -84,15 +85,8 @@ export const ModelSettings = ({ modelConfig }) => {
                     >
                       {modelConfig.instancePod}
                     </Typography>
+                    
                     <Spacer height="10px" />
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      <Box component="div" display="inline"><FiberManualRecordIcon style={getStatus(modelConfig.instanceState)}/></Box>
-                      <Box component="div" display="inline" className={classes.statusText}>State: {modelConfig.instanceState.toString()}</Box>
-                    </Typography>
                   </CardContent>
                   <Button href={`/studio/${modelConfig.id}`}>View</Button>
                 </CardActionArea>
