@@ -168,8 +168,8 @@ export const SingleInstance = ({ modelConfig }) => {
             <h2>Live Stream</h2>
             <Grid container alignItems="center" justify="center">
               <img
-                alt="stream"
-                src="https://via.placeholder.com/640x460.png?text=Live+Stream"
+                alt="Stream loading"
+                src={`http://${modelConfig.publicIP}:8000/video_feed`}
                 style={{ maxWidth: '90%' }}
               />
             </Grid>
