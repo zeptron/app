@@ -7,6 +7,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import green from "@material-ui/core/colors/green";
 import { Button, Grid, Card } from "@material-ui/core";
+import Box from '@material-ui/core/Box';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import { makeStyles } from "@material-ui/core/styles";
 import Spacer from "react-spacer";
 
@@ -32,11 +34,21 @@ const useStyles = makeStyles((theme) => ({
   control: {
     padding: theme.spacing(4),
   },
+  statusText: {
+    verticalAlign: "top",
+    lineHeight: "25px",
+  },
 }));
 
 export const ModelSettings = ({ modelConfig }) => {
   const classes = useStyles();
 
+  const getStatus = (value) => {
+    if(value)
+    return {color: "green"}
+    else 
+    return {color: "red"}
+  } 
   return (
     <div>
           <Grid item md={4}>
@@ -55,7 +67,8 @@ export const ModelSettings = ({ modelConfig }) => {
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                      {modelConfig.instanceName}
+                      <Box component="div" display="inline"><FiberManualRecordIcon style={getStatus(modelConfig.instanceState)}/></Box>
+                      <Box component="div" display="inline" className={classes.statusText}>{modelConfig.instanceName}</Box>
                     </Typography>
                     <Spacer height="10px" />
                     <Typography
@@ -72,14 +85,8 @@ export const ModelSettings = ({ modelConfig }) => {
                     >
                       {modelConfig.instancePod}
                     </Typography>
+                    
                     <Spacer height="10px" />
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      State: {modelConfig.instanceState.toString()}
-                    </Typography>
                   </CardContent>
                   <Button href={`/studio/${modelConfig.id}`}>View</Button>
                 </CardActionArea>
