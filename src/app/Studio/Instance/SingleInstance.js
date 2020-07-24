@@ -102,7 +102,7 @@ export const SingleInstance = ({ modelConfig }) => {
         CloudWatchOutputEnabled: true
       },
       Comment: 'run instance',
-      InstanceIds: ['i-030889e77bb1d7b94'],
+      InstanceIds: [`${modelConfig.EC2instanceID}`],
       NotificationConfig: {
         NotificationArn: process.env.REACT_APP_AWS_NOTIFICATION_ARN,
         NotificationEvents: ['All'],
@@ -183,16 +183,9 @@ export const SingleInstance = ({ modelConfig }) => {
               )}
             </div>
 
-            <Box bgcolor="primary.main" color="primary.contrastText" p={4}>
+            <Box  p={4}>
               <Grid container alignItems="center" justify="center">
-                <Grid item md={2}>
-                  <h4 className={s.modelHeader}>Model Name</h4>
-                  <h4 className={s.modelDetails}>{modelConfig.model.name}</h4>
-                  <h4 className={s.modelHeader}>Location</h4>
-                  <h4 className={s.modelDetails}>{modelConfig.instanceLocation}</h4>
-                  <h4 className={s.modelHeader}>IP Address</h4>
-                  <h4 className={s.modelDetails}>{modelConfig.publicIP}</h4>
-                </Grid>
+               
 
                 <Grid item md={8}>
                   <h2 style={{ textTransform: 'uppercase' }}>Live Stream</h2>
