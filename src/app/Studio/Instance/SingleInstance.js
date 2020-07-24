@@ -34,7 +34,6 @@ export const SingleInstance = ({ modelConfig }) => {
     });
 
     const AWSEC2 = new AWS.EC2();
-  
 
     setLoadingInstanceState(true);
 
@@ -94,6 +93,8 @@ export const SingleInstance = ({ modelConfig }) => {
 
     const SSM = new AWS.SSM();
 
+    setLoadingRunInstance(true);
+
     const params = {
       DocumentName: 'AWS-RunShellScript',
       CloudWatchOutputConfig: {
@@ -114,15 +115,11 @@ export const SingleInstance = ({ modelConfig }) => {
       },
       ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
     };
-    SSM.sendCommand(params, function(err, data) {
-      if (err) console.log(err, err.stack); // an error occurred
-      else     console.log(data);           // successful response
+
+    SSM.sendCommand(params, (err, data) => {
+      setLoadingRunInstance(false);
     });
-
-    setLoadingRunInstance(true);
   };
-
-
 
   return (
     <div>
@@ -146,6 +143,7 @@ export const SingleInstance = ({ modelConfig }) => {
                           checked={instanceState}
                           onChange={switchInstanceState}
                           name="Started"
+                          disabled={loadingInstanceState}
                         />
                       }
                       label="Power"
@@ -185,16 +183,36 @@ export const SingleInstance = ({ modelConfig }) => {
               )}
             </div>
 
-            <Spacer height="50px"/>
+            <Box bgcolor="primary.main" color="primary.contrastText" p={4}>
+              <Grid container alignItems="center" justify="center">
+                <Grid item md={2}>
+                  <h4 className={s.modelHeader}>Model Name</h4>
+                  <h4 className={s.modelDetails}>{modelConfig.model.name}</h4>
+                  <h4 className={s.modelHeader}>Location</h4>
+                  <h4 className={s.modelDetails}>{modelConfig.instanceLocation}</h4>
+                  <h4 className={s.modelHeader}>IP Address</h4>
+                  <h4 className={s.modelDetails}>{modelConfig.publicIP}</h4>
+                </Grid>
 
-            <h2>Live Stream</h2>
-            <Grid container alignItems="center" justify="center">
-              <img
-                alt="Stream loading"
-                src={`http://${modelConfig.publicIP}:8000/video_feed`}
-                style={{ maxWidth: '90%' }}
-              />
-            </Grid>
+                <Grid item md={8}>
+                  <h2 style={{ textTransform: 'uppercase' }}>Live Stream</h2>
+                  <Grid container alignItems="center" justify="center">
+
+                    <Spacer height="50px"/>
+
+                    <h2>Live Stream</h2>
+                    <Grid container alignItems="center" justify="center">
+                      <img
+                        alt="Stream loading"
+                        src={`http://${modelConfig.publicIP}:8000/video_feed`}
+                        style={{ maxWidth: '90%' }}
+                      />
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Spacer height="100px"/>
+              </Grid>
+            </Box>
             <p>Comes from {modelConfig.publicIP}</p>
           </Grid>
         </Grid>

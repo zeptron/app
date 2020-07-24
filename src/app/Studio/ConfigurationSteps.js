@@ -100,7 +100,7 @@ const ConfigurationSteps = ({ match }) => {
     const numbers = {};
     const items = classesQuery.data?.listClasss.items ?? [];
 
-    items.forEach(({name, number}) => numbers[name] = number);
+    items.forEach(({ name, number }) => numbers[name] = number);
 
     return numbers;
   }, [classesQuery.data?.listClasss.items]);
@@ -459,7 +459,7 @@ const ConfigurationSteps = ({ match }) => {
       const stack = await AWSCloudFormation.createStack({
         StackName: `stack${data?.data?.createModelConfig?.id}`,
         TemplateBody: template,
-        Capabilities: [ 
+        Capabilities: [
           `CAPABILITY_IAM`
       ],
         Parameters: [
@@ -480,9 +480,9 @@ const ConfigurationSteps = ({ match }) => {
         }).promise();
       }
 
-      const publicIP = stackDescription?.Stacks[0].Outputs.find(({OutputKey}) => OutputKey === 'EC2I2VQQ4PublicIP')?.OutputValue;
-      const privateIP = stackDescription?.Stacks[0].Outputs.find(({OutputKey}) => OutputKey === 'EC2I2VQQ4PrivateIP')?.OutputValue;
-      const EC2instanceID = stackDescription?.Stacks[0].Outputs.find(({OutputKey}) => OutputKey === 'EC2I2VQQ4ID')?.OutputValue;
+      const publicIP = stackDescription?.Stacks[0].Outputs.find(({ OutputKey }) => OutputKey === 'EC2I2VQQ4PublicIP')?.OutputValue;
+      const privateIP = stackDescription?.Stacks[0].Outputs.find(({ OutputKey }) => OutputKey === 'EC2I2VQQ4PrivateIP')?.OutputValue;
+      const EC2instanceID = stackDescription?.Stacks[0].Outputs.find(({ OutputKey }) => OutputKey === 'EC2I2VQQ4ID')?.OutputValue;
 
       updateModelConfigQuery.fetch({
         input: {
@@ -490,6 +490,7 @@ const ConfigurationSteps = ({ match }) => {
           publicIP,
           privateIP,
           EC2instanceID,
+          instanceState: true,
           tableName: `tableName${data?.data?.createModelConfig?.id}`,
         }
       });
