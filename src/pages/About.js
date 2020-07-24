@@ -56,7 +56,7 @@ import Spacer from 'react-spacer'
               <Grid container alignItems="center" >
               <Spacer height="80px"/>
              
-              <p className={`${s.subheader} ${s.center}`}>As computer vision enthusiasts ourselves, we created Zeptron as an an easy, scalable, and robust way to deploy computer vision applications </p>
+              {/* <p className={`${s.subheader} ${s.center}`}>As computer vision enthusiasts ourselves, we created Zeptron as an an easy, scalable, and robust way to deploy computer vision applications </p> */}
               <p className={`${s.subheader} ${s.center}`}>Zeptron works with any model or framework to provision, configure, and feed your cloud-based AI</p>
               <p className={`${s.subheader} ${s.center}`}>Configure tracking, get detection alerts through SMS, iOS or Slack, and automatically chart inference results </p>
               <p className={`${s.subheader} ${s.center}`}>Start getting value from computer vision faster with easy, code-free deployment</p>
