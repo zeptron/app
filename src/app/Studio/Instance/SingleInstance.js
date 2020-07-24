@@ -34,6 +34,7 @@ export const SingleInstance = ({ modelConfig }) => {
     });
 
     const AWSEC2 = new AWS.EC2();
+  
 
     setLoadingInstanceState(true);
 
@@ -91,16 +92,37 @@ export const SingleInstance = ({ modelConfig }) => {
       secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
     });
 
-    const AWSEC2 = new AWS.EC2();
+    const SSM = new AWS.SSM();
+
+    const params = {
+      DocumentName: 'AWS-RunShellScript',
+      CloudWatchOutputConfig: {
+        CloudWatchLogGroupName: 'ZeptronAPP',
+        CloudWatchOutputEnabled: true
+      },
+      Comment: 'run instance',
+      InstanceIds: ['i-030889e77bb1d7b94'],
+      NotificationConfig: {
+        NotificationArn: process.env.REACT_APP_AWS_NOTIFICATION_ARN,
+        NotificationEvents: ['All'],
+        NotificationType: 'Command'
+      },
+      Parameters: {
+        'commands': [
+          `cd /home/ubuntu/ && python3 testing.py --tableName=${modelConfig.EC2instanceID}`,
+        ],
+      },
+      ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
+    };
+    SSM.sendCommand(params, function(err, data) {
+      if (err) console.log(err, err.stack); // an error occurred
+      else     console.log(data);           // successful response
+    });
 
     setLoadingRunInstance(true);
-
-    AWSEC2.runInstances({
-      // TODO 21.07.2020 yelysei: provide parameters
-    }, (err, data) => {
-      setLoadingRunInstance(false);
-    });
   };
+
+
 
   return (
     <div>
