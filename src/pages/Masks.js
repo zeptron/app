@@ -26,6 +26,9 @@ export default function Masks(){
             </Grid>
             <Spacer height="100px"/>
         </Box>
+        <Box>
+            
+        </Box>
        
          
         </div>

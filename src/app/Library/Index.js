@@ -40,7 +40,7 @@ export default function Library() {
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
         <h1 className={`${s.header} ${s.center}`}>
-          Model Library
+          Library
         </h1>
       </Box>
 

@@ -67,26 +67,29 @@ export default function SwipeableTemporaryDrawer(props) {
     name : "Account",
     route: "/account",
     icon: <AccountBoxIcon style={{color: "#fff"}}/>
-  },{
-    name : "Billing",
-    route: "/billing",
-    icon: <AccountBalanceIcon style={{color: "#fff"}}/>
-  },{
+  }
+  // ,{
+  //   name : "Billing",
+  //   route: "/billing",
+  //   icon: <AccountBalanceIcon style={{color: "#fff"}}/>
+  // }
+  ,{
     name : "Help",
     route: "https://zeptron.github.io",
     icon: <HelpOutlineIcon style={{color: "#fff"}}/>
   }
 ]
 
-  const items = [{
-    name : "About",
-    route: "/about",
-    icon: ''
-  },
-  // {
-  //   name :"",
-  //   route: "/faq",
-  //   icon: ""
+  const items = [
+    // {
+    //   name :"Models",
+    //   route: "/faq",
+    //   icon: ""
+    // },
+  //   {
+  //   name : "About",
+  //   route: "/about",
+  //   icon: ''
   // },
   // {
   //   name : "Contact",

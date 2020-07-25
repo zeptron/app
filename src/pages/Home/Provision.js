@@ -3,6 +3,9 @@ import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Provision from '../../assets/provision.png'
+import Brain from './animations/brain.js'
+import Cloud from './animations/data.js'
+import Edge from './animations/results.js'
 
 
 
@@ -11,24 +14,36 @@ import Provision from '../../assets/provision.png'
  
    return (
 
-          <Box p={2} >
+          <Box p={2}>
           <Grid container justify="center" spacing={spacing}>
-            <Grid item md={9} sm={10} xs={10}>
+            <Grid item md={10} sm={10} xs={10}>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Grid item md={6} xs={12}>
-            <Spacer height="40px"/>
-              <h2 className={s.header} >
-              One-touch deploy 
+            <Spacer height="80px"/>
+            <Brain/>
+              <Spacer height="20px"/>
+              <h2 className={`${s.header} ${s.center}`} >
+              Stay smart <br/>with resources
               </h2>
-               <p className={s.subheader} >Automatically provision resources based on your model's requirements</p>
-              <Spacer height="40px"/>
+              </Grid>
+              </Grid>
+              <Spacer height="25px"/>
+              <Grid container alignItems="center" justify="center" spacing={spacing}>
+            <Grid item md={6} xs={12}>
+              <Cloud/>
+            <p className={`${s.subheader} ${s.center}`}><strong>Cloud</strong></p>
+              <p className={`${s.subheader} ${s.center}`}>Scale efficiently<br/> with no up-front cost</p>
+              
             </Grid> 
             <Grid item md={6} xs={12}>
-            <img alt="provision AI models" style={{maxWidth: '100%'}} src={Provision} />
+              <Edge/>
+            <p className={`${s.subheader} ${s.center}`}><strong>Edge</strong></p>
+              <p className={`${s.subheader} ${s.center}`}>Invest in hardware<br/> and get consistent results</p>
+              
+            </Grid> 
             </Grid>
-            </Grid>
-            <Spacer height="80px"/>
-            </Grid>
+             <Spacer height="80px"/>
+            </Grid> 
             </Grid>
             </Box>
          

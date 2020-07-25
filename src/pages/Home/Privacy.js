@@ -1,7 +1,8 @@
 import React from 'react';
-import {Box, Grid} from '@material-ui/core'
+import {Box, Grid, Hidden} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
+import Image from '../../assets/cctv.jpg'
 
 
   export default function Hero() {
@@ -12,20 +13,29 @@ import Spacer from 'react-spacer'
 
           <Box p={2} style={{backgroundColor: '#e0e4e0'}}>
           <Grid container justify="center" spacing={spacing}>
-            <Grid item md={109} sm={10} xs={12}>
+            <Grid item md={10} sm={10} xs={12}>
             <Spacer height="40px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
-            
+            <Hidden smUp>
+            <Grid item md={6} xs={12}>
+            <img style={{maxWidth: '100%'}} src={Image}/>
+            </Grid> 
+            </Hidden>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Built-in privacy controls
+              Connect existing streams to AI
               </h2>
-              <p className={s.subheader} style={{textAlign: 'left'}}>Streamed footage is kept on ephemeral storage and destroyed after inference</p>
-              <Spacer height="20px"/>
-              <Spacer height="40px"/>
+              <p className={s.subheader} >
+                Point cameras to your model and get streaming video and data back
+               </p>  
+              <Spacer height="60px"/>
             </Grid> 
-           
+            <Hidden xsDown>
+            <Grid item md={6} xs={12}>
+            <img style={{maxWidth: '100%'}} src={Image}/>
+            </Grid> 
+            </Hidden>
             </Grid>
             <Spacer height="80px"/>
             </Grid>
