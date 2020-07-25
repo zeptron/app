@@ -205,6 +205,7 @@ export const getModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
+      tableName
       ModelResultsID
       ModelResults {
         id
@@ -294,6 +295,7 @@ export const listModelConfigs = /* GraphQL */ `
         port
         EC2instanceID
         instanceState
+        tableName
         ModelResultsID
         ModelResults {
           id
