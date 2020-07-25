@@ -17,6 +17,7 @@ export const createModel = /* GraphQL */ `
       rating
       type
       video
+      ami
       class {
         id
         modelID
@@ -33,6 +34,7 @@ export const createModel = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       modelConfig {
@@ -46,6 +48,7 @@ export const createModel = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -63,6 +66,7 @@ export const createModel = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -84,6 +88,7 @@ export const updateModel = /* GraphQL */ `
       rating
       type
       video
+      ami
       class {
         id
         modelID
@@ -100,6 +105,7 @@ export const updateModel = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       modelConfig {
@@ -113,6 +119,7 @@ export const updateModel = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -130,6 +137,7 @@ export const updateModel = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -151,6 +159,7 @@ export const deleteModel = /* GraphQL */ `
       rating
       type
       video
+      ami
       class {
         id
         modelID
@@ -167,6 +176,7 @@ export const deleteModel = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       modelConfig {
@@ -180,6 +190,7 @@ export const deleteModel = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -197,6 +208,7 @@ export const deleteModel = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -223,6 +235,7 @@ export const createClass = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -240,6 +253,7 @@ export const createClass = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -266,6 +280,7 @@ export const updateClass = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -283,6 +298,7 @@ export const updateClass = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -309,6 +325,7 @@ export const deleteClass = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -326,6 +343,7 @@ export const deleteClass = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -370,6 +388,7 @@ export const createModelConfig = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
         classID
         class {
@@ -393,6 +412,7 @@ export const createModelConfig = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -410,6 +430,7 @@ export const createModelConfig = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -454,6 +475,7 @@ export const updateModelConfig = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
         classID
         class {
@@ -477,6 +499,7 @@ export const updateModelConfig = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -494,6 +517,7 @@ export const updateModelConfig = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -538,6 +562,7 @@ export const deleteModelConfig = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
         classID
         class {
@@ -561,6 +586,7 @@ export const deleteModelConfig = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -578,6 +604,7 @@ export const deleteModelConfig = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -607,6 +634,7 @@ export const createModelUsage = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -624,6 +652,7 @@ export const createModelUsage = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -653,6 +682,7 @@ export const updateModelUsage = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -670,6 +700,7 @@ export const updateModelUsage = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -699,6 +730,7 @@ export const deleteModelUsage = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -716,6 +748,7 @@ export const deleteModelUsage = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -740,6 +773,7 @@ export const createModelResults = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -757,6 +791,7 @@ export const createModelResults = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       classID
@@ -776,6 +811,7 @@ export const createModelResults = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       insertedAt
@@ -803,6 +839,7 @@ export const updateModelResults = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -820,6 +857,7 @@ export const updateModelResults = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       classID
@@ -839,6 +877,7 @@ export const updateModelResults = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       insertedAt
@@ -866,6 +905,7 @@ export const deleteModelResults = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -883,6 +923,7 @@ export const deleteModelResults = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       classID
@@ -902,6 +943,7 @@ export const deleteModelResults = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       insertedAt

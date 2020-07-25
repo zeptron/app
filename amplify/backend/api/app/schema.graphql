@@ -9,6 +9,7 @@ type Model @model {
   rating: Int!
   type: String!
   video: String!
+  ami: String!
   class: Class @connection
   modelConfig: Model @connection
 }

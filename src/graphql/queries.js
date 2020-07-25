@@ -14,6 +14,7 @@ export const getModel = /* GraphQL */ `
       rating
       type
       video
+      ami
       class {
         id
         modelID
@@ -30,6 +31,7 @@ export const getModel = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       modelConfig {
@@ -43,6 +45,7 @@ export const getModel = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -60,6 +63,7 @@ export const getModel = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -83,6 +87,7 @@ export const listModels = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -100,6 +105,7 @@ export const listModels = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       nextToken
@@ -124,6 +130,7 @@ export const getClass = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -141,6 +148,7 @@ export const getClass = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -169,6 +177,7 @@ export const listClasss = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       nextToken
@@ -211,6 +220,7 @@ export const getModelConfig = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
         classID
         class {
@@ -234,6 +244,7 @@ export const getModelConfig = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -251,6 +262,7 @@ export const getModelConfig = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -302,6 +314,7 @@ export const listModelConfigs = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       nextToken
@@ -329,6 +342,7 @@ export const getModelUsage = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -346,6 +360,7 @@ export const getModelUsage = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
     }
@@ -377,6 +392,7 @@ export const listModelUsages = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       nextToken
@@ -399,6 +415,7 @@ export const getModelResults = /* GraphQL */ `
         rating
         type
         video
+        ami
         class {
           id
           modelID
@@ -416,6 +433,7 @@ export const getModelResults = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       classID
@@ -435,6 +453,7 @@ export const getModelResults = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
       }
       insertedAt
@@ -464,6 +483,7 @@ export const listModelResultss = /* GraphQL */ `
           rating
           type
           video
+          ami
         }
         classID
         class {
