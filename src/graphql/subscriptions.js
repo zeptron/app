@@ -352,7 +352,10 @@ export const onCreateModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      tableName
+      image
+      directory
+      virtualenv
+      command
       ModelResultsID
       ModelResults {
         id
@@ -437,7 +440,10 @@ export const onUpdateModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      tableName
+      image
+      directory
+      virtualenv
+      command
       ModelResultsID
       ModelResults {
         id
@@ -522,7 +528,10 @@ export const onDeleteModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      tableName
+      image
+      directory
+      virtualenv
+      command
       ModelResultsID
       ModelResults {
         id

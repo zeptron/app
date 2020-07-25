@@ -41,7 +41,10 @@ type modelConfig @model  {
   port: String!
   EC2instanceID: String!
   instanceState: Boolean!
-  tableName: String!
+  image: String!
+  directory: String! 
+  virtualenv: String!
+  command: String!
   ModelResultsID: ID!
   ModelResults: ModelResults @connection(fields: ["ModelResultsID"])
   model: Model @connection(fields: ["modelID"])
