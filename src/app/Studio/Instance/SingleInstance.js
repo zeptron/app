@@ -110,7 +110,7 @@ export const SingleInstance = ({ modelConfig }) => {
       },
       Parameters: {
         'commands': [
-          `cd /home/ubuntu/ && python3 testing.py --tableName=${modelConfig.EC2instanceID}`,
+          `cd /home/ubuntu/FairMOT/src && workon fairmot &&  python count_fairMOT.py --arch=dla_34 --load_model=./model/all_dla34.pth --tableName=${modelConfig.tableName}`,
         ],
       },
       ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
