@@ -4,6 +4,7 @@ import animation from './Brain.json'
  
 const Brain = () => (
   <Lottie
+    width='200px'
     options={{
       animationData: animation
     }}

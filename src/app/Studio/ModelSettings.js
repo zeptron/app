@@ -45,7 +45,7 @@ export const ModelSettings = ({ modelConfig }) => {
 
   const getStatus = (value) => {
     if(value)
-    return {color: "green"}
+    return {color: "limegreen"}
     else 
     return {color: "red"}
   } 
@@ -67,7 +67,7 @@ export const ModelSettings = ({ modelConfig }) => {
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                      <Box component="div" display="inline"><FiberManualRecordIcon style={getStatus(modelConfig.instanceState)}/></Box>
+                      <Box style={{marginRight: 5}} component="div" display="inline"><FiberManualRecordIcon style={getStatus(modelConfig.instanceState)}/></Box>
                       <Box component="div" display="inline" className={classes.statusText}>{modelConfig.instanceName}</Box>
                     </Typography>
                     <Spacer height="10px" />

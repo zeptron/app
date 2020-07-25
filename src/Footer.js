@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <Box bgcolor="primary.main" color="primary.contrastText" p={4}>
+    <Box style={{borderTop: '1px solid #494848'}} bgcolor="primary.main" color="primary.contrastText" p={4}>
       <Spacer height="40px" />
       <Grid container alignItems="center" justify="center">
         <Grid item md={8}>
@@ -24,9 +24,9 @@ export default function Footer() {
             <Grid item xs={12}>
               <Spacer height="40px" />
               <div {...css(styles.navContainer)}>
-                <Link to="/about" {...css(styles.link)}>
+                {/* <Link to="/about" {...css(styles.link)}>
                   <p className={s.navItemF}>About</p>
-                </Link>
+                </Link> */}
                 <Link to="/contact" {...css(styles.link)}>
                   <p className={s.navItemF}>Contact</p>
                 </Link>

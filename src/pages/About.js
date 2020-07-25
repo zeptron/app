@@ -11,21 +11,16 @@ import Spacer from 'react-spacer'
             <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
                 <Spacer height="10px"/>
                 <Grid container alignItems="center" justify="center">
-                   <Grid item md={8} xs={12}>
+                   <Grid item md={4} xs={12}>
                    <Spacer height="100px"/>
                     <h1  className={`${s.header} ${s.center}`}>
-                        Deploy computer vision solutions in minutes
+                        Cut deploy time to 2 minutes
                     </h1>
                     </Grid>
                     </Grid>
 
             <Spacer height="30px"/>
-            <Grid container alignItems="center" justify="center">
-                   <Grid item md={8} xs={12}>
-                   <p style={{color: 'white'}} className={`${s.subheader} ${s.center}`}>Make your computer vision models useful with the tools and features you need to deploy them in the field in minutes</p>
-
-                   </Grid>
-               </Grid>
+          
 
             <Spacer height="60px"/>
            
@@ -57,11 +52,9 @@ import Spacer from 'react-spacer'
               <Spacer height="80px"/>
              
               {/* <p className={`${s.subheader} ${s.center}`}>As computer vision enthusiasts ourselves, we created Zeptron as an an easy, scalable, and robust way to deploy computer vision applications </p> */}
-              <p className={`${s.subheader} ${s.center}`}>Zeptron works with any model or framework to provision, configure, and feed your cloud-based AI</p>
-              <p className={`${s.subheader} ${s.center}`}>Configure tracking, get detection alerts through SMS, iOS or Slack, and automatically chart inference results </p>
-              <p className={`${s.subheader} ${s.center}`}>Start getting value from computer vision faster with easy, code-free deployment</p>
-             
-              </Grid>
+              <p className={`${s.subheader} ${s.center}`}>Zeptron was created to make it easier to use AI.</p>
+              <p className={`${s.subheader} ${s.center}`}>When there was no large-scale way to deploy our model, we made one.</p>
+             </Grid>
                 <Spacer height="80px"/>
                 <Hidden xsDown>
                     <Button size="large" variant="contained" color="secondary" href="/auth">

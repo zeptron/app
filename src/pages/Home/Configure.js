@@ -2,8 +2,9 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Touch from '../../assets/touch.png'
+import Touch from '../../assets/iPab.png'
 import Hidden from '@material-ui/core/Hidden';
+import Results from './animations/results.js'
 
 
   export default function Hero() {
@@ -15,27 +16,20 @@ import Hidden from '@material-ui/core/Hidden';
           <Box p={2} style={{backgroundColor: '#e0e4e0'}}>
           <Grid container justify="center" spacing={spacing}>
             <Grid item md={109} sm={10} xs={10}>
-            <Spacer height="40px"/>
+            <Spacer height="80px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
-             <Hidden smDown>
-            <Grid item md={5} xs={12}>
-              <img style={{maxWidth: '100%'}} src={Touch}/>
-              </Grid>
-              </Hidden>
-            <Grid item md={6} xs={12}>
-            <Spacer height="40px"/>
-              <h2 className={s.header} >
-              Set up tracking and notifications
+             <Grid item md={6} xs={12}>
+             <Spacer height="20px"/>
+             <img src={Touch} style={{maxWidth: '100%'}}/>
+             {/* <Results /> */}
+             <Spacer height="20px"/>
+              <h2 className={`${s.header} ${s.center}`} >
+              See results immediately
               </h2>
-               <p className={s.subheader} >Configure tracking, directional counting, and detection alerts through SMS or Slack</p>
+               <p className={`${s.subheader} ${s.center}`} >Get a live inference feed, notifications, and results charted in real time</p>
               <Spacer height="20px"/>
               <Spacer height="40px"/>
             </Grid> 
-            <Hidden mdUp>
-            <Grid item md={6} xs={12}>
-              <img style={{maxWidth: '100%'}} src={Touch}/>
-              </Grid>
-              </Hidden>
             </Grid>
             <Spacer height="80px"/>
             </Grid>

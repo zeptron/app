@@ -5,7 +5,7 @@ import Spacer from 'react-spacer'
 
 
   export default function About() {
-    const [spacing] = React.useState(8);
+    const [spacing] = React.useState(4);
     
    
    return (
@@ -22,10 +22,7 @@ import Spacer from 'react-spacer'
 
             <Spacer height="30px"/>
             <Grid container alignItems="center" justify="center">
-                   <Grid item md={8} xs={12}>
-                   <p style={{color: 'white'}} className={s.subheader}>Need a new model? Want to use your own AWS resources?</p>
-                  <p style={{color: 'white'}} className={s.subheader}>Send us a message. We'd love to talk</p>
-                   </Grid>
+                   
                </Grid>
 
             <Spacer height="60px"/>
@@ -44,11 +41,11 @@ import Spacer from 'react-spacer'
 
               </Grid>
                */}
-              <Grid item md={6}>
+              <Grid item md={6} >
                 {/* <h3 className={s.subheader} >New Zealand</h3> */}
-                <p className={s.subheader}><a style={{color: 'black'}} href="mailto:auckland@zeptron.co">auckland@zeptron.co</a></p>
-                <p className={s.subheader}><a style={{color: 'black'}} href="mailto:sydney@zeptron.co">sydney@zeptron.co</a></p>=
-                <p className={s.subheader}>Level 2, 11 York Street<br/>Sydney, NSW 2000</p>
+                <p className={s.subheader}>Drop the humans a letter</p>
+                <p className={s.subheader}><a style={{color: 'black'}} href="mailto:hello@zeptron.co">hello@zeptron.co</a></p>
+                <p className={s.subheader}>Level 4, 11 York Street<br/>Sydney, NSW 2000</p>
 
               </Grid>
               </Grid>
