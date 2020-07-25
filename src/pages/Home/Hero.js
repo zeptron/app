@@ -28,7 +28,7 @@ import Vision from '../../assets/hero.png'
                      in minutes
                     </h1>
                     <p className={`${s.subheader} ${s.center}`} >
-                    Get value out of computer vision with a complete deployment solution
+                    Get value out of computer vision faster with a complete deployment solution
                     </p>
                     <Spacer height="50px"/>
                     <Hidden xsDown >

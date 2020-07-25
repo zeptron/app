@@ -36,7 +36,7 @@ import Cloud from './animations/data.js'
                  <li><strong>4k / 1080p</strong></li>
                  </ul></p>             
                <p className={s.subheader} >
-                Zeptron 3D prints camera bodies in minutes for bespoke applications
+                If our camera bodies don't suit, we can 3d print a bespoke shell in minutes
                </p>  
               <Spacer height="40px"/>
             </Grid> 

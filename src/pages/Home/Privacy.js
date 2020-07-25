@@ -24,10 +24,10 @@ import Image from '../../assets/cctv.jpg'
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Connect existing streams to AI
+              Connect existing video streams
               </h2>
               <p className={s.subheader} >
-                Point cameras to your model and get streaming video and data back
+                Integrate directly with your CCTV system, IP cameras, or wired video hardware
                </p>  
               <Spacer height="60px"/>
             </Grid> 
