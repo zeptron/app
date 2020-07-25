@@ -18,6 +18,10 @@ export const createModel = /* GraphQL */ `
       type
       video
       ami
+      directory
+      virtualenv
+      command
+      instanceSize
       class {
         id
         modelID
@@ -35,6 +39,10 @@ export const createModel = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       modelConfig {
@@ -49,6 +57,10 @@ export const createModel = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -67,6 +79,10 @@ export const createModel = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -89,6 +105,10 @@ export const updateModel = /* GraphQL */ `
       type
       video
       ami
+      directory
+      virtualenv
+      command
+      instanceSize
       class {
         id
         modelID
@@ -106,6 +126,10 @@ export const updateModel = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       modelConfig {
@@ -120,6 +144,10 @@ export const updateModel = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -138,6 +166,10 @@ export const updateModel = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -160,6 +192,10 @@ export const deleteModel = /* GraphQL */ `
       type
       video
       ami
+      directory
+      virtualenv
+      command
+      instanceSize
       class {
         id
         modelID
@@ -177,6 +213,10 @@ export const deleteModel = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       modelConfig {
@@ -191,6 +231,10 @@ export const deleteModel = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -209,6 +253,10 @@ export const deleteModel = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -236,6 +284,10 @@ export const createClass = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -254,6 +306,10 @@ export const createClass = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -281,6 +337,10 @@ export const updateClass = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -299,6 +359,10 @@ export const updateClass = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -326,6 +390,10 @@ export const deleteClass = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -344,6 +412,10 @@ export const deleteClass = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -374,9 +446,6 @@ export const createModelConfig = /* GraphQL */ `
       EC2instanceID
       instanceState
       image
-      directory
-      virtualenv
-      command
       ModelResultsID
       ModelResults {
         id
@@ -393,6 +462,10 @@ export const createModelConfig = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
         classID
         class {
@@ -417,6 +490,10 @@ export const createModelConfig = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -435,6 +512,10 @@ export const createModelConfig = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -465,9 +546,6 @@ export const updateModelConfig = /* GraphQL */ `
       EC2instanceID
       instanceState
       image
-      directory
-      virtualenv
-      command
       ModelResultsID
       ModelResults {
         id
@@ -484,6 +562,10 @@ export const updateModelConfig = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
         classID
         class {
@@ -508,6 +590,10 @@ export const updateModelConfig = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -526,6 +612,10 @@ export const updateModelConfig = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -556,9 +646,6 @@ export const deleteModelConfig = /* GraphQL */ `
       EC2instanceID
       instanceState
       image
-      directory
-      virtualenv
-      command
       ModelResultsID
       ModelResults {
         id
@@ -575,6 +662,10 @@ export const deleteModelConfig = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
         classID
         class {
@@ -599,6 +690,10 @@ export const deleteModelConfig = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -617,6 +712,10 @@ export const deleteModelConfig = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -647,6 +746,10 @@ export const createModelUsage = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -665,6 +768,10 @@ export const createModelUsage = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -695,6 +802,10 @@ export const updateModelUsage = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -713,6 +824,10 @@ export const updateModelUsage = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -743,6 +858,10 @@ export const deleteModelUsage = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -761,6 +880,10 @@ export const deleteModelUsage = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -786,6 +909,10 @@ export const createModelResults = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -804,6 +931,10 @@ export const createModelResults = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       classID
@@ -824,6 +955,10 @@ export const createModelResults = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       insertedAt
@@ -852,6 +987,10 @@ export const updateModelResults = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -870,6 +1009,10 @@ export const updateModelResults = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       classID
@@ -890,6 +1033,10 @@ export const updateModelResults = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       insertedAt
@@ -918,6 +1065,10 @@ export const deleteModelResults = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -936,6 +1087,10 @@ export const deleteModelResults = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       classID
@@ -956,6 +1111,10 @@ export const deleteModelResults = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       insertedAt

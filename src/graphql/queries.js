@@ -15,6 +15,10 @@ export const getModel = /* GraphQL */ `
       type
       video
       ami
+      directory
+      virtualenv
+      command
+      instanceSize
       class {
         id
         modelID
@@ -32,6 +36,10 @@ export const getModel = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       modelConfig {
@@ -46,6 +54,10 @@ export const getModel = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -64,6 +76,10 @@ export const getModel = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -88,6 +104,10 @@ export const listModels = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -106,6 +126,10 @@ export const listModels = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       nextToken
@@ -131,6 +155,10 @@ export const getClass = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -149,6 +177,10 @@ export const getClass = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -178,6 +210,10 @@ export const listClasss = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       nextToken
@@ -206,9 +242,6 @@ export const getModelConfig = /* GraphQL */ `
       EC2instanceID
       instanceState
       image
-      directory
-      virtualenv
-      command
       ModelResultsID
       ModelResults {
         id
@@ -225,6 +258,10 @@ export const getModelConfig = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
         classID
         class {
@@ -249,6 +286,10 @@ export const getModelConfig = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -267,6 +308,10 @@ export const getModelConfig = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -299,9 +344,6 @@ export const listModelConfigs = /* GraphQL */ `
         EC2instanceID
         instanceState
         image
-        directory
-        virtualenv
-        command
         ModelResultsID
         ModelResults {
           id
@@ -323,6 +365,10 @@ export const listModelConfigs = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       nextToken
@@ -351,6 +397,10 @@ export const getModelUsage = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -369,6 +419,10 @@ export const getModelUsage = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
     }
@@ -401,6 +455,10 @@ export const listModelUsages = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       nextToken
@@ -424,6 +482,10 @@ export const getModelResults = /* GraphQL */ `
         type
         video
         ami
+        directory
+        virtualenv
+        command
+        instanceSize
         class {
           id
           modelID
@@ -442,6 +504,10 @@ export const getModelResults = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       classID
@@ -462,6 +528,10 @@ export const getModelResults = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
       }
       insertedAt
@@ -492,6 +562,10 @@ export const listModelResultss = /* GraphQL */ `
           type
           video
           ami
+          directory
+          virtualenv
+          command
+          instanceSize
         }
         classID
         class {

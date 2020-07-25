@@ -10,6 +10,10 @@ type Model @model {
   type: String!
   video: String!
   ami: String!
+  directory: String! 
+  virtualenv: String!
+  command: String!
+  instanceSize: String!
   class: Class @connection
   modelConfig: Model @connection
 }
@@ -42,9 +46,6 @@ type modelConfig @model  {
   EC2instanceID: String!
   instanceState: Boolean!
   image: String!
-  directory: String! 
-  virtualenv: String!
-  command: String!
   ModelResultsID: ID!
   ModelResults: ModelResults @connection(fields: ["ModelResultsID"])
   model: Model @connection(fields: ["modelID"])
