@@ -124,19 +124,11 @@ export const SingleInstance = ({ modelConfig }) => {
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-<<<<<<< HEAD
         <h1 className={s.header} style={{ textAlign: 'center' }}>
-=======
-      <Grid container alignItems="center" justify="center"> 
-      <Grid item md={6}>
-
-  
-        <h1 className={s.header} style={{ textAlign: "center" }}>
->>>>>>> 06a19e243c704d03590240d32f388456145f2904
           {modelConfig.instanceName}
         </h1>
+      </Box>
 
-<<<<<<< HEAD
       <Box>
         <Spacer height="100px"/>
         <Grid container alignItems="center" justify="center">
@@ -175,42 +167,8 @@ export const SingleInstance = ({ modelConfig }) => {
                   </FormGroup>
                 </Box>
               </Grid>
-=======
-        </Grid>
-       
-            <Grid item md={6} xs={12}>
-              <Box p={2}>
-            <FormGroup row style={{textAlign: 'center'}}>
-            <FormControlLabel
-                control={
-                  <Switch
-                    checked={state.Started}
-                    onChange={instanceSwitch}
-                    name="Started"
-                  />
-                }
-                label="Power"
-              />
-              <Button variant="contained" color="secondary" size="large">
-                Run
-              </Button>
-               <Button
-                href="#"
-                variant="contained"
-                color="primary"
-                size="large"
-              >
-                Stop
-              </Button>
-            </FormGroup>
-            </Box>
-            
             </Grid>
->>>>>>> 06a19e243c704d03590240d32f388456145f2904
-            </Grid>
-      </Box>
 
-<<<<<<< HEAD
             <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
               {loadingInstanceState && (
                 <Typography align='center'>
@@ -253,36 +211,6 @@ export const SingleInstance = ({ modelConfig }) => {
         </Grid>
         <Spacer height="100px"/>
       </Box>
-=======
-     
-                <Box bgcolor="primary.main" color="primary.contrastText" p={4}>
-                <Grid container alignItems="center" justify="center">
-                <Grid item md={2}>
-
-                <h4 className={s.modelHeader}>Model Name</h4>
-                <h4 className={s.modelDetails}>{modelConfig.model.name}</h4>
-                <h4 className={s.modelHeader}>Location</h4>
-                <h4 className={s.modelDetails}>{modelConfig.instanceLocation}</h4>
-                <h4 className={s.modelHeader}>IP Address</h4>
-                <h4 className={s.modelDetails}>{modelConfig.publicIP}</h4>
-                
-
-            </Grid>
-          <Grid item md={8}>
-          <h2 style={{textTransform: 'uppercase'}}>Live Stream</h2>
-            <Grid container alignItems="center" justify="center" >
-              <img
-                alt="stream"
-                src={`http://${modelConfig.publicIP}:8000/video_feed`}
-                style={{maxWidth: '90%'}}
-              />
-            </Grid>
-            </Grid>
-        </Grid> 
-        <Spacer height="100px" />
-                  </Box>
-
->>>>>>> 06a19e243c704d03590240d32f388456145f2904
     </div>
   );
 };
