@@ -4,6 +4,7 @@ import animation from './Connect.json'
  
 const Results = () => (
   <Lottie
+  width='100px'
     options={{
       animationData: animation
     }}

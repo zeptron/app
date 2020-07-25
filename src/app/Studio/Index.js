@@ -59,8 +59,8 @@ export default function Studio() {
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <h1 className={s.header} style={{ textAlign: "center" }}>
-          Vision Studio
+        <h1 className={`${s.header} ${s.center}`}>
+          Studio
         </h1>
       </Box>
       <Box>

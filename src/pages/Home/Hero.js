@@ -16,24 +16,23 @@ import Vision from '../../assets/hero.png'
    return (
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
           <video loop autoPlay {...css(styles.vidDiv)}>
-            <source src={require("./../../assets/vid.mp4")} type="video/mp4" />
+            <source src={require("./../../assets/vision.mp4")} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
        <div {...css(styles.coverOpacity)}></div>
+       <Spacer height="125px"/>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
-          <Grid item md={5} sm={6} xs={10}>
-            <img src={Vision} style={{maxWidth: '100%'}} />
-          </Grid>
             <Grid item md={5} sm={6} xs={10}>
-                   <h1  className={s.header} >
-                   Precise deployment <br/>for computer vision
+                   <h1  className={`${s.header} ${s.center}`} >
+                    Deploy AI<br/>
+                     in minutes
                     </h1>
-                    <p className={s.subheader} >
-                      Configure and deploy computer vision with streaming video in less than 2 minutes
+                    <p className={`${s.subheader} ${s.center}`} >
+                    Get value out of computer vision with a complete deployment solution
                     </p>
-                    <Spacer height="20px"/>
+                    <Spacer height="50px"/>
                     <Hidden xsDown >
-                    <div style={{textAlign: 'left'}}>
+                    <div style={{textAlign: 'center'}}>
                     <Button size="large" variant="contained" color="secondary" href="/auth">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
@@ -46,7 +45,7 @@ import Vision from '../../assets/hero.png'
                     </Hidden>
             </Grid>
         </Grid>
-      <Spacer height="100px"/>
+      <Spacer height="125px"/>
     </Box>  
   )
 }

@@ -1,5 +1,5 @@
 .header {
-    font-family: Prata;
+    font-family: ocr-a-std, monospace;
     font-size: 3em;
     text-align: left;
 }
@@ -160,3 +160,18 @@ background-position: center;
 iframe.video  {
     max-width: 100%;
 }
+
+
+ /* App Styles */
+
+.modelHeader { 
+    margin-bottom: 7px;
+}
+
+ .modelDetails { 
+    margin-top: 0px;
+    background-color: #101b0c;
+    font-family: ocr-a-std, monospace;
+    letter-spacing: 0.1em;
+    padding: 10px;
+ }
