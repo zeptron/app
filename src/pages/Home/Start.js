@@ -5,6 +5,7 @@ import Spacer from 'react-spacer'
 import { IoLogoGoogle } from "react-icons/io";
 import {MdEmail} from "react-icons/md"
 import { Auth } from 'aws-amplify'
+import Form from './Form'
 // import { Button } from "../../containers/Auth.style";
 
 
@@ -16,27 +17,31 @@ import { Auth } from 'aws-amplify'
     const [spacing] = React.useState(2);
    
    return (
-    <Box p={2} bgcolor="primary.dark" color="primary.contrastText" >
+    <Box p={2} bgcolor="cornsilk"  >
          <Grid container justify="center" spacing={spacing}>
             <Grid item md={8} sm={10} xs={12}>
-        <Grid container justify="center" spacing={spacing}>
+            <Spacer height="80px"/>
+
+            
+            <Grid container justify="center" spacing={spacing}>
             <Grid item md={8} xs={12}>
             <Spacer height="40px"/>
             <h2 className={`${s.header} ${s.center}`}>
             Available today
             </h2>
-            
-            <p className={`${s.subheader} ${s.center}`}>Get a 10 minute demo with pre-trained models</p>
             <Spacer height="20px"/>
+            <p className={`${s.subheader} ${s.center}`}>Get a demo of Zeptron at work</p>
+            </Grid> 
+            </Grid> 
+            <Spacer height="40px"/>
+            <Form/>
+            <Spacer height="80px"/>
 
-            </Grid> 
-            
-            </Grid> 
             <Grid container alignItems="center" justify="center">
                 <Grid item md={4} sm={8} xs={12}>
-                  <Button href="/contact" variant="contained" size="large" color="secondary">
+                  {/* <Button href="/contact" variant="contained" size="large" color="secondary">
                 <strong>Get In Touch</strong>
-                  </Button>
+                  </Button> */}
         {/* <Button
           fullwidth
           title={'Start with Google'}

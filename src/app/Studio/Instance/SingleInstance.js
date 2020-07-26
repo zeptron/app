@@ -190,11 +190,16 @@ export const SingleInstance = ({ modelConfig }) => {
               )}
             </div>
 
-            <Box  p={4}>
+           
+          </Grid>
+        </Grid>
+        <Spacer height="100px"/>
+      </Box>
+      <Box  p={4}>
               <Grid container alignItems="center" justify="center">
                
 
-                <Grid item md={8}>
+                <Grid item md={10}>
                   <h2 style={{ textTransform: 'uppercase' }}>Live Stream</h2>
                   <Grid container alignItems="center" justify="center">
 
@@ -214,10 +219,6 @@ export const SingleInstance = ({ modelConfig }) => {
               </Grid>
             </Box>
             <p>Comes from {modelConfig.publicIP}</p>
-          </Grid>
-        </Grid>
-        <Spacer height="100px"/>
-      </Box>
     </div>
   );
 };
