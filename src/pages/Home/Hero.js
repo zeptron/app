@@ -24,10 +24,10 @@ import Vision from '../../assets/hero.png'
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
             <Grid item md={5} sm={6} xs={10}>
                    <h1  className={`${s.header} ${s.center}`} >
-                    Rapid AI <br/> Deployment
+                    Deploy AI<br/>in 60 seconds
                     </h1>
                     <p className={`${s.subheader} ${s.center}`} >
-                    Zeptron makes deploying and managing computer vision cameras easy
+                    Zeptron makes deploying and managing computer vision models easy
                     </p>
                     <Spacer height="25px"/>
                     <Hidden xsDown >
