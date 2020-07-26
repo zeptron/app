@@ -29,10 +29,10 @@ import Form from './Form'
             Available now
             </h2>
            
-            <p className={`${s.subheader} ${s.center}`}>Get a demo today</p>
+            <p className={`${s.subheader} ${s.center}`}>Try a demo today</p>
             </Grid> 
             </Grid> 
-            <Spacer height="40px"/>
+            <Spacer height="20px"/>
             <Form/>
             <Spacer height="80px"/>
 
