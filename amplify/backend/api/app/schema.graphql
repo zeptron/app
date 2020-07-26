@@ -13,7 +13,6 @@ type Model @model {
   directory: String! 
   virtualenv: String!
   command: String!
-  instanceSize: String!
   class: Class @connection
   modelConfig: Model @connection
 }
@@ -45,7 +44,6 @@ type modelConfig @model  {
   port: String!
   EC2instanceID: String!
   instanceState: Boolean!
-  image: String!
   ModelResultsID: ID!
   ModelResults: ModelResults @connection(fields: ["ModelResultsID"])
   model: Model @connection(fields: ["modelID"])

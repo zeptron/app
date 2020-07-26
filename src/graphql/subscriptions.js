@@ -18,7 +18,6 @@ export const onCreateModel = /* GraphQL */ `
       directory
       virtualenv
       command
-      instanceSize
       class {
         id
         modelID
@@ -39,8 +38,13 @@ export const onCreateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
       modelConfig {
         id
@@ -57,12 +61,14 @@ export const onCreateModel = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -79,9 +85,17 @@ export const onCreateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -102,7 +116,6 @@ export const onUpdateModel = /* GraphQL */ `
       directory
       virtualenv
       command
-      instanceSize
       class {
         id
         modelID
@@ -123,8 +136,13 @@ export const onUpdateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
       modelConfig {
         id
@@ -141,12 +159,14 @@ export const onUpdateModel = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -163,9 +183,17 @@ export const onUpdateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -186,7 +214,6 @@ export const onDeleteModel = /* GraphQL */ `
       directory
       virtualenv
       command
-      instanceSize
       class {
         id
         modelID
@@ -207,8 +234,13 @@ export const onDeleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
       modelConfig {
         id
@@ -225,12 +257,14 @@ export const onDeleteModel = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -247,9 +281,17 @@ export const onDeleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -275,12 +317,14 @@ export const onCreateClass = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -297,9 +341,17 @@ export const onCreateClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -325,12 +377,14 @@ export const onUpdateClass = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -347,9 +401,17 @@ export const onUpdateClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -375,12 +437,14 @@ export const onDeleteClass = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -397,9 +461,17 @@ export const onDeleteClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -424,7 +496,6 @@ export const onCreateModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      image
       ModelResultsID
       ModelResults {
         id
@@ -444,7 +515,9 @@ export const onCreateModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
         classID
         class {
@@ -452,10 +525,16 @@ export const onCreateModelConfig = /* GraphQL */ `
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         insertedAt
         count
         detected
+        _version
+        _deleted
+        _lastChangedAt
       }
       model {
         id
@@ -472,12 +551,14 @@ export const onCreateModelConfig = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -494,9 +575,17 @@ export const onCreateModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -521,7 +610,6 @@ export const onUpdateModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      image
       ModelResultsID
       ModelResults {
         id
@@ -541,7 +629,9 @@ export const onUpdateModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
         classID
         class {
@@ -549,10 +639,16 @@ export const onUpdateModelConfig = /* GraphQL */ `
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         insertedAt
         count
         detected
+        _version
+        _deleted
+        _lastChangedAt
       }
       model {
         id
@@ -569,12 +665,14 @@ export const onUpdateModelConfig = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -591,9 +689,17 @@ export const onUpdateModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -618,7 +724,6 @@ export const onDeleteModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      image
       ModelResultsID
       ModelResults {
         id
@@ -638,7 +743,9 @@ export const onDeleteModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
         classID
         class {
@@ -646,10 +753,16 @@ export const onDeleteModelConfig = /* GraphQL */ `
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         insertedAt
         count
         detected
+        _version
+        _deleted
+        _lastChangedAt
       }
       model {
         id
@@ -666,12 +779,14 @@ export const onDeleteModelConfig = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -688,9 +803,17 @@ export const onDeleteModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -719,12 +842,14 @@ export const onCreateModelUsage = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -741,9 +866,17 @@ export const onCreateModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -772,12 +905,14 @@ export const onUpdateModelUsage = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -794,9 +929,17 @@ export const onUpdateModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -825,12 +968,14 @@ export const onDeleteModelUsage = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -847,9 +992,17 @@ export const onDeleteModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -873,12 +1026,14 @@ export const onCreateModelResults = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -895,8 +1050,13 @@ export const onCreateModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
       classID
       class {
@@ -919,12 +1079,20 @@ export const onCreateModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
       insertedAt
       count
       detected
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -948,12 +1116,14 @@ export const onUpdateModelResults = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -970,8 +1140,13 @@ export const onUpdateModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
       classID
       class {
@@ -994,12 +1169,20 @@ export const onUpdateModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
       insertedAt
       count
       detected
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -1023,12 +1206,14 @@ export const onDeleteModelResults = /* GraphQL */ `
         directory
         virtualenv
         command
-        instanceSize
         class {
           id
           modelID
           name
           number
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -1045,8 +1230,13 @@ export const onDeleteModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
       classID
       class {
@@ -1069,12 +1259,20 @@ export const onDeleteModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          instanceSize
+          _version
+          _deleted
+          _lastChangedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
       }
       insertedAt
       count
       detected
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;

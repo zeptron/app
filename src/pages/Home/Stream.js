@@ -17,7 +17,7 @@ import Cloud from './animations/data.js'
           <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
             <h2 className={`${s.header} ${s.center}`}>
-              Go rogue with a powerful lens
+              Get precise with a powerful lens
               </h2> 
               <Spacer height="40px"/>
             </Grid>
@@ -32,11 +32,11 @@ import Cloud from './animations/data.js'
               <p className={s.subheader} style={{fontSize: '2.2em', fontWeight: '700', textTransform: 'uppercase'}}>Modular 4K</p>
                <p className={s.subheader} >
                  <ul style={{padding: 0, listStyle: 'none'}}>
-                 <li><strong>120 fps</strong></li>
                  <li><strong>4k / 1080p</strong></li>
+                 <li><strong>120 fps</strong></li>
                  </ul></p>             
                <p className={s.subheader} >
-                If our camera bodies don't suit, we can 3d print a bespoke shell in minutes
+                Camera bodies are 3D printed in minutes from our library of designs
                </p>  
               <Spacer height="40px"/>
             </Grid> 
