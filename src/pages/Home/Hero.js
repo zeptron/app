@@ -27,7 +27,7 @@ import Vision from '../../assets/hero.png'
                     Rapid AI <br/> Deployment
                     </h1>
                     <p className={`${s.subheader} ${s.center}`} >
-                    Zeptron makes deploying and managing multiple computer vision cameras easy
+                    Zeptron makes deploying and managing computer vision cameras easy
                     </p>
                     <Spacer height="25px"/>
                     <Hidden xsDown >
