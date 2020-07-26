@@ -41,13 +41,13 @@ export const createModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       modelConfig {
         id
@@ -69,9 +69,9 @@ export const createModel = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -88,17 +88,17 @@ export const createModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -142,13 +142,13 @@ export const updateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       modelConfig {
         id
@@ -170,9 +170,9 @@ export const updateModel = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -189,17 +189,17 @@ export const updateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -243,13 +243,13 @@ export const deleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       modelConfig {
         id
@@ -271,9 +271,9 @@ export const deleteModel = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -290,17 +290,17 @@ export const deleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -334,9 +334,9 @@ export const createClass = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -353,17 +353,17 @@ export const createClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -397,9 +397,9 @@ export const updateClass = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -416,17 +416,17 @@ export const updateClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -460,9 +460,9 @@ export const deleteClass = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -479,17 +479,17 @@ export const deleteClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -517,46 +517,6 @@ export const createModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      ModelResultsID
-      ModelResults {
-        id
-        modelID
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        classID
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        insertedAt
-        count
-        detected
-        _version
-        _deleted
-        _lastChangedAt
-      }
       model {
         id
         FPS
@@ -577,9 +537,9 @@ export const createModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -596,17 +556,17 @@ export const createModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -634,46 +594,6 @@ export const updateModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      ModelResultsID
-      ModelResults {
-        id
-        modelID
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        classID
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        insertedAt
-        count
-        detected
-        _version
-        _deleted
-        _lastChangedAt
-      }
       model {
         id
         FPS
@@ -694,9 +614,9 @@ export const updateModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -713,17 +633,17 @@ export const updateModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -751,46 +671,6 @@ export const deleteModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      ModelResultsID
-      ModelResults {
-        id
-        modelID
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        classID
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        insertedAt
-        count
-        detected
-        _version
-        _deleted
-        _lastChangedAt
-      }
       model {
         id
         FPS
@@ -811,9 +691,9 @@ export const deleteModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -830,17 +710,17 @@ export const deleteModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -877,9 +757,9 @@ export const createModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -896,17 +776,17 @@ export const createModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -943,9 +823,9 @@ export const updateModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -962,17 +842,17 @@ export const updateModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -1009,9 +889,9 @@ export const deleteModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -1028,296 +908,17 @@ export const deleteModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const createModelResults = /* GraphQL */ `
-  mutation CreateModelResults(
-    $input: CreateModelResultsInput!
-    $condition: ModelModelResultsConditionInput
-  ) {
-    createModelResults(input: $input, condition: $condition) {
-      id
-      modelID
-      model {
-        id
-        FPS
-        description
-        image
-        mAP
-        name
-        notes
-        rating
-        type
-        video
-        ami
-        directory
-        virtualenv
-        command
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        modelConfig {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      classID
-      class {
-        id
-        modelID
-        name
-        number
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      insertedAt
-      count
-      detected
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const updateModelResults = /* GraphQL */ `
-  mutation UpdateModelResults(
-    $input: UpdateModelResultsInput!
-    $condition: ModelModelResultsConditionInput
-  ) {
-    updateModelResults(input: $input, condition: $condition) {
-      id
-      modelID
-      model {
-        id
-        FPS
-        description
-        image
-        mAP
-        name
-        notes
-        rating
-        type
-        video
-        ami
-        directory
-        virtualenv
-        command
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        modelConfig {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      classID
-      class {
-        id
-        modelID
-        name
-        number
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      insertedAt
-      count
-      detected
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const deleteModelResults = /* GraphQL */ `
-  mutation DeleteModelResults(
-    $input: DeleteModelResultsInput!
-    $condition: ModelModelResultsConditionInput
-  ) {
-    deleteModelResults(input: $input, condition: $condition) {
-      id
-      modelID
-      model {
-        id
-        FPS
-        description
-        image
-        mAP
-        name
-        notes
-        rating
-        type
-        video
-        ami
-        directory
-        virtualenv
-        command
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        modelConfig {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      classID
-      class {
-        id
-        modelID
-        name
-        number
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      insertedAt
-      count
-      detected
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;

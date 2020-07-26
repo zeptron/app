@@ -34,9 +34,9 @@ export const syncModels = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -53,13 +53,13 @@ export const syncModels = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -103,13 +103,13 @@ export const getModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       modelConfig {
         id
@@ -131,9 +131,9 @@ export const getModel = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -150,17 +150,17 @@ export const getModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -191,9 +191,9 @@ export const listModels = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -210,13 +210,13 @@ export const listModels = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -256,13 +256,13 @@ export const syncClasses = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -296,9 +296,9 @@ export const getClass = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -315,17 +315,17 @@ export const getClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -356,13 +356,13 @@ export const listClasss = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -401,18 +401,6 @@ export const syncModelConfigs = /* GraphQL */ `
         port
         EC2instanceID
         instanceState
-        ModelResultsID
-        ModelResults {
-          id
-          modelID
-          classID
-          insertedAt
-          count
-          detected
-          _version
-          _deleted
-          _lastChangedAt
-        }
         model {
           id
           FPS
@@ -428,13 +416,13 @@ export const syncModelConfigs = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -462,46 +450,6 @@ export const getModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
-      ModelResultsID
-      ModelResults {
-        id
-        modelID
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        classID
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        insertedAt
-        count
-        detected
-        _version
-        _deleted
-        _lastChangedAt
-      }
       model {
         id
         FPS
@@ -522,9 +470,9 @@ export const getModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -541,17 +489,17 @@ export const getModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -581,18 +529,6 @@ export const listModelConfigs = /* GraphQL */ `
         port
         EC2instanceID
         instanceState
-        ModelResultsID
-        ModelResults {
-          id
-          modelID
-          classID
-          insertedAt
-          count
-          detected
-          _version
-          _deleted
-          _lastChangedAt
-        }
         model {
           id
           FPS
@@ -608,13 +544,13 @@ export const listModelConfigs = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -657,13 +593,13 @@ export const syncModelUsages = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -700,9 +636,9 @@ export const getModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -719,17 +655,17 @@ export const getModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -763,211 +699,13 @@ export const listModelUsages = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncModelResults = /* GraphQL */ `
-  query SyncModelResults(
-    $filter: ModelModelResultsFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncModelResults(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        modelID
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        classID
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        insertedAt
-        count
-        detected
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getModelResults = /* GraphQL */ `
-  query GetModelResults($id: ID!) {
-    getModelResults(id: $id) {
-      id
-      modelID
-      model {
-        id
-        FPS
-        description
-        image
-        mAP
-        name
-        notes
-        rating
-        type
-        video
-        ami
-        directory
-        virtualenv
-        command
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        modelConfig {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      classID
-      class {
-        id
-        modelID
-        name
-        number
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      insertedAt
-      count
-      detected
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listModelResultss = /* GraphQL */ `
-  query ListModelResultss(
-    $filter: ModelModelResultsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listModelResultss(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        modelID
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        classID
-        class {
-          id
-          modelID
-          name
-          number
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        insertedAt
-        count
-        detected
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt

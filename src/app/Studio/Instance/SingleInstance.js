@@ -95,6 +95,8 @@ export const SingleInstance = ({ modelConfig }) => {
 
     setLoadingRunInstance(true);
 
+    // const SSM = new AWS.SSM();
+
     const params = {
       DocumentName: 'AWS-RunShellScript',
       CloudWatchOutputConfig: {
@@ -110,16 +112,21 @@ export const SingleInstance = ({ modelConfig }) => {
       },
       Parameters: {
         'commands': [
-          `cd /home/ubuntu/FairMOT/src && workon fairmot &&  python count_fairMOT.py`,
+          `cd ${modelConfig.model.directory} && ${modelConfig.model.command}`,
         ],
       },
       ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
     };
-
-    SSM.sendCommand(params, (err, data) => {
-      setLoadingRunInstance(false);
+    SSM.sendCommand(params, function(err, data) {
+      if (err) console.log(err, err.stack); // an error occurred
+      else     console.log(data);           // successful response
     });
   };
+
+  //   SSM.sendCommand(params, (err, data) => {
+  //     setLoadingRunInstance(false);
+  //   });
+  // };
 
   return (
     <div>
@@ -183,11 +190,16 @@ export const SingleInstance = ({ modelConfig }) => {
               )}
             </div>
 
-            <Box  p={4}>
+           
+          </Grid>
+        </Grid>
+        <Spacer height="100px"/>
+      </Box>
+      <Box  p={4}>
               <Grid container alignItems="center" justify="center">
                
 
-                <Grid item md={8}>
+                <Grid item md={10}>
                   <h2 style={{ textTransform: 'uppercase' }}>Live Stream</h2>
                   <Grid container alignItems="center" justify="center">
 
@@ -207,10 +219,6 @@ export const SingleInstance = ({ modelConfig }) => {
               </Grid>
             </Box>
             <p>Comes from {modelConfig.publicIP}</p>
-          </Grid>
-        </Grid>
-        <Spacer height="100px"/>
-      </Box>
     </div>
   );
 };

@@ -44,8 +44,6 @@ type modelConfig @model  {
   port: String!
   EC2instanceID: String!
   instanceState: Boolean!
-  ModelResultsID: ID!
-  ModelResults: ModelResults @connection(fields: ["ModelResultsID"])
   model: Model @connection(fields: ["modelID"])
 }
 
@@ -59,17 +57,4 @@ type modelUsage @model {
   stopTime: String!
   usage: String!
   model: Model @connection(fields: ["modelID"])
-}
-
-
-
-type ModelResults @model  { 
-  id: ID!
-  modelID: ID!
-  model: Model @connection(fields: ["modelID"])
-  classID: ID!
-  class: Class @connection(fields: ["classID"])
-  insertedAt: String!
-  count: String!
-  detected: Boolean!
 }
