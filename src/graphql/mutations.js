@@ -41,9 +41,13 @@ export const createModel = /* GraphQL */ `
           directory
           virtualenv
           command
-        
+          _version
+          _deleted
+          _lastChangedAt
         }
-       
+        _version
+        _deleted
+        _lastChangedAt
       }
       modelConfig {
         id
@@ -65,7 +69,9 @@ export const createModel = /* GraphQL */ `
           modelID
           name
           number
-         
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -82,12 +88,17 @@ export const createModel = /* GraphQL */ `
           directory
           virtualenv
           command
-         
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-       
+        _version
+        _deleted
+        _lastChangedAt
       }
-    
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -131,9 +142,13 @@ export const updateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-       
+          _version
+          _deleted
+          _lastChangedAt
         }
-     
+        _version
+        _deleted
+        _lastChangedAt
       }
       modelConfig {
         id
@@ -155,7 +170,9 @@ export const updateModel = /* GraphQL */ `
           modelID
           name
           number
-        
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -172,11 +189,17 @@ export const updateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-         
+          _version
+          _deleted
+          _lastChangedAt
         }
-       
+        _version
+        _deleted
+        _lastChangedAt
       }
-    
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -220,9 +243,13 @@ export const deleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
-        
+          _version
+          _deleted
+          _lastChangedAt
         }
-       
+        _version
+        _deleted
+        _lastChangedAt
       }
       modelConfig {
         id
@@ -244,7 +271,9 @@ export const deleteModel = /* GraphQL */ `
           modelID
           name
           number
-        
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -261,12 +290,17 @@ export const deleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
-       
+          _version
+          _deleted
+          _lastChangedAt
         }
-       
-      
+        _version
+        _deleted
+        _lastChangedAt
       }
-    
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -300,7 +334,9 @@ export const createClass = /* GraphQL */ `
           modelID
           name
           number
-       
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -317,12 +353,17 @@ export const createClass = /* GraphQL */ `
           directory
           virtualenv
           command
-        
+          _version
+          _deleted
+          _lastChangedAt
         }
-      
+        _version
+        _deleted
+        _lastChangedAt
       }
-    
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -356,7 +397,9 @@ export const updateClass = /* GraphQL */ `
           modelID
           name
           number
-         
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -373,11 +416,17 @@ export const updateClass = /* GraphQL */ `
           directory
           virtualenv
           command
-         
+          _version
+          _deleted
+          _lastChangedAt
         }
-   
+        _version
+        _deleted
+        _lastChangedAt
       }
-   
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -411,9 +460,9 @@ export const deleteClass = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -430,17 +479,17 @@ export const deleteClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -487,9 +536,9 @@ export const createModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         classID
         class {
@@ -497,16 +546,16 @@ export const createModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         insertedAt
         count
         detected
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
       model {
         id
@@ -528,9 +577,9 @@ export const createModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -547,17 +596,17 @@ export const createModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -604,9 +653,9 @@ export const updateModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         classID
         class {
@@ -614,16 +663,16 @@ export const updateModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         insertedAt
         count
         detected
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
       model {
         id
@@ -645,9 +694,9 @@ export const updateModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -664,17 +713,17 @@ export const updateModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -721,9 +770,9 @@ export const deleteModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         classID
         class {
@@ -731,16 +780,16 @@ export const deleteModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         insertedAt
         count
         detected
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
       model {
         id
@@ -762,9 +811,9 @@ export const deleteModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -781,17 +830,17 @@ export const deleteModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -828,9 +877,9 @@ export const createModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -847,17 +896,17 @@ export const createModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -894,9 +943,9 @@ export const updateModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -913,17 +962,17 @@ export const updateModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -960,9 +1009,9 @@ export const deleteModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -979,17 +1028,17 @@ export const deleteModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -1021,9 +1070,9 @@ export const createModelResults = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -1040,13 +1089,13 @@ export const createModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
       classID
       class {
@@ -1069,20 +1118,20 @@ export const createModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
       insertedAt
       count
       detected
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -1114,9 +1163,9 @@ export const updateModelResults = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -1133,13 +1182,13 @@ export const updateModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
       classID
       class {
@@ -1162,20 +1211,20 @@ export const updateModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
       insertedAt
       count
       detected
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -1207,9 +1256,9 @@ export const deleteModelResults = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
         modelConfig {
           id
@@ -1226,13 +1275,13 @@ export const deleteModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
       classID
       class {
@@ -1255,20 +1304,20 @@ export const deleteModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          _
+          _version
+          _deleted
+          _lastChangedAt
         }
-        
-        
-        _
+        _version
+        _deleted
+        _lastChangedAt
       }
       insertedAt
       count
       detected
-      
-      
-      _
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;

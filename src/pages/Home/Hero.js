@@ -25,11 +25,10 @@ import Vision from '../../assets/hero.png'
             <Grid item md={5} sm={6} xs={10}>
                    <h1  className={`${s.header} ${s.center}`} >
                     Deploy AI<br/>
-                     in minutes
+                     in seconds
                     </h1>
                     <p className={`${s.subheader} ${s.center}`} >
-                    Get value out of computer vision faster with a complete deployment solution
-                    </p>
+                    Fast deployment for computer vision                   </p>
                     <Spacer height="50px"/>
                     <Hidden xsDown >
                     <div style={{textAlign: 'center'}}>

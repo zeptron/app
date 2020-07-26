@@ -29,15 +29,14 @@ import Cloud from './animations/data.js'
             </Grid>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
-              <p className={s.subheader} style={{fontSize: '2.2em', fontWeight: '700', textTransform: 'uppercase'}}>Modular 4K</p>
+              <p className={s.subheader} style={{fontSize: '2.2em', fontWeight: '700', textTransform: 'uppercase'}}>4K / 120 FPS Lens</p>
+             
                <p className={s.subheader} >
-                 <ul style={{padding: 0, listStyle: 'none'}}>
-                 <li><strong>4k / 1080p</strong></li>
-                 <li><strong>120 fps</strong></li>
-                 </ul></p>             
-               <p className={s.subheader} >
-                Camera bodies are 3D printed in minutes from our library of designs
+                Control computer features ethernet, 802.11 bgn wireless and GPIO pins
                </p>  
+               <p className={s.subheader}>
+               3D printed casing
+               </p>
               <Spacer height="40px"/>
             </Grid> 
 
