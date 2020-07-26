@@ -25,28 +25,29 @@ import Results from './animations/results.js'
               <Grid container  justify="center" spacing={spacing}>
               <Grid item md={4} sm={6}  xs={12}>
               <Spacer height="20px"/>
+              <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/2904/2904376.svg"/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Health</h3>
-              <img style={{maxWidth: '40%'}} src="https://image.flaticon.com/icons/svg/2904/2904376.svg"/>
+
               </Grid>
               <Grid item md={4} sm={6}  xs={12}>
               <Spacer height="20px"/>
+              <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/1605/1605056.svg"/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Safety</h3>
-              <img style={{maxWidth: '40%'}} src="https://image.flaticon.com/icons/svg/1605/1605056.svg"/>
               </Grid>
               <Grid item md={4} sm={6}  xs={12}>
               <Spacer height="20px"/>
+              <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/1037/1037353.svg"/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Production</h3>
-              <img style={{maxWidth: '40%'}} src="https://image.flaticon.com/icons/svg/1037/1037353.svg"/>
               </Grid>
               <Grid item md={4} sm={6}  xs={12}>
               <Spacer height="20px"/>
+              <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/1596/1596544.svg"/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Infrastructure</h3>
-              <img style={{maxWidth: '40%'}} src="https://image.flaticon.com/icons/svg/1596/1596544.svg"/>
               </Grid>
               <Grid item md={4} sm={6}  xs={12}>
-              <Spacer height="20px"/>
+              <Spacer height="20px"/>              
+              <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/942/942872.svg"/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Management</h3>
-              <img style={{maxWidth: '40%'}} src="https://image.flaticon.com/icons/svg/942/942872.svg"/>
               </Grid>
             </Grid>
             </Grid> 
