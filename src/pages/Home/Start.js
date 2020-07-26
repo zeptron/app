@@ -28,7 +28,7 @@ import Form from './Form'
             <h2 className={`${s.header} ${s.center}`}>
             Available now
             </h2>
-            <Spacer height="20px"/>
+            <Spacer height="10px"/>
             <p className={`${s.subheader} ${s.center}`}>Get a demo of Zeptron at work</p>
             </Grid> 
             </Grid> 

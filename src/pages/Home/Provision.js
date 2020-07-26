@@ -32,13 +32,13 @@ import Edge from './animations/results.js'
             <Grid item md={6} xs={12}>
               <Cloud/>
             <p className={`${s.subheader} ${s.center}`}><strong>Cloud</strong></p>
-              <p className={`${s.subheader} ${s.center}`}>Scale efficiently<br/> with no up-front cost</p>
+              <p className={`${s.subheader} ${s.center}`}>Scale up efficiently<br/> with no up-front cost</p>
               
             </Grid> 
             <Grid item md={6} xs={12}>
               <Edge/>
             <p className={`${s.subheader} ${s.center}`}><strong>Edge</strong></p>
-              <p className={`${s.subheader} ${s.center}`}>Invest in hardware<br/> and get consistent results</p>
+              <p className={`${s.subheader} ${s.center}`}>Invest in hardware<br/> and get steady results</p>
               
             </Grid> 
             </Grid>
