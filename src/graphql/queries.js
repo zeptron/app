@@ -34,9 +34,9 @@ export const syncModels = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -53,13 +53,13 @@ export const syncModels = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -103,13 +103,13 @@ export const getModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       modelConfig {
         id
@@ -131,9 +131,9 @@ export const getModel = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -150,17 +150,17 @@ export const getModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -191,9 +191,9 @@ export const listModels = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -210,13 +210,13 @@ export const listModels = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -256,13 +256,13 @@ export const syncClasses = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -296,9 +296,9 @@ export const getClass = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -315,17 +315,17 @@ export const getClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -356,13 +356,13 @@ export const listClasss = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -409,9 +409,9 @@ export const syncModelConfigs = /* GraphQL */ `
           insertedAt
           count
           detected
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         model {
           id
@@ -428,13 +428,13 @@ export const syncModelConfigs = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -481,9 +481,9 @@ export const getModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         classID
         class {
@@ -491,16 +491,16 @@ export const getModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         insertedAt
         count
         detected
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       model {
         id
@@ -522,9 +522,9 @@ export const getModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -541,17 +541,17 @@ export const getModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -589,9 +589,9 @@ export const listModelConfigs = /* GraphQL */ `
           insertedAt
           count
           detected
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         model {
           id
@@ -608,13 +608,13 @@ export const listModelConfigs = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -657,13 +657,13 @@ export const syncModelUsages = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -700,9 +700,9 @@ export const getModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -719,17 +719,17 @@ export const getModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -763,13 +763,13 @@ export const listModelUsages = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -807,9 +807,9 @@ export const syncModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         classID
         class {
@@ -817,16 +817,16 @@ export const syncModelResults = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         insertedAt
         count
         detected
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
@@ -858,9 +858,9 @@ export const getModelResults = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         modelConfig {
           id
@@ -877,13 +877,13 @@ export const getModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       classID
       class {
@@ -906,20 +906,20 @@ export const getModelResults = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       insertedAt
       count
       detected
-      _version
-      _deleted
-      _lastChangedAt
+      
+      
+      
     }
   }
 `;
@@ -948,9 +948,9 @@ export const listModelResultss = /* GraphQL */ `
           directory
           virtualenv
           command
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         classID
         class {
@@ -958,16 +958,16 @@ export const listModelResultss = /* GraphQL */ `
           modelID
           name
           number
-          _version
-          _deleted
-          _lastChangedAt
+          
+          
+          
         }
         insertedAt
         count
         detected
-        _version
-        _deleted
-        _lastChangedAt
+        
+        
+        
       }
       nextToken
       startedAt
