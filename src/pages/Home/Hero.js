@@ -27,8 +27,7 @@ import Vision from '../../assets/hero.png'
                     Deploy AI<br/>
                      in seconds
                     </h1>
-                    <p className={`${s.subheader} ${s.center}`} >
-                    Fast deployment for computer vision                   </p>
+                    
                     <Spacer height="50px"/>
                     <Hidden xsDown >
                     <div style={{textAlign: 'center'}}>
