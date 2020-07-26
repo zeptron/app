@@ -25,6 +25,7 @@ import Spacer from 'react-spacer'
                    
                </Grid>
 
+
             <Spacer height="60px"/>
            
             </Box>
@@ -43,6 +44,8 @@ import Spacer from 'react-spacer'
                */}
               <Grid item md={6} >
                 {/* <h3 className={s.subheader} >New Zealand</h3> */}
+                <p className={s.subheader}>Zeptron is a code-free deployment solution for computer vision</p>
+                <Spacer height="20px"/>
                 <p className={s.subheader}>Drop us a line</p>
                 <p className={s.subheader}><a style={{color: 'black'}} href="mailto:hello@zeptron.co">hello@zeptron.co</a></p>
                 <p className={s.subheader}>Level 4, 11 York Street<br/>Sydney, NSW 2000</p>
