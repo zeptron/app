@@ -52,7 +52,11 @@ export default function Form(){
           };
           SNS.publish(params, function(err, data) {
             if (err) console.log(err, err.stack); // an error occurred
-            else     console.log(data);           // successful response
+            else     
+                console.log(data)
+                const [userName, userOrg, userNum, userEmail] = ''
+            
+            ;           // successful response
           });
     }
 
@@ -67,24 +71,28 @@ export default function Form(){
                         id="filled-basic" 
                         label="Name" 
                         variant="filled" 
+                        value={userName}
                         onChange={setUserName}
                     />
                     <TextField 
                         id="filled-basic" 
                         label="Organisation" 
                         variant="filled" 
+                        value={userOrg}
                         onChange={setUserOrg}
                     />
                     <TextField 
                         id="filled-basic" 
                         label="Number" 
                         variant="filled"
+                        value={userNum}
                         onChange={setUserNum}
                     />
                     <TextField 
                         id="filled-basic" 
                         label="Email" 
                         variant="filled" 
+                        value={userEmail}
                         onChange={setUserEmail}
                     />
                     </form>

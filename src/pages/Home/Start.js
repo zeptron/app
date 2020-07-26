@@ -22,14 +22,14 @@ import Form from './Form'
             <Grid item md={8} sm={10} xs={12}>
             <Spacer height="80px"/>
 
-            <Grid container justify="center" spacing={spacing}>
+            <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Grid item md={8} xs={12}>
-            <Spacer height="40px"/>
+            <Spacer height="30px"/>
             <h2 className={`${s.header} ${s.center}`}>
             Available now
             </h2>
-            <Spacer height="10px"/>
-            <p className={`${s.subheader} ${s.center}`}>Get a demo of Zeptron at work</p>
+           
+            <p className={`${s.subheader} ${s.center}`}>Get a demo today</p>
             </Grid> 
             </Grid> 
             <Spacer height="40px"/>

@@ -83,7 +83,8 @@ const styles = {
     backgroundColor: "rgb(0, 10, 18)",
     display: "flex",
     // position: "fixed",
-    zIndex: 1
+    zIndex: 1,
+    borderBottom: '1px solid #0a0909'
   },
   menuContainer: {
     marginRight: "45px"
