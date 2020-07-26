@@ -61,7 +61,7 @@ export default function Form(){
         <div>
            
                 <Grid container alignItems="center" justify="center">
-                    <Grid item sm={10} xs={12}>
+                    <Grid item lg={6} md={9} sm={10} xs={12}>
                     <form className={classes.root} noValidate autoComplete="off">
                     <TextField 
                         id="filled-basic" 
