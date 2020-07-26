@@ -17,7 +17,7 @@ import Cloud from './animations/data.js'
           <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
             <h2 className={`${s.header} ${s.center}`}>
-              Notice minute details with a powerful lens
+              Notice the details with a powerful lens
               </h2> 
               <Spacer height="40px"/>
             </Grid>

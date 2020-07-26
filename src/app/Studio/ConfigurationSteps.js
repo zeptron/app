@@ -467,6 +467,10 @@ const ConfigurationSteps = ({ match }) => {
             ParameterKey: 'tableName',
             ParameterValue: `tableName${data?.data?.createModelConfig?.id}`,
           },
+          {
+            ParameterKey: 'ami',
+            ParameterValue: `${modelQuery.getModel.ami}`,
+          },
         ],
       }).promise();
 
@@ -522,7 +526,6 @@ const ConfigurationSteps = ({ match }) => {
         privateIP: '',
         port: '',
         EC2instanceID: '',
-        ModelResultsID: '',
         tableName: '',
       }
     });

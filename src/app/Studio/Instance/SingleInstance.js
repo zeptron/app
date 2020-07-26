@@ -95,6 +95,8 @@ export const SingleInstance = ({ modelConfig }) => {
 
     setLoadingRunInstance(true);
 
+    // const SSM = new AWS.SSM();
+
     const params = {
       DocumentName: 'AWS-RunShellScript',
       CloudWatchOutputConfig: {
@@ -110,16 +112,21 @@ export const SingleInstance = ({ modelConfig }) => {
       },
       Parameters: {
         'commands': [
-          `cd /home/ubuntu/FairMOT/src && workon fairmot &&  python count_fairMOT.py`,
+          `cd ${modelConfig.model.directory} && ${modelConfig.model.command}`,
         ],
       },
       ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
     };
-
-    SSM.sendCommand(params, (err, data) => {
-      setLoadingRunInstance(false);
+    SSM.sendCommand(params, function(err, data) {
+      if (err) console.log(err, err.stack); // an error occurred
+      else     console.log(data);           // successful response
     });
   };
+
+  //   SSM.sendCommand(params, (err, data) => {
+  //     setLoadingRunInstance(false);
+  //   });
+  // };
 
   return (
     <div>
