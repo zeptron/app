@@ -41,13 +41,7 @@ export const createModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
       modelConfig {
         id
@@ -69,9 +63,6 @@ export const createModel = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -88,17 +79,8 @@ export const createModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -142,13 +124,7 @@ export const updateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
       modelConfig {
         id
@@ -170,9 +146,6 @@ export const updateModel = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -189,17 +162,8 @@ export const updateModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -243,13 +207,7 @@ export const deleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
       modelConfig {
         id
@@ -271,9 +229,6 @@ export const deleteModel = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -290,17 +245,8 @@ export const deleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -334,9 +280,6 @@ export const createClass = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -353,17 +296,8 @@ export const createClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -397,9 +331,6 @@ export const updateClass = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -416,17 +347,8 @@ export const updateClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -460,9 +382,6 @@ export const deleteClass = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -479,17 +398,8 @@ export const deleteClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -537,9 +447,6 @@ export const createModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -556,17 +463,8 @@ export const createModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -614,9 +512,6 @@ export const updateModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -633,17 +528,8 @@ export const updateModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -691,9 +577,6 @@ export const deleteModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -710,17 +593,8 @@ export const deleteModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -757,9 +631,6 @@ export const createModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -776,17 +647,8 @@ export const createModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -823,9 +685,6 @@ export const updateModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -842,17 +701,8 @@ export const updateModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -889,9 +739,6 @@ export const deleteModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -908,17 +755,8 @@ export const deleteModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;

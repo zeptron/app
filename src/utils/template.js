@@ -13,15 +13,12 @@ Metadata:
 Parameters:
   tableName:
     Type: String
-  ami:
-    Type: String
 Resources:
   EC2I2VQQ4:
     Type: 'AWS::EC2::Instance'
     Properties:
       IamInstanceProfile: "AmazonSSMRoleForInstancesQuickSetup"
-      ImageId: 
-        Ref: ami
+      ImageId: ami-0192d76f155f6c406
       InstanceType: t2.micro
       UserData:
         Fn::Base64: !Sub |
