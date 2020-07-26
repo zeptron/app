@@ -16,7 +16,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "API_KEY",
 						"apiKeyConfig": {
-							"description": "app",
+							"description": "zep",
 							"apiKeyExpirationDays": "365"
 						}
 					}

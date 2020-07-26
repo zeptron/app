@@ -1,71 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const syncModels = /* GraphQL */ `
-  query SyncModels(
-    $filter: ModelModelFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncModels(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        FPS
-        description
-        image
-        mAP
-        name
-        notes
-        rating
-        type
-        video
-        ami
-        directory
-        virtualenv
-        command
-        class {
-          id
-          modelID
-          name
-          number
-          
-          
-          
-        }
-        modelConfig {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          
-          
-          
-        }
-        
-        
-        
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
 export const getModel = /* GraphQL */ `
   query GetModel($id: ID!) {
     getModel(id: $id) {
@@ -103,13 +38,7 @@ export const getModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
       modelConfig {
         id
@@ -131,9 +60,6 @@ export const getModel = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -150,17 +76,8 @@ export const getModel = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -191,9 +108,6 @@ export const listModels = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -210,62 +124,9 @@ export const listModels = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
       nextToken
-      startedAt
-    }
-  }
-`;
-export const syncClasses = /* GraphQL */ `
-  query SyncClasses(
-    $filter: ModelClassFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncClasses(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        modelID
-        name
-        number
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          
-          
-          
-        }
-        
-        
-        
-      }
-      nextToken
-      startedAt
     }
   }
 `;
@@ -296,9 +157,6 @@ export const getClass = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -315,17 +173,8 @@ export const getClass = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -356,76 +205,9 @@ export const listClasss = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
       nextToken
-      startedAt
-    }
-  }
-`;
-export const syncModelConfigs = /* GraphQL */ `
-  query SyncModelConfigs(
-    $filter: ModelmodelConfigFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncModelConfigs(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        userID
-        modelID
-        instanceName
-        instanceLocation
-        instancePod
-        count
-        notify
-        countClasses
-        notifyClasses
-        line
-        fromFile
-        fileUrl
-        publicIP
-        privateIP
-        port
-        EC2instanceID
-        instanceState
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          
-          
-          
-        }
-        
-        
-        
-      }
-      nextToken
-      startedAt
     }
   }
 `;
@@ -470,9 +252,6 @@ export const getModelConfig = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -489,17 +268,8 @@ export const getModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -544,65 +314,9 @@ export const listModelConfigs = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
       nextToken
-      startedAt
-    }
-  }
-`;
-export const syncModelUsages = /* GraphQL */ `
-  query SyncModelUsages(
-    $filter: ModelmodelUsageFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncModelUsages(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        modelID
-        userID
-        modelConfigID
-        startTime
-        stopTime
-        usage
-        model {
-          id
-          FPS
-          description
-          image
-          mAP
-          name
-          notes
-          rating
-          type
-          video
-          ami
-          directory
-          virtualenv
-          command
-          
-          
-          
-        }
-        
-        
-        
-      }
-      nextToken
-      startedAt
     }
   }
 `;
@@ -636,9 +350,6 @@ export const getModelUsage = /* GraphQL */ `
           modelID
           name
           number
-          
-          
-          
         }
         modelConfig {
           id
@@ -655,17 +366,8 @@ export const getModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
-      
-      
-      
     }
   }
 `;
@@ -699,16 +401,9 @@ export const listModelUsages = /* GraphQL */ `
           directory
           virtualenv
           command
-          
-          
-          
         }
-        
-        
-        
       }
       nextToken
-      startedAt
     }
   }
 `;
