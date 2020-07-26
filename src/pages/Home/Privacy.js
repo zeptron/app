@@ -24,7 +24,7 @@ import Image from '../../assets/cctv.jpg'
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Connect existing video streams
+              Consume existing video streams
               </h2>
               <p className={s.subheader} >
                 Integrate directly with your CCTV system, IP cameras, or wired video hardware
