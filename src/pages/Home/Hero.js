@@ -20,7 +20,7 @@ import Vision from '../../assets/hero.png'
             Your browser does not support the video tag.
           </video>
        <div {...css(styles.coverOpacity)}></div>
-       <Spacer height="125px"/>
+       <Spacer height="200px"/>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
             <Grid item md={5} sm={6} xs={10}>
                    <h1  className={`${s.header} ${s.center}`} >
@@ -28,7 +28,7 @@ import Vision from '../../assets/hero.png'
                      in seconds
                     </h1>
                     
-                    <Spacer height="50px"/>
+                    <Spacer height="25px"/>
                     <Hidden xsDown >
                     <div style={{textAlign: 'center'}}>
                     <Button size="large" variant="contained" color="secondary" href="/auth">
@@ -43,7 +43,7 @@ import Vision from '../../assets/hero.png'
                     </Hidden>
             </Grid>
         </Grid>
-      <Spacer height="125px"/>
+      <Spacer height="200px"/>
     </Box>  
   )
 }
@@ -59,7 +59,9 @@ const styles = {
   container: {
     overflow: "hidden",
     position: "relative",
-    padding: "0px !important"
+    padding: "0px !important",
+    backgroundImage: 'url(https://zepappassets.s3-ap-southeast-2.amazonaws.com/bg.jpg)',
+    backgroundSize: 'cover'
   },
   content: {
     position: "relative",

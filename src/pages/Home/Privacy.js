@@ -14,7 +14,7 @@ import Image from '../../assets/cctv.jpg'
           <Box p={2} style={{backgroundColor: '#e0e4e0'}}>
           <Grid container justify="center" spacing={spacing}>
             <Grid item md={10} sm={10} xs={12}>
-            <Spacer height="40px"/>
+            <Spacer height="80px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Hidden smUp>
             <Grid item md={6} xs={12}>
