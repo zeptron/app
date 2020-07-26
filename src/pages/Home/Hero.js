@@ -21,6 +21,9 @@ import Vision from '../../assets/hero.png'
           </video> */}
        <div {...css(styles.coverOpacity)}></div>
        <Spacer height="200px"/>
+       <Hidden smUp >
+       <Spacer height="50px"/>
+       </Hidden>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
             <Grid item md={5} sm={6} xs={10}>
                    <h1  className={`${s.header} ${s.center}`} >
@@ -44,7 +47,7 @@ import Vision from '../../assets/hero.png'
                     </Hidden>
             </Grid>
         </Grid>
-      <Spacer height="200px"/>
+      <Spacer height="100px"/>
     </Box>  
   )
 }
@@ -62,7 +65,8 @@ const styles = {
     position: "relative",
     padding: "0px !important",
     backgroundImage: 'url(https://zepappassets.s3-ap-southeast-2.amazonaws.com/bg.jpg)',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundPosition: 'bottom'
   },
   content: {
     position: "relative",
