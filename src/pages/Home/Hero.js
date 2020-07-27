@@ -35,13 +35,13 @@ import Vision from '../../assets/hero.png'
                     <Spacer height="25px"/>
                     <Hidden xsDown >
                     <div style={{textAlign: 'center'}}>
-                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <Button size="large" variant="contained" color="secondary" href="#start">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </div>
                     </Hidden>
                     <Hidden smUp>
-                    <Button size="small" variant="contained" color="secondary" href="/auth">
+                    <Button size="small" variant="contained" color="secondary" href="#start">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </Hidden>
