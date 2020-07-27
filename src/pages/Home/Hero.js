@@ -14,7 +14,7 @@ import Spacer from 'react-spacer'
 
    return (
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
-          {/* <video loop autoPlay {...css(styles.vidDiv)}>
+    {/*  <video loop autoPlay {...css(styles.vidDiv)}>
             <source src={require("./../../assets/vision.mp4")} type="video/mp4" />
             Your browser does not support the video tag.
           </video> */}
@@ -29,7 +29,7 @@ import Spacer from 'react-spacer'
                     Deploy AI<br/>in 60 seconds
                     </h1>
                     <p className={`${s.subheader} ${s.center}`} >
-                    Zeptron makes deploying and managing computer vision models software
+                    Zeptron makes deploying and managing computer vision software easy
                     </p>
                     <Spacer height="25px"/>
                     <Hidden xsDown >

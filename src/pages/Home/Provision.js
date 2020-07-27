@@ -31,12 +31,12 @@ import Edge from './animations/results.js'
             <Grid item md={6} xs={12}>
               <Cloud/>
             <p className={`${s.subheader} ${s.center}`}><strong>Cloud</strong></p>
-              
+
             </Grid> 
             <Grid item md={6} xs={12}>
               <Edge/>
             <p className={`${s.subheader} ${s.center}`}><strong>Edge</strong></p>
-              
+
             </Grid> 
             </Grid>
              <Spacer height="80px"/>
