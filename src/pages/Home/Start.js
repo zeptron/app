@@ -28,7 +28,6 @@ import Form from './Form'
             <h2 className={`${s.header} ${s.center}`}>
             Available now
             </h2>
-           
             <p className={`${s.subheader} ${s.center}`}>Try a demo today</p>
             </Grid> 
             </Grid> 

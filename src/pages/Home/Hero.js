@@ -14,10 +14,10 @@ import Spacer from 'react-spacer'
 
    return (
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
-           <video loop autoPlay {...css(styles.vidDiv)}>
+    {/*  <video loop autoPlay {...css(styles.vidDiv)}>
             <source src={require("./../../assets/vision.mp4")} type="video/mp4" />
             Your browser does not support the video tag.
-          </video> 
+          </video> */}
        <div {...css(styles.coverOpacity)}></div>
        <Spacer height="200px"/>
        <Hidden smUp >
