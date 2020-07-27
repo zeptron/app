@@ -30,7 +30,7 @@ import Vision from '../../assets/hero.png'
                     Deploy AI<br/>in 60 seconds
                     </h1>
                     <p className={`${s.subheader} ${s.center}`} >
-                    Zeptron makes deploying and managing computer vision models easy
+                    Zeptron makes deploying and managing computer vision software easy
                     </p>
                     <Spacer height="25px"/>
                     <Hidden xsDown >
