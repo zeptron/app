@@ -153,7 +153,6 @@ const ConfigurationSteps = ({ match }) => {
                   <TextField
                     required
                     label="Instance Name"
-                    defaultValue="My Model"
                     variant="outlined"
                     value={instanceName}
                     onChange={setInstanceName}
@@ -161,15 +160,13 @@ const ConfigurationSteps = ({ match }) => {
                   <TextField
                     required
                     label="Location"
-                    defaultValue="City Near Me"
                     variant="outlined"
                     value={instanceLocation}
                     onChange={setInstanceLocation}
                   />
                   <TextField
                     required
-                    label="Pod"
-                    defaultValue="Place Near Me"
+                    label="Tag"
                     variant="outlined"
                     value={instancePod}
                     onChange={setInstancePod}
@@ -467,10 +464,10 @@ const ConfigurationSteps = ({ match }) => {
             ParameterKey: 'tableName',
             ParameterValue: `tableName${data?.data?.createModelConfig?.id}`,
           },
-          {
-            ParameterKey: 'ami',
-            ParameterValue: `${modelQuery.getModel.ami}`,
-          },
+          // {
+          //   ParameterKey: 'ami',
+          //   ParameterValue: `${modelQuery.getModel.ami}`,
+          // },
         ],
       }).promise();
 

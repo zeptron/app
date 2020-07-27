@@ -3,7 +3,6 @@ import { css } from "glamor";
 import {Box, Button, Grid, Hidden} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Vision from '../../assets/hero.png'
 
 
 
@@ -25,7 +24,7 @@ import Vision from '../../assets/hero.png'
        <Spacer height="50px"/>
        </Hidden>
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
-            <Grid item md={5} sm={6} xs={10}>
+            <Grid item lg={5} md={5} sm={6} xs={10}>
                    <h1  className={`${s.header} ${s.center}`} >
                     Deploy AI<br/>in 60 seconds
                     </h1>

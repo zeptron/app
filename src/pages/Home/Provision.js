@@ -2,7 +2,6 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Provision from '../../assets/provision.png'
 import Brain from './animations/brain.js'
 import Cloud from './animations/data.js'
 import Edge from './animations/results.js'
