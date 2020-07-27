@@ -29,18 +29,18 @@ import Spacer from 'react-spacer'
                     Deploy AI<br/>in 60 seconds
                     </h1>
                     <p className={`${s.subheader} ${s.center}`} >
-                    Zeptron makes deploying and managing computer vision models easy
+                    Zeptron makes deploying and managing computer vision models software
                     </p>
                     <Spacer height="25px"/>
                     <Hidden xsDown >
                     <div style={{textAlign: 'center'}}>
-                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <Button size="large" variant="contained" color="secondary" href="#start">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </div>
                     </Hidden>
                     <Hidden smUp>
-                    <Button size="small" variant="contained" color="secondary" href="/auth">
+                    <Button size="small" variant="contained" color="secondary" href="#start">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </Hidden>

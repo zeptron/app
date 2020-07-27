@@ -17,7 +17,7 @@ import Form from './Form'
     const [spacing] = React.useState(2);
    
    return (
-    <Box p={2} bgcolor="cornsilk"  >
+    <Box id="start" p={2} bgcolor="cornsilk"  >
          <Grid container justify="center" spacing={spacing}>
             <Grid item md={8} sm={10} xs={12}>
             <Spacer height="80px"/>
@@ -28,7 +28,6 @@ import Form from './Form'
             <h2 className={`${s.header} ${s.center}`}>
             Available now
             </h2>
-           
             <p className={`${s.subheader} ${s.center}`}>Try a demo today</p>
             </Grid> 
             </Grid> 
