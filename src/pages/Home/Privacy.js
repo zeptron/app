@@ -17,7 +17,7 @@ import ReactPlayer from 'react-player'
             <Grid item md={10} sm={10} xs={12}>
             <Spacer height="80px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
-            <Hidden smUp>
+            <Hidden xsDown>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header}>
@@ -38,7 +38,7 @@ import ReactPlayer from 'react-player'
                 url='https://vimeo.com/441931886' 
             />
             </Grid> 
-            <Hidden xsDown>
+            <Hidden smUp>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
