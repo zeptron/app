@@ -2,12 +2,6 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Brain from './animations/brain.js'
-import Data from './animations/data.js'
-import Results from './animations/results.js'
-
-
-
 
   export default function Hero() {
     const [spacing] = React.useState(4);

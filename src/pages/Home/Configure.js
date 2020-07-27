@@ -3,8 +3,6 @@ import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Touch from '../../assets/iPab.png'
-import Hidden from '@material-ui/core/Hidden';
-import Results from './animations/results.js'
 
 
   export default function Hero() {

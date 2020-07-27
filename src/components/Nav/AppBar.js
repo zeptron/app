@@ -12,7 +12,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
-import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import AppsIcon from '@material-ui/icons/Apps';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Logo from '../../assets/logo_white.svg'

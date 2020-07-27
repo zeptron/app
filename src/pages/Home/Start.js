@@ -1,18 +1,18 @@
 import React from 'react';
-import {Box, Grid, Button} from '@material-ui/core'
+import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import { IoLogoGoogle } from "react-icons/io";
-import {MdEmail} from "react-icons/md"
+// import { IoLogoGoogle } from "react-icons/io";
+// import {MdEmail} from "react-icons/md"
 import { Auth } from 'aws-amplify'
 import Form from './Form'
 // import { Button } from "../../containers/Auth.style";
 
 
   export default function Start() {
-    const thisGoogle = () => {
-        Auth.federatedSignIn({ provider: "Google" });
-      };
+    // const thisGoogle = () => {
+    //     Auth.federatedSignIn({ provider: "Google" });
+    //   };
    
     const [spacing] = React.useState(2);
    
