@@ -19,9 +19,26 @@ import ReactPlayer from 'react-player'
             <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Hidden smUp>
             <Grid item md={6} xs={12}>
-            <img style={{maxWidth: '100%'}} src={Image}/>
+            <Spacer height="40px"/>
+              <h2 className={s.header}>
+              Consume existing video streams
+              </h2>
+              <p className={s.subheader} >
+                Integrate directly with your CCTV system, IP cameras, or wired video hardware
+               </p>  
+              <Spacer height="60px"/>
             </Grid> 
             </Hidden>
+            <Grid item md={6} xs={12}>
+            <ReactPlayer 
+                pip="true" 
+                muted 
+                width="100%" 
+                playing="true" 
+                url='https://vimeo.com/441931886' 
+            />
+            </Grid> 
+            <Hidden xsDown>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
@@ -31,16 +48,6 @@ import ReactPlayer from 'react-player'
                 Integrate directly with your CCTV system, IP cameras, or wired video hardware
                </p>  
               <Spacer height="60px"/>
-            </Grid> 
-            <Hidden xsDown>
-            <Grid item md={6} xs={12}>
-            <ReactPlayer 
-                pip="true" 
-                muted 
-                width="100%" 
-                playing="true" 
-                url='https://vimeo.com/441931886' 
-            />
             </Grid> 
             </Hidden>
             </Grid>
