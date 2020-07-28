@@ -123,24 +123,18 @@ export const SingleInstance = ({ modelConfig }) => {
     });
   };
 
-  //   SSM.sendCommand(params, (err, data) => {
-  //     setLoadingRunInstance(false);
-  //   });
-  // };
-
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <h1 className={s.header} style={{ textAlign: 'center' }}>
-          {modelConfig.instanceName}
-        </h1>
-      </Box>
-
-      <Box>
         <Spacer height="100px"/>
         <Grid container alignItems="center" justify="center">
           <Grid item md={8}>
             <Grid container alignItems="center" justify="center">
+              <Grid item md={6} xs={12}>
+              <h1 className={s.header} style={{ textAlign: 'center' }}>
+                {modelConfig.instanceName}
+              </h1>
+              </Grid>
               <Grid item md={6} xs={12}>
                 <Box p={2}>
                   <FormGroup row>
@@ -177,6 +171,7 @@ export const SingleInstance = ({ modelConfig }) => {
             </Grid>
 
             <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
+              
               {loadingInstanceState && (
                 <Typography align='center'>
                   {instanceState ? 'Stopping instance...' : 'Starting instance...'}
@@ -189,22 +184,25 @@ export const SingleInstance = ({ modelConfig }) => {
                 </Typography>
               )}
             </div>
-
-           
+            
           </Grid>
         </Grid>
         <Spacer height="100px"/>
       </Box>
-      <Box  p={4}>
+      <Box bgcolor="primary.main" color="primary.contrastText" p={4}>
               <Grid container alignItems="center" justify="center">
-               
-
-                <Grid item md={10}>
-                  <h2 style={{ textTransform: 'uppercase' }}>Live Stream</h2>
+                <Grid item md={2}>
+                  <h3>Model Name</h3>
+                  <h3 className={s.ocr}>{modelConfig.model.name}</h3>
+                  <h3>IP</h3>
+                  <h3 className={s.ocr}>{modelConfig.publicIP}</h3>
+                  <h3>Port</h3>
+                  <h3 className={s.ocr}>555</h3>
+                  <h3>Location</h3>
+                  <h3 className={s.ocr}>{modelConfig.instanceLocation}</h3>
+                </Grid>
+                <Grid item md={8}>
                   <Grid container alignItems="center" justify="center">
-
-                    <Spacer height="50px"/>
-
                     <h2>Live Stream</h2>
                     <Grid container alignItems="center" justify="center">
                       <img
@@ -215,10 +213,12 @@ export const SingleInstance = ({ modelConfig }) => {
                     </Grid>
                   </Grid>
                 </Grid>
+                <Grid item md={2}>
+                  
+                </Grid>
                 <Spacer height="100px"/>
               </Grid>
             </Box>
-            <p>Comes from {modelConfig.publicIP}</p>
     </div>
   );
 };
