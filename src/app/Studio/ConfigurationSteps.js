@@ -464,10 +464,14 @@ const ConfigurationSteps = ({ match }) => {
             ParameterKey: 'tableName',
             ParameterValue: `tableName${data?.data?.createModelConfig?.id}`,
           },
-          // {
-          //   ParameterKey: 'ami',
-          //   ParameterValue: `${modelQuery.getModel.ami}`,
-          // },
+          {
+            ParameterKey: 'ami',
+            ParameterValue: `${modelQuery.getModel.ami}`,
+          },
+          {
+            ParameterKey: 'instance',
+            ParameterValue: `${modelQuery.getModel.instance}`,
+          },
         ],
       }).promise();
 
