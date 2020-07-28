@@ -49,7 +49,7 @@ export const ModelCard = ({ model }) => {
                   {model.description}
                 </Typography>
               </CardContent>
-              <Button component="a" href={`/library/${model.id}`}>View</Button>
+              <Button href={`/library/${model.id}`}>View</Button>
             </CardActionArea>
           </Card>
         </Link>

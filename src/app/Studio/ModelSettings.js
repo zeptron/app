@@ -88,8 +88,8 @@ export const ModelSettings = ({ modelConfig }) => {
                     
                     <Spacer height="10px" />
                   </CardContent>
-                  <Button href={`/studio/${modelConfig.id}`}>View</Button>
                 </CardActionArea>
+                <Button>View</Button>
               </Card>
             </Link>
             </Grid>

@@ -91,38 +91,37 @@ export const SingleInstance = ({ modelConfig }) => {
       secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
     });
 
-    const SNS = new AWS.SNS();
+    const SSM = new AWS.SSM();
 
     setLoadingRunInstance(true);
 
     // const SSM = new AWS.SSM();
 
     const params = {
-      Message: `cd ${modelConfig.model.directory} && ${modelConfig.model.command}`, /* required */
-      MessageAttributes: {
-        'EC2intanceID': {
-          DataType: 'String', /* required */
-          // BinaryValue: Buffer.from('...') || 'STRING_VALUE' /* Strings will be Base-64 encoded on your behalf */,
-          StringValue: `${modelConfig.EC2instanceID}`
-        },
-        /* '<String>': ... */
+      DocumentName: 'AWS-RunShellScript',
+      CloudWatchOutputConfig: {
+        CloudWatchLogGroupName: 'ZeptronAPP',
+        CloudWatchOutputEnabled: true
       },
-      // MessageStructure: 'json',
-      // PhoneNumber: 'STRING_VALUE',
-      // Subject: 'STRING_VALUE',
-      // TargetArn: 'STRING_VALUE',
-      TopicArn: 'arn:aws:sns:ap-southeast-2:047384901313:zeptroncommands'
+      Comment: 'run instance',
+      InstanceIds: [`${modelConfig.EC2instanceID}`],
+      NotificationConfig: {
+        NotificationArn: process.env.REACT_APP_AWS_NOTIFICATION_ARN,
+        NotificationEvents: ['All'],
+        NotificationType: 'Command'
+      },
+      Parameters: {
+        'commands': [
+          `cd ${modelConfig.model.directory} && ${modelConfig.model.command}`,
+        ],
+      },
+      ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
     };
-    SNS.publish(params, function(err, data) {
+    SSM.sendCommand(params, function(err, data) {
       if (err) console.log(err, err.stack); // an error occurred
       else     console.log(data);           // successful response
     });
   };
-
-  //   SSM.sendCommand(params, (err, data) => {
-  //     setLoadingRunInstance(false);
-  //   });
-  // };
 
   return (
     <div>
@@ -190,9 +189,19 @@ export const SingleInstance = ({ modelConfig }) => {
         </Grid>
         <Spacer height="100px"/>
       </Box>
-      <Box bgColor="primary"  p={4}>
+      <Box bgcolor="primary.main" color="primary.contrastText" p={4}>
               <Grid container alignItems="center" justify="center">
-                <Grid item md={10}>
+                <Grid item md={2}>
+                  <h3>Model Name</h3>
+                  <h3 className={s.ocr}>{modelConfig.model.name}</h3>
+                  <h3>IP</h3>
+                  <h3 className={s.ocr}>{modelConfig.publicIP}</h3>
+                  <h3>Port</h3>
+                  <h3 className={s.ocr}>555</h3>
+                  <h3>Location</h3>
+                  <h3 className={s.ocr}>{modelConfig.instanceLocation}</h3>
+                </Grid>
+                <Grid item md={8}>
                   <Grid container alignItems="center" justify="center">
                     <h2>Live Stream</h2>
                     <Grid container alignItems="center" justify="center">
@@ -204,10 +213,12 @@ export const SingleInstance = ({ modelConfig }) => {
                     </Grid>
                   </Grid>
                 </Grid>
+                <Grid item md={2}>
+                  
+                </Grid>
                 <Spacer height="100px"/>
               </Grid>
             </Box>
-            <p>Comes from {modelConfig.publicIP}</p>
     </div>
   );
 };

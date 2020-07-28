@@ -21,6 +21,7 @@ export const createModel = /* GraphQL */ `
       directory
       virtualenv
       command
+      instance
       class {
         id
         modelID
@@ -41,6 +42,7 @@ export const createModel = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
       modelConfig {
@@ -58,6 +60,7 @@ export const createModel = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -79,6 +82,7 @@ export const createModel = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -104,6 +108,7 @@ export const updateModel = /* GraphQL */ `
       directory
       virtualenv
       command
+      instance
       class {
         id
         modelID
@@ -124,6 +129,7 @@ export const updateModel = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
       modelConfig {
@@ -141,6 +147,7 @@ export const updateModel = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -162,6 +169,7 @@ export const updateModel = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -187,6 +195,7 @@ export const deleteModel = /* GraphQL */ `
       directory
       virtualenv
       command
+      instance
       class {
         id
         modelID
@@ -207,6 +216,7 @@ export const deleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
       modelConfig {
@@ -224,6 +234,7 @@ export const deleteModel = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -245,6 +256,7 @@ export const deleteModel = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -275,6 +287,7 @@ export const createClass = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -296,6 +309,7 @@ export const createClass = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -326,6 +340,7 @@ export const updateClass = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -347,6 +362,7 @@ export const updateClass = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -377,6 +393,7 @@ export const deleteClass = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -398,6 +415,7 @@ export const deleteClass = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -442,6 +460,7 @@ export const createModelConfig = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -463,6 +482,7 @@ export const createModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -507,6 +527,7 @@ export const updateModelConfig = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -528,6 +549,7 @@ export const updateModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -572,6 +594,7 @@ export const deleteModelConfig = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -593,6 +616,7 @@ export const deleteModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -626,6 +650,7 @@ export const createModelUsage = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -647,6 +672,7 @@ export const createModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -680,6 +706,7 @@ export const updateModelUsage = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -701,6 +728,7 @@ export const updateModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -734,6 +762,7 @@ export const deleteModelUsage = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -755,6 +784,7 @@ export const deleteModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }

@@ -13,6 +13,7 @@ type Model @model {
   directory: String! 
   virtualenv: String!
   command: String!
+  instance: String!
   class: Class @connection
   modelConfig: Model @connection
 }

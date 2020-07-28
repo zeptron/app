@@ -18,6 +18,7 @@ export const getModel = /* GraphQL */ `
       directory
       virtualenv
       command
+      instance
       class {
         id
         modelID
@@ -38,6 +39,7 @@ export const getModel = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
       modelConfig {
@@ -55,6 +57,7 @@ export const getModel = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -76,6 +79,7 @@ export const getModel = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -103,6 +107,7 @@ export const listModels = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -124,6 +129,7 @@ export const listModels = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
       nextToken
@@ -152,6 +158,7 @@ export const getClass = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -173,6 +180,7 @@ export const getClass = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -205,6 +213,7 @@ export const listClasss = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
       nextToken
@@ -247,6 +256,7 @@ export const getModelConfig = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -268,6 +278,7 @@ export const getModelConfig = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -314,6 +325,7 @@ export const listModelConfigs = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
       nextToken
@@ -345,6 +357,7 @@ export const getModelUsage = /* GraphQL */ `
         directory
         virtualenv
         command
+        instance
         class {
           id
           modelID
@@ -366,6 +379,7 @@ export const getModelUsage = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
     }
@@ -401,6 +415,7 @@ export const listModelUsages = /* GraphQL */ `
           directory
           virtualenv
           command
+          instance
         }
       }
       nextToken

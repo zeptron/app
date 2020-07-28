@@ -3,6 +3,14 @@
     font-size: 3em;
     text-align: left;
 }
+.ocr { 
+    font-family: ocr-a-std, monospace;
+    background-color: rgb(0, 10, 18);
+    padding: 8px 5px 5px 5px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .heroh3 {
     text-transform: uppercase;
 }
