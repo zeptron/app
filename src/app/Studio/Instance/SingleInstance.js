@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AWS from 'aws-sdk';
 import Spacer from 'react-spacer';
 import Switch from '@material-ui/core/Switch';
-import { Box, Button, Grid } from '@material-ui/core';
+import { Box, Button, Grid, Hidden } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -112,7 +112,7 @@ export const SingleInstance = ({ modelConfig }) => {
       },
       Parameters: {
         'commands': [
-          `cd ${modelConfig.model.directory} && ${modelConfig.model.command}`,
+          `cd ${modelConfig.model.directory} && ${modelConfig.model.virtualenv} ${modelConfig.model.command}`,
         ],
       },
       ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
@@ -149,6 +149,25 @@ export const SingleInstance = ({ modelConfig }) => {
                       }
                       label="Power"
                     />
+                    <Hidden smUp>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      size="small"
+                      onClick={runInstance}
+                    >
+                      Run
+                    </Button>
+                    <Button
+                      href={`/studio/${modelConfig.id}/analytics`}
+                      variant="contained"
+                      color="primary"
+                      size="small"
+                    >
+                      Analyse
+                    </Button>
+                    </Hidden>
+                    <Hidden xsDown>
                     <Button
                       variant="contained"
                       color="secondary"
@@ -165,6 +184,7 @@ export const SingleInstance = ({ modelConfig }) => {
                     >
                       Analyse
                     </Button>
+                    </Hidden>
                   </FormGroup>
                 </Box>
               </Grid>
@@ -201,14 +221,14 @@ export const SingleInstance = ({ modelConfig }) => {
                   <h3>Location</h3>
                   <h3 className={s.ocr}>{modelConfig.instanceLocation}</h3>
                 </Grid>
-                <Grid item md={8}>
+                <Grid item md={8} xs={12}>
                   <Grid container alignItems="center" justify="center">
                     <h2>Live Stream</h2>
                     <Grid container alignItems="center" justify="center">
                       <img
                         alt="Stream loading"
                         src={`http://${modelConfig.publicIP}:8000/video_feed`}
-                        style={{ maxWidth: '90%' }}
+                        style={{ maxWidth: '95%' }}
                       />
                     </Grid>
                   </Grid>
