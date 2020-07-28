@@ -197,7 +197,7 @@ export const SingleInstance = ({ modelConfig }) => {
                   <h3>IP</h3>
                   <h3 className={s.ocr}>{modelConfig.publicIP}</h3>
                   <h3>Port</h3>
-                  <h3 className={s.ocr}>555</h3>
+                  <h3 className={s.ocr}>5555</h3>
                   <h3>Location</h3>
                   <h3 className={s.ocr}>{modelConfig.instanceLocation}</h3>
                 </Grid>
