@@ -91,33 +91,29 @@ export const SingleInstance = ({ modelConfig }) => {
       secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
     });
 
-    const SSM = new AWS.SSM();
+    const SNS = new AWS.SNS();
 
     setLoadingRunInstance(true);
 
     // const SSM = new AWS.SSM();
 
     const params = {
-      DocumentName: 'AWS-RunShellScript',
-      CloudWatchOutputConfig: {
-        CloudWatchLogGroupName: 'ZeptronAPP',
-        CloudWatchOutputEnabled: true
+      Message: `cd ${modelConfig.model.directory} && ${modelConfig.model.command}`, /* required */
+      MessageAttributes: {
+        'EC2intanceID': {
+          DataType: 'String', /* required */
+          // BinaryValue: Buffer.from('...') || 'STRING_VALUE' /* Strings will be Base-64 encoded on your behalf */,
+          StringValue: `${modelConfig.EC2instanceID}`
+        },
+        /* '<String>': ... */
       },
-      Comment: 'run instance',
-      InstanceIds: [`${modelConfig.EC2instanceID}`],
-      NotificationConfig: {
-        NotificationArn: process.env.REACT_APP_AWS_NOTIFICATION_ARN,
-        NotificationEvents: ['All'],
-        NotificationType: 'Command'
-      },
-      Parameters: {
-        'commands': [
-          `cd ${modelConfig.model.directory} && ${modelConfig.model.command}`,
-        ],
-      },
-      ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
+      // MessageStructure: 'json',
+      // PhoneNumber: 'STRING_VALUE',
+      // Subject: 'STRING_VALUE',
+      // TargetArn: 'STRING_VALUE',
+      TopicArn: 'arn:aws:sns:ap-southeast-2:047384901313:zeptroncommands'
     };
-    SSM.sendCommand(params, function(err, data) {
+    SNS.publish(params, function(err, data) {
       if (err) console.log(err, err.stack); // an error occurred
       else     console.log(data);           // successful response
     });
@@ -131,16 +127,15 @@ export const SingleInstance = ({ modelConfig }) => {
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <h1 className={s.header} style={{ textAlign: 'center' }}>
-          {modelConfig.instanceName}
-        </h1>
-      </Box>
-
-      <Box>
         <Spacer height="100px"/>
         <Grid container alignItems="center" justify="center">
           <Grid item md={8}>
             <Grid container alignItems="center" justify="center">
+              <Grid item md={6} xs={12}>
+              <h1 className={s.header} style={{ textAlign: 'center' }}>
+                {modelConfig.instanceName}
+              </h1>
+              </Grid>
               <Grid item md={6} xs={12}>
                 <Box p={2}>
                   <FormGroup row>
@@ -177,6 +172,7 @@ export const SingleInstance = ({ modelConfig }) => {
             </Grid>
 
             <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
+              
               {loadingInstanceState && (
                 <Typography align='center'>
                   {instanceState ? 'Stopping instance...' : 'Starting instance...'}
@@ -189,22 +185,15 @@ export const SingleInstance = ({ modelConfig }) => {
                 </Typography>
               )}
             </div>
-
-           
+            
           </Grid>
         </Grid>
         <Spacer height="100px"/>
       </Box>
-      <Box  p={4}>
+      <Box bgColor="primary"  p={4}>
               <Grid container alignItems="center" justify="center">
-               
-
                 <Grid item md={10}>
-                  <h2 style={{ textTransform: 'uppercase' }}>Live Stream</h2>
                   <Grid container alignItems="center" justify="center">
-
-                    <Spacer height="50px"/>
-
                     <h2>Live Stream</h2>
                     <Grid container alignItems="center" justify="center">
                       <img
