@@ -466,11 +466,11 @@ const ConfigurationSteps = ({ match }) => {
           },
           {
             ParameterKey: 'ami',
-            ParameterValue: `${modelQuery.getModel.ami}`,
+            ParameterValue: `${modelQuery.data.getModel?.ami}`,
           },
           {
             ParameterKey: 'instance',
-            ParameterValue: `${modelQuery.getModel.instance}`,
+            ParameterValue: `${modelQuery.data.getModel?.instance}`,
           },
         ],
       }).promise();
