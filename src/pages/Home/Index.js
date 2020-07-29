@@ -37,7 +37,7 @@ class Home extends React.Component {
             {/* <Results/> */}
             {/* <Privacy/> */}
             {/* <Pricing/> */}
-            <Below/>
+            {/* <Below/> */}
             <Start/>
             </div>
           )

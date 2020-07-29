@@ -495,7 +495,7 @@ const ConfigurationSteps = ({ match }) => {
           publicIP,
           privateIP,
           EC2instanceID,
-          // instanceState: true,
+          instanceState: true,
           tableName: `tableName${data?.data?.createModelConfig?.id}`,
         }
       });
