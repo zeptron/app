@@ -26,9 +26,9 @@ import Form from './Form'
             <Grid item md={8} xs={12}>
             <Spacer height="30px"/>
             <h2 className={`${s.header} ${s.center}`}>
-            Available now
+            Get it now
             </h2>
-            <p className={`${s.subheader} ${s.center}`}>Try a demo today</p>
+            <p className={`${s.subheader} ${s.center}`}>Try a free demo today</p>
             </Grid> 
             </Grid> 
             <Spacer height="20px"/>
