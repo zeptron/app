@@ -21,22 +21,23 @@ import ReactPlayer from 'react-player'
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header}>
-              Consume existing video streams
+                Put AI to work in under a minute
               </h2>
               <p className={s.subheader} >
-                Integrate directly with your CCTV system, IP cameras, or wired video hardware
+                Zeptron is a control centre for vision AI that makes it easy to deploy analytics, optical sorting, and quality control models
                </p>  
               <Spacer height="60px"/>
             </Grid> 
             </Hidden>
             <Grid item md={6} xs={12}>
-            <ReactPlayer 
+            {/* <ReactPlayer 
                 pip="true" 
                 muted 
                 width="100%" 
                 playing="true" 
                 url='https://vimeo.com/441931886' 
-            />
+            /> */}
+            <img src="https://i.ytimg.com/vi/cXKTnOvTvcE/maxresdefault.jpg" style={{maxWidth: '100%'}}/>
             </Grid> 
             <Hidden smUp>
             <Grid item md={6} xs={12}>
