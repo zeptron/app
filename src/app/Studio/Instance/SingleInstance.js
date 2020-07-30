@@ -134,6 +134,24 @@ export const SingleInstance = ({ modelConfig }) => {
 
     SSM.sendCommand(params, (err, data) => {
       setLoadingRunInstance(false);
+
+      const AWSEC2 = new AWS.EC2();
+
+      AWSEC2.describeInstances({
+        InstanceIds: [modelConfig.EC2instanceID],
+      }, (err, data) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        updateModelConfigQuery.fetch({
+          input: {
+            id: modelConfig?.id,
+            publicIP: data?.Reservations?.[0]?.Instances?.[0]?.PublicIpAddress,
+          }
+        });
+      });
     });
   };
 
