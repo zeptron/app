@@ -126,7 +126,7 @@ export const SingleInstance = ({ modelConfig }) => {
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <Spacer height="100px"/>
+        {/* <Spacer height="50px"/> */}
         <Grid container alignItems="center" justify="center">
           <Grid item md={8}>
             <Grid container alignItems="center" justify="center">
@@ -207,7 +207,7 @@ export const SingleInstance = ({ modelConfig }) => {
             
           </Grid>
         </Grid>
-        <Spacer height="100px"/>
+        {/* <Spacer height="50px"/> */}
       </Box>
       <Box bgcolor="primary.main" color="primary.contrastText" p={4}>
               <Grid container alignItems="center" justify="center">

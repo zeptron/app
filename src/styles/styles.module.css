@@ -10,6 +10,7 @@
     display: flex;
   justify-content: center;
   align-items: center;
+  color: lime;
 }
 .heroh3 {
     text-transform: uppercase;
