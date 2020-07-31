@@ -38,7 +38,7 @@ export const SingleInstance = ({ modelConfig }) => {
     setLoadingInstanceState(true);
 
     AWSEC2.startInstances({
-      InstanceIds: [modelConfig.EC2instanceID]
+      InstanceIds: [modelConfig.EC2instanceID],
     }, (err, data) => {
       setLoadingInstanceState(false);
 
@@ -51,6 +51,22 @@ export const SingleInstance = ({ modelConfig }) => {
           id: modelConfig?.id,
           instanceState: true,
         }
+      });
+
+      AWSEC2.describeInstances({
+        InstanceIds: [modelConfig.EC2instanceID],
+      }, (err, data) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        updateModelConfigQuery.fetch({
+          input: {
+            id: modelConfig?.id,
+            publicIP: data?.Reservations?.[0]?.Instances?.[0]?.PublicIpAddress,
+          }
+        });
       });
     });
   };
@@ -95,8 +111,6 @@ export const SingleInstance = ({ modelConfig }) => {
 
     setLoadingRunInstance(true);
 
-    // const SSM = new AWS.SSM();
-
     const params = {
       DocumentName: 'AWS-RunShellScript',
       CloudWatchOutputConfig: {
@@ -117,16 +131,34 @@ export const SingleInstance = ({ modelConfig }) => {
       },
       ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
     };
-    SSM.sendCommand(params, function(err, data) {
-      if (err) console.log(err, err.stack); // an error occurred
-      else     console.log(data);           // successful response
+
+    SSM.sendCommand(params, (err, data) => {
+      setLoadingRunInstance(false);
+
+      const AWSEC2 = new AWS.EC2();
+
+      AWSEC2.describeInstances({
+        InstanceIds: [modelConfig.EC2instanceID],
+      }, (err, data) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        updateModelConfigQuery.fetch({
+          input: {
+            id: modelConfig?.id,
+            publicIP: data?.Reservations?.[0]?.Instances?.[0]?.PublicIpAddress,
+          }
+        });
+      });
     });
   };
 
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-      
+
         <Grid container alignItems="center" justify="center">
           <Grid item md={8}>
             <Grid container alignItems="center" justify="center">
@@ -191,7 +223,7 @@ export const SingleInstance = ({ modelConfig }) => {
             </Grid>
 
             <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
-              
+
               {loadingInstanceState && (
                 <Typography align='center'>
                   {instanceState ? 'Stopping instance...' : 'Starting instance...'}
@@ -204,10 +236,10 @@ export const SingleInstance = ({ modelConfig }) => {
                 </Typography>
               )}
             </div>
-            
+
           </Grid>
         </Grid>
-       
+
       </Box>
       <Box bgcolor="primary.main" color="primary.contrastText" p={4}>
               <Grid container alignItems="center" justify="center">
@@ -234,7 +266,7 @@ export const SingleInstance = ({ modelConfig }) => {
                   </Grid>
                 </Grid>
                 <Grid item md={2}>
-                  
+
                 </Grid>
                 <Spacer height="100px"/>
               </Grid>
