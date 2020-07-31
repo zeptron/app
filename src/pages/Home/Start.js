@@ -26,7 +26,7 @@ import Form from './Form'
             <Grid item md={8} xs={12}>
             <Spacer height="30px"/>
             <h2 className={`${s.header} ${s.center}`}>
-            Start using AI now
+            Start with AI now
             </h2>
             <p className={`${s.subheader} ${s.center}`}>Try a free demo today</p>
             </Grid> 
