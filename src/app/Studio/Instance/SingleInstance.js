@@ -126,7 +126,7 @@ export const SingleInstance = ({ modelConfig }) => {
       },
       Parameters: {
         'commands': [
-          `cd ${modelConfig.model.directory} && ${modelConfig.model.virtualenv} ${modelConfig.model.command}`,
+          `cd ${modelConfig.model.directory} && ${modelConfig.model.virtualenv} ${modelConfig.model.command} --tableName=${modelConfig.tableName}`,
         ],
       },
       ServiceRoleArn: process.env.REACT_APP_AWS_SERVICE_ROLE_ARN,
