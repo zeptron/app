@@ -21,10 +21,10 @@ import ReactPlayer from 'react-player'
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header}>
-                Put AI to work in under a minute
+              Automated computer vision deployment
               </h2>
               <p className={s.subheader} >
-              Zeptron is a code-free deployment solution for vision AI that makes it easy to use analytics, optical sorting, and quality control models
+              Put AI to work for analytics, optical sorting, and quality control in under a minute with an automated deployment solution
                </p>  
               <Spacer height="60px"/>
             </Grid> 
@@ -43,10 +43,10 @@ import ReactPlayer from 'react-player'
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Put AI to work in under a minute
+              Automated computer vision deployment
               </h2>
               <p className={s.subheader} >
-              Zeptron is a code-free deployment solution for vision AI that makes it easy to use analytics, optical sorting, and quality control models
+              Put AI to work for analytics, optical sorting, and quality control in less time and with less work
                </p>  
               <Spacer height="60px"/>
             </Grid> 
