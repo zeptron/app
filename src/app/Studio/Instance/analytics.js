@@ -1,23 +1,132 @@
-import React from "react";
-import Spacer from "react-spacer";
-import { Box, Button, Grid } from "@material-ui/core";
-import s from "../../../styles/styles.module.css";
+import React, { useContext, useEffect, useState } from 'react';
+import Spacer from 'react-spacer';
+import { Box, Button, Grid } from '@material-ui/core';
 
-// Data from GraphQL
+import UserContext from '../../../UserContext';
+import useQuery from '../../../graphql/useQuery';
+import * as queries from '../../../graphql/queries';
 
-const InstanceName = "InstanceName";
+import s from '../../../styles/styles.module.css';
+import AWS from 'aws-sdk';
+import { Bar } from 'react-chartjs-2';
 
-export default function Analytics() {
+export default function Analytics({ match }) {
+  const [chartData, setChartData] = useState([]);
+
+  const { user } = useContext(UserContext);
+
+  const modelQuery = useQuery(queries.listModelConfigs, {
+    onSuccess: ({ data }) => {
+      AWS.config.update({
+        region: process.env.REACT_APP_AWS_REGION,
+        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+      });
+
+      const DynamoDB = new AWS.DynamoDB();
+
+      DynamoDB.scan({
+        // TODO 30.07.2020 yelysei: remove test data
+        TableName: 'tableName9cd450a6-de6e-4e90-9a84-5738880e4298',
+        // TableName: data?.listModelConfigs?.items?.[0]?.tableName,
+      }, (err, data) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        setChartData(data.Items);
+      });
+    },
+  });
+
+  useEffect(() => {
+    modelQuery.fetch({
+      filter: {
+        userID: {
+          eq: user.username,
+        },
+        id: {
+          eq: match.params.id,
+        },
+      },
+    });
+  }, []);
+
+  if (modelQuery.loading || !modelQuery.data) {
+    return <>Loading...</>;
+  }
+
+  console.log(chartData);
+  const modelConfig = modelQuery.data?.listModelConfigs?.items?.[0];
+
+  const COLORS = [
+    '#cc241d',
+    '#458588',
+    '#d79921',
+    '#83a598',
+    '#689d6a',
+    '#fb4934',
+    '#d3869b',
+    '#b16286',
+    '#8ec07c',
+    '#fabd2f',
+  ];
+
+  const labels = Object.keys(chartData?.[0] ?? {}).filter((item) => item !== 'timestamp');
+
+  const data = {
+    labels: chartData?.map(({ timestamp }) => timestamp.S),
+    datasets: labels.map((label, index) => ({
+      label: label,
+      data: chartData?.map((item) => parseInt(item[label].N, 10)),
+      backgroundColor: COLORS[index % COLORS.length],
+    })),
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    // animation: {
+    //   duration: 0,
+    // },
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+          },
+          gridLines: {
+            drawBorder: false,
+            zeroLineWidth: 0,
+            zeroLineColor: '#ffffff',
+            borderDash: [2, 3],
+          },
+        },
+      ],
+      xAxes: [
+        // {
+        //   display: false,
+        // },
+      ],
+    },
+    layout: {
+      padding: {
+        right: 50,
+      },
+    },
+  };
+
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <h1 className={s.header} style={{ textAlign: "center" }}>
-          {InstanceName}
+        <h1 className={s.header} style={{ textAlign: 'center' }}>
+          {modelConfig.instanceName}
         </h1>
       </Box>
 
       <Box>
-        <Spacer height="100px" />
+        <Spacer height="100px"/>
         <Grid container alignItems="center" justify="center">
           <Grid item md={8}>
             <Button
@@ -31,17 +140,18 @@ export default function Analytics() {
             <Button variant="contained" color="secondary" size="large">
               Stop
             </Button>
-            <Spacer height="50px" />
+            <Spacer height="50px"/>
             <h2>Charts</h2>
             <Grid container alignItems="center" justify="center" spacing={2}>
-              <img
-                alt="stream"
-                src="https://via.placeholder.com/640x460.png?text=Live+Stream"
+              <Bar
+                data={data}
+                options={options}
+                redraw
               />
             </Grid>
           </Grid>
         </Grid>
-        <Spacer height="100px" />
+        <Spacer height="100px"/>
       </Box>
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 
 import * as queries from "../../../graphql/queries";
-import * as mutations from '../../../graphql/mutations';
 import useQuery from '../../../graphql/useQuery';
 import UserContext from '../../../UserContext';
 
