@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "glamor";
 import { Link } from "react-router-dom";
 import UserContext from "./UserContext";
-import AppBar from "./components/Nav/AppBar";
+import AppBar from "./components/Nav/AppBar2";
 
 
 class Header extends React.Component {

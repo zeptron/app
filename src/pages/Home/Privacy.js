@@ -3,7 +3,6 @@ import {Box, Grid, Hidden} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Image from '../../assets/cctv.jpg'
-import YouTube from 'react-youtube'
 import ReactPlayer from 'react-player'
 
   export default function Hero() {
@@ -21,11 +20,10 @@ import ReactPlayer from 'react-player'
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header}>
-              Automated computer vision deployment
+              Consume existing video streams
               </h2>
               <p className={s.subheader} >
-              Put AI to work for analytics, optical sorting, and quality control in under a minute with an automated deployment solution
-               </p>  
+Use Zeptron on your existing CCTV network, IP Cameras, or wired hardware               </p>  
               <Spacer height="60px"/>
             </Grid> 
             </Hidden>
@@ -37,17 +35,17 @@ import ReactPlayer from 'react-player'
                 playing="true" 
                 url='https://vimeo.com/441931886' 
             /> */}
-            <img src="https://i.ytimg.com/vi/cXKTnOvTvcE/maxresdefault.jpg" style={{maxWidth: '100%'}}/>
+            <img src={Image} style={{maxWidth: '100%'}}/>
             </Grid> 
             <Hidden smUp>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Automated computer vision deployment
+              Consume existing video streams
               </h2>
               <p className={s.subheader} >
-              Put AI to work for analytics, optical sorting, and quality control in less time and with less work
-               </p>  
+              Use Zeptron on your existing CCTV network, IP Cameras, or wired hardware               </p>  
+             
               <Spacer height="60px"/>
             </Grid> 
             </Hidden>
