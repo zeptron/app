@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Box, Button, Grid, Paper } from "@material-ui/core";
 import Spacer from "react-spacer";
 import s from "../../styles/styles.module.css";

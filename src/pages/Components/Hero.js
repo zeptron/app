@@ -6,14 +6,15 @@ import Spacer from 'react-spacer'
 
 
 
-  export default function Hero() {
+  export default function Hero(props) {
 
 
-    console.log(`require("./../../assets/herobg.mp4")`, require("./../../assets/herobg.mp4"))
+    console.log(`require("./../../assets/herobg.mp4")`, 
+    require("./../../assets/herobg.mp4"))
   
 
    return (
-      <Box bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
+      <Box style={{backgroundImage: `${props.bgImage}`}} bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
     {/*  <video loop autoPlay {...css(styles.vidDiv)}>
             <source src={require("./../../assets/vision.mp4")} type="video/mp4" />
             Your browser does not support the video tag.
@@ -26,10 +27,10 @@ import Spacer from 'react-spacer'
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
             <Grid item lg={5} md={5} sm={6} xs={10}>
                    <h1  className={`${s.header} ${s.center}`} >
-                    Deploy AI<br/>in 60 seconds
+                     {props.header}
                     </h1>
                     <p className={`${s.subheader} ${s.center}`} >
-                    Zeptron makes deploying and managing computer vision software easy
+                      {props.subheader}
                     </p>
                     <Spacer height="25px"/>
                     <Hidden xsDown >

@@ -1,16 +1,36 @@
 import React, { useContext, useEffect, useState } from 'react';
+import AWS from 'aws-sdk';
+import { Bar } from 'react-chartjs-2';
 import Spacer from 'react-spacer';
 import { Box, Button, Grid } from '@material-ui/core';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 import UserContext from '../../../UserContext';
 import useQuery from '../../../graphql/useQuery';
 import * as queries from '../../../graphql/queries';
 
 import s from '../../../styles/styles.module.css';
-import AWS from 'aws-sdk';
-import { Bar } from 'react-chartjs-2';
 
 export default function Analytics({ match }) {
+  const MODES = {
+    MIN5: {
+      key: 'MIN5',
+      title: '5 min',
+      seconds: 5 * 60,
+    },
+    MIN30: {
+      key: 'MIN30',
+      title: '30 min',
+      seconds: 30 * 60,
+    },
+    HOUR1: {
+      key: 'HOUR1',
+      title: '1 hour',
+      seconds: 60 * 60,
+    },
+  };
+
+  const [mode, setMode] = useState(MODES.MIN5.key);
   const [chartData, setChartData] = useState([]);
 
   const { user } = useContext(UserContext);
@@ -27,8 +47,8 @@ export default function Analytics({ match }) {
 
       DynamoDB.scan({
         // TODO 30.07.2020 yelysei: remove test data
-        TableName: 'tableName9cd450a6-de6e-4e90-9a84-5738880e4298',
-        // TableName: data?.listModelConfigs?.items?.[0]?.tableName,
+        // TableName: 'tableName9cd450a6-de6e-4e90-9a84-5738880e4298',
+        TableName: data?.listModelConfigs?.items?.[0]?.tableName,
       }, (err, data) => {
         if (err) {
           console.error(err);
@@ -57,7 +77,6 @@ export default function Analytics({ match }) {
     return <>Loading...</>;
   }
 
-  console.log(chartData);
   const modelConfig = modelQuery.data?.listModelConfigs?.items?.[0];
 
   const COLORS = [
@@ -86,7 +105,8 @@ export default function Analytics({ match }) {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
+    aspectRatio: 1.5,
     // animation: {
     //   duration: 0,
     // },
@@ -105,9 +125,6 @@ export default function Analytics({ match }) {
         },
       ],
       xAxes: [
-        // {
-        //   display: false,
-        // },
       ],
     },
     layout: {
@@ -130,7 +147,7 @@ export default function Analytics({ match }) {
         <Grid container alignItems="center" justify="center">
           <Grid item md={8}>
             <Button
-              href="/studio/{id}/"
+              href={`/studio/${match.params.id}/`}
               variant="contained"
               color="primary"
               size="large"
@@ -142,6 +159,19 @@ export default function Analytics({ match }) {
             </Button>
             <Spacer height="50px"/>
             <h2>Charts</h2>
+            <div className={s.chartSelectorWrapper}>
+              <div className={s.chartSelectorText}>Group by: </div>
+              <ButtonGroup size="small" color="primary" aria-label="contained primary button group">
+                {Object.values(MODES).map(({ key, title }) => (
+                  <Button
+                    color={key === mode ? 'secondary' : 'primary'}
+                    onClick={() => setMode(key)}
+                  >
+                    {title}
+                  </Button>
+                ))}
+              </ButtonGroup>
+            </div>
             <Grid container alignItems="center" justify="center" spacing={2}>
               <Bar
                 data={data}
