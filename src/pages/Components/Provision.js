@@ -31,12 +31,14 @@ import Edge from './animations/results.js'
             <Grid item md={6} xs={12}>
               <Cloud/>
             <p className={`${s.subheader} ${s.center}`}><strong>Cloud</strong></p>
-
+            <p style={{marginBottom: 0}} className={`${s.subheader} ${s.center}`}>Scale and manage easily</p>
+            <p style={{marginTop: 0}}  className={`${s.subheader} ${s.center}`}>Pay per hour for compute</p>
             </Grid> 
             <Grid item md={6} xs={12}>
               <Edge/>
             <p className={`${s.subheader} ${s.center}`}><strong>Edge</strong></p>
-
+            <p style={{marginBottom: 0}} className={`${s.subheader} ${s.center}`}>Install compute on-site</p>
+            <p style={{marginTop: 0}}  className={`${s.subheader} ${s.center}`}>Only send results to the cloud</p>
             </Grid> 
             </Grid>
              <Spacer height="80px"/>
