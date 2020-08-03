@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
             <Grid item md={10} sm={10} xs={12}>
             <Spacer height="50px"/>
             <h2 className={`${s.header} ${s.center}`} >
-              With products for...
+              Explore
               </h2>
             <Spacer height="50px"/>
               <Grid container  justify="center" spacing={spacing}>
@@ -25,18 +25,18 @@ import { Link } from "react-router-dom";
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Health</h3>
               </Link>
               </Grid>
-              <Grid item md={4} sm={6}  xs={12}>
+              {/* <Grid item md={4} sm={6}  xs={12}>
               <Link to="/safety" className={s.belowlink}>
               <Spacer height="20px"/>
               <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/1605/1605056.svg"/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Safety</h3>
               </Link>
-              </Grid>
+              </Grid> */}
               <Grid item md={4} sm={6}  xs={12}>
-              <Link to="/safety" className={s.belowlink}>
+              <Link to="/production" className={s.belowlink}>
               <Spacer height="20px"/>
               <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/1037/1037353.svg"/>
-              <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Manufacturing</h3>
+              <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Production</h3>
               </Link>
               </Grid>
             </Grid>
