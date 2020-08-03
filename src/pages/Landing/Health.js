@@ -5,6 +5,7 @@ import Spacer from 'react-spacer'
 import Hero from '../Components/Hero'
 import Consume from '../Components/Privacy'
 import ReactPlayer from 'react-player'
+import Notifications from '../Components/Notifications'
 
 export default function Health() {
     return (
@@ -25,6 +26,7 @@ export default function Health() {
                 url='https://vimeo.com/441931886' 
             />}
             />
+        <Notifications/>
         
         </div>
     )
