@@ -5,11 +5,12 @@ import Spacer from 'react-spacer'
 import Hero from '../Components/Hero'
 import Consume from '../Components/Privacy'
 import ReactPlayer from 'react-player'
-import Notifications from '../Components/Notifications'
+import ImgLeft from '../Components/ImgLeft'
 import NotificationImg from '../../assets/notifications.png'
-import Charts from '../Components/Charts'
+import ImgRight from '../Components/ImgRight'
 import ChartImg from '../../assets/charts.png'
 import Start from '../Components/Start'
+import ConfigureImg from '../../assets/configure.png'
 
 export default function Health() {
     return (
@@ -30,12 +31,17 @@ export default function Health() {
                 url='https://vimeo.com/441931886' 
             />}
             />
-        <Notifications
+        <ImgRight
+        img={ConfigureImg}
+        header="Configure tracking and counting for detections"
+        subheader="Get better analytics by setting up multi-directional counting"
+        />
+        <ImgLeft
         img={NotificationImg}
         header="Receive notifications for detections that matter"
         subheader="Find out what you want to know when you want to know it with smart detection alerts"
         />
-        <Charts
+        <ImgRight
         img={ChartImg}
         header="Get real-time analysis of detection results"
         subheader="Zeptron automatically charts detections in real time and can offer results in CSV / JSON"
