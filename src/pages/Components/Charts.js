@@ -7,6 +7,7 @@ export default function Charts(props) {
     return (
         <div>
             <Box p={4}>
+                 <Spacer height="50px"/>
                 <Grid container alignItems="center" justify="center">
                     <Grid item md={10}>
                         <Grid container alignItems="center" justify="center">
@@ -40,6 +41,7 @@ export default function Charts(props) {
                         </Grid>
                     </Grid>
                 </Grid>
+                <Spacer height="50px"/>
             </Box>
         </div>
     )

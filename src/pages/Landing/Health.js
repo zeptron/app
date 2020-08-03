@@ -9,6 +9,7 @@ import Notifications from '../Components/Notifications'
 import NotificationImg from '../../assets/notifications.png'
 import Charts from '../Components/Charts'
 import ChartImg from '../../assets/charts.png'
+import Start from '../Components/Start'
 
 export default function Health() {
     return (
@@ -19,7 +20,7 @@ export default function Health() {
         subheader="Use CCTV networks to provide analytics and notifications for public health events"
         />
         <Consume
-            header="Consume existing video streams"
+            header="Consume your existing video streams"
             subheader="Use Zeptron on your existing CCTV network, IP Cameras, or wired hardware"
             asset={<ReactPlayer 
                 pip="true" 
@@ -32,14 +33,14 @@ export default function Health() {
         <Notifications
         img={NotificationImg}
         header="Receive notifications for the detections that matter"
-        subheader="Get alerted for what you want to know and how often you want to know it with Zeptron's smart detection alerts."
+        subheader="Get alerted for what you want to know when you want to know it with Zeptron's smart detection alerts."
         />
         <Charts
         img={ChartImg}
         header="Get real-time analysis of detection results"
         subheader="Zeptron automatically charts detection results for your model in real time "
         />
-        
+        <Start/>     
         </div>
     )
 }
