@@ -43,7 +43,7 @@ export default function Production() {
         header="Configure counting for each detection class"
         subheader="Set up counting from left to right or up and down for each of your detection classes"
         />
-        <Charts
+        <ImgLeft
         img={ChartImg}
         header="Automatic real-time analysis of detection results"
         subheader="Zeptron automatically charts detection results for your model in real time "
