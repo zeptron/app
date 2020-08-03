@@ -7,9 +7,10 @@ import Consume from '../Components/Privacy'
 import ReactPlayer from 'react-player'
 import Notifications from '../Components/Notifications'
 import NotificationImg from '../../assets/notifications.png'
-import Charts from '../Components/Charts'
+import Charts from '../Components/ImgRight'
 import ChartImg from '../../assets/charts.png'
 import Start from '../Components/Start'
+import ConfigureImg from '../../assets/configure.png'
 
 export default function Health() {
     return (
@@ -30,6 +31,11 @@ export default function Health() {
                 url='https://vimeo.com/441931886' 
             />}
             />
+        <Notifications
+        img={ConfigureImg}
+        header="Configure tracking and counting for detections"
+        subheader="Get better analytics by setting up multi-directional counting"
+        />
         <Notifications
         img={NotificationImg}
         header="Receive notifications for detections that matter"
