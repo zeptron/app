@@ -244,7 +244,8 @@ export const SingleInstance = ({ modelConfig }) => {
         </Grid>
 
       </Box> */}
-      <Box p={4}>
+      <Box p={4} bgcolor="primary.dark" color="primary.contrastText">
+              <Spacer height="30px"/>
               <Grid container alignItems="center" justify="center">
               <Grid item md={2}>
               <h3 className={s.header} >
