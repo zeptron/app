@@ -11,7 +11,7 @@ import Charts from '../Components/Charts'
 import ChartImg from '../../assets/charts.png'
 import Start from '../Components/Start'
 
-export default function Health() {
+export default function Management() {
     return (
         <div>
         <Hero 
@@ -33,12 +33,12 @@ export default function Health() {
         <Notifications
         img={NotificationImg}
         header="Receive notifications for detections that matter"
-        subheader="Find out what you want to know when you want to know it with smart detection alerts"
+        subheader="Get alerted for what you want to know when you want to know it with Zeptron's smart detection alerts."
         />
         <Charts
         img={ChartImg}
         header="Get real-time analysis of detection results"
-        subheader="Zeptron automatically charts detections in real time and can offer results in CSV / JSON"
+        subheader="Zeptron automatically charts detection results for your model in real time "
         />
         <Start/>     
         </div>
