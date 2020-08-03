@@ -12,6 +12,8 @@ import ChartImg from '../../assets/charts.png'
 import Start from '../Components/Start'
 import Budlight from '../../assets/budlight.jpg'
 import ConfigureImg from '../../assets/configure.png'
+import ActionsImg from '../../assets/actions.png'
+import TrainImg from '../../assets/bottles.png'
 import Stream from '../Components/Stream'
 
 export default function Production() {
@@ -29,19 +31,19 @@ export default function Production() {
             />
         <Stream/>
         <ImgRight
-        img={NotificationImg}
+        img={TrainImg}
         header="Train your AI on known defects or anomalies"
-        subheader="Get alerted for what you want to know when you want to know it with Zeptron's smart detection alerts."
+        subheader="To train your model, simply film a few training runs with our machine vision cameras and Zeptron does the rest"
         />
         <ImgLeft
-        img={NotificationImg}
-        header="Train your AI on known defects or anomalies"
-        subheader="Get alerted for what you want to know when you want to know it with Zeptron's smart detection alerts."
+        img={ActionsImg}
+        header="Trigger actions and alerts when defects are detected"
+        subheader="Detections happen in under 20ms and can trigger actions and alerts easily"
         />
         <ImgRight
         img={ConfigureImg}
-        header="Configure counting for each detection class"
-        subheader="Set up counting from left to right or up and down for each of your detection classes"
+        header="Configure counting for each product and defect class"
+        subheader="Get production run analytics in no time with one-click set up for tracking and counting"
         />
         <ImgLeft
         img={ChartImg}
