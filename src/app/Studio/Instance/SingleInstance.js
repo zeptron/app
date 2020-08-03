@@ -11,6 +11,8 @@ import Cogs from '../../animations/cogs';
 import s from '../../../styles/styles.module.css';
 import useQuery from '../../../graphql/useQuery';
 import * as mutations from '../../../graphql/mutations';
+import { sleep } from '../../../utils/sleep';
+
 
 export const SingleInstance = ({ modelConfig }) => {
   const [instanceState, setInstanceState] = useState(modelConfig.instanceState);
@@ -40,7 +42,7 @@ export const SingleInstance = ({ modelConfig }) => {
 
     AWSEC2.startInstances({
       InstanceIds: [modelConfig.EC2instanceID],
-    }, (err, data) => {
+    }, async (err, data) => {
       setLoadingInstanceState(false);
 
       if (!err) {
@@ -53,7 +55,7 @@ export const SingleInstance = ({ modelConfig }) => {
           instanceState: true,
         }
       });
-
+      await sleep(5000)
       AWSEC2.describeInstances({
         InstanceIds: [modelConfig.EC2instanceID],
       }, (err, data) => {
