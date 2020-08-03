@@ -31,7 +31,7 @@ import ReactPlayer from 'react-player'
             <Hidden smUp>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
-              <h2 className={s.header} style={{textAlign: 'left'}}>
+              <h2 className={s.header}>
               {props.header}
               </h2>
               <p className={s.subheader} >

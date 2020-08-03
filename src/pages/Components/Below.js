@@ -19,21 +19,25 @@ import { Link } from "react-router-dom";
             <Spacer height="50px"/>
               <Grid container  justify="center" spacing={spacing}>
               <Grid item md={4} sm={6}  xs={12}>
-                <Link to="/health" style={{color: 'white', textDecoration: 'none'}}>
+                <Link to="/health" className={s.belowlink}>
               <Spacer height="20px"/>
               <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/2904/2904376.svg"/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Health</h3>
               </Link>
               </Grid>
               <Grid item md={4} sm={6}  xs={12}>
+              <Link to="/safety" className={s.belowlink}>
               <Spacer height="20px"/>
               <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/1605/1605056.svg"/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Safety</h3>
+              </Link>
               </Grid>
               <Grid item md={4} sm={6}  xs={12}>
+              <Link to="/safety" className={s.belowlink}>
               <Spacer height="20px"/>
               <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/1037/1037353.svg"/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Manufacturing</h3>
+              </Link>
               </Grid>
             </Grid>
             </Grid> 
