@@ -8,7 +8,7 @@ import Edge from './animations/results.js'
 
 
 
-  export default function Hero() {
+  export default function Provision() {
     const [spacing] = React.useState(2);
  
    return (
