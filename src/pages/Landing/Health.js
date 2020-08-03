@@ -6,12 +6,15 @@ import Hero from '../Components/Hero'
 import Consume from '../Components/Privacy'
 import ReactPlayer from 'react-player'
 import Notifications from '../Components/Notifications'
+import NotificationImg from '../../assets/notifications.png'
+import Charts from '../Components/Charts'
+import ChartImg from '../../assets/charts.png'
 
 export default function Health() {
     return (
         <div>
         <Hero 
-        header="Deploy AI on CCTV to improve public health & safety"
+        header="Deploy AI on CCTV to bolster health & safety"
         bgImage='url(https://zeptronco.s3-ap-southeast-2.amazonaws.com/t.jpg)'
         subheader="Use CCTV networks to provide analytics and notifications for public health events"
         />
@@ -26,7 +29,16 @@ export default function Health() {
                 url='https://vimeo.com/441931886' 
             />}
             />
-        <Notifications/>
+        <Notifications
+        img={NotificationImg}
+        header="Receive notifications for the detections that matter"
+        subheader="Get alerted for what you want to know and how often you want to know it with Zeptron's smart detection alerts."
+        />
+        <Charts
+        img={ChartImg}
+        header="Get real-time analysis of detection results"
+        subheader="Zeptron automatically charts detection results for your model in real time "
+        />
         
         </div>
     )
