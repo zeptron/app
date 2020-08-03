@@ -34,7 +34,7 @@ export default function Health() {
         <ImgRight
         img={ConfigureImg}
         header="Configure tracking and counting for detections"
-        subheader="Get better analytics by setting up multi-directional counting"
+        subheader="Get better analytics by setting up multi-directional counting with one click"
         />
         <ImgLeft
         img={NotificationImg}
