@@ -5,12 +5,9 @@ import Spacer from 'react-spacer'
 import Image from '../../assets/cctv.jpg'
 import ReactPlayer from 'react-player'
 
-  export default function Hero() {
+  export default function Hero(props) {
     const [spacing] = React.useState(2);
-   
-    
    return (
-
           <Box p={2} style={{backgroundColor: '#e0e4e0'}}>
           <Grid container justify="center" spacing={spacing}>
             <Grid item md={10} sm={10} xs={12}>
@@ -20,32 +17,25 @@ import ReactPlayer from 'react-player'
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header}>
-              Consume existing video streams
+              {props.header}
               </h2>
               <p className={s.subheader} >
-Use Zeptron on your existing CCTV network, IP Cameras, or wired hardware               </p>  
+              {props.subheader}
+              </p>  
               <Spacer height="60px"/>
             </Grid> 
             </Hidden>
             <Grid item md={6} xs={12}>
-            {/* <ReactPlayer 
-                pip="true" 
-                muted 
-                width="100%" 
-                playing="true" 
-                url='https://vimeo.com/441931886' 
-            /> */}
-            <img src={Image} style={{maxWidth: '100%'}}/>
+              {props.asset}
             </Grid> 
             <Hidden smUp>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
               <h2 className={s.header} style={{textAlign: 'left'}}>
-              Consume existing video streams
+              {props.header}
               </h2>
               <p className={s.subheader} >
-              Use Zeptron on your existing CCTV network, IP Cameras, or wired hardware               </p>  
-             
+              {props.subheader}</p>
               <Spacer height="60px"/>
             </Grid> 
             </Hidden>
@@ -54,7 +44,6 @@ Use Zeptron on your existing CCTV network, IP Cameras, or wired hardware        
             </Grid>
             </Grid>
             </Box>
-         
      )
     }
 

@@ -32,6 +32,8 @@ import Streaming from './pages/Streaming'
 
 import Faq from './pages/Faq'
 
+import * as Landing from './pages/Landing'
+
 class PrivateRoute extends React.Component {
   state = {
     loaded: false,
@@ -94,7 +96,9 @@ const Routes = () => (
         <Route path="/privacy" exact component={Privacy} />
         <Route path="/terms" exact component={Terms} />        
         <Route path="/streaming" exact component={Streaming} />
-        <Route path="/faq" exact component={Faq} />
+        <Route path="/production" exact component={Landing.Production} />
+        <Route path="/safety" exact component={Landing.Safety} />
+        <Route path="/health" exact component={Landing.Health} />
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/library" exact component={Library} />
         <PrivateRoute path="/studio/configuration/:id" component={ConfigurationSteps} />
