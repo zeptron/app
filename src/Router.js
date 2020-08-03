@@ -10,7 +10,7 @@ import UserContext from "./UserContext";
 import Header from "./Menu";
 import Footer from "./Footer";
 import Authenticator from "./Authenticator";
-import Home from "./pages/Home/Index";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";

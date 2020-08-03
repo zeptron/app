@@ -10,7 +10,7 @@ import Stream from './Components/Stream'
 import Start from './Components/Start'
 import Privacy from './Components/Privacy'
 import Studio from '../app/Studio/Index'
-import Image from '../../assets/cctv.jpg'
+import Image from '../assets/budlight.jpg'
 
 class Home extends React.Component {
 
@@ -36,8 +36,8 @@ class Home extends React.Component {
             bgImage='url(https://zepappassets.s3-ap-southeast-2.amazonaws.com/bg.jpg)'
             />
             <Privacy
-            header="Consume existing video streams"
-            subheader="Use Zeptron on your existing CCTV network, IP Cameras, or wired hardware"
+            header="Automate complex AI deployments easily"
+            subheader="Zeptron is an easy-to-use solution for deploying computer vision software on new or existing video feeds"
             asset={<img src={Image} style={{maxWidth: '100%'}}/>}
             />
             <Stream/>
