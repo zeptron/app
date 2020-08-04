@@ -20,7 +20,7 @@ export default function Production() {
     return (
         <div>
         <Hero 
-        header="Improve QC for every product using computer vision"
+        header="Improve QC for each product with computer vision"
         bgImage='url(https://zeptronco.s3-ap-southeast-2.amazonaws.com/bottlecap.jpg)'
         subheader="Manage and deploy computer vision models for each of your products from Zeptron"
         />
