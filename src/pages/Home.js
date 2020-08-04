@@ -35,18 +35,18 @@ class Home extends React.Component {
             subheader="Zeptron makes it easy to deploy and manage computer vision software"
             bgImage='url(https://zepappassets.s3-ap-southeast-2.amazonaws.com/bg.jpg)'
             />
-            <Privacy
+             <Below/>
+            {/* <Privacy
             header="Automate complex AI deployments easily"
             subheader="Zeptron is an easy-to-use solution for deploying computer vision software on new or existing video feeds"
             asset={<img src={Image} style={{maxWidth: '100%'}}/>}
-            />
+            /> */}
             <Stream/>
             <Configure/>
             <Provision/>
             {/* <Results/> */}
             {/* <Privacy/> */}
             {/* <Pricing/> */}
-            <Below/>
             <Start/>
             </div>
           )

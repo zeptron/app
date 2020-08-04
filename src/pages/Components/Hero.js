@@ -20,7 +20,7 @@ import Spacer from 'react-spacer'
             Your browser does not support the video tag.
           </video> */}
        <div {...css(styles.coverOpacity)}></div>
-       <Spacer height="200px"/>
+       <Spacer height="150px"/>
        <Hidden smUp >
        <Spacer height="50px"/>
        </Hidden>
