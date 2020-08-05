@@ -4,6 +4,7 @@ import { Bar } from 'react-chartjs-2';
 import Spacer from 'react-spacer';
 import { Box, Button, Grid } from '@material-ui/core';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import moment from 'moment';
 
 import UserContext from '../../../UserContext';
 import useQuery from '../../../graphql/useQuery';
@@ -47,8 +48,8 @@ export default function Analytics({ match }) {
 
       DynamoDB.scan({
         // TODO 30.07.2020 yelysei: remove test data
-        // TableName: 'tableNamecd1fb1d0-b93f-4b58-a049-2036f174d1ea',
-        TableName: data?.listModelConfigs?.items?.[0]?.tableName,
+        //TableName: 'tableNamecd1fb1d0-b93f-4b58-a049-2036f174d1ea',
+         TableName: data?.listModelConfigs?.items?.[0]?.tableName,
       }, (err, data) => {
         if (err) {
           console.error(err);
@@ -92,17 +93,6 @@ export default function Analytics({ match }) {
     '#fabd2f',
   ];
 
-  const labels = Object.keys(chartData?.[0] ?? {}).filter((item) => item !== 'timestamp');
-
-  const data = {
-    labels: chartData?.map(({ timestamp }) => timestamp.S),
-    datasets: labels.map((label, index) => ({
-      label: label,
-      data: chartData?.map((item) => parseInt(item[label].N, 10)),
-      backgroundColor: COLORS[index % COLORS.length],
-    })),
-  };
-
   const options = {
     responsive: true,
     maintainAspectRatio: true,
@@ -124,8 +114,7 @@ export default function Analytics({ match }) {
           },
         },
       ],
-      xAxes: [{
-        type: 'time',}
+      xAxes: [
       ],
     },
     layout: {
@@ -133,6 +122,55 @@ export default function Analytics({ match }) {
         right: 50,
       },
     },
+  };
+
+  const generateData = () => {
+    const labels = Object.keys(chartData?.[0] ?? {}).filter((item) => item !== 'timestamp');
+
+    const chartDataFormatted = chartData
+      .map((item) => ({ ...item, timestamp: moment(item.timestamp.S).unix() }))
+      .sort((a, b) => a.timestamp - b.timestamp);
+
+    const from = Math.floor((chartDataFormatted[0]?.timestamp ?? 0) / MODES[mode].seconds) * MODES[mode].seconds;
+    const to = Math.ceil((chartDataFormatted[chartDataFormatted.length - 1]?.timestamp ?? 0) / MODES[mode].seconds) * MODES[mode].seconds;
+
+    const periods = [];
+
+    for (let i = from; i < to; i += MODES[mode].seconds) {
+      periods.push({
+        from: i,
+        to: i + MODES[mode].seconds,
+      });
+
+      labels.forEach((label) => {
+        periods[periods.length - 1][label] = 0;
+      });
+    }
+
+    periods.forEach((period, i) => {
+      chartDataFormatted
+        .filter((item) => item.timestamp >= period.from && item.timestamp < period.to)
+        .forEach((item) => {
+          labels.forEach((label) => {
+            periods[i][label] += periods[i][label] + parseInt(item[label].N, 10);
+          });
+        });
+    });
+
+    console.log(periods);
+    const data = {
+      labels: periods?.map((period) => {
+        return `${moment(period.from * 1000).format('DD MMM')} ${moment(period.from * 1000).format('hh:mm')} - ${moment(period.to * 1000).format('hh:mm')}`;
+      }),
+      datasets: labels.map((label, index) => ({
+        label: label,
+        data: periods?.map((item) => item[label]),
+        backgroundColor: COLORS[index % COLORS.length],
+      })),
+    };
+    console.log(data);
+
+    return data;
   };
 
   return (
@@ -175,7 +213,7 @@ export default function Analytics({ match }) {
             </div>
             <Grid container alignItems="center" justify="center" spacing={2}>
               <Bar
-                data={data}
+                data={generateData()}
                 options={options}
                 redraw
               />
