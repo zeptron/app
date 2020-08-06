@@ -64,8 +64,8 @@ export default function Analytics({ match }) {
 
       DynamoDB.scan({
         // TODO 30.07.2020 yelysei: remove test data
-        TableName: 'tableNamef6dbe703-4cbd-480d-8eb1-7fe118620d17',
-        // TableName: data?.listModelConfigs?.items?.[0]?.tableName,
+        // TableName: 'tableNamef6dbe703-4cbd-480d-8eb1-7fe118620d17',
+        TableName: data?.listModelConfigs?.items?.[0]?.tableName,
       }, (err, data) => {
         if (err) {
           console.error(err);
