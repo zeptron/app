@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AWS from 'aws-sdk';
 import { Bar } from 'react-chartjs-2';
 import Spacer from 'react-spacer';
@@ -17,22 +17,38 @@ export default function Analytics({ match }) {
     MIN5: {
       key: 'MIN5',
       title: '5 min',
-      seconds: 5 * 60,
+      seconds: 5 * 60, // 5 minutes
+      timeFrom: 60 * 60, // 1 hour
     },
     MIN30: {
       key: 'MIN30',
       title: '30 min',
-      seconds: 30 * 60,
+      seconds: 30 * 60, // 30 minutes
+      timeFrom: 60 * 60 * 12, // 12 hours
     },
     HOUR1: {
       key: 'HOUR1',
       title: '1 hour',
-      seconds: 60 * 60,
+      seconds: 60 * 60, // 1 hour
+      timeFrom: 60 * 60 * 24, // 24 hours
     },
   };
 
+  const COLORS = [
+    '#cc241d',
+    '#458588',
+    '#d79921',
+    '#83a598',
+    '#689d6a',
+    '#fb4934',
+    '#d3869b',
+    '#b16286',
+    '#8ec07c',
+    '#fabd2f',
+  ];
+
   const [mode, setMode] = useState(MODES.MIN5.key);
-  const [chartData, setChartData] = useState([]);
+  const [analytics, setAnalytics] = useState([]);
 
   const { user } = useContext(UserContext);
 
@@ -48,7 +64,7 @@ export default function Analytics({ match }) {
 
       DynamoDB.scan({
         // TODO 30.07.2020 yelysei: remove test data
-        // TableName: 'tableNamecd1fb1d0-b93f-4b58-a049-2036f174d1ea',
+        // TableName: 'tableNamef6dbe703-4cbd-480d-8eb1-7fe118620d17',
         TableName: data?.listModelConfigs?.items?.[0]?.tableName,
       }, (err, data) => {
         if (err) {
@@ -56,7 +72,7 @@ export default function Analytics({ match }) {
           return;
         }
 
-        setChartData(data.Items);
+        setAnalytics(data.Items);
       });
     },
   });
@@ -74,24 +90,77 @@ export default function Analytics({ match }) {
     });
   }, []);
 
+  const chartData = useMemo(() => {
+    const labels = Object.keys(analytics?.[0] ?? {}).filter((item) => item !== 'timestamp');
+
+    const analyticsFormatted = analytics
+      .map((item) => ({ ...item, timestamp: moment(item.timestamp.S, 'DD/MM/YYYY HH:mm:ss').unix() }))
+      .filter((item) => item.timestamp >= moment().unix() - MODES[mode].timeFrom)
+      .sort((a, b) => a.timestamp - b.timestamp);
+
+    const from = Math.floor((analyticsFormatted[0]?.timestamp ?? 0) / MODES[mode].seconds) * MODES[mode].seconds;
+    const to = Math.ceil((analyticsFormatted[analyticsFormatted.length - 1]?.timestamp ?? 0) / MODES[mode].seconds) * MODES[mode].seconds;
+
+    const periods = [];
+
+    for (let i = from; i < to; i += MODES[mode].seconds) {
+      const item = {
+        from: i,
+        to: i + MODES[mode].seconds,
+      };
+
+      labels.forEach((label) => {
+        item[label] = 0;
+      });
+
+      periods.push(item);
+    }
+
+    periods.forEach((period, i) => {
+      analyticsFormatted
+        .filter((item) => item.timestamp >= period.from && item.timestamp < period.to)
+        .forEach((item) => {
+          labels.forEach((label) => {
+            periods[i][label] += parseInt(item[label].N, 10);
+          });
+        });
+    });
+
+    return {
+      labels: periods?.map((period) => {
+        return `${moment(period.from * 1000).format('DD MMM')} ${moment(period.from * 1000).format('hh:mm')} - ${moment(period.to * 1000).format('hh:mm')}`;
+      }),
+      datasets: labels.map((label, index) => ({
+        label: label,
+        data: periods?.map((item) => item[label]),
+        backgroundColor: COLORS[index % COLORS.length],
+      })),
+    };
+  }, [analytics, mode]);
+
+  const summaryData = useMemo(() => {
+    const labels = Object.keys(analytics?.[0] ?? {}).filter((item) => item !== 'timestamp')
+      .map((item) => ({
+        label: item,
+        value: 0,
+      }));
+
+    analytics
+      .filter((item) => moment(item.timestamp.S, 'DD/MM/YYYY HH:mm:ss').unix() >= moment().unix() - MODES[mode].timeFrom)
+      .forEach((item) => {
+      labels.forEach(({ label }, i) => {
+        labels[i].value += parseInt(item[label].N, 10);
+      })
+    });
+
+    return labels;
+  }, [analytics, mode]);
+
   if (modelQuery.loading || !modelQuery.data) {
     return <>Loading...</>;
   }
 
   const modelConfig = modelQuery.data?.listModelConfigs?.items?.[0];
-
-  const COLORS = [
-    '#cc241d',
-    '#458588',
-    '#d79921',
-    '#83a598',
-    '#689d6a',
-    '#fb4934',
-    '#d3869b',
-    '#b16286',
-    '#8ec07c',
-    '#fabd2f',
-  ];
 
   const options = {
     responsive: true,
@@ -117,60 +186,14 @@ export default function Analytics({ match }) {
       xAxes: [
       ],
     },
+    legend: {
+      display: false,
+    },
     layout: {
       padding: {
         right: 50,
       },
     },
-  };
-
-  const generateData = () => {
-    const labels = Object.keys(chartData?.[0] ?? {}).filter((item) => item !== 'timestamp');
-
-    const chartDataFormatted = chartData
-      .map((item) => ({ ...item, timestamp: moment(item.timestamp.S).unix() }))
-      .sort((a, b) => a.timestamp - b.timestamp);
-
-    const from = Math.floor((chartDataFormatted[0]?.timestamp ?? 0) / MODES[mode].seconds) * MODES[mode].seconds;
-    const to = Math.ceil((chartDataFormatted[chartDataFormatted.length - 1]?.timestamp ?? 0) / MODES[mode].seconds) * MODES[mode].seconds;
-
-    const periods = [];
-
-    for (let i = from; i < to; i += MODES[mode].seconds) {
-      periods.push({
-        from: i,
-        to: i + MODES[mode].seconds,
-      });
-
-      labels.forEach((label) => {
-        periods[periods.length - 1][label] = 0;
-      });
-    }
-
-    periods.forEach((period, i) => {
-      chartDataFormatted
-        .filter((item) => item.timestamp >= period.from && item.timestamp < period.to)
-        .forEach((item) => {
-          labels.forEach((label) => {
-            periods[i][label] += periods[i][label] + parseInt(item[label].N, 10);
-          });
-        });
-    });
-
-    console.log(periods);
-    const data = {
-      labels: periods?.map((period) => {
-        return `${moment(period.from * 1000).format('DD MMM')} ${moment(period.from * 1000).format('hh:mm')} - ${moment(period.to * 1000).format('hh:mm')}`;
-      }),
-      datasets: labels.map((label, index) => ({
-        label: label,
-        data: periods?.map((item) => item[label]),
-        backgroundColor: COLORS[index % COLORS.length],
-      })),
-    };
-    console.log(data);
-
-    return data;
   };
 
   return (
@@ -203,6 +226,7 @@ export default function Analytics({ match }) {
               <ButtonGroup size="small" color="primary" aria-label="contained primary button group">
                 {Object.values(MODES).map(({ key, title }) => (
                   <Button
+                    key={key}
                     color={key === mode ? 'secondary' : 'primary'}
                     onClick={() => setMode(key)}
                   >
@@ -211,9 +235,17 @@ export default function Analytics({ match }) {
                 ))}
               </ButtonGroup>
             </div>
+            <div className={s.legend}>
+              {summaryData.map(({ label, value }, index) => (
+                <div className={s.legendItem}>
+                  <div className={s.legendColor} style={{ backgroundColor: COLORS[index % COLORS.length] }}/>
+                  <div><b>{label}</b>: {value}</div>
+                </div>
+              ))}
+            </div>
             <Grid container alignItems="center" justify="center" spacing={2}>
               <Bar
-                data={generateData()}
+                data={chartData}
                 options={options}
                 redraw
               />

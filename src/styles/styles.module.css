@@ -207,3 +207,25 @@ iframe.video {
 .chartSelectorText {
     margin-right: 12px;
 }
+
+.legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
+    align-content: center;
+    justify-content: flex-start;
+    margin: 24px 0;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+}
+
+.legendColor {
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    border-radius: 8px;
+}
