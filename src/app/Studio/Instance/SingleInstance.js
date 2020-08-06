@@ -309,7 +309,7 @@ export const SingleInstance = ({ modelConfig }) => {
                 
                 </FormGroup>
                 <Spacer height="10px"/>
-                {/* <FormGroup row>
+                <FormGroup row>
                 <Hidden smUp>
                     
                     <Button
@@ -332,7 +332,7 @@ export const SingleInstance = ({ modelConfig }) => {
                       Analyse
                     </Button>
                     </Hidden>
-                </FormGroup> */}
+                </FormGroup>
                 </Grid>
                 <Grid item md={8} xs={12}>
                   <Grid container alignItems="center" justify="center">
