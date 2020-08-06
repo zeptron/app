@@ -154,7 +154,7 @@ export default function Analytics({ match }) {
     });
 
     return labels;
-  }, [analytics]);
+  }, [analytics, mode]);
 
   if (modelQuery.loading || !modelQuery.data) {
     return <>Loading...</>;
