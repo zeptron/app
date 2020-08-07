@@ -5,6 +5,7 @@ import Spacer from 'react-spacer';
 import { Box, Button, Grid } from '@material-ui/core';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import moment from 'moment';
+import FormGroup from '@material-ui/core/FormGroup';
 
 import UserContext from '../../../UserContext';
 import useQuery from '../../../graphql/useQuery';
@@ -196,6 +197,10 @@ export default function Analytics({ match }) {
     },
   };
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
@@ -207,20 +212,25 @@ export default function Analytics({ match }) {
       <Box>
         <Spacer height="100px"/>
         <Grid container alignItems="center" justify="center">
-          <Grid item md={8}>
+          <Grid item md={10}>
+            <Spacer height="50px"/>
+            <Button
+              onClick={refreshPage}
+              variant="outlined"
+              color="primary"
+              size="large"
+            >
+              Refresh
+            </Button>
             <Button
               href={`/studio/${match.params.id}/`}
               variant="contained"
               color="primary"
               size="large"
             >
-              Video
+              Live Stream
             </Button>
-            <Button variant="contained" color="secondary" size="large">
-              Stop
-            </Button>
-            <Spacer height="50px"/>
-            <h2>Charts</h2>
+
             <div className={s.chartSelectorWrapper}>
               <div className={s.chartSelectorText}>Group by: </div>
               <ButtonGroup size="small" color="primary" aria-label="contained primary button group">
