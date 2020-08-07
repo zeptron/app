@@ -25,7 +25,7 @@ class Profile extends React.Component {
           <Spacer height="50px" />
           <Hidden smDown>
           <Button variant="contained" color="primary" size="large" href="/">
-            <span className={s.ctabutton}>Go To Library</span>
+            <span className={s.ctabutton}>Studio</span>
           </Button>
           <Button
             variant="contained"
@@ -38,7 +38,7 @@ class Profile extends React.Component {
           </Hidden>
           <Hidden mdUp>
           <Button variant="contained" color="primary" size="small" href="/">
-            <span className={s.ctabutton}>Go To Library</span>
+            <span className={s.ctabutton}>Studio</span>
           </Button>
           <Button
             variant="contained"
