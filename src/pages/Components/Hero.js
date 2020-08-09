@@ -5,14 +5,37 @@ import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Ai from './animations/ai'
 import Image from '../../assets/bg4.jpg'
-
+import AWS from 'aws-sdk';
+import useInput from '../../utils/hooks/useInput';
 
   export default function Hero(props) {
 
 
     console.log(`require("./../../assets/herobg.mp4")`, 
     require("./../../assets/herobg.mp4"))
-  
+    
+    const [userEmail, { setWrap: setUserEmail }] = useInput('');
+    
+    const sendForm = async () => {
+      AWS.config.update({
+          region: process.env.REACT_APP_AWS_REGION,
+          accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+          secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+        });
+      const SNS = new AWS.SNS();
+      const params = {
+          Message: `Demo requested by: \n \n *Email:* ${userEmail}`, 
+          TopicArn: 'arn:aws:sns:ap-southeast-2:047384901313:zeptronusers'
+        };
+        SNS.publish(params, function(err, data) {
+          if (err) console.log(err, err.stack); // an error occurred
+          else     
+              console.log(data)
+              const [userEmail] = ''
+          
+          ;           // successful response
+        });
+  }
 
    return (
       <Box style={{backgroundImage: `${props.bgImage}`}} bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
@@ -41,8 +64,10 @@ import Image from '../../assets/bg4.jpg'
                     variant="filled"
                     size="small"
                     style={{backgroundColor: 'white'}}
+                    value={userEmail}
+                    onChange={setUserEmail}
                   />
-                    <Button style={{height: 48}} size="large" variant="contained" color="secondary" href="#start">
+                    <Button style={{height: 48}} size="large" variant="contained" color="secondary" onClick={sendForm}>
                     <span className={s.ctabutton}>Get a Demo</span>
                     </Button>
                     </div>

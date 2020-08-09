@@ -186,9 +186,9 @@ export const SingleInstance = ({ modelConfig }) => {
           <Box p={4} bgcolor="primary.dark" color="primary.contrastText">
           <Spacer height="80px"/>
 
-              <Grid container alignItems="center" justify="center">
+              <Grid container alignItems="center" justify="center" id="window">
                 <Grid item md={9} sm={12} xs={12}>
-                  <Grid container alignItems="center" justify="center" id="window">
+                  <Grid container alignItems="center" justify="center" >
                     <Hidden smDown>
                     <Grid item md={3}>
                       <Spacer height="25px"/>
@@ -215,7 +215,7 @@ export const SingleInstance = ({ modelConfig }) => {
                     </div>
                     </Grid>
                     </Hidden>
-                    <Grid item md={6}>
+                    <Grid item md={6} >
                     <h3 style={{textAlign: 'center'}} className={s.header} >
                     {modelConfig.instanceName}
                     </h3>
@@ -284,11 +284,22 @@ export const SingleInstance = ({ modelConfig }) => {
                     </Grid>
                   </Grid>
                     <Grid item xs={12}>
+                    <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
+                    {loadingInstanceState && (
+                      <Cogs/>
+                    )}
+
+                    {loadingRunInstance && (
+                      <Cogs/>
+                    )}
+                    </div>
+                    <div style={{minHeight: 300, minWidth: 350, backgroundColor: 'black'}}>
                       <img
                         alt="Stream loading"
                         src={`http://${modelConfig.publicIP}:8000/video_feed`}
                         style={{ maxWidth: '100%' }}
                       />
+                      </div>
                       </Grid>
                       <br/>
                       <Grid container alignItems="center" justify="center">

@@ -16,7 +16,7 @@ class Header extends React.Component {
   }
 
   listenScrollEvent = e => {
-    if (window.scrollY > 80) {
+    if (window.scrollY > 40) {
       this.setState({isScrolled: true})
     } else {
       this.setState({isScrolled: false})
@@ -84,7 +84,7 @@ const styles = {
     display: "flex",
     position: "fixed",
     zIndex: 1,
-    borderBottom: '1px solid #0a0909'
+    // borderBottom: '1px solid #0a0909'
   },
   menuContainer: {
     marginRight: "45px"
