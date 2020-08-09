@@ -3,6 +3,7 @@ import { css } from "glamor";
 import { Button } from "./containers/Auth.style";
 import { IoLogoGoogle } from "react-icons/io";
 import { Auth } from "aws-amplify";
+import Spacer from 'react-spacer'
 
 class SignUp extends React.Component {
   state = {
@@ -44,6 +45,8 @@ class SignUp extends React.Component {
     const { showConfirmation } = this.state;
     return (
       <div {...css(styles.container)}>
+        
+        
         {!showConfirmation && (
           <div {...css(styles.formContainer)}>
             {/* <Button

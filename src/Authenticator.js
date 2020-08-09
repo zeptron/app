@@ -4,6 +4,7 @@ import {Box} from '@material-ui/core'
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ForgotPassword from "./ForgotPassword";
+import Spacer from 'react-spacer'
 
 class Authenticator extends React.Component {
   state = {
@@ -22,6 +23,9 @@ class Authenticator extends React.Component {
     const { currentState } = this.state;
     return (
       <div>
+         <Box bgcolor="primary.dark">
+        <Spacer height="80px"/>
+        </Box>
         <Box p={2}>
           <div style={styles.container}>
         {currentState === "showSignIn" && (

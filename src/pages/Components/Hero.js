@@ -1,17 +1,41 @@
 import React from 'react';
 import { css } from "glamor";
-import {Box, Button, Grid, Hidden} from '@material-ui/core'
+import {Box, Button, Grid, Hidden, TextField} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-
-
+import Ai from './animations/ai'
+import Image from '../../assets/bg4.jpg'
+import AWS from 'aws-sdk';
+import useInput from '../../utils/hooks/useInput';
 
   export default function Hero(props) {
 
 
     console.log(`require("./../../assets/herobg.mp4")`, 
     require("./../../assets/herobg.mp4"))
-  
+    
+    const [userEmail, { setWrap: setUserEmail }] = useInput('');
+    
+    const sendForm = async () => {
+      AWS.config.update({
+          region: process.env.REACT_APP_AWS_REGION,
+          accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+          secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+        });
+      const SNS = new AWS.SNS();
+      const params = {
+          Message: `Demo requested by: \n \n *Email:* ${userEmail}`, 
+          TopicArn: 'arn:aws:sns:ap-southeast-2:047384901313:zeptronusers'
+        };
+        SNS.publish(params, function(err, data) {
+          if (err) console.log(err, err.stack); // an error occurred
+          else     
+              console.log(data)
+              const [userEmail] = ''
+          
+          ;           // successful response
+        });
+  }
 
    return (
       <Box style={{backgroundImage: `${props.bgImage}`}} bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
@@ -20,34 +44,38 @@ import Spacer from 'react-spacer'
             Your browser does not support the video tag.
           </video> */}
        <div {...css(styles.coverOpacity)}></div>
-       <Spacer height="150px"/>
-       <Hidden smUp >
-       <Spacer height="50px"/>
-       </Hidden>
+       <Spacer height="250px"/>
+       
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
+           
             <Grid item lg={5} md={5} sm={6} xs={10}>
-                   <h1  className={`${s.header} ${s.center}`} >
+                   <h1  className={`${s.header} ${s.center} `} >
                      {props.header}
                     </h1>
-                    <p className={`${s.subheader} ${s.center}`} >
+                    <p className={`${s.subheader} ${s.center}  `} >
                       {props.subheader}
                     </p>
                     <Spacer height="25px"/>
-                    <Hidden xsDown >
-                    <div style={{textAlign: 'center'}}>
-                    <Button size="large" variant="contained" color="secondary" href="#start">
-                    <span className={s.ctabutton}>Start Now</span>
+                    <Grid container alignItems="center" justify="center">
+                    <div style={{textAlign: 'center', color: 'white'}}>
+                    <TextField
+                    label="Email"
+                    id="filled-size-small"
+                    variant="filled"
+                    size="small"
+                    style={{backgroundColor: 'white'}}
+                    value={userEmail}
+                    onChange={setUserEmail}
+                  />
+                    <Button style={{height: 48}} size="large" variant="contained" color="secondary" onClick={sendForm}>
+                    <span className={s.ctabutton}>Get a Demo</span>
                     </Button>
                     </div>
-                    </Hidden>
-                    <Hidden smUp>
-                    <Button size="small" variant="contained" color="secondary" href="#start">
-                    <span className={s.ctabutton}>Start Now</span>
-                    </Button>
-                    </Hidden>
+                    </Grid>
             </Grid>
+            
         </Grid>
-      <Spacer height="100px"/>
+      <Spacer height="200px"/>
     </Box>  
   )
 }
@@ -64,7 +92,6 @@ const styles = {
     overflow: "hidden",
     position: "relative",
     padding: "0px !important",
-    backgroundImage: 'url(https://zepappassets.s3-ap-southeast-2.amazonaws.com/bg.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'bottom'
   },

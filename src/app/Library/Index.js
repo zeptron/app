@@ -39,6 +39,7 @@ export default function Library() {
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
+      <Spacer height="80px"/>
         <h1 className={`${s.header} ${s.center}`}>
           Library
         </h1>

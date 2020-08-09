@@ -6,7 +6,8 @@ import { Box, Button, Grid } from '@material-ui/core';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import moment from 'moment';
 import FormGroup from '@material-ui/core/FormGroup';
-
+import RefreshIcon from '@material-ui/icons/Refresh';
+import VideocamIcon from '@material-ui/icons/Videocam';
 import UserContext from '../../../UserContext';
 import useQuery from '../../../graphql/useQuery';
 import * as queries from '../../../graphql/queries';
@@ -204,34 +205,17 @@ export default function Analytics({ match }) {
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-        <h1 className={s.header} style={{ textAlign: 'center' }}>
+      <Spacer height="80px"/>
+
+        <h1 className={s.header} style={{textAlign: 'center'}}>
           {modelConfig.instanceName}
         </h1>
-      </Box>
-
-      <Box>
-        <Spacer height="100px"/>
         <Grid container alignItems="center" justify="center">
           <Grid item md={10}>
-            <Spacer height="50px"/>
-            <Button
-              onClick={refreshPage}
-              variant="outlined"
-              color="primary"
-              size="large"
-            >
-              Refresh
-            </Button>
-            <Button
-              href={`/studio/${match.params.id}/`}
-              variant="contained"
-              color="primary"
-              size="large"
-            >
-              Live Stream
-            </Button>
-
-            <div className={s.chartSelectorWrapper}>
+            <Spacer height="30px"/>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            
+            <div className={s.chartSelectorWrapper2}>
               <div className={s.chartSelectorText}>Group by: </div>
               <ButtonGroup size="small" color="primary" aria-label="contained primary button group">
                 {Object.values(MODES).map(({ key, title }) => (
@@ -245,6 +229,27 @@ export default function Analytics({ match }) {
                 ))}
               </ButtonGroup>
             </div>
+            <div className={s.chartSelectorWrapper}>
+            <Button
+            style={{marginLeft: 5}}
+            href={`/studio/${modelConfig.id}/`}
+            variant="contained"
+            color="primary"
+            size="small"
+            >
+            <VideocamIcon/>
+            </Button>
+            <Button
+            style={{marginLeft: 5}}
+            onClick={refreshPage}
+            variant="contained"
+            color="primary"
+            size="small"
+            >
+                  <RefreshIcon/>
+                </Button>
+            </div>
+             </div>
             <div className={s.legend}>
               {summaryData.map(({ label, value }, index) => (
                 <div className={s.legendItem}>
@@ -262,6 +267,15 @@ export default function Analytics({ match }) {
             </Grid>
           </Grid>
         </Grid>
+        <Grid container alignItems="center" justify="center">
+                      <h3 className={s.ocr}>{modelConfig.publicIP}</h3><h3 className={s.ocr}>·</h3> <h3 className={s.ocr}>5555</h3>
+                      </Grid>
+                      <Grid container container alignItems="center" justify="center">
+                      <h3 style={{color: 'white'}} className={s.ocr}>{modelConfig.model.name}</h3>
+                      </Grid>
+                      <Grid container container alignItems="center" justify="center">
+                      <h3 style={{color: 'white'}}  className={s.ocr}>{modelConfig.instanceLocation}</h3>
+                      </Grid>
         <Spacer height="100px"/>
       </Box>
     </div>
