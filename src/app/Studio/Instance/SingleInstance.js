@@ -7,12 +7,14 @@ import Typography from '@material-ui/core/Typography';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Cogs from '../../animations/cogs';
-
+import BarChartIcon from '@material-ui/icons/BarChart';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import s from '../../../styles/styles.module.css';
 import useQuery from '../../../graphql/useQuery';
 import * as mutations from '../../../graphql/mutations';
 import { sleep } from '../../../utils/sleep';
-
+import RefreshIcon from '@material-ui/icons/Refresh';
+import FullscreenIcon from '@material-ui/icons/Fullscreen';
 
 export const SingleInstance = ({ modelConfig }) => {
   const [instanceState, setInstanceState] = useState(modelConfig.instanceState);
@@ -158,74 +160,14 @@ export const SingleInstance = ({ modelConfig }) => {
     });
   };
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <div>
-      {/* <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-
-        <Grid container alignItems="center" justify="center">
-          <Grid item md={8}>
-            <Grid container alignItems="center" justify="center">
-              <Grid item md={6} xs={12}>
-              <h1 className={s.header} style={{ textAlign: 'center' }}>
-                {modelConfig.instanceName}
-              </h1>
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <Box p={2}>
-                  <FormGroup row>
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={instanceState}
-                          onChange={switchInstanceState}
-                          name="Started"
-                          disabled={loadingInstanceState}
-                        />
-                      }
-                      label="Power"
-                    />
-                    <Hidden smUp>
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                      size="small"
-                      onClick={runInstance}
-                    >
-                      Run
-                    </Button>
-                    <Button
-                      href={`/studio/${modelConfig.id}/analytics`}
-                      variant="contained"
-                      color="primary"
-                      size="small"
-                    >
-                      Analyse
-                    </Button>
-                    </Hidden>
-                    <Hidden xsDown>
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                      size="large"
-                      onClick={runInstance}
-                    >
-                      Run
-                    </Button>
-                    <Button
-                      href={`/studio/${modelConfig.id}/analytics`}
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                    >
-                      Analyse
-                    </Button>
-                    </Hidden>
-                  </FormGroup>
-                </Box>
-              </Grid>
-            </Grid>
-
-            <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
+      
+            {/* <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
 
               {loadingInstanceState && (
                 <Typography align='center'>
@@ -238,36 +180,20 @@ export const SingleInstance = ({ modelConfig }) => {
                   Running instance...
                 </Typography>
               )}
-            </div>
+            </div> */}
 
-          </Grid>
-        </Grid>
+    
+          <Box p={4} bgcolor="primary.dark" color="primary.contrastText">
+          <Spacer height="80px"/>
 
-      </Box> */}
-      <Box p={4} bgcolor="primary.dark" color="primary.contrastText">
-              <Spacer height="30px"/>
               <Grid container alignItems="center" justify="center">
-              <Grid item md={2}>
-              <h3 className={s.header} >
-                {modelConfig.instanceName}
-              </h3>
-              <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
-              {loadingInstanceState && (
-                // <Typography align='center'>
-                //   {instanceState ? 'Stopping instance...' : 'Starting instance...'}
-                // </Typography>
-                <Cogs/>
-              )}
-
-              {loadingRunInstance && (
-                // <Typography align='center'>
-                //   Running instance...
-                // </Typography>
-                <Cogs/>
-              )}
-              </div>
-                <FormGroup row>
-                <FormControlLabel
+                <Grid item md={9} sm={12} xs={12}>
+                  <Grid container alignItems="center" justify="center" id="window">
+                    <Hidden smDown>
+                    <Grid item md={3}>
+                      <Spacer height="25px"/>
+                    <div className={s.chartSelectorWrapper2}>
+                      <FormControlLabel
                       control={
                         <Switch
                           checked={instanceState}
@@ -276,88 +202,106 @@ export const SingleInstance = ({ modelConfig }) => {
                           disabled={loadingInstanceState}
                         />
                       }
-                      label="Power"
+                      label={instanceState ? 'On' : 'Off'}
                     />
-                     </FormGroup>
-                     <Spacer height="30px"/>
-                     <FormGroup row>
-                    <Hidden smUp>
                     <Button
                       variant="contained"
                       color="secondary"
                       size="small"
                       onClick={runInstance}
                     >
-                      <strong>Run</strong>
+                    <PlayArrowIcon/>
                     </Button>
-                    
+                    </div>
+                    </Grid>
                     </Hidden>
-                    <Hidden xsDown>
+                    <Grid item md={6}>
+                    <h3 style={{textAlign: 'center'}} className={s.header} >
+                    {modelConfig.instanceName}
+                    </h3>
+                    </Grid>
+                    <Hidden mdUp>
+                    <Grid item md={3}>
+                      <Spacer height="25px"/>
+                    <div className={s.chartSelectorWrapper2}>
+                      <FormControlLabel
+                      style={{marginLeft: 5}}
+                      control={
+                        <Switch
+                          checked={instanceState}
+                          onChange={switchInstanceState}
+                          name="Started"
+                          disabled={loadingInstanceState}
+                        />
+                      }
+                      label={instanceState ? 'On' : 'Off'}
+                    />
                     <Button
+                       style={{marginLeft: 5}}
                       variant="contained"
                       color="secondary"
-                      size="large"
+                      size="small"
                       onClick={runInstance}
                     >
-                      <strong>Run</strong>
+                    <PlayArrowIcon/>
                     </Button>
-                    
+                    </div>
+                    </Grid>
                     </Hidden>
-                </FormGroup>
-              <Spacer height="30px"/>
-                <FormGroup row>
-                
-                </FormGroup>
-                <Spacer height="10px"/>
-                <FormGroup row>
-                <Hidden smUp>
-                    
+                    <Grid item md={3}>
+                    <Spacer height="25px"/>
+                    <div className={s.chartSelectorWrapper}>
+                      <Hidden mdDown>
+                      <Button
+                     style={{marginLeft: 5}}
+                      href="#window"
+                      variant="contained"
+                      color="primary"
+                      size="small"
+                    >
+                      <FullscreenIcon/>
+                    </Button>
+                      </Hidden>
                     <Button
+                     style={{marginLeft: 5}}
                       href={`/studio/${modelConfig.id}/analytics`}
                       variant="contained"
                       color="primary"
                       size="small"
                     >
-                      Analyse
+                      <BarChartIcon/>
                     </Button>
-                    </Hidden>
-                    <Hidden xsDown>
-                   
                     <Button
-                      href={`/studio/${modelConfig.id}/analytics`}
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                    >
-                      Analyse
-                    </Button>
-                    </Hidden>
-                </FormGroup>
-                </Grid>
-                <Grid item md={8} xs={12}>
-                  <Grid container alignItems="center" justify="center">
-                    <h2>Live Stream</h2>
-                    <Grid container alignItems="center" justify="center">
+                   style={{marginLeft: 5}}
+                  onClick={refreshPage}
+                  variant="contained"
+                  color="primary"
+                  size="small"
+                >
+                  <RefreshIcon/>
+                </Button>
+                    </div>
+                    </Grid>
+                  </Grid>
+                    <Grid item xs={12}>
                       <img
                         alt="Stream loading"
                         src={`http://${modelConfig.publicIP}:8000/video_feed`}
-                        style={{ maxWidth: '95%' }}
+                        style={{ maxWidth: '100%' }}
                       />
-                    </Grid>
-                  </Grid>
+                      </Grid>
+                      <br/>
+                      <Grid container alignItems="center" justify="center">
+                      <h3 className={s.ocr}>{modelConfig.publicIP}</h3><h3 className={s.ocr}>·</h3> <h3 className={s.ocr}>5555</h3>
+                      </Grid>
+                      <Grid container container alignItems="center" justify="center">
+                      <h3 style={{color: 'white'}} className={s.ocr}>{modelConfig.model.name}</h3>
+                      </Grid>
+                      <Grid container container alignItems="center" justify="center">
+                      <h3 style={{color: 'white'}}  className={s.ocr}>{modelConfig.instanceLocation}</h3>
+                      </Grid>
                 </Grid>
-                <Grid item md={2}>
-                  <h3>AI Name</h3>
-                  <h3 className={s.ocr}>{modelConfig.model.name}</h3>
-                  <h3>IP</h3>
-                  <h3 className={s.ocr}>{modelConfig.publicIP}</h3>
-                  <h3>Port</h3>
-                  <h3 className={s.ocr}>5555</h3>
-                  <h3>Location</h3>
-                  <h3 className={s.ocr}>{modelConfig.instanceLocation}</h3>
-                </Grid>
-               
-                <Spacer height="100px"/>
+                <Spacer height="170px"/>
               </Grid>
             </Box>
     </div>

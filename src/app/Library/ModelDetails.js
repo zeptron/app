@@ -62,7 +62,7 @@ export const ModelDetails = ({ model, rows, modelClasses }) => {
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={2}>
-        <Spacer height="50px" />
+        <Spacer height="130px" />
         <Grid container alignItems="center" justify="center">
           <Grid item md={8} sm={10} xs={12}>
             <Box component="fieldset" mb={3} borderColor="transparent">

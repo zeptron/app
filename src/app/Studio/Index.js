@@ -59,6 +59,7 @@ export default function Studio() {
   return (
     <div>
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
+      <Spacer height="80px"/>
         <h1 className={`${s.header} ${s.center}`}>
           Studio
         </h1>

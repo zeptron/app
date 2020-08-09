@@ -13,7 +13,7 @@ class Profile extends React.Component {
     return (
       <div>
         <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
-          <Spacer height="10px" />
+          <Spacer height="90px" />
           <Grid container alignItems="center" justify="center">
             <Grid item md={8} xs={12}>
               <h1 className={`${s.header} ${s.center}`}>

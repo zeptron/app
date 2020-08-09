@@ -10,7 +10,7 @@ import Stream from './Components/Stream'
 import Start from './Components/Start'
 import Privacy from './Components/Privacy'
 import Studio from '../app/Studio/Index'
-import Image from '../assets/budlight.jpg'
+import Image from '../assets/bg4.jpg'
 
 class Home extends React.Component {
 
@@ -31,22 +31,14 @@ class Home extends React.Component {
             ) : (
             <div>
             <Hero
-            header="Deploy AI in under 60 seconds"
-            subheader="Zeptron makes it easy to deploy and manage computer vision software"
-            bgImage='url(https://zepappassets.s3-ap-southeast-2.amazonaws.com/bg.jpg)'
+            header="Deploy vision AI in seconds"
+            subheader="Zeptron's plug-and-play solutions make it easy to deploy AI on new & existing video streams"
+            bgImage={`url('${Image}')`}
             />
              <Below/>
-            {/* <Privacy
-            header="Automate complex AI deployments easily"
-            subheader="Zeptron is an easy-to-use solution for deploying computer vision software on new or existing video feeds"
-            asset={<img src={Image} style={{maxWidth: '100%'}}/>}
-            /> */}
             <Stream/>
             <Configure/>
             <Provision/>
-            {/* <Results/> */}
-            {/* <Privacy/> */}
-            {/* <Pricing/> */}
             <Start/>
             </div>
           )
