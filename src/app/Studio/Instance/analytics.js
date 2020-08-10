@@ -234,7 +234,7 @@ export default function Analytics({ match }) {
             style={{marginLeft: 5}}
             href={`/studio/${modelConfig.id}/`}
             variant="contained"
-            color="primary"
+            color="secondary"
             size="small"
             >
             <VideocamIcon/>
@@ -246,8 +246,8 @@ export default function Analytics({ match }) {
             color="primary"
             size="small"
             >
-                  <RefreshIcon/>
-                </Button>
+            <RefreshIcon/>
+            </Button>
             </div>
              </div>
             <div className={s.legend}>
