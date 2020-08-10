@@ -11,6 +11,8 @@ import Start from './Components/Start'
 import Privacy from './Components/Privacy'
 import Studio from '../app/Studio/Index'
 import Image from '../assets/bg4.jpg'
+import CCTV from '../assets/cctv.png'
+import ImgLeft from './Components/ImgLeft'
 
 class Home extends React.Component {
 
@@ -31,14 +33,20 @@ class Home extends React.Component {
             ) : (
             <div>
             <Hero
-            header="Deploy vision AI in seconds"
-            subheader="Zeptron's plug-and-play solutions make it easy to deploy AI on new & existing video streams"
+            header="Deploy vision AI now"
+            subheader="Add AI to new & existing video streams in seconds using Zeptron's plug-and-play solutions"
             bgImage={`url('${Image}')`}
             />
-             <Below/>
+            <ImgLeft
+            header="Connect CCTV streams to AI"
+            subheader="Zeptron's CCTV router plugs into your CCTV controller and sends data securely to AI"
+            img={CCTV}
+            />
+            <hr/>
             <Stream/>
             <Configure/>
             <Provision/>
+            <Below/>
             <Start/>
             </div>
           )

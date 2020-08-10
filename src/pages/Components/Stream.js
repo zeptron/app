@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Grid, Hidden} from '@material-ui/core'
+import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Stream from '../../assets/cam.png'
@@ -29,7 +29,7 @@ import ReactPlayer from 'react-player'
             <Grid item md={6} sm={9} xs={12}>
             <Spacer height="40px"/>
             <h2 className={`${s.header}`}>
-              Detect small details with a powerful lens
+              Set up new video streams with a superior lens
               </h2> 
               <Spacer height="40px"/>
             </Grid>
@@ -44,14 +44,12 @@ import ReactPlayer from 'react-player'
             </Grid>
             <Grid item md={6} xs={12}>
             <Spacer height="40px"/>
-              <p className={s.subheader} style={{fontSize: '2.2em', fontWeight: '700', textTransform: 'uppercase'}}>4K / 120 FPS Lens</p>
+              <p className={s.subheader} style={{fontSize: '2.2em', fontWeight: '700', textTransform: 'uppercase'}}>12.3 MP / 120 FPS</p>
              
                <p className={s.subheader} >
-                Control computer features ethernet, 802.11 bgn wireless and GPIO pins
+                Camera body is 3D printed with ethernet, 802.11 bgn wireless, and GPIO pins
                </p>  
-               <p className={s.subheader}>
-               3D printed casing
-               </p>
+              
               <Spacer height="40px"/>
             </Grid> 
 

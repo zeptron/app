@@ -22,7 +22,7 @@ import Touch from '../../assets/iPadManuf.png'
              {/* <Results /> */}
              <Spacer height="20px"/>
               <h2 className={`${s.header} ${s.center}`} >
-              See results immediately
+              See results in a smart app
               </h2>
                <p className={`${s.subheader} ${s.center}`} >Get a live inference feed, notifications, and results charted in real time</p>
               <Spacer height="20px"/>

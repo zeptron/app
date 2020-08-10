@@ -16,7 +16,7 @@ class Header extends React.Component {
   }
 
   listenScrollEvent = e => {
-    if (window.scrollY > 40) {
+    if (window.scrollY > 1) {
       this.setState({isScrolled: true})
     } else {
       this.setState({isScrolled: false})
