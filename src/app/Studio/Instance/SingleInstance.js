@@ -298,7 +298,8 @@ export const SingleInstance = ({ modelConfig }) => {
                         alt="Stream loading"
                         src={`http://${modelConfig.publicIP}:8000/video_feed`}
                         style={{ maxWidth: '100%' }}
-                      />
+                        onError={(e)=>{e.target.onerror = null; e.target.src="https://forums.digitalpoint.com/proxy/yrWFm%2BbujmpVzRJJI0zQH6cnH69kXw4ANJaDnvDvDAfkBE%2F3rTD41Dmr908lo3FQWU5AMJzxSLk%2FyHtoScNs5ed0Q1H%2Bqa4TCCgQjojovWOh5Nuvx9ORszRu7wabvdBCz9xeWECfieQjcLU%3D/image.png"}}/>
+                      
                       </div>
                       </Grid>
                       <br/>
