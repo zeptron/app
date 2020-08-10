@@ -20,7 +20,7 @@ import ReactPlayer from 'react-player'
             <Grid item md={6} sm={9} xs={12}>
             <Spacer height="40px"/>
             <h2 className={`${s.header}`}>
-              Use our cameras to set up new Ultra-HD video streams
+              Set up new Ultra-HD video streams with our cameras
               </h2> 
               <Spacer height="40px"/>
             </Grid>
