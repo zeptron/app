@@ -38,7 +38,7 @@ class Home extends React.Component {
             bgImage={`url('${Image}')`}
             />
             <ImgLeft
-            header="Connect your CCTV streams in seconds"
+            header="Connect your CCTV streams"
             subheader="Zeptron's CCTV router plugs into your NVR and overlays AI on your CCTV"
             img={CCTV}
             />
