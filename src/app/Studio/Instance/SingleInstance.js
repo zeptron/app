@@ -262,11 +262,11 @@ export const SingleInstance = ({ modelConfig }) => {
                       <FullscreenIcon/>
                     </Button>
                       </Hidden>
-                    <Button
+                      <Button
                      style={{marginLeft: 5}}
                       href={`/studio/${modelConfig.id}/analytics`}
                       variant="contained"
-                      color="primary"
+                      color="secondary"
                       size="small"
                     >
                       <BarChartIcon/>
@@ -280,6 +280,7 @@ export const SingleInstance = ({ modelConfig }) => {
                 >
                   <RefreshIcon/>
                 </Button>
+                
                     </div>
                     </Grid>
                   </Grid>
@@ -293,7 +294,7 @@ export const SingleInstance = ({ modelConfig }) => {
                       <Cogs/>
                     )}
                     </div>
-                    <div style={{minHeight: 300, minWidth: 350, backgroundColor: 'black'}}>
+                    <div style={{minHeight: 300, minWidth: '100%', backgroundColor: 'black'}}>
                       <img
                         alt="Stream loading"
                         src={`http://${modelConfig.publicIP}:8000/video_feed`}
