@@ -56,6 +56,7 @@ import useInput from '../../utils/hooks/useInput';
                       {props.subheader}
                     </p>
                     <Spacer height="25px"/>
+            </Grid>
                     <Grid container alignItems="center" justify="center">
                     <div style={{textAlign: 'center', color: 'white'}}>
                     <TextField
@@ -67,12 +68,19 @@ import useInput from '../../utils/hooks/useInput';
                     value={userEmail}
                     onChange={setUserEmail}
                   />
+                  <Hidden xsDown>
                     <Button style={{height: 48}} size="large" variant="contained" color="secondary" onClick={sendForm}>
                     <span className={s.ctabutton}>Get a Demo</span>
                     </Button>
+                    </Hidden>
+                    <Hidden smUp>
+                    <Button style={{height: 48}} size="small" variant="contained" color="secondary" onClick={sendForm}>
+                    <span className={s.ctabutton}>Get a Demo</span>
+                    </Button>
+                    </Hidden>
                     </div>
                     </Grid>
-            </Grid>
+            
             
         </Grid>
       <Spacer height="200px"/>

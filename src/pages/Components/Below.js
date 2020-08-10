@@ -3,6 +3,8 @@ import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import { Link } from "react-router-dom";
+import Robot from "../../assets/robot.svg"
+import Mask from "../../assets/coronavirus.svg"
 
   export default function Hero() {
     const [spacing] = React.useState(4);
@@ -21,7 +23,7 @@ import { Link } from "react-router-dom";
               <Grid item md={4} sm={6}  xs={12}>
                 <Link to="/health" className={s.belowlink}>
               <Spacer height="20px"/>
-              <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/2904/2904376.svg"/>
+              <img style={{maxWidth: '30%'}} src={Mask}/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Health</h3>
               </Link>
               </Grid>
@@ -35,7 +37,7 @@ import { Link } from "react-router-dom";
               <Grid item md={4} sm={6}  xs={12}>
               <Link to="/production" className={s.belowlink}>
               <Spacer height="20px"/>
-              <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/1037/1037353.svg"/>
+              <img style={{maxWidth: '30%'}} src={Robot}/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Production</h3>
               </Link>
               </Grid>

@@ -12,9 +12,12 @@ export default function Notifications(props) {
                     <Grid item md={10}>
                         <Grid container alignItems="center" justify="center">
                             <Grid item md={6}>
+                            <Box p={4}>
                                 <img src={props.img} style={{maxWidth: '100%'}}/>
+                                </Box>
                             </Grid>
-                            <Grid item md={6}>
+                            <Grid item md={6} >
+                                <Box >
                             <Spacer height="20px"/>
                             <h2 className={`${s.header} ${s.center}`} >
                                 {props.header}
@@ -23,6 +26,7 @@ export default function Notifications(props) {
                                 {props.subheader}
                             </p>
               <Spacer height="20px"/>
+              </Box>
                             </Grid>
                         </Grid>
                     </Grid>
