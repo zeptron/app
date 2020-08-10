@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import * as queries from "../../../graphql/queries";
 import useQuery from '../../../graphql/useQuery';
 import UserContext from '../../../UserContext';
-
+import Loader from '../Components/Loader'
 import { SingleInstance } from "./SingleInstance";
 
 export default function Instance({ match }) {
@@ -32,7 +32,7 @@ export default function Instance({ match }) {
 
   if (!modelQuery.data && modelQuery.loading) {
     return (
-      <p>Loading...</p>
+      <Loader />
     );
   }
   console.log(modelQuery.data?.listModelConfigs?.items?.[0]);

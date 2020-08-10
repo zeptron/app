@@ -11,7 +11,7 @@ import VideocamIcon from '@material-ui/icons/Videocam';
 import UserContext from '../../../UserContext';
 import useQuery from '../../../graphql/useQuery';
 import * as queries from '../../../graphql/queries';
-
+import Loader from '../Components/Loader'
 import s from '../../../styles/styles.module.css';
 
 export default function Analytics({ match }) {
@@ -159,7 +159,7 @@ export default function Analytics({ match }) {
   }, [analytics, mode]);
 
   if (modelQuery.loading || !modelQuery.data) {
-    return <>Loading...</>;
+    return <Loader/>;
   }
 
   const modelConfig = modelQuery.data?.listModelConfigs?.items?.[0];
