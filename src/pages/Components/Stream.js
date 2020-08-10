@@ -16,7 +16,15 @@ import ReactPlayer from 'react-player'
             <Grid item md={10} sm={10} xs={12}>
             <Spacer height="80px"/>
             <Grid container justify="center" alignItems="center" spacing={spacing}>
-            
+
+            <Grid item md={6} sm={9} xs={12}>
+            <Spacer height="40px"/>
+            <h2 className={`${s.header}`}>
+              Use our cameras to set up new Ultra-HD video streams
+              </h2> 
+              <Spacer height="40px"/>
+            </Grid>
+
             <Grid item md={6} xs={12}>
                 <ReactPlayer 
                 playing="true" 
@@ -24,14 +32,6 @@ import ReactPlayer from 'react-player'
                 width="100%" 
                 pip="true"
                 url="https://vimeo.com/441935476"/>
-            </Grid>
-           
-            <Grid item md={6} sm={9} xs={12}>
-            <Spacer height="40px"/>
-            <h2 className={`${s.header}`}>
-              Set up new video streams with a superior lens
-              </h2> 
-              <Spacer height="40px"/>
             </Grid>
            
             </Grid>

@@ -11,7 +11,7 @@ import Start from './Components/Start'
 import Privacy from './Components/Privacy'
 import Studio from '../app/Studio/Index'
 import Image from '../assets/bg4.jpg'
-import CCTV from '../assets/cctv.png'
+import CCTV from '../assets/Router_alt.png'
 import ImgLeft from './Components/ImgLeft'
 
 class Home extends React.Component {
@@ -38,11 +38,11 @@ class Home extends React.Component {
             bgImage={`url('${Image}')`}
             />
             <ImgLeft
-            header="Connect CCTV streams to AI"
-            subheader="Zeptron's CCTV router plugs into your CCTV controller and sends data securely to AI"
+            header="Connect your CCTV streams"
+            subheader="Zeptron's CCTV router plugs into your NVR controller and overlays AI to your CCTV"
             img={CCTV}
             />
-            <hr/>
+          
             <Stream/>
             <Configure/>
             <Provision/>
