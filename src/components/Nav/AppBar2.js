@@ -15,6 +15,7 @@ import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AppsIcon from '@material-ui/icons/Apps';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Logo from '../../assets/logo_white.svg'
+import { Auth } from "aws-amplify";
 
 const useStyles = makeStyles({
   list: {
@@ -66,8 +67,8 @@ export default function SwipeableTemporaryDrawer(props) {
     name : "Account",
     route: "/account",
     icon: <AccountBoxIcon style={{color: "#fff"}}/>
-  }
-  ,{
+  },
+  {
     name : "Help",
     route: "https://zeptron.github.io",
     icon: <HelpOutlineIcon style={{color: "#fff"}}/>
@@ -215,10 +216,18 @@ export default function SwipeableTemporaryDrawer(props) {
   return (
     <div>
       {["right"].map(anchor => (
-        <React.Fragment key={anchor}>
+        <React.Fragment kney={anchor}>
           {getMenu(anchor)}
         </React.Fragment>
       ))}
     </div>
   );
+}
+
+function signOut() {
+  Auth.signOut()
+    .then(() => {
+      this.props.history.push("/auth");
+    })
+    .catch(() => console.log("error signing out..."));
 }

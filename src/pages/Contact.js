@@ -3,11 +3,9 @@ import {Box, Grid} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import Spacer from 'react-spacer'
 
-
   export default function About() {
     const [spacing] = React.useState(4);
-    
-   
+
    return (
         <div>
             <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
@@ -32,19 +30,13 @@ import Spacer from 'react-spacer'
                         <p className={s.subheader}>Drop us a line</p>
                         <p className={s.subheader}><a style={{color: 'black'}} href="mailto:hello@zeptron.co">hello@zeptron.co</a></p>
                         <p className={s.subheader}>Level 4, 11 York Street<br/>Sydney, NSW 2000</p>
-
                       </Grid>
                       </Grid>
-                    
-                          <Spacer height="80px"/>
-                          <Spacer height="80px"/>
-          
+                      <Spacer height="160px"/>
                       </Grid>
                       </Grid>
                       </Box>
                       </div>
-            
-         
      )
     }
 

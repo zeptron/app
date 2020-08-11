@@ -294,7 +294,7 @@ export const SingleInstance = ({ modelConfig }) => {
                       <Cogs/>
                     )}
                     </div>
-                    <div style={{minHeight: 300, minWidth: '100%', backgroundColor: 'black'}}>
+                    <div style={{minHeight: '100%', minWidth: '100%', backgroundColor: 'black'}}>
                       <img
                         alt="Stream loading"
                         src={`http://${modelConfig.publicIP}:8000/video_feed`}
