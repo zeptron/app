@@ -78,7 +78,7 @@ const styles = {
     display: "inline-flex",
   },
   container: {
-    height: "80px",
+    height: "50px",
     alignItems: "center",
     width: "100%",
     backgroundColor: "rgba(0, 10, 18, 0)",
