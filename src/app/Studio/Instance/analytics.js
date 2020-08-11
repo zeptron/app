@@ -267,6 +267,7 @@ export default function Analytics({ match }) {
             </Grid>
           </Grid>
         </Grid>
+        <Spacer height="50px"/>
         <Grid container alignItems="center" justify="center">
                       <h3 className={s.ocr}>{modelConfig.publicIP}</h3><h3 className={s.ocr}>·</h3> <h3 className={s.ocr}>5555</h3>
                       </Grid>
