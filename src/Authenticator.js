@@ -5,6 +5,7 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ForgotPassword from "./ForgotPassword";
 import Spacer from 'react-spacer'
+import s from './styles/styles.module.css'
 
 class Authenticator extends React.Component {
   state = {
@@ -23,8 +24,24 @@ class Authenticator extends React.Component {
     const { currentState } = this.state;
     return (
       <div>
-         <Box bgcolor="primary.dark">
+         <Box bgcolor="primary.dark" color="primary.contrastText">
         <Spacer height="80px"/>
+            {currentState === "showSignIn" && (
+              <h3 style={{textAlign: 'center'}} className={s.header} >
+                Authenticate
+                </h3>
+                )}
+             {currentState === "showSignUp" && (
+               <h3 style={{textAlign: 'center'}} className={s.header} >
+               Register
+               </h3>
+                )}
+               {currentState === "showForgotPassword" && (
+                  <h3 style={{textAlign: 'center'}} className={s.header} >
+                  Reset password
+                  </h3>
+                  )}
+        <Spacer height="50px"/>
         </Box>
         <Box p={2}>
           <div style={styles.container}>
