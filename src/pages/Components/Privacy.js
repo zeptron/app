@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Grid, Hidden} from '@material-ui/core'
+import {Box, Button, Grid, Hidden} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Image from '../../assets/cctv.jpg'
@@ -23,6 +23,9 @@ import ReactPlayer from 'react-player'
               {props.subheader}
               </p>  
               <Spacer height="60px"/>
+              <Button href="#start" color="secondary" size="large" variant="contained">
+              Get Started
+              </Button>
             </Grid> 
             </Hidden>
             <Grid item md={6} xs={12}>
@@ -37,6 +40,9 @@ import ReactPlayer from 'react-player'
               <p className={s.subheader} >
               {props.subheader}</p>
               <Spacer height="60px"/>
+              <Button href="#start" color="secondary" size="small" variant="contained">
+              Get Started
+              </Button>
             </Grid> 
             </Hidden>
             </Grid>
