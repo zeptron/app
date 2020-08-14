@@ -52,7 +52,6 @@ import Spacer from 'react-spacer'
               <Spacer height="80px"/>
              
               {/* <p className={`${s.subheader} ${s.center}`}>As computer vision enthusiasts ourselves, we created Zeptron as an an easy, scalable, and robust way to deploy computer vision applications </p> */}
-              <p className={`${s.subheader} ${s.center}`}>Zeptron was created to make it easier to use AI.</p>
               <p className={`${s.subheader} ${s.center}`}>When there was no large-scale way to deploy our model, we made one.</p>
              </Grid>
                 <Spacer height="80px"/>

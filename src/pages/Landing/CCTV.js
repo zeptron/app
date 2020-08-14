@@ -11,7 +11,10 @@ import ImgRight from '../Components/ImgRight'
 import ChartImg from '../../assets/charts.png'
 import Start from '../Components/Start'
 import ConfigureImg from '../../assets/configure.png'
-import Hubspot from './Hubspot'
+import Hubspot from '../Components/Hubspot'
+import Features from '../Components/Features'
+import CCTV from '../../assets/Router_alt.png'
+
 
 export default function Health() {
     return (
@@ -21,7 +24,12 @@ export default function Health() {
         bgImage='url(https://zepappassets.s3-ap-southeast-2.amazonaws.com/cctv.jpg)'
         subheader="Use AI on CCTV networks for occupancy management, analytics, and monitoring"
         />
-        
+        <ImgLeft
+        header="Connect CCTV streams easily"
+        subheader="Zeptron's CCTV router plugs into your NVR/DVR and overlays AI on your CCTV"
+        img={CCTV}
+        />
+        <Features/>
         <ImgRight
         img={ConfigureImg}
         header="Configure tracking and counting for detections"

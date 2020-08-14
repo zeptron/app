@@ -34,6 +34,8 @@ import Faq from './pages/Faq'
 
 import * as Landing from './pages/Landing'
 
+import ScrollToTop from './utils/scroll'
+
 class PrivateRoute extends React.Component {
   state = {
     loaded: false,
@@ -89,6 +91,7 @@ const Routes = () => (
     <div>
       <Header />
       <Switch>
+        <ScrollToTop>
         <Route path="/auth" exact component={Authenticator} />
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
@@ -98,14 +101,12 @@ const Routes = () => (
         <Route path="/streaming" exact component={Streaming} />
         <Route path="/production" exact component={Landing.Production} />
         <Route path="/safety" exact component={Landing.Safety} />
-        <Route path="/cctv" exact component={Landing.Health} />
+        <Route path="/cctv" exact component={Landing.CCTV} />
         <Route path="/management" exact component={Landing.Management} />
+        </ScrollToTop>
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/library" exact component={Library} />
         <PrivateRoute path="/studio/configuration/:id" component={ConfigurationSteps} />
-        {/*<PrivateRoute path="/studio/provision/:id" component={Provision} />*/}
-        {/*<PrivateRoute path="/studio/start/:id" component={Start} />*/}
-        {/*<PrivateRoute path="/studio/actions/:id" component={Actions} />*/}
         <PrivateRoute path="/studio/:id/analytics" component={Analytics} />
         <PrivateRoute path="/studio/:id/" component={Instance} />
         <PrivateRoute path="/studio" exact component={Studio} />
@@ -119,3 +120,4 @@ const Routes = () => (
 );
 
 export default Routes;
+

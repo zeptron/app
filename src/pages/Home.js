@@ -13,7 +13,7 @@ import Studio from '../app/Studio/Index'
 import Image from '../assets/bg4.jpg'
 import CCTV from '../assets/Router_alt.png'
 import ImgLeft from './Components/ImgLeft'
-import Hubspot from './Landing/Hubspot'
+import Hubspot from './Components/Hubspot'
 
 class Home extends React.Component {
 

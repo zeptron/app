@@ -5,7 +5,7 @@ import Spacer from 'react-spacer'
 // import { IoLogoGoogle } from "react-icons/io";
 // import {MdEmail} from "react-icons/md"
 //import { Auth } from 'aws-amplify'
-import Hubspot from '../Landing/Hubspot'
+import Hubspot from './Hubspot'
 //import Form from './Form'
 // import { Button } from "../../containers/Auth.style";
 
