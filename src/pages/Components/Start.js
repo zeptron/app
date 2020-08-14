@@ -26,45 +26,16 @@ import Hubspot from './Hubspot'
             <Grid item md={8} xs={12}>
             <Spacer height="30px"/>
             <h2 className={`${s.header} ${s.center}`}>
-            Start now
+              {props.header || 'Start now'}
             </h2>
-            <p className={`${s.subheader} ${s.center}`}>Try a free demo today</p>
+            <p className={`${s.subheader} ${s.center}`}>
+              {props.subheader || 'Try a free demo today'}
+            </p>
             </Grid> 
             </Grid> 
             <Spacer height="20px"/>
             {props.form}
-            <Spacer height="80px"/>
-
-            <Grid container alignItems="center" justify="center">
-                <Grid item md={4} sm={8} xs={12}>
-                  {/* <Button href="/contact" variant="contained" size="large" color="secondary">
-                <strong>Get In Touch</strong>
-                  </Button> */}
-        {/* <Button
-          fullwidth
-          title={'Start with Google'}
-          className='google'
-          icon={<IoLogoGoogle />}
-          iconPosition='left'
-          iconStyle={{ color: '#ffffff', marginRight: 5 }}
-          intlButtonId='continueGoogleBtn'
-          onClick={thisGoogle}
-          style={{ color: '#fff' }}
-        /> */}
-         {/* <Button
-          fullwidth
-          title={'Get In Touch'}
-          className='email'
-          icon={< MdEmail/>}
-          iconPosition='left'
-          iconStyle={{ color: '#ffffff', marginRight: 5 }}
-          intlButtonId='continueFacebookBtn'
-          style={{ color: '#fff' }}
-          onClick={event =>  window.location.href='/contact'}
-        /> */}
-        </Grid> 
-            </Grid>
-            <Spacer height="80px"/>
+            <Spacer height="16px"/>
         </Grid> 
         </Grid>
     </Box>

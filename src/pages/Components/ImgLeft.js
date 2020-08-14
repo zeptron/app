@@ -27,7 +27,8 @@ export default function Notifications(props) {
                             <Spacer height="20px"/>
                                 {
                                 props.button ? ( 
-                                <Button href={props.buttonLink || '#start'} 
+                                <Button 
+                                href={props.buttonLink || '#start'} 
                                 color={props.buttonColor || 'primary'} 
                                 size={props.buttonSize || 'large'} 
                                 variant={props.buttonVariant || 'contained'}

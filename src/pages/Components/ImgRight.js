@@ -23,7 +23,8 @@ export default function Charts(props) {
                             <Spacer height="20px"/>
                             {
                                 props.button ? ( 
-                                <Button href={props.buttonLink || '#start'} 
+                                <Button 
+                                href={props.buttonLink || '#start'} 
                                 color={props.buttonColor || 'primary'} 
                                 size={props.buttonSize || 'large'} 
                                 variant={props.buttonVariant || 'contained'}
@@ -36,7 +37,7 @@ export default function Charts(props) {
                             </Grid>
                             </Hidden>
                             <Grid item md={6}>
-                                <img src={props.img} style={{maxWidth: '100%'}}/>
+                            <img src={props.img} style={{maxWidth: '100%'}}/>
                             </Grid>
                             <Hidden smUp>
                             <Grid item md={6}>
@@ -48,9 +49,10 @@ export default function Charts(props) {
                                 {props.subheader}
                             </p>
                             <Spacer height="20px"/>
-                            {
+                                {
                                 props.button ? ( 
-                                <Button href={props.buttonLink || '#start'} 
+                                <Button 
+                                href={props.buttonLink || '#start'} 
                                 color={props.buttonColor || 'primary'} 
                                 size={props.buttonSize || 'large'} 
                                 variant={props.buttonVariant || 'contained'}

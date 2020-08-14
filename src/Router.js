@@ -103,7 +103,6 @@ const Routes = () => (
         <Route path="/safety" exact component={Landing.Safety} />
         <Route path="/cctv" exact component={Landing.CCTV} />
         <Route path="/management" exact component={Landing.Management} />
-        </ScrollToTop>
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/library" exact component={Library} />
         <PrivateRoute path="/studio/configuration/:id" component={ConfigurationSteps} />
@@ -113,6 +112,7 @@ const Routes = () => (
         <PrivateRoute path="/account" component={Account} />
         <PrivateRoute path="/billing" component={Billing} />
         <Route component={NoMatch} />
+        </ScrollToTop>
       </Switch>
       <Footer />
     </div>
