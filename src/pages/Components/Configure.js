@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Grid} from '@material-ui/core'
+import {Box, Button, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Touch from '../../assets/iPadManuf.png'
@@ -26,6 +26,9 @@ import Touch from '../../assets/iPadManuf.png'
               </h2>
                <p className={`${s.subheader} ${s.center}`} >Get a live inference feed, notifications, and results charted in real time</p>
               <Spacer height="20px"/>
+              <Button href="#start" color="primary" size="large" variant="contained">
+                                Get Started
+                                </Button>
               <Spacer height="40px"/>
             </Grid> 
             </Grid>

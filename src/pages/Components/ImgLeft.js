@@ -17,16 +17,27 @@ export default function Notifications(props) {
                                 </Box>
                             </Grid>
                             <Grid item md={6} >
-                                <Box >
-                            <Spacer height="20px"/>
+                            <Box >
                             <h2 className={`${s.header} ${s.center}`} >
                                 {props.header}
                             </h2>
                             <p className={`${s.subheader} ${s.center}`} >
                                 {props.subheader}
                             </p>
-              <Spacer height="20px"/>
-              </Box>
+                            <Spacer height="20px"/>
+                                {
+                                props.button ? ( 
+                                <Button href={props.buttonLink || '#start'} 
+                                color={props.buttonColor || 'primary'} 
+                                size={props.buttonSize || 'large'} 
+                                variant={props.buttonVariant || 'contained'}
+                                >
+                                {props.button}
+                                </Button>
+                                 ) : (
+                                <div></div>
+                                 )}
+                            </Box>
                             </Grid>
                         </Grid>
                     </Grid>

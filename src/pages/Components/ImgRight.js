@@ -21,6 +21,18 @@ export default function Charts(props) {
                                 {props.subheader}
                             </p>
                             <Spacer height="20px"/>
+                            {
+                                props.button ? ( 
+                                <Button href={props.buttonLink || '#start'} 
+                                color={props.buttonColor || 'primary'} 
+                                size={props.buttonSize || 'large'} 
+                                variant={props.buttonVariant || 'contained'}
+                                >
+                                {props.button}
+                                </Button>
+                                 ) : (
+                                <div></div>
+                                 )}
                             </Grid>
                             </Hidden>
                             <Grid item md={6}>
@@ -36,6 +48,18 @@ export default function Charts(props) {
                                 {props.subheader}
                             </p>
                             <Spacer height="20px"/>
+                            {
+                                props.button ? ( 
+                                <Button href={props.buttonLink || '#start'} 
+                                color={props.buttonColor || 'primary'} 
+                                size={props.buttonSize || 'large'} 
+                                variant={props.buttonVariant || 'contained'}
+                                >
+                                {props.button}
+                                </Button>
+                                 ) : (
+                                <div></div>
+                                 )}
                             </Grid>
                             </Hidden>
                         </Grid>

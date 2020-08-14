@@ -42,6 +42,7 @@ class Home extends React.Component {
             header="Connect your CCTV streams"
             subheader="Zeptron's CCTV router plugs into your NVR/DVR and overlays AI on your CCTV"
             img={CCTV}
+            button="See Demo"
             />
           
             <Stream/>
