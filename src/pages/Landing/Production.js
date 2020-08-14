@@ -15,7 +15,7 @@ import ConfigureImg from '../../assets/configure.png'
 import ActionsImg from '../../assets/actions.png'
 import TrainImg from '../../assets/bottles.png'
 import Stream from '../Components/Stream'
-import Hubspot from './Hubspot'
+import Hubspot from '../Components/Hubspot'
 
 export default function Production() {
     return (
