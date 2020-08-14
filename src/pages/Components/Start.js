@@ -4,12 +4,13 @@ import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 // import { IoLogoGoogle } from "react-icons/io";
 // import {MdEmail} from "react-icons/md"
-import { Auth } from 'aws-amplify'
-import Form from './Form'
+//import { Auth } from 'aws-amplify'
+import Hubspot from '../Landing/Hubspot'
+//import Form from './Form'
 // import { Button } from "../../containers/Auth.style";
 
 
-  export default function Start() {
+  export default function Start(props) {
     // const thisGoogle = () => {
     //     Auth.federatedSignIn({ provider: "Google" });
     //   };
@@ -21,7 +22,6 @@ import Form from './Form'
          <Grid container justify="center" spacing={spacing}>
             <Grid item md={8} sm={10} xs={12}>
             <Spacer height="80px"/>
-
             <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Grid item md={8} xs={12}>
             <Spacer height="30px"/>
@@ -32,7 +32,7 @@ import Form from './Form'
             </Grid> 
             </Grid> 
             <Spacer height="20px"/>
-            <Form/>
+            {props.form}
             <Spacer height="80px"/>
 
             <Grid container alignItems="center" justify="center">

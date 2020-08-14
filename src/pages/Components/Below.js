@@ -4,7 +4,7 @@ import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import { Link } from "react-router-dom";
 import Robot from "../../assets/robot.svg"
-import Mask from "../../assets/coronavirus.svg"
+import CCTV from "../../assets/camera.svg"
 
   export default function Hero() {
     const [spacing] = React.useState(4);
@@ -21,10 +21,10 @@ import Mask from "../../assets/coronavirus.svg"
             <Spacer height="50px"/>
               <Grid container  justify="center" spacing={spacing}>
               <Grid item md={4} sm={6}  xs={12}>
-                <Link to="/health" className={s.belowlink}>
+                <Link to="/cctv" className={s.belowlink}>
               <Spacer height="20px"/>
-              <img style={{maxWidth: '30%'}} src={Mask}/>
-              <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Health</h3>
+              <img style={{maxWidth: '30%'}} src={CCTV}/>
+              <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>CCTV</h3>
               </Link>
               </Grid>
               {/* <Grid item md={4} sm={6}  xs={12}>

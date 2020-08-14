@@ -98,7 +98,7 @@ const Routes = () => (
         <Route path="/streaming" exact component={Streaming} />
         <Route path="/production" exact component={Landing.Production} />
         <Route path="/safety" exact component={Landing.Safety} />
-        <Route path="/health" exact component={Landing.Health} />
+        <Route path="/cctv" exact component={Landing.Health} />
         <Route path="/management" exact component={Landing.Management} />
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/library" exact component={Library} />
