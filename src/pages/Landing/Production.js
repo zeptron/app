@@ -15,6 +15,7 @@ import ConfigureImg from '../../assets/configure.png'
 import ActionsImg from '../../assets/actions.png'
 import TrainImg from '../../assets/bottles.png'
 import Stream from '../Components/Stream'
+import Hubspot from './Hubspot'
 
 export default function Production() {
     return (
@@ -50,7 +51,13 @@ export default function Production() {
         header="Automatic real-time analysis of detection results"
         subheader="Zeptron automatically charts detection results for your model in real time "
         />
-        <Start/>     
+        <Start
+            form={
+              <Hubspot
+                meetcode="/meeting-def"
+              />
+            }
+            />    
         </div>
     )
 }
