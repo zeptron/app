@@ -183,6 +183,9 @@ iframe.video {
     max-width: 100%;
 }
 
+iframe {
+    border: none!important;
+}
 
 /* App Styles */
 .modelHeader {

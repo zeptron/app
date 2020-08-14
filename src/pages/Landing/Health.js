@@ -11,26 +11,17 @@ import ImgRight from '../Components/ImgRight'
 import ChartImg from '../../assets/charts.png'
 import Start from '../Components/Start'
 import ConfigureImg from '../../assets/configure.png'
+import Hubspot from './Hubspot'
 
 export default function Health() {
     return (
         <div>
         <Hero 
-        header="Deploy AI on CCTV to bolster health & safety"
-        bgImage='url(https://zeptronco.s3-ap-southeast-2.amazonaws.com/t.jpg)'
-        subheader="Use CCTV networks to provide analytics and notifications for public health events"
+        header="Add an AI overlay to your CCTV network"
+        bgImage='url(https://zepappassets.s3-ap-southeast-2.amazonaws.com/cctv.jpg)'
+        subheader="Use AI on CCTV networks for occupancy management, analytics, and monitoring"
         />
-        <Consume
-            header="Consume your existing video streams"
-            subheader="Use Zeptron on your existing CCTV network, IP Cameras, or wired hardware"
-            asset={<ReactPlayer 
-                pip="true" 
-                muted 
-                width="100%" 
-                playing="true" 
-                url='https://vimeo.com/441931886' 
-            />}
-            />
+        
         <ImgRight
         img={ConfigureImg}
         header="Configure tracking and counting for detections"
@@ -46,7 +37,12 @@ export default function Health() {
         header="Get real-time analysis of detection results"
         subheader="Zeptron automatically charts detections in real time and can offer results in CSV / JSON"
         />
-        <Start/>     
+        <Start
+        form={
+            <Hubspot
+            />
+            }
+        />     
         </div>
     )
 }

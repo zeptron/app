@@ -259,11 +259,13 @@ export default function Analytics({ match }) {
               ))}
             </div>
             <Grid container alignItems="center" justify="center" spacing={2}>
+              <Grid xs={12}>
               <Bar
                 data={chartData}
                 options={options}
                 redraw
               />
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
