@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Husbpot extends React.Component {
+export default class Hubspot extends React.Component {
     componentWillMount(){
         this.loadScheduler();
       }
@@ -15,9 +15,11 @@ export default class Husbpot extends React.Component {
       
       render() {
          {
-          return(<div>
-                   <iframe src={`https://meetings.hubspot.com/${this.props.meetperson || 'jason940'}${this.props.meetcode || ''}?embed=true`} maxWidth="600" height="600"></iframe>
-                 </div>)
+          return(
+          <div>
+            <iframe src={`https://meetings.hubspot.com/${this.props.meetperson || 'jason940'}${this.props.meetcode || ''}?embed=true`} maxWidth="600" height="600"></iframe>
+          </div>
+          )
         }
       }
     };
