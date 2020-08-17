@@ -2,9 +2,9 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Stream from '../../assets/camx.png'
+import Stream from '../../assets/cam_hd.png'
 // import Cloud from './animations/data.js'
-import ReactPlayer from 'react-player'
+// import ReactPlayer from 'react-player'
 
   export default function Hero() {
     const [spacing] = React.useState(2);
