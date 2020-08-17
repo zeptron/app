@@ -8,7 +8,6 @@ import Touch from '../../assets/ipadtrain.png'
   export default function Hero() {
     const [spacing] = React.useState(2);
    
-    
    return (
 
           <Box p={2} style={{backgroundColor: '#e0e4e0'}}>
@@ -19,16 +18,15 @@ import Touch from '../../assets/ipadtrain.png'
              <Grid item md={6} xs={12}>
              <Spacer height="20px"/>
              <img src={Touch} style={{maxWidth: '100%'}}/>
-             {/* <Results /> */}
              <Spacer height="20px"/>
               <h2 className={`${s.header} ${s.center}`} >
               Hold results in your palm immediately with our app
               </h2>
                <p className={`${s.subheader} ${s.center}`} >Get a live inference feed, notifications, and results charted in real time</p>
               <Spacer height="20px"/>
-              <Button href="#start" color="primary" size="large" variant="contained">
-                                Get Started
-                                </Button>
+              <Button href="/app" color="primary" size="large" variant="contained">
+              Learn More
+              </Button>
               <Spacer height="40px"/>
             </Grid> 
             </Grid>

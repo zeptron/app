@@ -39,7 +39,7 @@ import Hubspot from './Hubspot'
             <p className={`${s.subheader} `}>
               <ul style={{textAlign: 'left', margin: 2}}>
               <li>
-                  Ultra-precise algorithms
+                  State of the art algorithms
                 </li>
                 <li>
                   Instant plug & play deployment

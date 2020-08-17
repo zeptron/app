@@ -27,6 +27,7 @@ import Streaming from './pages/Streaming'
 import Faq from './pages/Faq'
 import ScrollToTop from './utils/scroll'
 import * as Landing from './pages/Landing'
+import App from './pages/App'
 
 class PrivateRoute extends React.Component {
   state = {
@@ -95,6 +96,7 @@ const Routes = () => (
         <Route path="/safety" exact component={Landing.Safety} />
         <Route path="/cctv" exact component={Landing.CCTV} />
         <Route path="/management" exact component={Landing.Management} />
+        <Route path="/app" exact component={App} />
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/library" exact component={Library} />
         <PrivateRoute path="/studio/configuration/:id" component={ConfigurationSteps} />
