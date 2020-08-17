@@ -10,7 +10,6 @@ import TagManager from 'react-gtm-module'
 import LogRocket from 'logrocket';
 LogRocket.init('mfa6i0/zeptron');
 
-
 const tagManagerArgs = {
   gtmId: 'GTM-MCJN3C6'
 }
