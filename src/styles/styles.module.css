@@ -1,6 +1,7 @@
 .belowlink {
-    color: white;
+    color: #263238;
     text-decoration: none;
+    font-weight: 900;
 }
 
 .header {
@@ -185,6 +186,11 @@ iframe.video {
 
 iframe {
     border: none!important;
+}
+
+#start {
+    background-color: #415c75;
+    background-image: url('https://image.shutterstock.com/z/stock-vector-vector-design-d-paper-circle-with-circuit-board-illustration-abstract-modern-futuristic-1323737948.jpg');
 }
 
 /* App Styles */
