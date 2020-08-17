@@ -8,12 +8,11 @@ import UserContext from "./UserContext";
 import theme from "./styles/theme.js";
 import TagManager from 'react-gtm-module'
 import LogRocket from 'logrocket';
-LogRocket.init('zeptron-v4dwl/zeptron');
-
+LogRocket.init('mfa6i0/zeptron');
 
 
 const tagManagerArgs = {
-  gtmId: 'GTM-TSP53SW'
+  gtmId: 'GTM-MCJN3C6'
 }
 
 TagManager.initialize(tagManagerArgs)
