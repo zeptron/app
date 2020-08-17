@@ -17,7 +17,7 @@ export default class Hubspot extends React.Component {
          {
           return(
           <div>
-            <iframe src={`https://meetings.hubspot.com/${this.props.meetperson || 'jason940'}${this.props.meetcode || ''}?embed=true`} maxWidth="600" height="600"></iframe>
+            <iframe src={`https://meetings.hubspot.com/${this.props.meetperson || 'jason940'}${this.props.meetcode || ''}?embed=true`} maxWidth="100%" height="600"></iframe>
           </div>
           )
         }

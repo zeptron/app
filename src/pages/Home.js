@@ -4,15 +4,16 @@ import Hero from './Components/Hero'
 import Below from './Components/Below'
 import Provision from './Components/Provision'
 import Configure from './Components/Configure'
-import Stream from './Components/Stream'
 // import Results from './Results'
 // import Pricing from './Pricing'
 import Start from './Components/Start'
-import Privacy from './Components/Privacy'
+import Spacer from 'react-spacer'
 import Studio from '../app/Studio/Index'
 import Image from '../assets/bg4.jpg'
 import CCTV from '../assets/Router_alt.png'
+import Stream from '../assets/camx.png'
 import ImgLeft from './Components/ImgLeft'
+import ImgRight from './Components/ImgRight'
 import Hubspot from './Components/Hubspot'
 
 class Home extends React.Component {
@@ -44,11 +45,17 @@ class Home extends React.Component {
             img={CCTV}
             button="See Demo"
             />
-          
-            <Stream/>
+            <ImgRight
+            header="Set up new video streams with Ultra-HD cameras"
+            subheader="Camera body is 3D printed with ethernet, 802.11 bgn wireless, and GPIO pins"
+            img={Stream}
+            button="See Demo"
+            />
+          <Spacer height="50px"/>
+            {/* <Stream/> */}
             <Configure/>
             <Provision/>
-            <Below/>
+            {/* <Below/> */}
             <Start
             form={
               <Hubspot
