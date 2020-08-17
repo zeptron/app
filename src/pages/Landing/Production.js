@@ -51,6 +51,7 @@ export default function Production() {
         header="Automatic real-time analysis of detection results"
         subheader="Zeptron automatically charts detection results for your model in real time "
         />
+        <Spacer height="25px"/>
         <Start
             form={
               <Hubspot

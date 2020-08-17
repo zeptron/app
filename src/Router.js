@@ -15,26 +15,19 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
-
 import Account from "./app/Account";
 import Billing from "./app/Billing";
-
 import Library from "./app/Library/Index";
 import LibTemplate from "./app/Library/{template}";
-
 import Studio from "./app/Studio/Index";
 import Instance from "./app/Studio/Instance";
 import Analytics from "./app/Studio/Instance/analytics";
-
 import ConfigurationSteps from './app/Studio/ConfigurationSteps';
-
 import Streaming from './pages/Streaming'
-
 import Faq from './pages/Faq'
-
-import * as Landing from './pages/Landing'
-
 import ScrollToTop from './utils/scroll'
+import * as Landing from './pages/Landing'
+import App from './pages/App'
 
 class PrivateRoute extends React.Component {
   state = {
@@ -90,8 +83,8 @@ const Routes = () => (
   <Router>
     <div>
       <Header />
+      <ScrollToTop>
       <Switch>
-        <ScrollToTop>
         <Route path="/auth" exact component={Authenticator} />
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
@@ -103,6 +96,7 @@ const Routes = () => (
         <Route path="/safety" exact component={Landing.Safety} />
         <Route path="/cctv" exact component={Landing.CCTV} />
         <Route path="/management" exact component={Landing.Management} />
+        <Route path="/app" exact component={App} />
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/library" exact component={Library} />
         <PrivateRoute path="/studio/configuration/:id" component={ConfigurationSteps} />
@@ -111,9 +105,9 @@ const Routes = () => (
         <PrivateRoute path="/studio" exact component={Studio} />
         <PrivateRoute path="/account" component={Account} />
         <PrivateRoute path="/billing" component={Billing} />
-        </ScrollToTop>
         <Route component={NoMatch} />
       </Switch>
+      </ScrollToTop>
       <Footer />
     </div>
   </Router>
