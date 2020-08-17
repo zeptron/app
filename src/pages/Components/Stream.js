@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Stream from '../../assets/cam.png'
+import Stream from '../../assets/camx.png'
 // import Cloud from './animations/data.js'
 import ReactPlayer from 'react-player'
 

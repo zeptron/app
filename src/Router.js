@@ -112,7 +112,6 @@ const Routes = () => (
         <PrivateRoute path="/account" component={Account} />
         <PrivateRoute path="/billing" component={Billing} />
         </ScrollToTop>
-
         <Route component={NoMatch} />
       </Switch>
       <Footer />
