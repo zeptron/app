@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Button, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Touch from '../../assets/iPadManuf.png'
+import Touch from '../../assets/ipadtrain.png'
 
 
   export default function Hero() {

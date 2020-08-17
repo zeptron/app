@@ -55,6 +55,7 @@ class App extends Component {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <div className="App">
+
             <Router />
           </div>
         </ThemeProvider>
