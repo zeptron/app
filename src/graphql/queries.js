@@ -310,7 +310,6 @@ export const listModelConfigs = /* GraphQL */ `
         port
         EC2instanceID
         instanceState
-        tableName
         model {
           id
           FPS
