@@ -3,8 +3,6 @@ import { css } from "glamor";
 import {Box, Button, Grid, Hidden, TextField} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
-import Ai from './animations/ai'
-import Image from '../../assets/bg4.jpg'
 import AWS from 'aws-sdk';
 import useInput from '../../utils/hooks/useInput';
 

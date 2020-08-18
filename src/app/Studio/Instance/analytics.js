@@ -5,7 +5,6 @@ import Spacer from 'react-spacer';
 import { Box, Button, Grid } from '@material-ui/core';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import moment from 'moment';
-import FormGroup from '@material-ui/core/FormGroup';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import UserContext from '../../../UserContext';
@@ -273,10 +272,10 @@ export default function Analytics({ match }) {
         <Grid container alignItems="center" justify="center">
                       <h3 className={s.ocr}>{modelConfig.publicIP}</h3><h3 className={s.ocr}>·</h3> <h3 className={s.ocr}>5555</h3>
                       </Grid>
-                      <Grid container container alignItems="center" justify="center">
+                      <Grid container alignItems="center" justify="center">
                       <h3 style={{color: 'white'}} className={s.ocr}>{modelConfig.model.name}</h3>
                       </Grid>
-                      <Grid container container alignItems="center" justify="center">
+                      <Grid container alignItems="center" justify="center">
                       <h3 style={{color: 'white'}}  className={s.ocr}>{modelConfig.instanceLocation}</h3>
                       </Grid>
         <Spacer height="100px"/>

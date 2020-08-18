@@ -5,19 +5,8 @@ import Spacer from 'react-spacer'
 import { css } from "glamor";
 import Bg from '../../assets/startbg.jpg'
 
-// import { IoLogoGoogle } from "react-icons/io";
-// import {MdEmail} from "react-icons/md"
-//import { Auth } from 'aws-amplify'
-import Hubspot from './Hubspot'
-//import Form from './Form'
-// import { Button } from "../../containers/Auth.style";
-
-
   export default function Start(props) {
-    // const thisGoogle = () => {
-    //     Auth.federatedSignIn({ provider: "Google" });
-    //   };
-   
+ 
     const [spacing] = React.useState(2);
    
    return (

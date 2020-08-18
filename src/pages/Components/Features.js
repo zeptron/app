@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Grid, Button, Hidden} from '@material-ui/core'
+import {Box, Grid} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import ReactPlayer from 'react-player'
@@ -34,7 +34,7 @@ export default function Notifications(props) {
                                     Occupancy Management                                
                                 </h2>
                                 <Spacer height="40px"/>
-                                <img src={Counting} style={{maxWidth: '100%'}}/>
+                                <img alt="Occupancy management using AI" src={Counting} style={{maxWidth: '100%'}}/>
                                 </Box>
                             </Grid>
                         </Grid>

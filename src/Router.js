@@ -23,8 +23,6 @@ import Studio from "./app/Studio/Index";
 import Instance from "./app/Studio/Instance";
 import Analytics from "./app/Studio/Instance/analytics";
 import ConfigurationSteps from './app/Studio/ConfigurationSteps';
-import Streaming from './pages/Streaming'
-import Faq from './pages/Faq'
 import ScrollToTop from './utils/scroll'
 import * as Landing from './pages/Landing'
 import App from './pages/App'
@@ -91,11 +89,8 @@ const Routes = () => (
         <Route path="/contact" exact component={Contact} />
         <Route path="/privacy" exact component={Privacy} />
         <Route path="/terms" exact component={Terms} />        
-        <Route path="/streaming" exact component={Streaming} />
         <Route path="/production" exact component={Landing.Production} />
-        <Route path="/safety" exact component={Landing.Safety} />
         <Route path="/cctv" exact component={Landing.CCTV} />
-        <Route path="/management" exact component={Landing.Management} />
         <Route path="/app" exact component={App} />
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/library" exact component={Library} />
