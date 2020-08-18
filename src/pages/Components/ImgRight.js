@@ -37,7 +37,7 @@ export default function Charts(props) {
                             </Grid>
                             </Hidden>
                             <Grid item md={6}>
-                            <img src={props.img} style={{maxWidth: '100%'}}/>
+                            <img alt={props.alt} src={props.img} style={{maxWidth: '100%'}}/>
                             </Grid>
                             <Hidden smUp>
                             <Grid item md={6}>

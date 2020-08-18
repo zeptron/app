@@ -17,7 +17,7 @@ import Touch from '../../assets/ipadtrain.png'
             <Grid container alignItems="center" justify="center" spacing={spacing}>
              <Grid item md={6} xs={12}>
              <Spacer height="20px"/>
-             <img src={Touch} style={{maxWidth: '100%'}}/>
+             <img alt="iPad app for using computer vision AI" src={Touch} style={{maxWidth: '100%'}}/>
              <Spacer height="20px"/>
               <h2 className={`${s.header} ${s.center}`} >
               Hold results in your palm immediately with our app

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Grid, Button, Hidden} from '@material-ui/core'
+import {Box, Grid, Button} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 
@@ -13,7 +13,7 @@ export default function Notifications(props) {
                         <Grid container alignItems="center" justify="center">
                             <Grid item md={6}>
                             <Box p={4}>
-                                <img src={props.img} style={{maxWidth: '100%'}}/>
+                                <img alt={props.alt} src={props.img} style={{maxWidth: '100%'}}/>
                                 </Box>
                             </Grid>
                             <Grid item md={6} >

@@ -43,16 +43,17 @@ class Home extends React.Component {
             header="Connect your CCTV streams"
             subheader="Zeptron's CCTV router plugs into your NVR/DVR and overlays AI on your CCTV"
             img={CCTV}
+            alt="Set up AI for your CCTV easily"
             button="See Demo"
             />
             <ImgRight
             header="Set up new video streams with Ultra-HD cameras"
             subheader="Camera body is 3D printed with ethernet, 802.11 bgn wireless, and GPIO pins"
             img={Stream}
+            alt="Set up new 4k video streams for AI in seconds"
             button="See Demo"
             />
           <Spacer height="50px"/>
-            {/* <Stream/> */}
             <Configure/>
             <Provision/>
             <Below/>

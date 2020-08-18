@@ -4,7 +4,6 @@ import { Auth } from "aws-amplify";
 import UserContext from "./UserContext";
 import { IoLogoGoogle } from "react-icons/io";
 import { Button } from "./containers/Auth.style";
-import Spacer from 'react-spacer'
 
 class SignIn extends React.Component {
   state = {

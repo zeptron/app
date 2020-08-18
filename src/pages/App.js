@@ -1,23 +1,15 @@
 import React from 'react'
-import UserContext from '../UserContext'
 import Hero from './Components/Hero'
-import Below from './Components/Below'
-import Provision from './Components/Provision'
-import Configure from './Components/Configure'
 import Start from './Components/Start'
-import Spacer from 'react-spacer'
-import Studio from '../app/Studio/Index'
 import Image from '../assets/ipadapp.jpg'
 import CCTV from '../assets/Router_alt.png'
 import Stream from '../assets/camx.png'
 import ImgLeft from './Components/ImgLeft'
 import ImgRight from './Components/ImgRight'
 import Hubspot from './Components/Hubspot'
-import Features from './Components/Features'
 import ConfigureImg from '../assets/configure.png'
 import ChartImg from '../assets/charts.png'
 import NotificationImg from '../assets/notifications.png'
-import TrainImg from '../assets/bottles.png'
 
 export default function App(props) {
 

@@ -3,7 +3,6 @@ import { css } from "glamor";
 import { Button } from "./containers/Auth.style";
 import { IoLogoGoogle } from "react-icons/io";
 import { Auth } from "aws-amplify";
-import Spacer from 'react-spacer'
 
 class SignUp extends React.Component {
   state = {
@@ -27,7 +26,6 @@ class SignUp extends React.Component {
         given_name,
         family_name,
         email,
-        // 'custom:favorite_flavor': 'Cookie Dough'  // custom attribute, not standard
       },
     })
       .then(() => this.setState({ showConfirmation: true }))
@@ -49,17 +47,6 @@ class SignUp extends React.Component {
         
         {!showConfirmation && (
           <div {...css(styles.formContainer)}>
-            {/* <Button
-          fullwidth
-          title={'Sign up with Facebook'}
-          className='facebook'
-          icon={<IoLogoFacebook />}
-          iconPosition='left'
-          iconStyle={{ color: '#ffffff', marginRight: 5 }}
-          intlButtonId='continueFacebookBtn'
-          onClick={thisFacebook}
-          style={{ color: '#fff' }}
-        /> */}
             <Button
               fullwidth
               title={"Sign up with Google"}
@@ -123,9 +110,7 @@ class SignUp extends React.Component {
 const thisGoogle = () => {
   Auth.federatedSignIn({ provider: "Google" });
 };
-// const thisFacebook = () => {
-//   Auth.federatedSignIn({ provider: "Facebook" });
-// };
+
 
 const styles = {
   signUpHeader: {

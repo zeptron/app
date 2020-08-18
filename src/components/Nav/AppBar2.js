@@ -15,7 +15,6 @@ import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AppsIcon from '@material-ui/icons/Apps';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Logo from '../../assets/logo_white.svg'
-import { Auth } from "aws-amplify";
 
 const useStyles = makeStyles({
   list: {
@@ -55,7 +54,8 @@ export default function SwipeableTemporaryDrawer(props) {
   const [routeLoction, setRouteLoction] = React.useState('');
   const [menuItems, setMenuItems] = React.useState([]);
 
-  const AuthItems = [{
+  const AuthItems = [
+  {
     name : "Studio",
     route: "/studio",
     icon: <DashboardIcon style={{color: "#fff"}}/>
@@ -76,26 +76,12 @@ export default function SwipeableTemporaryDrawer(props) {
 ]
 
   const items = [
-    // {
-    //   name :"Models",
-    //   route: "/faq",
-    //   icon: ""
-    // },
-  //   {
-  //   name : "About",
-  //   route: "/about",
-  //   icon: ''
-  // },
-  // {
-  //   name : "Contact",
-  //   route: "/contact",
-  //   icon: ""
-  // },
   {
     name : "Login",
     route: "/auth",
     icon: ''
-  }]
+  }
+]
 
   useEffect(() => {
     if(window.innerWidth <= 720){
@@ -205,7 +191,7 @@ export default function SwipeableTemporaryDrawer(props) {
             style={{backgroundColor: 'rgb(37, 51, 55)'}}
           >
             <div style={{textAlign: 'left', margin: '20px 20px'}}>
-              <Link to="/"><img src={Logo} style={{maxWidth: '50%'}} /></Link>
+              <Link to="/"><img alt="Zeptron logo" src={Logo} style={{maxWidth: '50%'}} /></Link>
             </div>
             {list(anchor)}
           </SwipeableDrawer>
@@ -222,12 +208,4 @@ export default function SwipeableTemporaryDrawer(props) {
       ))}
     </div>
   );
-}
-
-function signOut() {
-  Auth.signOut()
-    .then(() => {
-      this.props.history.push("/auth");
-    })
-    .catch(() => console.log("error signing out..."));
 }

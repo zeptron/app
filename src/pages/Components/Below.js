@@ -23,21 +23,14 @@ import CCTV from "../../assets/camera.svg"
               <Grid item md={4} sm={6}  xs={12}>
                 <Link to="/cctv" className={s.belowlink}>
               <Spacer height="20px"/>
-              <img style={{maxWidth: '30%'}} src={CCTV}/>
+              <img alt="AI for CCTV" style={{maxWidth: '30%'}} src={CCTV}/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}><strong>CCTV</strong></h3>
               </Link>
               </Grid>
-              {/* <Grid item md={4} sm={6}  xs={12}>
-              <Link to="/safety" className={s.belowlink}>
-              <Spacer height="20px"/>
-              <img style={{maxWidth: '30%'}} src="https://image.flaticon.com/icons/svg/1605/1605056.svg"/>
-              <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}>Safety</h3>
-              </Link>
-              </Grid> */}
               <Grid item md={4} sm={6}  xs={12}>
               <Link to="/production" className={s.belowlink}>
               <Spacer height="20px"/>
-              <img style={{maxWidth: '30%'}} src={Robot}/>
+              <img alt="AI for QC" style={{maxWidth: '30%'}} src={Robot}/>
               <h3 style={{textTransform: 'uppercase'}} className={`${s.subheader} ${s.center}`}><strong>Production</strong></h3>
               </Link>
               </Grid>

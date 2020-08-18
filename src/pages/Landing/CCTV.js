@@ -1,10 +1,5 @@
 import React from 'react'
-import s from '../../styles/styles.module.css'
-import {Grid, Box, Button} from '@material-ui/core'
-import Spacer from 'react-spacer'
 import Hero from '../Components/Hero'
-import Consume from '../Components/Privacy'
-import ReactPlayer from 'react-player'
 import ImgLeft from '../Components/ImgLeft'
 import NotificationImg from '../../assets/notifications.png'
 import ImgRight from '../Components/ImgRight'
@@ -28,23 +23,27 @@ export default function Health() {
         header="Connect CCTV streams easily"
         subheader="Zeptron's CCTV router plugs into your NVR/DVR and overlays AI on your CCTV"
         img={CCTV}
+        alt="Connect CCTV to AI in seconds"
         button="See Demo"
         />
         <Features/>
         <ImgRight
         img={ConfigureImg}
+        alt="Set up tracking and counting for AI in one click"
         header="Configure tracking and counting for detections"
         subheader="Get better analytics by setting up multi-directional counting with one click"
         button="See Demo"
         />
         <ImgLeft
         img={NotificationImg}
+        alt="Get notifications for AI detection"
         header="Receive notifications for detections that matter"
         subheader="Find out what you want to know when you want to know it with smart detection alerts"
         button="See Demo"
         />
         <ImgRight
         img={ChartImg}
+        alt="Automatic charting for AI results"
         header="Get real-time analysis of detection results"
         subheader="Zeptron automatically charts detections in real time and can offer results in CSV / JSON"
         button="Get Started"

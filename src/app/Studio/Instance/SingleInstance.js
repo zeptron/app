@@ -3,8 +3,6 @@ import AWS from 'aws-sdk';
 import Spacer from 'react-spacer';
 import Switch from '@material-ui/core/Switch';
 import { Box, Button, Grid, Hidden } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
-import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Cogs from '../../animations/cogs';
 import BarChartIcon from '@material-ui/icons/BarChart';
@@ -307,10 +305,10 @@ export const SingleInstance = ({ modelConfig }) => {
                       <Grid container alignItems="center" justify="center">
                       <h3 className={s.ocr}>{modelConfig.publicIP}</h3><h3 className={s.ocr}>·</h3> <h3 className={s.ocr}>5555</h3>
                       </Grid>
-                      <Grid container container alignItems="center" justify="center">
+                      <Grid container alignItems="center" justify="center">
                       <h3 style={{color: 'white'}} className={s.ocr}>{modelConfig.model.name}</h3>
                       </Grid>
-                      <Grid container container alignItems="center" justify="center">
+                      <Grid container alignItems="center" justify="center">
                       <h3 style={{color: 'white'}}  className={s.ocr}>{modelConfig.instanceLocation}</h3>
                       </Grid>
                 </Grid>

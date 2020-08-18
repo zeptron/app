@@ -1,12 +1,8 @@
 import React from 'react'
-import s from '../../styles/styles.module.css'
-import {Grid, Box, Button} from '@material-ui/core'
 import Spacer from 'react-spacer'
 import Hero from '../Components/Hero'
 import Consume from '../Components/Privacy'
-import ReactPlayer from 'react-player'
 import ImgLeft from '../Components/ImgLeft'
-import NotificationImg from '../../assets/notifications.png'
 import ImgRight from '../Components/ImgRight'
 import ChartImg from '../../assets/charts.png'
 import Start from '../Components/Start'
@@ -26,28 +22,32 @@ export default function Production() {
         subheader="Manage and deploy computer vision models for each of your products from Zeptron"
         />
         <Consume
-            header="All of your products. One app"
-            subheader="The value of Zeptron lies in its ability to manage, configure and deploy all of your deep learning models from one easy app"
-            asset={<img src={Budlight} style={{maxWidth: '100%'}}/>}
-            />
+        header="All of your products. One app"
+        subheader="The value of Zeptron lies in its ability to manage, configure and deploy all of your deep learning models from one easy app"
+        asset={<img alt="Quality control using AI" src={Budlight} style={{maxWidth: '100%'}}/>}
+        />
         <Stream/>
         <ImgRight
         img={TrainImg}
+        alt="Train AI on video feeds"
         header="Train your AI on known defects or anomalies"
         subheader="To train your model, simply film a few training runs with our machine vision cameras and Zeptron does the rest"
         />
         <ImgLeft
         img={ActionsImg}
+        alt="Trigger actions for AI detection results"
         header="Trigger actions and alerts when defects are detected"
         subheader="Detections happen in under 20ms and can trigger actions and alerts easily"
         />
         <ImgRight
         img={ConfigureImg}
+        alt="Set up counting and tracking with one click for AI"
         header="Configure counting for each product and defect class"
         subheader="Get production run analytics in no time with one-click set up for tracking and counting"
         />
         <ImgLeft
         img={ChartImg}
+        alt="Get automatic real-time analysis of detection results"
         header="Automatic real-time analysis of detection results"
         subheader="Zeptron automatically charts detection results for your model in real time "
         />
