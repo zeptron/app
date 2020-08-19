@@ -1,42 +1,62 @@
 {
-	"master": {
-		"awscloudformation": {
-			"AuthRoleName": "amplify-app-master-234727-authRole",
-			"UnauthRoleArn": "arn:aws:iam::047384901313:role/amplify-app-master-234727-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::047384901313:role/amplify-app-master-234727-authRole",
-			"Region": "ap-southeast-2",
-			"DeploymentBucketName": "amplify-app-master-234727-deployment",
-			"UnauthRoleName": "amplify-app-master-234727-unauthRole",
-			"StackName": "amplify-app-master-234727",
-			"StackId": "arn:aws:cloudformation:ap-southeast-2:047384901313:stack/amplify-app-master-234727/c0611ae0-b3c5-11ea-a989-0abb0b30af12",
-			"AmplifyAppId": "d1pnjarpgwe6bz"
-		},
-		"categories": {
-			"auth": {
-				"app4f82eba7": {
-					"hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"1892101827586690\",\"client_secret\":\"5c5d4d64d56ac498af6ca0dc87b3cc50\"},{\"ProviderName\":\"Google\",\"client_id\":\"515782544100-b8fmh9ecauodgno13uf8dkdc2nubj9d9.apps.googleusercontent.com\",\"client_secret\":\"Ov3AZGRwwq8aDwP5mtQ_yu1_\"}]"
-				}
-			}
-		}
-	},
-	"staging": {
-		"awscloudformation": {
-			"AuthRoleName": "amplify-app-staging-195344-authRole",
-			"UnauthRoleArn": "arn:aws:iam::047384901313:role/amplify-app-staging-195344-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::047384901313:role/amplify-app-staging-195344-authRole",
-			"Region": "ap-southeast-2",
-			"DeploymentBucketName": "amplify-app-staging-195344-deployment",
-			"UnauthRoleName": "amplify-app-staging-195344-unauthRole",
-			"StackName": "amplify-app-staging-195344",
-			"StackId": "arn:aws:cloudformation:ap-southeast-2:047384901313:stack/amplify-app-staging-195344/989358b0-b600-11ea-ad65-027e4c3e60c6",
-			"AmplifyAppId": "d1pnjarpgwe6bz"
-		},
-		"categories": {
-			"auth": {
-				"app4f82eba7": {
-					"hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"188338285951752\",\"client_secret\":\"572f2348a2b3a3646e8041d1e1db97cd\"},{\"ProviderName\":\"Google\",\"client_id\":\"515782544100-b8fmh9ecauodgno13uf8dkdc2nubj9d9.apps.googleusercontent.com\",\"client_secret\":\"Ov3AZGRwwq8aDwP5mtQ_yu1_\"}]"
-				}
-			}
-		}
-	}
+    "master": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-app-master-234727-authRole",
+            "UnauthRoleArn": "arn:aws:iam::047384901313:role/amplify-app-master-234727-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::047384901313:role/amplify-app-master-234727-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "amplify-app-master-234727-deployment",
+            "UnauthRoleName": "amplify-app-master-234727-unauthRole",
+            "StackName": "amplify-app-master-234727",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:047384901313:stack/amplify-app-master-234727/c0611ae0-b3c5-11ea-a989-0abb0b30af12",
+            "AmplifyAppId": "d1pnjarpgwe6bz"
+        },
+        "categories": {
+            "auth": {
+                "app4f82eba7": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"1892101827586690\",\"client_secret\":\"5c5d4d64d56ac498af6ca0dc87b3cc50\"},{\"ProviderName\":\"Google\",\"client_id\":\"515782544100-b8fmh9ecauodgno13uf8dkdc2nubj9d9.apps.googleusercontent.com\",\"client_secret\":\"Ov3AZGRwwq8aDwP5mtQ_yu1_\"}]"
+                }
+            }
+        }
+    },
+    "staging": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-app-staging-195344-authRole",
+            "UnauthRoleArn": "arn:aws:iam::047384901313:role/amplify-app-staging-195344-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::047384901313:role/amplify-app-staging-195344-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "amplify-app-staging-195344-deployment",
+            "UnauthRoleName": "amplify-app-staging-195344-unauthRole",
+            "StackName": "amplify-app-staging-195344",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:047384901313:stack/amplify-app-staging-195344/989358b0-b600-11ea-ad65-027e4c3e60c6",
+            "AmplifyAppId": "d1pnjarpgwe6bz"
+        },
+        "categories": {
+            "auth": {
+                "app4f82eba7": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"188338285951752\",\"client_secret\":\"572f2348a2b3a3646e8041d1e1db97cd\"},{\"ProviderName\":\"Google\",\"client_id\":\"515782544100-b8fmh9ecauodgno13uf8dkdc2nubj9d9.apps.googleusercontent.com\",\"client_secret\":\"Ov3AZGRwwq8aDwP5mtQ_yu1_\"}]"
+                }
+            }
+        }
+    },
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-app-prod-154856-authRole",
+            "UnauthRoleArn": "arn:aws:iam::485273623449:role/amplify-app-prod-154856-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::485273623449:role/amplify-app-prod-154856-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "amplify-app-prod-154856-deployment",
+            "UnauthRoleName": "amplify-app-prod-154856-unauthRole",
+            "StackName": "amplify-app-prod-154856",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:485273623449:stack/amplify-app-prod-154856/ac8c64a0-e1df-11ea-b28b-02de5ae5c4ae",
+            "AmplifyAppId": "de1w7flomrwif"
+        },
+        "categories": {
+            "auth": {
+                "app4f82eba7": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"188338285951752\",\"client_secret\":\"572f2348a2b3a3646e8041d1e1db97cd\"},{\"ProviderName\":\"Google\",\"client_id\":\"515782544100-b8fmh9ecauodgno13uf8dkdc2nubj9d9.apps.googleusercontent.com\",\"client_secret\":\"Ov3AZGRwwq8aDwP5mtQ_yu1_\"}]"
+                }
+            }
+        }
+    }
 }
