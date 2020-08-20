@@ -30,9 +30,9 @@ export const ModelCard = ({ model }) => {
   return (
     <div>
       <Grid item md={8}>
-        <Link to={`/library/${model.id}`} style={{ textDecoration: "none" }}>
           <Card className={classes.card}>
             <CardActionArea>
+            <Link to={`/library/${model.id}`} style={{ textDecoration: "none" }}>
               <CardMedia
                 component="img"
                 alt={model.name}
@@ -49,10 +49,11 @@ export const ModelCard = ({ model }) => {
                   {model.description}
                 </Typography>
               </CardContent>
+              </Link>
               <Button href={`/library/${model.id}`}>View</Button>
             </CardActionArea>
           </Card>
-        </Link>
+        
       </Grid>
     </div>
   );

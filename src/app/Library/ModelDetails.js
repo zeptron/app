@@ -174,7 +174,7 @@ export const ModelDetails = ({ model, rows, modelClasses }) => {
 
       <Box>
         <Spacer height="50px" />
-        <Grid container alignItems="top" justify="center">
+        <Grid container alignItems="center" justify="center">
           <Grid item md={6} sm={6} xs={12}>
             <h3 className={s.subclass}>Demo Video</h3>
             <Box p={4}>

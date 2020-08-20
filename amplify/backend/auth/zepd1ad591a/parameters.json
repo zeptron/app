@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "app4f82eba7_identitypool_4f82eba7",
+    "identityPoolName": "zepd1ad591a_identitypool_d1ad591a",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "app4f82eba7",
-    "userPoolName": "app4f82eba7_userpool_4f82eba7",
+    "resourceNameTruncated": "zepd1ad591a",
+    "userPoolName": "zepd1ad591a_userpool_d1ad591a",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -30,9 +30,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "app4f84f82eba7_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "zepd1ad1ad591a_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "app4f82eba7",
+    "resourceName": "zepd1ad591a",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -52,17 +52,16 @@
         "email"
     ],
     "triggers": "{}",
-    "hostedUIDomainName": "zeptron",
+    "hostedUIDomainName": "zepd1ad591a-d1ad591a",
     "authProvidersUserPool": [
-        "Facebook",
         "Google"
     ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"family_name\":\"last_name\",\"given_name\":\"given_name\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"family_name\":\"family_name\",\"given_name\":\"given_name\",\"username\":\"sub\"}}]",
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"family_name\":\"family_name\",\"given_name\":\"given_name\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.zeptron.co/\"],\"LogoutURLs\":[\"https://www.zeptron.co/\"]}",
     "userPoolGroupList": [],
     "parentStack": {
         "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "dependsOn": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.zeptron.co/\"],\"LogoutURLs\":[\"https://www.zeptron.co/\"]}"
+    "dependsOn": []
 }

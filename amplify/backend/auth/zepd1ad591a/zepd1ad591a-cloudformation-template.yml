@@ -100,10 +100,16 @@ Parameters:
       
   hostedUIProviderMeta:
     Type: String
+              
+  hostedUIProviderCreds:
+    Type: String
+              
+  oAuthMetadata:
+    Type: String
                       
   userPoolGroupList:
     Type: CommaDelimitedList
-            
+                        
   parentStack:
     Type: String
                 
@@ -112,13 +118,7 @@ Parameters:
               
   dependsOn:
     Type: CommaDelimitedList
-      
-  hostedUIProviderCreds:
-    Type: String
-              
-  oAuthMetadata:
-    Type: String
-                        
+    
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
 
@@ -130,7 +130,7 @@ Resources:
   # Created to allow the UserPool SMS Config to publish via the Simple Notification Service during MFA Process
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, 'app4f82eba7_sns-role', !Join ['',[ 'sns', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, 'zepd1ad591a_sns-role', !Join ['',[ 'sns', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument: 
         Version: "2012-10-17"
         Statement: 
@@ -142,10 +142,10 @@ Resources:
               - "sts:AssumeRole"
             Condition: 
               StringEquals:
-                sts:ExternalId: app4f82eba7_role_external_id
+                sts:ExternalId: zepd1ad591a_role_external_id
       Policies: 
         - 
-          PolicyName: app4f82eba7-sns-policy
+          PolicyName: zepd1ad591a-sns-policy
           PolicyDocument: 
             Version: "2012-10-17"
             Statement: 
@@ -203,7 +203,7 @@ Resources:
       SmsVerificationMessage: !Ref smsVerificationMessage
       SmsConfiguration: 
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: app4f82eba7_role_external_id
+        ExternalId: zepd1ad591a_role_external_id
     
   
     
@@ -223,7 +223,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: app4f82eba7_app_clientWeb
+      ClientName: zepd1ad591a_app_clientWeb
       
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
@@ -233,7 +233,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: app4f82eba7_app_client
+      ClientName: zepd1ad591a_app_client
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
@@ -298,7 +298,7 @@ Resources:
   # Marked as depending on UserPoolClientRole for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: app4f82eba7_userpoolclient_lambda_iam_policy
+      PolicyName: zepd1ad591a_userpoolclient_lambda_iam_policy
       Roles: 
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -315,7 +315,7 @@ Resources:
   # Marked as depending on UserPoolClientLambdaPolicy for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: app4f82eba7_userpoolclient_lambda_log_policy
+      PolicyName: zepd1ad591a_userpoolclient_lambda_log_policy
       Roles: 
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -702,7 +702,7 @@ Resources:
   # Always created
     Type: AWS::Cognito::IdentityPool
     Properties: 
-      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'app4f82eba7_identitypool_4f82eba7', !Join ['',['app4f82eba7_identitypool_4f82eba7', '__', !Ref env]]]
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'zepd1ad591a_identitypool_d1ad591a', !Join ['',['zepd1ad591a_identitypool_d1ad591a', '__', !Ref env]]]
       
       CognitoIdentityProviders:
         - ClientId:  !Ref UserPoolClient

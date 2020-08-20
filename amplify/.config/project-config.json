@@ -1,5 +1,5 @@
 {
-    "projectName": "app",
+    "projectName": "zep",
     "version": "3.0",
     "frontend": "javascript",
     "javascript": {
@@ -7,8 +7,8 @@
         "config": {
             "SourceDir": "src",
             "DistributionDir": "public",
-            "BuildCommand": "npm build",
-            "StartCommand": "npm start"
+            "BuildCommand": "npm run build",
+            "StartCommand": "npm run start"
         }
     },
     "providers": [

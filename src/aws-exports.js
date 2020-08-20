@@ -2,12 +2,12 @@
 
 const awsmobile = {
     "aws_project_region": "ap-southeast-2",
-    "aws_cognito_identity_pool_id": "ap-southeast-2:54339bdf-5a41-4e9d-9366-628f6b5fae3d",
+    "aws_cognito_identity_pool_id": "ap-southeast-2:658fb33e-fa5b-4568-b9da-1fe6bb8dc3eb",
     "aws_cognito_region": "ap-southeast-2",
-    "aws_user_pools_id": "ap-southeast-2_8h7nSR2S1",
-    "aws_user_pools_web_client_id": "3vkvlra0spoj7ouns4va2ar1e7",
+    "aws_user_pools_id": "ap-southeast-2_TI4K0gDk9",
+    "aws_user_pools_web_client_id": "7v2a0uemmnmrrlbvpij9hg4al3",
     "oauth": {
-        "domain": "zeptron-master.auth.ap-southeast-2.amazoncognito.com",
+        "domain": "zepd1ad591a-d1ad591a-master.auth.ap-southeast-2.amazoncognito.com",
         "scope": [
             "phone",
             "email",
@@ -20,10 +20,10 @@ const awsmobile = {
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",
-    "aws_appsync_graphqlEndpoint": "https://4sdmpybta5gjvhc5hrwzshxnwq.appsync-api.ap-southeast-2.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://scmapqdtpzgl3iuaiergysxini.appsync-api.ap-southeast-2.amazonaws.com/graphql",
     "aws_appsync_region": "ap-southeast-2",
     "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-hlvvjzglyzcvnas46vgk3l6xx4"
+    "aws_appsync_apiKey": "da2-pq7bausb7rbdnnbnzw2wpaan4m"
 };
 
 

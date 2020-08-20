@@ -1,13 +1,13 @@
 {
 	"auth": {
-		"app4f82eba7": {
+		"zepd1ad591a": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
 		}
 	},
 	"api": {
-		"app": {
+		"zep": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
@@ -16,7 +16,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "API_KEY",
 						"apiKeyConfig": {
-							"description": "zep",
+							"description": "zepql",
 							"apiKeyExpirationDays": "365"
 						}
 					}

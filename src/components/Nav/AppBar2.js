@@ -202,7 +202,7 @@ export default function SwipeableTemporaryDrawer(props) {
   return (
     <div>
       {["right"].map(anchor => (
-        <React.Fragment kney={anchor}>
+        <React.Fragment key={anchor}>
           {getMenu(anchor)}
         </React.Fragment>
       ))}

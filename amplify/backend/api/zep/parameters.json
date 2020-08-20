@@ -1,5 +1,5 @@
 {
-    "AppSyncApiName": "app",
+    "AppSyncApiName": "zep",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": "false"
 }
