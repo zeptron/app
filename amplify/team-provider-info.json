@@ -18,5 +18,25 @@
                 }
             }
         }
+    },
+    "staging": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-zep-staging-164327-authRole",
+            "UnauthRoleArn": "arn:aws:iam::485273623449:role/amplify-zep-staging-164327-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::485273623449:role/amplify-zep-staging-164327-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "amplify-zep-staging-164327-deployment",
+            "UnauthRoleName": "amplify-zep-staging-164327-unauthRole",
+            "StackName": "amplify-zep-staging-164327",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:485273623449:stack/amplify-zep-staging-164327/74339340-e2b0-11ea-a87c-0614fccc6b12",
+            "AmplifyAppId": "d27mo73zjjpmbo"
+        },
+        "categories": {
+            "auth": {
+                "zepd1ad591a": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"257644803938-j3j2716akdaed50scdm34ojn067nhckd.apps.googleusercontent.com\",\"client_secret\":\"X661sPOiGrOjVKiE6ympsDPm\"}]"
+                }
+            }
+        }
     }
 }
