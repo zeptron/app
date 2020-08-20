@@ -23,7 +23,7 @@ import useInput from '../../utils/hooks/useInput';
       const SNS = new AWS.SNS();
       const params = {
           Message: `Demo requested by: \n \n *Email:* ${userEmail}`, 
-          TopicArn: 'arn:aws:sns:ap-southeast-2:047384901313:zeptronusers'
+          TopicArn: process.env.REACT_APP_AWS_NOTIFICATION_ARN,
         };
         SNS.publish(params, function(err, data) {
           if (err) console.log(err, err.stack); // an error occurred
