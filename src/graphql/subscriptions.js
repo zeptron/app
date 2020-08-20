@@ -424,6 +424,7 @@ export const onCreateModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
+      tableName
       model {
         id
         FPS
@@ -488,6 +489,7 @@ export const onUpdateModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
+      tableName
       model {
         id
         FPS
@@ -552,6 +554,7 @@ export const onDeleteModelConfig = /* GraphQL */ `
       port
       EC2instanceID
       instanceState
+      tableName
       model {
         id
         FPS
