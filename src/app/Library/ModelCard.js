@@ -32,7 +32,7 @@ export const ModelCard = ({ model }) => {
       <Grid item md={8}>
           <Card className={classes.card}>
             <CardActionArea>
-            <Link to={`/library/${model.id}`} style={{ textDecoration: "none" }}>
+            <Link to={`/library/${model.id}`} style={{ textDecoration: "none", color: 'initial'}}>
               <CardMedia
                 component="img"
                 alt={model.name}
@@ -41,7 +41,7 @@ export const ModelCard = ({ model }) => {
                 title={model.name}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h5" component="h2" >
                   {model.name}
                 </Typography>
                 <Spacer height="25px" />
