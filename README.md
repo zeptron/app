@@ -28,7 +28,7 @@
 
 Please optimise for performance and future maintanability
 
-Package manager: NPM
+Package manager: Yarn
 
 ## To start
 
