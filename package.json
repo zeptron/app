@@ -14,6 +14,7 @@
     "chart.js": "^2.9.3",
     "dat.gui": "^0.7.7",
     "glamor": "^2.20.40",
+    "intl-messageformat": "^9.3.2",
     "intl-messageformat-parser": "^6.0.1",
     "logrocket": "^1.0.9",
     "logrocket-react": "^4.0.1",
