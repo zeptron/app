@@ -2,6 +2,8 @@
 
 ## A model-agnostic app for working with artificial intelligence models
 
+![Zeptron Cover image](README/cover.jpg)
+
 ## Core Components 
 
 - Studio
