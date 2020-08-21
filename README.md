@@ -1,20 +1,20 @@
 # Zeptron 
 
-## A model-agnostic platform for working with artificial intelligence models
+## A model-agnostic app for working with artificial intelligence models
 
 ## Core Components 
 
 - Studio
 - Library 
-- Streams
-- Account
-- Billing
 
- ## Uses
 
- - AWS Amplify
+ ## Built using...
+
  - React 
  - Material UI
+ - styles.modules.css
+ 
+ - AWS Amplify
  - DynamoDB NoSQL Tables
     - Model
     - ModelConfig
@@ -22,6 +22,8 @@
     - ModelResults
  - AppSync
  - API Gateway
+ - CloudFormation
+ - AWS SDK
 
 
  ## Notes for contributing
@@ -36,9 +38,9 @@ Package manager: Yarn
 
 `cd app`
 
-`npm install`
+`yarn install`
 
-`npm start`
+`yarn start`
 
 
 For local testing, you should authenticate through email instead of social login
