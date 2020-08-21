@@ -21,7 +21,7 @@ Resources:
   EC2I2VQQ4:
     Type: 'AWS::EC2::Instance'
     Properties:
-      IamInstanceProfile: "AmazonSSMRoleForInstancesQuickSetup"
+      IamInstanceProfile: "zepinstance"
       ImageId:
         Ref: ami
       InstanceType:
