@@ -1,5 +1,9 @@
 Arguments: 
+<<<<<<< HEAD
   /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js remove webpack
+=======
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add @format-js
+>>>>>>> master
 
 PATH: 
   /usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
@@ -14,12 +18,26 @@ Platform:
   darwin x64
 
 Trace: 
+<<<<<<< HEAD
   SyntaxError: /Users/j/a/z/zep/package.json: Unexpected token } in JSON at position 1874
       at JSON.parse (<anonymous>)
       at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
       at step (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:310:30)
       at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:321:13
+=======
+  Error: https://registry.yarnpkg.com/@format-js: Request "https://registry.yarnpkg.com/@format-js" returned a 405
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66996:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141720:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1201:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+>>>>>>> master
 
 npm manifest: 
   {
@@ -27,6 +45,7 @@ npm manifest:
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+<<<<<<< HEAD
       "@aws-amplify/analytics": "^3.0.0",
       "@aws-amplify/api": "^3.0.0",
       "@aws-amplify/auth": "^3.0.0",
@@ -38,11 +57,14 @@ npm manifest:
       "@babel/core": "^7.11.4",
       "@babel/preset-env": "^7.11.0",
       "@formatjs/intl-utils": "^3.8.4",
+=======
+>>>>>>> master
       "@material-ui/core": "^4.11.0",
       "@material-ui/icons": "^4.9.1",
       "@material-ui/lab": "^4.0.0-alpha.56",
       "@material-ui/styles": "^4.10.0",
       "@styled-system/theme-get": "^5.1.2",
+<<<<<<< HEAD
       "@types/youtube": "0.0.38",
       "aws-amplify": "^3.0.23",
       "aws-amplify-react": "^4.1.19",
@@ -55,6 +77,16 @@ npm manifest:
       "intl-format-cache": "^4.3.1",
       "intl-messageformat": "9.3.2",
       "intl-messageformat-parser": "^6.0.1",
+=======
+      "aws-amplify": "^3.0.23",
+      "aws-amplify-react": "^4.1.19",
+      "aws-sdk": "^2.713.0",
+      "chart.js": "^2.9.3",
+      "dat.gui": "^0.7.7",
+      "glamor": "^2.20.40",
+      "intl-messageformat": "9.3.1",
+      "intl-messageformat-parser": "6.0",
+>>>>>>> master
       "logrocket": "^1.0.9",
       "logrocket-react": "^4.0.1",
       "lottie-react-web": "^2.2.2",
@@ -69,8 +101,13 @@ npm manifest:
       "react-gtm-module": "^2.0.10",
       "react-helmet": "^6.1.0",
       "react-icons": "^3.10.0",
+<<<<<<< HEAD
       "react-intl": "^5.6.8",
       "react-is": "^16.13.1",
+=======
+      "react-intl": "^4.7.6",
+      "react-p5-wrapper": "^2.0.0",
+>>>>>>> master
       "react-particles-js": "^3.2.1",
       "react-player": "^2.6.0",
       "react-redux": "^7.2.0",
@@ -81,7 +118,11 @@ npm manifest:
       "react-youtube": "^7.11.2",
       "redux": "^4.0.5",
       "styled-components": "^5.1.1",
+<<<<<<< HEAD
       "styled-system": "^5.1.5",
+=======
+      "styled-system": "^5.1.5"
+>>>>>>> master
     },
     "scripts": {
       "start": "react-scripts start",
