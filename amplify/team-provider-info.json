@@ -14,7 +14,7 @@
         "categories": {
             "auth": {
                 "zepd1ad591a": {
-                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"515782544100-b8fmh9ecauodgno13uf8dkdc2nubj9d9.apps.googleusercontent.com\\t\",\"client_secret\":\"Ov3AZGRwwq8aDwP5mtQ_yu1_\\t\"}]"
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"257644803938-j3j2716akdaed50scdm34ojn067nhckd.apps.googleusercontent.com\",\"client_secret\":\"X661sPOiGrOjVKiE6ympsDPm\"}]"
                 }
             }
         }
