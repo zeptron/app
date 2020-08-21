@@ -15,8 +15,8 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "https://www.zeptron.co/",
-        "redirectSignOut": "https://www.zeptron.co/",
+        "redirectSignIn": "https://staging.zeptron.co/",
+        "redirectSignOut": "https://staging.zeptron.co/",
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",
