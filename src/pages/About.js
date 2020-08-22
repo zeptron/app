@@ -2,12 +2,16 @@ import React from 'react';
 import {Box, Button, Grid, Hidden} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import Spacer from 'react-spacer'
-
+import SEO from '../utils/SEO'
 
   export default function About() {
     
    return (
         <div>
+          <SEO 
+          title="Zeptron - About | A code free deployment solution for computer vision"
+          path="about"
+          />
             <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
                 <Spacer height="10px"/>
                 <Grid container alignItems="center" justify="center">

@@ -10,11 +10,16 @@ import Hubspot from './Components/Hubspot'
 import ConfigureImg from '../assets/configure.png'
 import ChartImg from '../assets/charts.png'
 import NotificationImg from '../assets/notifications.png'
+import SEO from '../utils/SEO'
 
 export default function App(props) {
 
     return (
         <div>
+            <SEO 
+            title="Zeptron - App | AI app for computer vision on CCTV and streaming video"
+            path="app"
+            />
             <Hero
             header="Deploy computer vision AI quickly with a simple app"
             subheader="Configure, provision and run any computer vision software through a simple app"

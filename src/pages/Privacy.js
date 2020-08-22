@@ -2,6 +2,7 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import Spacer from 'react-spacer'
+import SEO from '../utils/SEO'
 
 
   export default function Hero() {
@@ -9,6 +10,10 @@ import Spacer from 'react-spacer'
    
    return (
       <div>
+        <SEO 
+          title="Zeptron - Privacy Policy"
+          path="privacy"
+          />
             <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
                 <Spacer height="10px"/>
                     <Grid container alignItems="center" justify="center">

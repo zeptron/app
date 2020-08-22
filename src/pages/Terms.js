@@ -2,25 +2,28 @@ import React from 'react';
 import {Box, Grid} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import Spacer from 'react-spacer'
-
+import SEO from '../utils/SEO'
 
   export default function Hero() {
     const [spacing] = React.useState(8);
    
    return (
       <div>
-            <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
-       
-                <Spacer height="10px"/>
-               <Grid container alignItems="center" justify="center">
-                   <Grid item md={8} xs={12}>
-                   <h1  className={`${s.header} ${s.center}`}>Terms & Conditions               </h1>
-                   </Grid>
-               </Grid>
-                
-                <Box>
-                    <Grid container justify="center" spacing={spacing}>
-                    <Grid item md={8} style={{textAlign: 'left'}}>
+          <SEO 
+          title="Zeptron - Terms & Conditions"
+          path="terms"
+          />
+<Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
+    <Spacer height="10px"/>
+   <Grid container alignItems="center" justify="center">
+       <Grid item md={8} xs={12}>
+       <h1  className={`${s.header} ${s.center}`}>Terms & Conditions               </h1>
+       </Grid>
+   </Grid>
+    
+    <Box>
+        <Grid container justify="center" spacing={spacing}>
+        <Grid item md={8} style={{textAlign: 'left'}}>
 <p>
 Please read these Terms of Use before you start to use our Website or Apps and before using any service.
 </p>

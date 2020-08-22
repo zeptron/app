@@ -6,15 +6,21 @@ import {
   Redirect,
   BrowserRouter as Router,
 } from "react-router-dom";
+// Utils
 import UserContext from "./UserContext";
 import Header from "./Menu";
 import Footer from "./Footer";
 import Authenticator from "./Authenticator";
+import ScrollToTop from './utils/scroll'
+// Public Routes
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import App from './pages/App'
+import * as Landing from './pages/Landing'
+// App Routes
 import Account from "./app/Account";
 import Billing from "./app/Billing";
 import Library from "./app/Library/Index";
@@ -23,9 +29,9 @@ import Studio from "./app/Studio/Index";
 import Instance from "./app/Studio/Instance";
 import Analytics from "./app/Studio/Instance/analytics";
 import ConfigurationSteps from './app/Studio/ConfigurationSteps';
-import ScrollToTop from './utils/scroll'
-import * as Landing from './pages/Landing'
-import App from './pages/App'
+
+
+
 
 class PrivateRoute extends React.Component {
   state = {

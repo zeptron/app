@@ -8,6 +8,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import SEO from '../utils/SEO'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,6 +36,10 @@ export default function Faq(){
 
     return (
         <div>
+          <SEO 
+          title="Zeptron - Frequently Asked Questions"
+          path="faq"
+          />
             <Box bgcolor="primary.dark" color="primary.contrastText" p={4} >
             <Spacer height="10px"/>
             <Grid container alignItems="center" justify="center">

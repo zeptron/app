@@ -12,10 +12,15 @@ import ActionsImg from '../../assets/actions.png'
 import TrainImg from '../../assets/bottles.png'
 import Stream from '../Components/Stream'
 import Hubspot from '../Components/Hubspot'
+import SEO from '../../utils/SEO'
 
 export default function Production() {
     return (
         <div>
+        <SEO 
+        title="Zeptron - Quality Control | AI deployment solution for every product in your inventory"
+        path="production"
+        />
         <Hero 
         header="Improve QC for each product with computer vision"
         bgImage='url(https://zeptronco.s3-ap-southeast-2.amazonaws.com/bottlecap.jpg)'
