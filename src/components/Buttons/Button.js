@@ -1,6 +1,10 @@
 import React from 'react';
 import ButtonStyle from './Button.style';
+<<<<<<< HEAD
 import { FormattedMessage } from 'react-intl';
+=======
+//import { FormattedMessage } from 'react-intl';
+>>>>>>> master
 
 const Button = ({
   type,
@@ -57,10 +61,16 @@ const Button = ({
       {position === 'left' && buttonIcon}
       {title && !isLoading && (
         <span className='btn-text'>
+<<<<<<< HEAD
           <FormattedMessage
             id={intlButtonId ? intlButtonId : 'intlButtonId'}
             defaultMessage={title}
           />
+=======
+          <div id={intlButtonId ? intlButtonId : 'intlButtonId'} >
+          {title}
+            </div>
+>>>>>>> master
         </span>
       )}
       {position === 'right' && buttonIcon}

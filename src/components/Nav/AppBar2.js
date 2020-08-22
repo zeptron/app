@@ -15,6 +15,11 @@ import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AppsIcon from '@material-ui/icons/Apps';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Logo from '../../assets/logo_white.svg'
+import { Auth } from "aws-amplify";
+import UserContext from "../../UserContext";
+import s from "../../styles/styles.module.css";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import Spacer from 'react-spacer'
 
 const useStyles = makeStyles({
   list: {
@@ -44,6 +49,7 @@ const useStyles = makeStyles({
   }
 });
 
+
 export default function SwipeableTemporaryDrawer(props) {
   const classes = useStyles();
   const location = useLocation();
@@ -59,15 +65,17 @@ export default function SwipeableTemporaryDrawer(props) {
     name : "Studio",
     route: "/studio",
     icon: <DashboardIcon style={{color: "#fff"}}/>
-  },{
+  }
+  ,{
     name : "Library",
     route: "/library",
     icon: <DynamicFeedIcon style={{color: "#fff"}}/>
-  },{
-    name : "Account",
-    route: "/account",
-    icon: <AccountBoxIcon style={{color: "#fff"}}/>
   },
+  // {
+  //   name : "Account",
+  //   route: "/account",
+  //   icon: <AccountBoxIcon style={{color: "#fff"}}/>
+  // },
   {
     name : "Help",
     route: "https://zeptron.github.io",
@@ -79,7 +87,7 @@ export default function SwipeableTemporaryDrawer(props) {
   {
     name : "Login",
     route: "/auth",
-    icon: ''
+    icon: <ExitToAppIcon style={{color: '#fff'}}/>
   }
 ]
 
@@ -109,7 +117,7 @@ export default function SwipeableTemporaryDrawer(props) {
       return item.name === checkTabText;
     });
     if(selectedItem && selectedItem[0].route === routeLoction){
-      return {color : "#f57f17"}
+      return {color : "#26a7be"}
     } else {
       return {color : "#ffffff"}
     }
@@ -165,7 +173,7 @@ export default function SwipeableTemporaryDrawer(props) {
         <div>
         <List className= {clsx(classes.flexContainer)} >
             {menuItems.map((val, index) => (
-            <ListItem key={val.name} className= {clsx(classes.listMenu)}>
+            <ListItem key={val.name} className={clsx(classes.listMenu)}>
               <Button
                   href={`${val.route}`}
                   className= {clsx(classes.menuOptions)}
@@ -175,6 +183,19 @@ export default function SwipeableTemporaryDrawer(props) {
                 </Button>
             </ListItem>
           ))}
+          {props.isAuthenticated ? (
+          <div>
+          <ListItem button component="a"  className={clsx(classes.listMenu)} >
+          <Button
+           onClick={signOut}
+           className= {clsx(classes.menuOptions)}
+           style={{color: '#fff', fontWeight: 700}}
+           >LOGOUT
+           </Button>
+          </ListItem>
+          </div>
+          ) : ( '' )
+            }
           </List>
           </div>
       )
@@ -192,8 +213,30 @@ export default function SwipeableTemporaryDrawer(props) {
           >
             <div style={{textAlign: 'left', margin: '20px 20px'}}>
               <Link to="/"><img alt="Zeptron logo" src={Logo} style={{maxWidth: '50%'}} /></Link>
+              {props.isAuthenticated ? (
+              <div>
+              <Spacer height="25px"/>
+              <Account/>
+              </div>
+              ) : (
+                ''
+              )
+              }
             </div>
             {list(anchor)}
+            {props.isAuthenticated ? (
+            <ListItem button component="a" onClick={signOut} >
+            <ListItemIcon>
+            <ExitToAppIcon style={{color: '#fff'}}/>
+            </ListItemIcon>
+            <ListItemText>
+              LOGOUT
+            </ListItemText>
+          </ListItem>
+            ) : (
+              ''
+            )
+            }
           </SwipeableDrawer>
         </div>)
     }
@@ -208,4 +251,27 @@ export default function SwipeableTemporaryDrawer(props) {
       ))}
     </div>
   );
+}
+
+function signOut() {
+  Auth.signOut()
+    .then(() => {
+      this.props.history.push("/auth");
+    })
+    .catch(() => console.log("error signing out..."));
+}
+
+
+class Account extends React.Component {
+  static contextType = UserContext;
+  render() {
+    return (
+      <div>
+         <h3>
+          {this.context.user.attributes.given_name}{" "}
+          {this.context.user.attributes.family_name}
+        </h3>
+      </div>
+    )
+  }
 }
