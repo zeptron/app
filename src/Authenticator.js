@@ -6,6 +6,7 @@ import SignUp from "./SignUp";
 import ForgotPassword from "./ForgotPassword";
 import Spacer from 'react-spacer'
 import s from './styles/styles.module.css'
+import SEO from './utils/SEO'
 
 class Authenticator extends React.Component {
   state = {
@@ -24,6 +25,10 @@ class Authenticator extends React.Component {
     const { currentState } = this.state;
     return (
       <div>
+         <SEO 
+          title="Zeptron - Sign in"
+          path="auth"
+          />
          <Box bgcolor="primary.dark" color="primary.contrastText">
         <Spacer height="80px"/>
             {currentState === "showSignIn" && (

@@ -9,11 +9,15 @@ import ConfigureImg from '../../assets/configure.png'
 import Hubspot from '../Components/Hubspot'
 import Features from '../Components/Features'
 import CCTV from '../../assets/Router_alt.png'
-
+import SEO from '../../utils/SEO'
 
 export default function Health() {
     return (
         <div>
+        <SEO 
+        title="Zeptron - CCTV | Add AI to CCTV in 60 seconds for occupancy management, analytics, and monitoring"
+        path="cctv"
+        />
         <Hero 
         header="Add an AI overlay to your CCTV network"
         bgImage='url(https://zepappassets.s3-ap-southeast-2.amazonaws.com/cctv.jpg)'
