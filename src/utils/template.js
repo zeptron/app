@@ -26,6 +26,7 @@ Resources:
         Ref: ami
       InstanceType:
         Ref: instance
+      KeyName: manager
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash -xe
