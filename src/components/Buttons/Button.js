@@ -57,10 +57,9 @@ const Button = ({
       {position === 'left' && buttonIcon}
       {title && !isLoading && (
         <span className='btn-text'>
-          <div
-            // id={intlButtonId ? intlButtonId : 'intlButtonId'}
-            defaultMessage={title}
-          />
+          <div id={intlButtonId ? intlButtonId : 'intlButtonId'} >
+          {title}
+            </div>
         </span>
       )}
       {position === 'right' && buttonIcon}
