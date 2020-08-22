@@ -50,7 +50,7 @@ export const ModelCard = ({ model }) => {
                 </Typography>
               </CardContent>
               </Link>
-              <Button href={`/library/${model.id}`}>View</Button>
+              <Button href={`/library/${model.id}`}>Start</Button>
             </CardActionArea>
           </Card>
         
