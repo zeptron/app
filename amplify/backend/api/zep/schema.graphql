@@ -43,6 +43,7 @@ type modelConfig @model  {
   publicIP: String!
   privateIP: String!
   port: String!
+  streamPort: String
   EC2instanceID: String!
   instanceState: Boolean!
   tableName: String!
