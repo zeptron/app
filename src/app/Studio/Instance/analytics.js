@@ -50,9 +50,8 @@ export default function Analytics({ match }) {
 
   const [mode, setMode] = useState(MODES.MIN5.key);
   const [analytics, setAnalytics] = useState([]);
-
   const { user } = useContext(UserContext);
-
+  
   const modelQuery = useQuery(queries.listModelConfigs, {
     onSuccess: ({ data }) => {
       AWS.config.update({
