@@ -13,6 +13,7 @@ import * as mutations from '../../../graphql/mutations';
 import { sleep } from '../../../utils/sleep';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
+import SEO from '../../../utils/SEO'
 
 export const SingleInstance = ({ modelConfig }) => {
   const [instanceState, setInstanceState] = useState(modelConfig.instanceState);
@@ -164,22 +165,10 @@ export const SingleInstance = ({ modelConfig }) => {
 
   return (
     <div>
-      
-            {/* <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
-
-              {loadingInstanceState && (
-                <Typography align='center'>
-                  {instanceState ? 'Stopping instance...' : 'Starting instance...'}
-                </Typography>
-              )}
-
-              {loadingRunInstance && (
-                <Typography align='center'>
-                  Running instance...
-                </Typography>
-              )}
-            </div> */}
-
+      <SEO 
+          title="Zeptron - Studio"
+          path="studio"
+          />
     
           <Box p={4} bgcolor="primary.dark" color="primary.contrastText">
           <Spacer height="80px"/>
