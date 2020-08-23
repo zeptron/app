@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AWS from 'aws-sdk';
 import Spacer from 'react-spacer';
 import Switch from '@material-ui/core/Switch';
@@ -13,7 +13,6 @@ import * as mutations from '../../../graphql/mutations';
 import { sleep } from '../../../utils/sleep';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
-import SEO from '../../../utils/SEO'
 
 export const SingleInstance = ({ modelConfig }) => {
   const [instanceState, setInstanceState] = useState(modelConfig.instanceState);
@@ -162,14 +161,12 @@ export const SingleInstance = ({ modelConfig }) => {
   function refreshPage() {
     window.location.reload(false);
   }
+  useEffect(() => {
+    document.title = `Zeptron - Studio | ${modelConfig.instanceName}`
+  }, []);
 
   return (
     <div>
-      <SEO 
-          title="Zeptron - Studio"
-          path="studio"
-          />
-    
           <Box p={4} bgcolor="primary.dark" color="primary.contrastText">
           <Spacer height="80px"/>
 
@@ -267,6 +264,7 @@ export const SingleInstance = ({ modelConfig }) => {
                 >
                   <RefreshIcon/>
                 </Button>
+                
                     </div>
                     </Grid>
                   </Grid>
@@ -275,6 +273,7 @@ export const SingleInstance = ({ modelConfig }) => {
                     {loadingInstanceState && (
                       <Cogs/>
                     )}
+
                     {loadingRunInstance && (
                       <Cogs/>
                     )}
@@ -282,7 +281,7 @@ export const SingleInstance = ({ modelConfig }) => {
                     <div style={{minHeight: 300, minWidth: '100%', backgroundColor: 'black'}}>
                       <img
                         alt="Stream loading"
-                        src={`http://${modelConfig.publicIP}:${modelConfig.port || '8000'}/video_feed`}
+                        src={`http://${modelConfig.publicIP}:8000/video_feed`}
                         style={{ maxWidth: '100%' }}
                         onError={(e)=>{e.target.onerror = null; e.target.src="https://forums.digitalpoint.com/proxy/yrWFm%2BbujmpVzRJJI0zQH6cnH69kXw4ANJaDnvDvDAfkBE%2F3rTD41Dmr908lo3FQWU5AMJzxSLk%2FyHtoScNs5ed0Q1H%2Bqa4TCCgQjojovWOh5Nuvx9ORszRu7wabvdBCz9xeWECfieQjcLU%3D/image.png"}}
                         />
@@ -290,7 +289,7 @@ export const SingleInstance = ({ modelConfig }) => {
                       </Grid>
                       <br/>
                       <Grid container alignItems="center" justify="center">
-                      <h3 className={s.ocr}>{modelConfig.publicIP}</h3><h3 className={s.ocr}>·</h3> <h3 className={s.ocr}>{modelConfig.streamPort || '5555'}</h3>
+                      <h3 className={s.ocr}>{modelConfig.publicIP}</h3><h3 className={s.ocr}>·</h3> <h3 className={s.ocr}>5555</h3>
                       </Grid>
                       <Grid container alignItems="center" justify="center">
                       <h3 style={{color: 'white'}} className={s.ocr}>{modelConfig.model.name}</h3>

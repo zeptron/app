@@ -30,6 +30,10 @@ export default function Library() {
     fetchLibraryModelsAPI();
   }, []);
 
+  useEffect(() => {
+    document.title = `Zeptron - Library`
+  }, [])
+
   let output = <p>Loading...</p>;
 
   if (models.length !== 0) {

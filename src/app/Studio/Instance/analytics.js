@@ -79,6 +79,11 @@ export default function Analytics({ match }) {
   });
 
   useEffect(() => {
+    document.title = `Zeptron - Analytics | ${modelQuery.data?.listModelConfigs?.items?.[0].instanceName}`
+  }, []);
+
+
+  useEffect(() => {
     modelQuery.fetch({
       filter: {
         userID: {
