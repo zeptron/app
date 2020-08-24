@@ -15,6 +15,9 @@ import Stream from '../assets/camx.png'
 import ImgLeft from './Components/ImgLeft'
 import ImgRight from './Components/ImgRight'
 import Hubspot from './Components/Hubspot'
+import ConfigureImg from '../assets/configure.png'
+import ChartImg from '../assets/charts.png'
+import NotificationImg from '../assets/notifications.png'
 
 class Home extends React.Component {
 
@@ -40,22 +43,38 @@ class Home extends React.Component {
             bgImage={`url('${Image}')`}
             />
             <ImgLeft
-            header="Connect your CCTV streams"
+            header="Connect CCTV streams easily"
             subheader="Zeptron's CCTV router plugs into your NVR/DVR and overlays AI on your CCTV"
             img={CCTV}
-            alt="Set up AI for your CCTV easily"
             button="See Demo"
             />
-            <ImgRight
+             <ImgRight
             header="Set up new video streams with Ultra-HD cameras"
             subheader="Camera body is 3D printed with ethernet, 802.11 bgn wireless, and GPIO pins"
             img={Stream}
-            alt="Set up new 4k video streams for AI in seconds"
             button="See Demo"
             />
+            <ImgLeft
+            img={ConfigureImg}
+            header="Configure tracking and counting for detections"
+            subheader="Get better analytics by setting up multi-directional counting with one click"
+            button="See Demo"
+            />
+            <ImgRight
+            img={NotificationImg}
+            header="Receive notifications for detections that matter"
+            subheader="Find out what you want to know when you want to know it with smart detection alerts"
+            button="See Demo"
+            />
+            <ImgLeft
+            img={ChartImg}
+            header="Get real-time analysis of detection results"
+            subheader="Zeptron automatically charts detections in real time and can offer results in CSV / JSON"
+            button="Get Started"
+            />
           <Spacer height="50px"/>
-            <Configure/>
-            <Provision/>
+            {/* <Configure/>
+            <Provision/> */}
             <Below/>
             <Start
             form={
