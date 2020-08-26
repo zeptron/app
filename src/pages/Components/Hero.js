@@ -9,8 +9,8 @@ import useInput from '../../utils/hooks/useInput';
   export default function Hero(props) {
 
 
-    console.log(`require("./../../assets/herobg.mp4")`, 
-    require("./../../assets/herobg.mp4"))
+    // console.log(`require("./../../assets/herobg.mp4")`, 
+    // require("./../../assets/herobg.mp4"))
     
     const [userEmail, { setWrap: setUserEmail }] = useInput('');
     
@@ -37,16 +37,12 @@ import useInput from '../../utils/hooks/useInput';
 
    return (
       <Box style={{backgroundImage: `${props.bgImage}`}} bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
-    {/*  <video loop autoPlay {...css(styles.vidDiv)}>
-            <source src={require("./../../assets/vision.mp4")} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video> */}
        <div {...css(styles.coverOpacity)}></div>
        <Spacer height="250px"/>
        
         <Grid container alignItems="center" justify="center" {...css(styles.content)}>
            
-            <Grid item lg={5} md={5} sm={6} xs={10}>
+            <Grid item lg={4} md={5} sm={8} xs={10}>
                    <h1  className={`${s.header} ${s.center} `} >
                      {props.header}
                     </h1>

@@ -38,7 +38,7 @@ class Home extends React.Component {
             ) : (
             <div>
             <Hero
-            header="Deploy vision AI now"
+            header="Improve operations with vision AI now"
             subheader="Add AI to new & existing video streams in seconds using Zeptron's plug-and-play solutions"
             bgImage={`url('${Image}')`}
             />

@@ -14,6 +14,13 @@ import { sleep } from '../../../utils/sleep';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
 
+const StreamLink = ({modelConfig}) => {
+  if (!modelConfig.cfStream) {
+    return `http://${modelConfig.publicIP}:${modelConfig.port || '8000'}/video_feed`
+  }
+  return `${modelConfig.cfStream}`
+}
+console.log(StreamLink)
 export const SingleInstance = ({ modelConfig }) => {
   const [instanceState, setInstanceState] = useState(modelConfig.instanceState);
   const updateModelConfigQuery = useQuery(mutations.updateModelConfig);
@@ -158,6 +165,8 @@ export const SingleInstance = ({ modelConfig }) => {
     });
   };
 
+  
+
   function refreshPage() {
     window.location.reload(false);
   }
@@ -281,7 +290,13 @@ export const SingleInstance = ({ modelConfig }) => {
                     <div style={{minHeight: 300, minWidth: '100%', backgroundColor: 'black'}}>
                       <img
                         alt="Stream loading"
-                        src={`http://${modelConfig.publicIP}:${modelConfig.port || '8000'}/video_feed`}
+                        src={
+                          modelConfig.cfStream ? (
+                           `${modelConfig.cfStream}`
+                          ) : (
+                           `http://${modelConfig.publicIP}:${modelConfig.port || '8000'}/video_feed`
+                          )
+                         }
                         style={{ maxWidth: '100%' }}
                         onError={(e)=>{e.target.onerror = null; e.target.src="https://forums.digitalpoint.com/proxy/yrWFm%2BbujmpVzRJJI0zQH6cnH69kXw4ANJaDnvDvDAfkBE%2F3rTD41Dmr908lo3FQWU5AMJzxSLk%2FyHtoScNs5ed0Q1H%2Bqa4TCCgQjojovWOh5Nuvx9ORszRu7wabvdBCz9xeWECfieQjcLU%3D/image.png"}}
                         />
@@ -304,3 +319,4 @@ export const SingleInstance = ({ modelConfig }) => {
     </div>
   );
 };
+

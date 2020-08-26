@@ -62,7 +62,13 @@ export const ModelSettings = ({ modelConfig }) => {
                     component="img"
                     alt={modelConfig.description}
                     height="140"
-                    image={`http://${modelConfig.publicIP}:${modelConfig.port || '8000'}/video_feed`}
+                    image={
+                      modelConfig.cfStream ? (
+                       `${modelConfig.cfStream}`
+                      ) : (
+                       `http://${modelConfig.publicIP}:${modelConfig.port || '8000'}/video_feed`
+                      )
+                     }
                     title={modelConfig.instanceName}
                     onError={(e)=>{e.target.onerror = null; e.target.src=`${modelConfig.model.image}`}}
                   />
