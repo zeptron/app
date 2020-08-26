@@ -71,8 +71,8 @@ export default function Studio() {
       <Box>
         <Spacer height="100px" />
         <Grid container justify="center">
-        <NewModelConfig />
         {output}
+        <NewModelConfig />
         </Grid>
         <Spacer height="100px" />
       </Box>
