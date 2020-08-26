@@ -63,5 +63,9 @@
     },
     "permissions": [],
     "dependsOn": [],
+<<<<<<< HEAD
     "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://staging.zeptron.co/\"],\"LogoutURLs\":[\"https://staging.zeptron.co/\"]}"
+=======
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.zeptron.co/\"],\"LogoutURLs\":[\"https://www.zeptron.co/\"]}"
+>>>>>>> master
 }

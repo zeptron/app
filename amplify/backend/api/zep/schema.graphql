@@ -44,6 +44,7 @@ type modelConfig @model  {
   privateIP: String!
   port: String!
   streamPort: String
+  cfStream: String
   EC2instanceID: String!
   instanceState: Boolean!
   tableName: String!

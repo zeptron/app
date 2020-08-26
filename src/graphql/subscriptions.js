@@ -423,6 +423,7 @@ export const onCreateModelConfig = /* GraphQL */ `
       privateIP
       port
       streamPort
+      cfStream
       EC2instanceID
       instanceState
       tableName
@@ -489,6 +490,7 @@ export const onUpdateModelConfig = /* GraphQL */ `
       privateIP
       port
       streamPort
+      cfStream
       EC2instanceID
       instanceState
       tableName
@@ -555,6 +557,7 @@ export const onDeleteModelConfig = /* GraphQL */ `
       privateIP
       port
       streamPort
+      cfStream
       EC2instanceID
       instanceState
       tableName

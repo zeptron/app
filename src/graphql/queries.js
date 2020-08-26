@@ -240,6 +240,7 @@ export const getModelConfig = /* GraphQL */ `
       privateIP
       port
       streamPort
+      cfStream
       EC2instanceID
       instanceState
       tableName
@@ -311,6 +312,7 @@ export const listModelConfigs = /* GraphQL */ `
         privateIP
         port
         streamPort
+        cfStream
         EC2instanceID
         instanceState
         tableName
