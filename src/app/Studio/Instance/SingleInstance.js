@@ -14,13 +14,6 @@ import { sleep } from '../../../utils/sleep';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
 
-const StreamLink = ({modelConfig}) => {
-  if (!modelConfig.cfStream) {
-    return `http://${modelConfig.publicIP}:${modelConfig.port || '8000'}/video_feed`
-  }
-  return `${modelConfig.cfStream}`
-}
-console.log(StreamLink)
 export const SingleInstance = ({ modelConfig }) => {
   const [instanceState, setInstanceState] = useState(modelConfig.instanceState);
   const updateModelConfigQuery = useQuery(mutations.updateModelConfig);
