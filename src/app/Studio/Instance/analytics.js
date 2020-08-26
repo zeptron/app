@@ -33,6 +33,12 @@ export default function Analytics({ match }) {
       seconds: 60 * 60, // 1 hour
       timeFrom: 60 * 60 * 24, // 24 hours
     },
+    DAY1: {
+      key: 'DAY1',
+      title: '1 day',
+      seconds: 1440 * 60, // 1 day
+      timeFrom: 1440 * 60 * 168, // 7 days
+    },
   };
 
   const COLORS = [
