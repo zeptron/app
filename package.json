@@ -31,7 +31,7 @@
     "glamor": "^2.20.40",
     "intl-format-cache": "^4.3.1",
     "intl-messageformat": "9.3.2",
-    "intl-messageformat-parser": "^6.0.1",
+    "intl-messageformat-parser": "^6.0.5",
     "logrocket": "^1.0.9",
     "logrocket-react": "^4.0.1",
     "lottie-react-web": "^2.2.2",
