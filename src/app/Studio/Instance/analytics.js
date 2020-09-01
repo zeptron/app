@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AWS from 'aws-sdk';
 import { Bar } from 'react-chartjs-2';
 import Spacer from 'react-spacer';
-import { Box, Button, Grid } from '@material-ui/core';
+import { Box, Button, Grid, Hidden } from '@material-ui/core';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import moment from 'moment';
 import RefreshIcon from '@material-ui/icons/Refresh';
@@ -221,7 +221,30 @@ export default function Analytics({ match }) {
         </h1>
         <Grid container alignItems="center" justify="center">
           <Grid item md={10}>
+            <Hidden smUp>
+            <div>
+            <Button
+            style={{marginLeft: 5}}
+            href={`/studio/${modelConfig.id}/`}
+            variant="contained"
+            color="secondary"
+            size="small"
+            >
+            <VideocamIcon/>
+            </Button>
+            <Button
+            style={{marginLeft: 5}}
+            onClick={refreshPage}
+            variant="contained"
+            color="primary"
+            size="small"
+            >
+            <RefreshIcon/>
+            </Button>
+            </div>
+            </Hidden>
             <Spacer height="30px"/>
+            
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
             
             <div className={s.chartSelectorWrapper2}>
@@ -238,6 +261,7 @@ export default function Analytics({ match }) {
                 ))}
               </ButtonGroup>
             </div>
+            <Hidden xsDown>
             <div className={s.chartSelectorWrapper}>
             <Button
             style={{marginLeft: 5}}
@@ -258,6 +282,7 @@ export default function Analytics({ match }) {
             <RefreshIcon/>
             </Button>
             </div>
+            </Hidden>
              </div>
             <div className={s.legend}>
               {summaryData.map(({ label, value }, index) => (
