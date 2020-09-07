@@ -14,14 +14,13 @@ import Form from './Form'
     <Box id="start" p={4} color="secondary.main" {...css(styles.container)}   >
          <Grid container justify="center" spacing={spacing} {...css(styles.content)}>
             <Grid item md={8} sm={10} xs={12}>
-            <Spacer height="150px"/>
+            <Spacer height="200px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Grid item md={6} xs={12}>
             <h2 className={`${s.header} `}>
-              {props.header || 'Talk to us today to get started with Zeptron'}
+              {props.header || 'Do you need to add AI to your CCTV?'}
             </h2>
             <p className={`${s.subheader} `}>
-              {/* {props.subheader || 'Schedule a call with us'} */}
             </p>
             <Spacer height="50px"/>
             </Grid> 

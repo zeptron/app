@@ -88,7 +88,7 @@ PrivateRoute = withRouter(PrivateRoute);
  export const DefaultRoutes = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
@@ -101,7 +101,7 @@ PrivateRoute = withRouter(PrivateRoute);
         <Route path="/test" component={Test}/>
         <Route component={NoMatch} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

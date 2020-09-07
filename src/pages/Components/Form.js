@@ -62,7 +62,9 @@ export default function Form(){
                 <Grid container alignItems="center" justify="center">
                     <Grid item lg={6} md={9} sm={10} xs={12}>
                     <form className={classes.root} noValidate autoComplete="off">
-                        <ButtonGroup style={{width: 700}}>
+                        <ButtonGroup 
+                        style={{width: 700}}
+                        >
                       <TextField 
                             id="standard" 
                             label="Email" 
@@ -75,7 +77,7 @@ export default function Form(){
                         variant="contained" 
                         size="large" 
                         color="secondary" 
-                        onClick={sendForm} ><strong>Start</strong>
+                        onClick={sendForm} ><strong>Yes</strong>
                         </Button>
                         </ButtonGroup>
                     </form>
