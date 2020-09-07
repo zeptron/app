@@ -44,17 +44,17 @@ class Header extends React.Component {
           <img
             alt="icon"
             style={styles.amplifyLogo}
-            src={require("./assets/logo_white.svg")}
+            src={require("./assets/logo_dark.png")}
           />
         </Link>
 
-        <div {...css(styles.navContainer)}>
+        {/* <div {...css(styles.navContainer)}>
           {isLoaded ? (
               <div {...css(styles.menuContainer)}>
                 <AppBar isAuthenticated={isAuthenticated}/>
               </div>
             ) : null}
-        </div>
+        </div> */}
       </div>
     );
   }
