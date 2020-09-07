@@ -42,8 +42,8 @@ export default function Form(){
           });
         const SNS = new AWS.SNS();
         const params = {
-            Message: `New query from: \n \n *Name:* ${userName} \n *Company:* ${userOrg} \n *Number:* ${userNum} \n *Email:* ${userEmail}`, 
-            TopicArn: 'arn:aws:sns:ap-southeast-2:047384901313:zeptronusers'
+            Message: `New query from: *Email:* ${userEmail}`, 
+            TopicArn: 'arn:aws:sns:ap-southeast-2:485273623449:slack'
           };
           SNS.publish(params, function(err, data) {
             if (err) console.log(err, err.stack); // an error occurred

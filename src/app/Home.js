@@ -30,13 +30,7 @@ export default function Home() {
                     <Box p={2}>
                   <Spacer height="100px"/>
                     <Grid container alignItems="center" justify="center">
-                        {/* <Grid item xs={12}>
-                        <Box height={1} p={4}>
-                            <div style={{textAlign: 'left'}}>
-                            {date}/{month<10?`0${month}`:`${month}`}/{year} 
-                            </div>
-                         </Box>
-                         </Grid> */}
+                       
                     <Grid item md={4} xs={12} >
                         <Box height={1} p={2} m={2}>
                         <Spacer height="20px"/>
