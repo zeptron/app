@@ -49,35 +49,35 @@ class SignUp extends React.Component {
           <div {...css(styles.formContainer)}>
             <Button
               fullwidth
-              title={"Sign up with Google"}
+              title={"Connect with Google"}
               className="google"
-              icon={<IoLogoGoogle />}
+              icon={<img src="https://app.getproflow.com/img/google.1208c7d8.svg"/>}
               iconPosition="left"
-              iconStyle={{ color: "#ffffff", marginRight: 5 }}
+              iconStyle={{ color: "#4285f4", marginRight: 5 }}
               intlButtonId="continueGoogleBtn"
               onClick={thisGoogle}
-              style={{ color: "#fff" }}
+              style={{ color: "rgb(0, 10, 18)" }}
             />
-            <span style={{ textAlign: "center" }}>or</span>
+            <span style={{ textAlign: "center", paddingTop: 10 }}><img src="https://app.getproflow.com/img/or-separator.36b3a8b9.svg"/></span>
             <br />
             <input
               {...css(styles.input)}
-              placeholder="First name"
+              placeholder="FIRST NAME"
               onChange={(evt) => this.onChange("given_name", evt.target.value)}
             />
             <input
               {...css(styles.input)}
-              placeholder="Family name"
+              placeholder="LAST NAME"
               onChange={(evt) => this.onChange("family_name", evt.target.value)}
             />
             <input
               {...css(styles.input)}
-              placeholder="Email"
+              placeholder="EMAIL"
               onChange={(evt) => this.onChange("email", evt.target.value)}
             />
             <input
               {...css(styles.input)}
-              placeholder="Password"
+              placeholder="PASSWORD"
               type="password"
               onChange={(evt) => this.onChange("password", evt.target.value)}
             />
@@ -85,6 +85,7 @@ class SignUp extends React.Component {
             <Button
               fullwidth
               title={"Sign up"}
+              className="register"
               onClick={this.signUp}
               style={{ color: "#fff" }}
             />

@@ -4,12 +4,12 @@ import Buttons from '../components/Buttons/Button';
 
 export const Button = styled(Buttons)`
   &.google {
-    background-color: #4285f4;
+    background-color: #fff;
     margin-bottom: 10px;
   }
 
   &.register {
-    background-color: #f57f17;
+    background-color: #1a8699;
     margin-bottom: 10px;
   }
 

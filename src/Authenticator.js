@@ -1,12 +1,13 @@
 import React from "react";
 import { css } from "glamor";
-import {Box} from '@material-ui/core'
+import {Box, Grid, Button} from '@material-ui/core'
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ForgotPassword from "./ForgotPassword";
 import Spacer from 'react-spacer'
 import s from './styles/styles.module.css'
 import SEO from './utils/SEO'
+import Shell from './app/Components/Shell'
 
 class Authenticator extends React.Component {
   state = {
@@ -25,29 +26,25 @@ class Authenticator extends React.Component {
     const { currentState } = this.state;
     return (
       <div>
+        
+          <Grid container alignItems="center" justify="center">
+            <Grid item xs={12}>
          <SEO 
           title="Zeptron - Sign in"
-          path="auth"
+          path="login"
           />
-         <Box bgcolor="primary.dark" color="primary.contrastText">
-        <Spacer height="80px"/>
-            {currentState === "showSignIn" && (
+         <Spacer height="100px"/>
               <h3 style={{textAlign: 'center'}} className={s.header} >
-                Authenticate
+              {currentState === "showSignIn" && (
+                'Sign In'
+                )}
+                 {currentState === "showSignUp" && (
+                     'Register'
+                     )}
+                      {currentState === "showForgotPassword" && (
+                         'Reset password'
+                         )}
                 </h3>
-                )}
-             {currentState === "showSignUp" && (
-               <h3 style={{textAlign: 'center'}} className={s.header} >
-               Register
-               </h3>
-                )}
-               {currentState === "showForgotPassword" && (
-                  <h3 style={{textAlign: 'center'}} className={s.header} >
-                  Reset password
-                  </h3>
-                  )}
-        <Spacer height="50px"/>
-        </Box>
         <Box p={2}>
           <div style={styles.container}>
         {currentState === "showSignIn" && (
@@ -73,27 +70,19 @@ class Authenticator extends React.Component {
         <div {...css(styles.buttonContainer)}>
           {currentState === "showSignIn" ? (
             <div {...css(styles.linkContainer)}>
-              <p
-                onClick={() => this.switchState("showSignUp")}
-                {...css(styles.toggle)}
-              >
-                Need an account? Sign Up
-              </p>
-              <p
-                onClick={() => this.switchState("showForgotPassword")}
-                {...css(styles.toggle)}
-              >
-                Forgot your password?
-              </p>
+             <Button variant="text" color="secondary" size="medium" onClick={() => this.switchState("showSignUp")}>
+               <strong>Sign up</strong>
+             </Button>
+             <Button variant="text" color="secondary" size="medium" onClick={() => this.switchState("showForgotPassword")}>
+               <strong>Reset Password</strong>
+             </Button>
+            
             </div>
           ) : (
             <div {...css(styles.linkContainer)}>
-              <p
-                {...css(styles.toggle)}
-                onClick={() => this.switchState("showSignIn")}
-              >
-                Already have an account? Sign In
-              </p>
+               <Button variant="text" color="primary" size="medium" onClick={() => this.switchState("showSignIn")}>
+               <strong>Sign in</strong>
+             </Button>
             </div>
           )}
         </div>
@@ -104,6 +93,9 @@ class Authenticator extends React.Component {
         )}
       </div>
       </Box>
+      </Grid>
+          </Grid>
+     
       </div>
     );
   }

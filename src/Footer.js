@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <Box style={{borderTop: '1px solid #494848'}} bgcolor="primary.main" color="primary.contrastText" p={4}>
+    <Box style={{borderTop: '1px solid #494848'}} bgcolor='secondary.dark' color="primary.contrastText"  p={4}>
       <Spacer height="40px" />
       <Grid container alignItems="center" justify="center">
         <Grid item md={8}>
@@ -41,7 +41,7 @@ export default function Footer() {
             </Grid>
 
             <Grid item xs={12}>
-              © 2020, Zeptron
+            © 2020, Zeptron
             </Grid>
           </Grid>
         </Grid>
@@ -73,7 +73,7 @@ const styles = {
     height: "80px",
     alignItems: "center",
     width: "100%",
-    backgroundColor: "#000a12",
+    // backgroundColor: "#000a12",
     display: "flex",
   },
 };

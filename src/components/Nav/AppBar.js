@@ -20,8 +20,18 @@ import UserContext from "../../UserContext";
 import s from "../../styles/styles.module.css";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Spacer from 'react-spacer'
+import Popper from '@material-ui/core/Popper';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles({
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
   list: {
     width: 250,
     textTransform: 'uppercase'
@@ -46,13 +56,16 @@ const useStyles = makeStyles({
   paper: {
     background: "rgb(37, 51, 55)",
     color: "#fff",
+    marginRight: theme.spacing(2),
   }
-});
+}));
 
 
 export default function SwipeableTemporaryDrawer(props) {
   const classes = useStyles();
   const location = useLocation();
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
   const [state, setState] = React.useState({
     right: false
   });
@@ -60,10 +73,39 @@ export default function SwipeableTemporaryDrawer(props) {
   const [routeLoction, setRouteLoction] = React.useState('');
   const [menuItems, setMenuItems] = React.useState([]);
 
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  function handleListKeyDown(event) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      setOpen(false);
+    }
+  }
+
+  // return focus to the button when we transitioned from !open -> open
+  const prevOpen = React.useRef(open);
+  React.useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current.focus();
+    }
+
+    prevOpen.current = open;
+  }, [open]);
+
   const AuthItems = [
   {
     name : "Studio",
-    route: "/studio",
+    route: "/app/studio",
     icon: <DashboardIcon style={{color: "#fff"}}/>
   }
   ,{
@@ -86,7 +128,7 @@ export default function SwipeableTemporaryDrawer(props) {
   const items = [
   {
     name : "Login",
-    route: "/auth",
+    route: "/login",
     icon: <ExitToAppIcon style={{color: '#fff'}}/>
   }
 ]
@@ -174,6 +216,36 @@ export default function SwipeableTemporaryDrawer(props) {
         <List className= {clsx(classes.flexContainer)} >
             {menuItems.map((val, index) => (
             <ListItem key={val.name} className={clsx(classes.listMenu)}>
+              {/* <div>
+        <Button
+          ref={anchorRef}
+          aria-controls={open ? 'menu-list-grow' : undefined}
+          aria-haspopup="true"
+          onClick={handleToggle}
+          className= {clsx(classes.menuOptions)}
+          style= {getActiveTab(val.name)}
+        >
+          Product
+        </Button>
+        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+            >
+              <Paper>
+                <ClickAwayListener onClickAway={handleClose}>
+                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                    <MenuItem onClick={handleClose}>AI App</MenuItem>
+                    <MenuItem onClick={handleClose}>CCTV Connection</MenuItem>
+                    <MenuItem onClick={handleClose}>4K AI Camera</MenuItem>
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
+      </div> */}
               <Button
                   href={`${val.route}`}
                   className= {clsx(classes.menuOptions)}
@@ -181,7 +253,9 @@ export default function SwipeableTemporaryDrawer(props) {
                 >
                   {val.name}
                 </Button>
+              
             </ListItem>
+            
           ))}
           {props.isAuthenticated ? (
           <div>
@@ -256,7 +330,7 @@ export default function SwipeableTemporaryDrawer(props) {
 function signOut() {
   Auth.signOut()
     .then(() => {
-      this.props.history.push("/auth");
+      this.props.history.push("/login");
     })
     .catch(() => console.log("error signing out..."));
 }

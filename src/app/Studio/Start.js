@@ -122,7 +122,7 @@ export default function Start({ match }) {
         <Spacer height="25px" />
         <Grid item xs={12}>
           <Link
-            to={`/studio/actions/${match.params.id}`}
+            to={`/app/studio/actions/${match.params.id}`}
             style={{ textDecoration: "none" }}
           >
             <Button

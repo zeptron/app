@@ -282,7 +282,7 @@ export default function Actions({ match }) {
         <Grid item xs={12}>
           <Spacer height="50px" />
           <Link
-            to={`/studio/provision/${match.params.id}`}
+            to={`/app/studio/provision/${match.params.id}`}
             style={{ textDecoration: "none" }}
           >
             <Button variant="contained" color="primary" size="large">

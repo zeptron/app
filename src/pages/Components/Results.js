@@ -101,12 +101,12 @@ const useStyles = makeStyles((theme) => ({
             </Grid> 
             <Spacer height="80px"/>
             <Hidden xsDown>
-                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <Button size="large" variant="contained" color="secondary" href="/login">
                     <span className={s.ctabutton}>Get Started Now</span>
                     </Button>
                     </Hidden>
                     <Hidden smUp>
-                    <Button size="small" variant="contained" color="secondary" href="/auth">
+                    <Button size="small" variant="contained" color="secondary" href="/login">
                     <span className={s.ctabutton}>Get Started Now</span>
                     </Button>
                     </Hidden>

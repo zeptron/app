@@ -102,7 +102,7 @@ class Billing extends React.Component {
 function signOut() {
   Auth.signOut()
     .then(() => {
-      this.props.history.push("/auth");
+      this.props.history.push("/login");
     })
     .catch(() => console.log("error signing out..."));
 }

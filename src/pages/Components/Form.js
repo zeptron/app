@@ -4,6 +4,7 @@ import {
     TextField, 
     Button, 
     Grid, 
+    ButtonGroup
 } from '@material-ui/core';
 import Spacer from 'react-spacer'
 import AWS from 'aws-sdk';
@@ -61,44 +62,27 @@ export default function Form(){
                 <Grid container alignItems="center" justify="center">
                     <Grid item lg={6} md={9} sm={10} xs={12}>
                     <form className={classes.root} noValidate autoComplete="off">
-                    <TextField 
-                        id="filled-basic" 
-                        label="Name" 
-                        variant="filled" 
-                        value={userName}
-                        onChange={setUserName}
-                    />
-                    <TextField 
-                        id="filled-basic" 
-                        label="Organisation" 
-                        variant="filled" 
-                        value={userOrg}
-                        onChange={setUserOrg}
-                    />
-                    <TextField 
-                        id="filled-basic" 
-                        label="Number" 
-                        variant="filled"
-                        value={userNum}
-                        onChange={setUserNum}
-                    />
-                    <TextField 
-                        id="filled-basic" 
-                        label="Email" 
-                        variant="filled" 
-                        value={userEmail}
-                        onChange={setUserEmail}
-                    />
+                        <ButtonGroup style={{width: 700}}>
+                      <TextField 
+                            id="standard" 
+                            label="Email" 
+                            variant="standard" 
+                            value={userEmail}
+                            onChange={setUserEmail}
+                            style={{width: 250}}
+                        />
+                        <Button 
+                        variant="contained" 
+                        size="large" 
+                        color="secondary" 
+                        onClick={sendForm} ><strong>Start</strong>
+                        </Button>
+                        </ButtonGroup>
                     </form>
                     </Grid>
                     <Grid item xs={12}>
                     <Spacer height="25px"/>
-                    <Button 
-                    variant="contained" 
-                    size="large" 
-                    color="secondary" 
-                    onClick={sendForm} ><strong>Start</strong></Button>
-                    </Grid>
+                </Grid>
                 </Grid>
         </div>
     )

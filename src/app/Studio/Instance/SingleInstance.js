@@ -250,7 +250,7 @@ export const SingleInstance = ({ modelConfig }) => {
                       </Hidden>
                       <Button
                      style={{marginLeft: 5}}
-                      href={`/studio/${modelConfig.id}/analytics`}
+                      href={`/app/studio/${modelConfig.id}/analytics`}
                       variant="contained"
                       color="secondary"
                       size="small"

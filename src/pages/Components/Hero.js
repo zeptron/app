@@ -36,47 +36,32 @@ import useInput from '../../utils/hooks/useInput';
   }
 
    return (
-      <Box style={{backgroundImage: `${props.bgImage}`}} bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
-       <div {...css(styles.coverOpacity)}></div>
-       <Spacer height="250px"/>
-       
-        <Grid container alignItems="center" justify="center" {...css(styles.content)}>
-           
-            <Grid item lg={4} md={5} sm={8} xs={10}>
-                   <h1  className={`${s.header} ${s.center} `} >
+      <Box bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
+       {/* <div {...css(styles.coverOpacity)}></div> */}
+          <Spacer height="250px"/>
+              <Grid container alignItems="center" justify="center" {...css(styles.content)}>
+                <Grid item xs={10}>
+                    <Grid item lg={4} md={6} sm={10} xs={12}>
+                   <h1  className={`${s.header}  `} >
                      {props.header}
                     </h1>
-                    <p className={`${s.subheader} ${s.center}  `} >
+                    
+                    <p className={`${s.subheader}`} >
                       {props.subheader}
                     </p>
+                 
                     <Spacer height="25px"/>
-            </Grid>
-                    <Grid container alignItems="center" justify="center">
-                    <div style={{textAlign: 'center', color: 'white'}}>
-                    <TextField
-                    label="Email"
-                    id="filled-size-small"
-                    variant="filled"
-                    size="small"
-                    style={{backgroundColor: 'white'}}
-                    value={userEmail}
-                    onChange={setUserEmail}
-                  />
-                  <Hidden xsDown>
-                    <Button style={{height: 48}} size="large" variant="contained" color="secondary" onClick={sendForm}>
-                    <span className={s.ctabutton}>Get a Demo</span>
-                    </Button>
-                    </Hidden>
-                    <Hidden smUp>
-                    <Button style={{height: 48}} size="small" variant="contained" color="secondary" onClick={sendForm}>
-                    <span className={s.ctabutton}>Get a Demo</span>
-                    </Button>
-                    </Hidden>
-                    </div>
-                    </Grid>
-            
-            
-        </Grid>
+                  </Grid>
+                  <div style={{textAlign: 'left'}}>
+                  {/* <Button size="medium" variant="contained" color="secondary">
+                    Sign up
+                  </Button> */}
+                  <Button size="large" variant="contained" color="secondary" to="/login">
+                    <strong>Learn More</strong>
+                  </Button>
+                  </div>
+                </Grid>
+              </Grid>
       <Spacer height="200px"/>
     </Box>  
   )

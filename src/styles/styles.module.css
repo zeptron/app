@@ -151,8 +151,8 @@
     margin-right: 15px;
     font-weight: 500;
     font-size: 1.3em;
-    color: white;
     padding-bottom: 4px;
+    color: #fff;
     border-bottom: 2px solid transparent;
 }
 
@@ -243,4 +243,7 @@ iframe {
     height: 12px;
     margin-right: 6px;
     border-radius: 8px;
+}
+.private-card  {
+background-color: black!important;
 }

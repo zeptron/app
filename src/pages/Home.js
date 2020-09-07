@@ -1,7 +1,7 @@
 import React from 'react'
 import UserContext from '../UserContext'
 import Hero from './Components/Hero'
-import Below from './Components/Below'
+import Below from './Components/Icons'
 import Provision from './Components/Provision'
 import Configure from './Components/Configure'
 // import Results from './Results'
@@ -18,6 +18,7 @@ import Hubspot from './Components/Hubspot'
 import ConfigureImg from '../assets/configure.png'
 import ChartImg from '../assets/charts.png'
 import NotificationImg from '../assets/notifications.png'
+import Section from './Components/Section'
 
 class Home extends React.Component {
 
@@ -38,12 +39,14 @@ class Home extends React.Component {
             ) : (
             <div>
             <Hero
-            header="Improve operations with vision AI now"
-            subheader="Add AI to new & existing video streams in seconds using Zeptron's plug-and-play solutions"
-            bgImage={`url('${Image}')`}
+            header="Zeptron makes live video smart with AI"
+            subheader="Add AI to CCTV in seconds for analytics and automation"
             />
-            <ImgLeft
-            header="Connect CCTV streams easily"
+            <Section
+            />
+
+            {/* <ImgLeft
+            header="Connect CCTV in seconds"
             subheader="Zeptron's CCTV router plugs into your NVR/DVR and overlays AI on your CCTV"
             img={CCTV}
             button="See Demo"
@@ -71,11 +74,11 @@ class Home extends React.Component {
             header="Get real-time analysis of detection results"
             subheader="Zeptron automatically charts detections in real time and can offer results in CSV / JSON"
             button="Get Started"
-            />
-          <Spacer height="50px"/>
+            /> */}
+          {/* <Spacer height="50px"/>
             {/* <Configure/>
-            <Provision/> */}
-            <Below/>
+            <Provision/> 
+            <Below/> */}
             <Start
             form={
               <Hubspot

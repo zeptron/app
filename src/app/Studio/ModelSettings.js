@@ -20,12 +20,12 @@ const useStyles = makeStyles((theme) => ({
     tertiary: green[500],
   },
   card: {
-    width: 300,
+    width: 150,
     margin: 4,
-    height: 330,
+    height: 175,
   },
   media: {
-    height: 200,
+    height: 150,
   },
   cardInner: {
     marginTop: "41%",
@@ -52,9 +52,9 @@ export const ModelSettings = ({ modelConfig }) => {
   } 
   return (
     <div>
-          <Grid item md={4}>
+          <Grid item md={2}>
             <Link
-              to={`/studio/${modelConfig.id}`}
+              to={`/app/studio/${modelConfig.id}`}
               style={{ textDecoration: "none" }}
             >
               <Card className={classes.card}>

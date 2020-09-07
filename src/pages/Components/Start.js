@@ -4,49 +4,35 @@ import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import { css } from "glamor";
 import Bg from '../../assets/startbg.jpg'
-
+import Form from './Form'
   export default function Start(props) {
+    
  
     const [spacing] = React.useState(2);
    
    return (
-    <Box id="start" style={{backgroundImage: `url('${Bg}')`}} p={4} color="primary.contrastText" {...css(styles.container)}   >
-         <div {...css(styles.coverOpacity)}></div>
+    <Box id="start" p={4} color="secondary.main" {...css(styles.container)}   >
          <Grid container justify="center" spacing={spacing} {...css(styles.content)}>
             <Grid item md={8} sm={10} xs={12}>
-            <Spacer height="80px"/>
-            <Grid container alignItems="top" justify="center" spacing={spacing}>
+            <Spacer height="150px"/>
+            <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Grid item md={6} xs={12}>
-            <Spacer height="50px"/>
             <h2 className={`${s.header} `}>
-              {props.header || 'See how Zeptron can help you today'}
+              {props.header || 'Talk to us today to get started with Zeptron'}
             </h2>
             <p className={`${s.subheader} `}>
-              {props.subheader || 'Schedule a free demo with us'}
-            </p>
-            <Spacer height="20px"/>
-            <p className={`${s.subheader} `}>
-              <ul style={{textAlign: 'left', margin: 2}}>
-              <li>
-                  State of the art algorithms
-                </li>
-                <li>
-                  Instant plug & play deployment
-                </li>
-                <li>
-                  Secure encrypted data transfer
-                </li>
-              </ul>
+              {/* {props.subheader || 'Schedule a call with us'} */}
             </p>
             <Spacer height="50px"/>
             </Grid> 
             <Grid item md={6} xs={12}>
             <Spacer height="20px"/>
-            {props.form}
-            <Spacer height="16px"/>
+            {/* {props.form} */}
+            <Form />
+            
             </Grid>
             </Grid> 
-            
+            <Spacer height="150px"/>
         </Grid> 
         </Grid>
     </Box>
@@ -69,7 +55,8 @@ coverOpacity: {
   width: "100%",
   height: "100%",
   position: "absolute",
-  backgroundColor: "rgb(0, 10, 18)",
+  backgroundColor: "#e2dbce",
   opacity: 0.7
 }
+
 }

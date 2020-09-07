@@ -32,13 +32,13 @@ import SEO from '../utils/SEO'
             <Grid container justify="center" alignItems="center" >
                 <Grid item xs={12}>
                 <Hidden xsDown>
-                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <Button size="large" variant="contained" color="secondary" href="/login">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </Hidden>
                     <Hidden smUp>
                     <div className={s.center}>
-                    <Button size="small" variant="contained" color="secondary" href="/auth">
+                    <Button size="small" variant="contained" color="secondary" href="/login">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </div>
@@ -60,13 +60,13 @@ import SEO from '../utils/SEO'
              </Grid>
                 <Spacer height="80px"/>
                 <Hidden xsDown>
-                    <Button size="large" variant="contained" color="secondary" href="/auth">
+                    <Button size="large" variant="contained" color="secondary" href="/login">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </Hidden>
                     <Hidden smUp>
                     <div className={s.center}>
-                    <Button size="small" variant="contained" color="secondary" href="/auth">
+                    <Button size="small" variant="contained" color="secondary" href="/login">
                     <span className={s.ctabutton}>Start Now</span>
                     </Button>
                     </div>

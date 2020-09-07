@@ -29,7 +29,7 @@ class SignIn extends React.Component {
           this.setState({ user, showConfirmation: true });
         } else {
           updateCurrentUser(user);
-          history.push("/studio");
+          history.push("/app/studio");
         }
       })
       .catch((err) => {
@@ -54,35 +54,35 @@ class SignIn extends React.Component {
       <div {...css(styles.container)}>
         {!this.state.showConfirmation && (
           <div {...css(styles.formContainer)}>
-            <h2 {...css(styles.signInHeader)}>Sign In</h2>
             <Button
               fullwidth
-              title={"Sign in with Google"}
+              title={"Connect with Google"}
               className="google"
-              icon={<IoLogoGoogle />}
+              icon={<img src="https://app.getproflow.com/img/google.1208c7d8.svg"/>}
               iconPosition="left"
-              iconStyle={{ color: "#ffffff", marginRight: 5 }}
+              iconStyle={{ color: "#4285f4", marginRight: 5 }}
               intlButtonId="continueGoogleBtn"
               onClick={thisGoogle}
-              style={{ color: "#fff" }}
+              style={{ color: "rgb(0, 10, 18)" }}
             />
-            <span style={{ textAlign: "center" }}>or</span>
+            <span style={{ textAlign: "center", paddingTop: 10 }}><img src="https://app.getproflow.com/img/or-separator.36b3a8b9.svg"/></span>
             <br />
             <input
               onChange={(evt) => this.onChange("username", evt.target.value)}
               {...css(styles.input)}
-              placeholder="username"
+              placeholder="EMAIL"
             />
             <input
               type="password"
               onChange={(evt) => this.onChange("password", evt.target.value)}
               {...css(styles.input)}
-              placeholder="password"
+              placeholder="PASSWORD"
             />
             <Button
               fullwidth
               title={"Sign in"}
               onClick={this.signIn}
+              className="register"
               style={{ color: "#fff" }}
             />
           </div>
@@ -133,10 +133,11 @@ const styles = {
   },
   input: {
     height: 40,
+    padding: 5,
+    paddingLeft: 10,
     marginBottom: "10px",
     border: "none",
     outline: "none",
-    borderBottom: "2px solid #ffb102",
     fontSize: "16px",
     "::placeholder": {
       color: "rgba(0, 0, 0, .3)",
@@ -144,7 +145,6 @@ const styles = {
   },
   container: {
     flex: 1,
-    paddingTop: "80px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",

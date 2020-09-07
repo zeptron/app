@@ -63,12 +63,12 @@ const useStyles = makeStyles((theme) => ({
               <BoxHeading>per hour </BoxHeading>
               <Spacer height="25px"/>
               <Hidden xsDown>
-                    <Button size="large" variant="contained" color="primary" href="/auth">
+                    <Button size="large" variant="contained" color="primary" href="/login">
                     <span className={s.ctabutton}>Start</span>
                     </Button>
                     </Hidden>
                     <Hidden smUp>
-                    <Button size="small" variant="contained" color="primary" href="/auth">
+                    <Button size="small" variant="contained" color="primary" href="/login">
                     <span className={s.ctabutton}>Start</span>
                     </Button>
                     </Hidden>
@@ -82,12 +82,12 @@ const useStyles = makeStyles((theme) => ({
               <BoxHeading>per month <br/>per camera</BoxHeading>
               <Spacer height="12px"/>
               <Hidden xsDown>
-                    <Button size="large" variant="contained" color="primary" href="/auth">
+                    <Button size="large" variant="contained" color="primary" href="/login">
                     <span className={s.ctabutton}>Start</span>
                     </Button>
                     </Hidden>
                     <Hidden smUp>
-                    <Button size="small" variant="contained" color="primary" href="/auth">
+                    <Button size="small" variant="contained" color="primary" href="/login">
                     <span className={s.ctabutton}>Start</span>
                     </Button>
                     </Hidden>
