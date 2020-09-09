@@ -55,7 +55,7 @@ class Home extends React.Component {
               />
             }
             />
-              <Box p={2} height="100vh">
+              <Box p={2} minHeight="100vh">
               <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
@@ -93,7 +93,7 @@ class Home extends React.Component {
               </Grid>
               </Box>
 
-              <Box p={2} height="100vh">
+              <Box p={2} minHeight="100vh">
               <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
@@ -137,7 +137,7 @@ class Home extends React.Component {
 
            
 
-            <Box p={2} height="100vh">
+            <Box p={2} minHeight="100vh">
                 <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
@@ -177,7 +177,7 @@ class Home extends React.Component {
                 </Grid>
             </Box>
 
-            <Box p={2} height="100vh" >
+            <Box p={2} minHeight="100vh" >
                 <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
@@ -218,7 +218,7 @@ class Home extends React.Component {
 
             </Box>
 
-            <Box bgcolor="secondary.dark" color height="100vh" color="primary.contrastText" >
+            <Box bgcolor="secondary.dark" color height="100vh" color="primary.contrastText" minHeight='100vh'>
               <Grid container alignItems="center" justify="center" style={{height: '100%'}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
