@@ -54,29 +54,116 @@ class Home extends React.Component {
               />
             }
             />
-            {/* <Box p={2} bgcolor="primary.main" color="primary.contrastText ">
-              <Grid container alignItems="center" justify="center">
+            
+              <Grid container alignItems="center" justify="center" height="100vh">
+              <Box p={2} bgcolor="primary.light" color="secondary.contrastText" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
                 <Grid item md={6}>
                   <Spacer height="50px"/>
+                 
                   <h2 className={`${s.header} `}>
-                  Building analytics
+                  Get occupancy count using your CCTV network
                   </h2>
                   <p style={{textAlign: 'left', fontSize: 'x-large'}}>
-                  
+                  Know exactly how many people are in your building at any one time using your existing CCTV network
                   </p>
+                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
+                  Get notifications when your limit is exceeded
+                  </p>
+                  <div style={{textAlign: 'left'}}>
+                  <Button variant="contained" size="large" color="secondary" href="#start">
+                    Start
+                  </Button>
+                  </div>
                   <Spacer height="50px"/>
                 </Grid>
                 <Grid item md={6}>
                 <Spacer height="50px"/>
-                  <img style={{maxWidth: '100%'}} src={Building} />
+                  <img style={{maxWidth: '100%'}} src={ConfigureImg} />
                   <Spacer height="50px"/>
                 </Grid>
                 </Grid>
                 </Grid>
+                </Box>
               </Grid>
-            </Box> */}
+           
+
+            
+
+           
+
+            <Box p={2} height="100vh">
+                <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
+                <Grid item md={8}>
+                <Grid container alignItems="center" justify="center">
+
+                <Grid item md={6}>
+                  <Spacer height="50px"/>
+                 
+                  <h2 className={`${s.header} `}>
+                  Get notifications for detections that matter
+                  </h2>
+                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
+                  Get notified via Slack, SMS or email for the notifications that matter to you
+                  </p>
+                  <div style={{textAlign: 'left'}}>
+                  <Button variant="contained" size="large" color="secondary" href="#start">
+                    Start
+                  </Button>
+                  </div>
+                  <Spacer height="50px"/>
+                </Grid>
+                <Grid item md={6}>
+                <Spacer height="50px"/>
+                  <img style={{maxWidth: '100%'}} src={NotificationImg} />
+                  <Spacer height="50px"/>
+                </Grid>
+                </Grid>
+                </Grid>
+                </Grid>
+            </Box>
+
+            <Box p={2} height="100vh" bgcolor="primary.main">
+                <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
+                <Grid item md={8}>
+                <Grid container alignItems="center" justify="center">
+
+                <Grid item md={6}>
+                  <Spacer height="50px"/>
+                  
+                  <h2 className={`${s.header} `}>
+                  Use a powerful cloud app to stay in control
+                  </h2>
+                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
+                  Use the powerful cloud-based Zeptron app to stay in control at all times, start new feeds, configure streams, and get analytics
+                  </p>
+                  <div style={{textAlign: 'left'}}>
+                  <Button variant="contained" size="large" color="secondary" href="#start">
+                    Start
+                  </Button>
+                  </div>
+                  <Spacer height="50px"/>
+                </Grid>
+                <Grid item md={6}>
+                <Spacer height="50px"/>
+                  <img style={{maxWidth: '100%'}} src={ChartImg} />
+                  <Spacer height="50px"/>
+                </Grid>
+                </Grid>
+                </Grid>
+                </Grid>
+
+            </Box>
+
+            <Start
+            form={
+              <Hubspot
+                meetcode="/meeting-def"
+              />
+            }
+            />
+
             </div>
           )
         }

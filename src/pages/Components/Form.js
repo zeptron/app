@@ -67,7 +67,7 @@ export default function Form(){
                         >
                       <TextField 
                             id="standard" 
-                            label="Email" 
+                            label="Email address" 
                             variant="standard" 
                             value={userEmail}
                             onChange={setUserEmail}
