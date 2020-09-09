@@ -182,6 +182,32 @@ class Home extends React.Component {
 
             </Box>
 
+            <Box bgcolor="secondary.dark" color height="100vh" color="primary.contrastText" >
+              <Grid container alignItems="center" justify="center" style={{height: '100%'}}>
+                <Grid item md={8}>
+                <Grid container alignItems="center" justify="center">
+                <Grid item md={12}>
+                <h2 className={`${s.header} ${s.center}`}>
+                  Loved by...
+                  </h2>
+                   <Spacer height="50px"/>
+                  <Grid container alignItems="center" justify="center">
+                    <Grid item md={4} sm={6}>
+                      <img style={{width: 250, maxWidth: '100%'}} src="https://static1.squarespace.com/static/5d7b27bf2da3a5041cc91ffd/t/5d9da5ffbe16a30f8d994aa0/1593416539322/?format=original"/>
+                    </Grid>
+                    <Grid item md={4} sm={6}>
+                      <img style={{width: 200, maxWidth: '100%'}} src="https://images.squarespace-cdn.com/content/v1/58038734f5e231804130cf01/1530186594390-OS2HAO6YEGV9ILQAQCW1/ke17ZwdGBToddI8pDm48kMtiXMEMZ8ID8MVhA-T_Qc9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIXpy3a2Cibo6eml5BpILeGX-BY3QvcZT7F317PmmzovI/stone_chalk.png"/>
+                    </Grid>
+                    <Grid item md={4} sm={6}>
+                      <img style={{width: 200, maxWidth: '100%', filter: 'invert(100%)'}} src="https://cdn.concreteplayground.com/content/uploads/2019/04/SRG-Logo-Blk-01.png"/>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                </Grid>
+                </Grid>
+              </Grid>
+            </Box>
+
             <Start
             header="Start getting more value out of your CCTV today"
             form={
