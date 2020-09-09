@@ -11,29 +11,27 @@ import Form from './Form'
     const [spacing] = React.useState(2);
    
    return (
-    <Box id="start" p={4} color="secondary.main" {...css(styles.container)}   >
+    <Box id="start" p={4} color="secondary.main" {...css(styles.container)} height="100vh"  >
+       <Spacer height="200px"/>
          <Grid container justify="center" spacing={spacing} {...css(styles.content)}>
             <Grid item md={8} sm={10} xs={12}>
-            <Spacer height="200px"/>
             <Grid container alignItems="center" justify="center" spacing={spacing}>
             <Grid item md={6} xs={12}>
+            <Spacer height="20px"/>
             <h2 className={`${s.header} `}>
-              {props.header || 'Do you need to add AI to your CCTV?'}
+              {props.header || 'Do you want to manage occupancy through CCTV using AI?'}
             </h2>
-            <p className={`${s.subheader} `}>
-            </p>
-            <Spacer height="50px"/>
+            <Spacer height="20px"/>
             </Grid> 
             <Grid item md={6} xs={12}>
-            <Spacer height="20px"/>
-            {/* {props.form} */}
-            <Form />
-            
+              <Spacer height="20px"/>
+              <Form />
+              <Spacer height="20px"/>
             </Grid>
             </Grid> 
-            <Spacer height="150px"/>
         </Grid> 
         </Grid>
+        <Spacer height="200px"/>
     </Box>
 
 )

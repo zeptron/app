@@ -70,8 +70,8 @@ export default function Analytics({ match }) {
 
       DynamoDB.scan({
         // TODO 30.07.2020 yelysei: remove test data
-        // TableName: 'tableName4e014254-aeed-446b-b823-2758baa51fba',
-        TableName: data?.listModelConfigs?.items?.[0]?.tableName,
+        TableName: 'tableNamea6849f7e-76ef-4adb-9657-fce1207de856',
+        //TableName: data?.listModelConfigs?.items?.[0]?.tableName,
       }, (err, data) => {
         if (err) {
           console.error(err);
@@ -213,7 +213,7 @@ export default function Analytics({ match }) {
 
   return (
     <div>
-      <Box bgcolor="primary.dark" color="primary.contrastText" p={4}>
+      <Box p={4}>
       <Spacer height="80px"/>
 
         <h1 className={s.header} style={{textAlign: 'center'}}>

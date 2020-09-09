@@ -19,6 +19,9 @@ import ConfigureImg from '../assets/configure.png'
 import ChartImg from '../assets/charts.png'
 import NotificationImg from '../assets/notifications.png'
 import Section from './Components/Section'
+import {Box, Grid, Button} from '@material-ui/core'
+import s from '../styles/styles.module.css'
+import Building from '../assets/building.png'
 
 class Home extends React.Component {
 
@@ -51,6 +54,29 @@ class Home extends React.Component {
               />
             }
             />
+            {/* <Box p={2} bgcolor="primary.main" color="primary.contrastText ">
+              <Grid container alignItems="center" justify="center">
+                <Grid item md={8}>
+                <Grid container alignItems="center" justify="center">
+                <Grid item md={6}>
+                  <Spacer height="50px"/>
+                  <h2 className={`${s.header} `}>
+                  Building analytics
+                  </h2>
+                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
+                  
+                  </p>
+                  <Spacer height="50px"/>
+                </Grid>
+                <Grid item md={6}>
+                <Spacer height="50px"/>
+                  <img style={{maxWidth: '100%'}} src={Building} />
+                  <Spacer height="50px"/>
+                </Grid>
+                </Grid>
+                </Grid>
+              </Grid>
+            </Box> */}
             </div>
           )
         }

@@ -169,7 +169,7 @@ export const SingleInstance = ({ modelConfig }) => {
 
   return (
     <div>
-          <Box p={4} bgcolor="primary.dark" color="primary.contrastText">
+          <Box p={4}>
           <Spacer height="80px"/>
 
               <Grid container alignItems="center" justify="center" id="window">
