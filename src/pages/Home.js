@@ -54,9 +54,9 @@ class Home extends React.Component {
               />
             }
             />
-            
-              <Grid container alignItems="center" justify="center" height="100vh">
-              <Box p={2} bgcolor="primary.light" color="secondary.contrastText" style={{height: "100%"}}>
+                          <Box p={2} bgcolor="primary.light" color="secondary.contrastText" height="100vh">
+
+              <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
                 <Grid item md={6}>
@@ -85,9 +85,9 @@ class Home extends React.Component {
                 </Grid>
                 </Grid>
                 </Grid>
-                </Box>
               </Grid>
-           
+              </Box>
+
 
             
 
