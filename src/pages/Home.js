@@ -19,7 +19,7 @@ import ConfigureImg from '../assets/configure.png'
 import ChartImg from '../assets/charts.png'
 import NotificationImg from '../assets/notifications.png'
 import Section from './Components/Section'
-import {Box, Grid, Button} from '@material-ui/core'
+import {Box, Grid, Button, Hidden} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import Building from '../assets/building.png'
 
@@ -64,14 +64,23 @@ class Home extends React.Component {
                   <h2 className={`${s.header} `}>
                   Plug directly into your CCTV network securely
                   </h2>
-                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
+                  <p className={s.p}>
                   The Zeptron router connects your CCTV streams to AI in seconds with no code or set up required from you
                   </p>
-                  <div style={{textAlign: 'left'}}>
+                  <Hidden smUp>
+                  <div style={{textAlign: 'center'}}>
                   <Button variant="contained" size="large" color="secondary" href="#start">
-                    Start
+                    <strong>Start</strong>
                   </Button>
                   </div>
+                  </Hidden>
+                  <Hidden smDown>
+                  <div style={{textAlign: 'left'}}>
+                  <Button variant="contained" size="large" color="secondary" href="#start">
+                    <strong>Start</strong>
+                  </Button>
+                  </div>
+                  </Hidden>
                   <Spacer height="50px"/>
                 </Grid>
                 <Grid item md={6}>
@@ -94,14 +103,23 @@ class Home extends React.Component {
                   <h2 className={`${s.header} `}>
                   Set up counting and tracking on your cameras in seconds
                   </h2>
-                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
+                  <p className={s.p}>
                   The Zeptron app makes it easy to set up counting and tracking in seconds using the CCTV cameras at your entrances and exits
                   </p>
-                  <div style={{textAlign: 'left'}}>
+                  <Hidden smUp>
+                  <div style={{textAlign: 'center'}}>
                   <Button variant="contained" size="large" color="secondary" href="#start">
-                    Start
+                    <strong>Start</strong>
                   </Button>
                   </div>
+                  </Hidden>
+                  <Hidden smDown>
+                  <div style={{textAlign: 'left'}}>
+                  <Button variant="contained" size="large" color="secondary" href="#start">
+                    <strong>Start</strong>
+                  </Button>
+                  </div>
+                  </Hidden>
                   <Spacer height="50px"/>
                 </Grid>
                 <Grid item md={6}>
@@ -130,14 +148,23 @@ class Home extends React.Component {
                   <h2 className={`${s.header} `}>
                   Get notifications for detections that matter
                   </h2>
-                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
+                  <p className={s.p}>
                   Get notified via Slack, SMS or email for the notifications that matter to you
                   </p>
-                  <div style={{textAlign: 'left'}}>
+                  <Hidden smUp>
+                  <div style={{textAlign: 'center'}}>
                   <Button variant="contained" size="large" color="secondary" href="#start">
-                    Start
+                    <strong>Start</strong>
                   </Button>
                   </div>
+                  </Hidden>
+                  <Hidden smDown>
+                  <div style={{textAlign: 'left'}}>
+                  <Button variant="contained" size="large" color="secondary" href="#start">
+                    <strong>Start</strong>
+                  </Button>
+                  </div>
+                  </Hidden>
                   <Spacer height="50px"/>
                 </Grid>
                 <Grid item md={6}>
@@ -161,14 +188,23 @@ class Home extends React.Component {
                   <h2 className={`${s.header} `}>
                   Use a powerful cloud app to stay in control
                   </h2>
-                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
+                  <p className={s.p}>
                   Use the powerful cloud-based Zeptron app to stay in control at all times, start new feeds, configure streams, and get analytics
                   </p>
-                  <div style={{textAlign: 'left'}}>
+                  <Hidden smUp>
+                  <div style={{textAlign: 'center'}}>
                   <Button variant="contained" size="large" color="secondary" href="#start">
-                    Start
+                    <strong>Start</strong>
                   </Button>
                   </div>
+                  </Hidden>
+                  <Hidden smDown>
+                  <div style={{textAlign: 'left'}}>
+                  <Button variant="contained" size="large" color="secondary" href="#start">
+                    <strong>Start</strong>
+                  </Button>
+                  </div>
+                  </Hidden>
                   <Spacer height="50px"/>
                 </Grid>
                 <Grid item md={6}>

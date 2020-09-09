@@ -129,7 +129,7 @@ export default function SwipeableTemporaryDrawer(props) {
   {
     name : "Login",
     route: "/login",
-    icon: <ExitToAppIcon />
+    icon: <ExitToAppIcon style={{color: 'white'}}/>
   }
 ]
 
@@ -276,7 +276,7 @@ export default function SwipeableTemporaryDrawer(props) {
     } else {
       return (
         <div>
-          <Button onClick={toggleDrawer(anchor, true)}><span style={{color: '#fff'}}><AppsIcon/></span></Button>
+          <Button onClick={toggleDrawer(anchor, true)}><span ><AppsIcon/></span></Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}

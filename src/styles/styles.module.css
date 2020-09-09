@@ -163,8 +163,16 @@
 .navItem :hover {
     border-bottom: 2px solid white;
 }
+.p {
+    font-size: x-large;
+    text-align: left;
+}
 
 @media screen and (max-width: 420px) {
+    .p {
+        font-size: x-large;
+        text-align: center;
+    }
     .navItem {
         margin-left: 15px;
         margin-right: 15px;
@@ -247,3 +255,4 @@ iframe {
 .private-card  {
 background-color: black!important;
 }
+
