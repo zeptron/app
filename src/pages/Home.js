@@ -48,14 +48,43 @@ class Home extends React.Component {
             {/* <Section
             /> */}
             <Start
+            button="Yes"
             form={
               <Hubspot
                 meetcode="/meeting-def"
               />
             }
             />
-                          <Box p={2} bgcolor="primary.light" color="secondary.contrastText" height="100vh">
+              <Box p={2} height="100vh">
+              <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
+                <Grid item md={8}>
+                <Grid container alignItems="center" justify="center">
+                <Grid item md={6}>
+                  <Spacer height="50px"/>
+                  <h2 className={`${s.header} `}>
+                  Plug directly into your CCTV network securely
+                  </h2>
+                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
+                  The Zeptron router connects your CCTV streams to AI in seconds with no code or set up required from you
+                  </p>
+                  <div style={{textAlign: 'left'}}>
+                  <Button variant="contained" size="large" color="secondary" href="#start">
+                    Start
+                  </Button>
+                  </div>
+                  <Spacer height="50px"/>
+                </Grid>
+                <Grid item md={6}>
+                <Spacer height="50px"/>
+                  <img style={{maxWidth: '100%'}} src={CCTV} />
+                  <Spacer height="50px"/>
+                </Grid>
+                </Grid>
+                </Grid>
+              </Grid>
+              </Box>
 
+              <Box p={2} height="100vh">
               <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
@@ -63,13 +92,10 @@ class Home extends React.Component {
                   <Spacer height="50px"/>
                  
                   <h2 className={`${s.header} `}>
-                  Get occupancy count using your CCTV network
+                  Set up counting and tracking on your cameras in seconds
                   </h2>
                   <p style={{textAlign: 'left', fontSize: 'x-large'}}>
-                  Know exactly how many people are in your building at any one time using your existing CCTV network
-                  </p>
-                  <p style={{textAlign: 'left', fontSize: 'x-large'}}>
-                  Get notifications when your limit is exceeded
+                  The Zeptron app makes it easy to set up counting and tracking in seconds using the CCTV cameras at your entrances and exits
                   </p>
                   <div style={{textAlign: 'left'}}>
                   <Button variant="contained" size="large" color="secondary" href="#start">
@@ -124,7 +150,7 @@ class Home extends React.Component {
                 </Grid>
             </Box>
 
-            <Box p={2} height="100vh" bgcolor="primary.main">
+            <Box p={2} height="100vh" >
                 <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
@@ -157,6 +183,7 @@ class Home extends React.Component {
             </Box>
 
             <Start
+            header="Start getting more value out of your CCTV today"
             form={
               <Hubspot
                 meetcode="/meeting-def"

@@ -25,7 +25,7 @@ class Header extends React.Component {
 
   checkbackground = () => {
     if(this.state.isScrolled){
-      return {backgroundColor: '#000a12'}
+      return {backgroundColor: 'rgba(0, 10, 18, 0)'}
     } 
     else {
       return {backgroundColor: 'rgba(0, 10, 18, 0)'}
@@ -44,17 +44,17 @@ class Header extends React.Component {
           <img
             alt="icon"
             style={styles.amplifyLogo}
-            src={require("./assets/logo_dark.png")}
+            src={require("./assets/logo_dark copy.png")}
           />
         </Link>
 
-        {/* <div {...css(styles.navContainer)}>
+        <div {...css(styles.navContainer)}>
           {isLoaded ? (
               <div {...css(styles.menuContainer)}>
                 <AppBar isAuthenticated={isAuthenticated}/>
               </div>
             ) : null}
-        </div> */}
+        </div>
       </div>
     );
   }

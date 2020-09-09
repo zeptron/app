@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     }));
 
-export default function Form(){
+export default function Form(props){
     const classes = useStyles();
 
     const [userName, { setWrap: setUserName }] = useInput('');
@@ -77,7 +77,7 @@ export default function Form(){
                         variant="contained" 
                         size="large" 
                         color="secondary" 
-                        onClick={sendForm} ><strong>Yes</strong>
+                        onClick={sendForm} ><strong>{props.button}</strong>
                         </Button>
                         </ButtonGroup>
                     </form>

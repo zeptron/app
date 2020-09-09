@@ -25,7 +25,9 @@ import Form from './Form'
             </Grid> 
             <Grid item md={6} xs={12}>
               
-              <Form />
+              <Form 
+              button={props.button || 'Go'}
+              />
               
             </Grid>
             </Grid> 

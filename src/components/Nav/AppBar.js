@@ -129,7 +129,7 @@ export default function SwipeableTemporaryDrawer(props) {
   {
     name : "Login",
     route: "/login",
-    icon: <ExitToAppIcon style={{color: '#fff'}}/>
+    icon: <ExitToAppIcon />
   }
 ]
 
@@ -161,7 +161,7 @@ export default function SwipeableTemporaryDrawer(props) {
     if(selectedItem && selectedItem[0].route === routeLoction){
       return {color : "#26a7be"}
     } else {
-      return {color : "#ffffff"}
+      return {color : "#26a7be"}
     }
   }
 
