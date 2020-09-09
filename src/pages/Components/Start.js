@@ -19,7 +19,7 @@ import Form from './Form'
             <Grid item md={6} xs={12}>
             <Spacer height="20px"/>
             <h2 className={`${s.header} `}>
-              {props.header || 'Do you want to manage occupancy through your CCTV using AI?'}
+              {props.header || 'Do you want to manage occupancy using AI through CCTV?'}
             </h2>
             <Spacer height="20px"/>
             </Grid> 
