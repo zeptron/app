@@ -41,6 +41,7 @@
     "material-ui": "^1.0.0-beta.47",
     "moment": "latest",
     "moment-timezone": "^0.5.31",
+    "notistack": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.6.3",
     "react-chartjs-2": "^2.9.0",

@@ -9,6 +9,7 @@ import {
 import Spacer from 'react-spacer'
 import AWS from 'aws-sdk';
 import useInput from '../../utils/hooks/useInput';
+import { SnackbarProvider, useSnackbar } from 'notistack';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,8 +34,9 @@ export default function Form(props){
     const [userOrg, { setWrap: setUserOrg }] = useInput('');
     const [userNum, { setWrap: setUserNum }] = useInput('');
     const [userEmail, { setWrap: setUserEmail }] = useInput('');
-
+    const { enqueueSnackbar } = useSnackbar();
     const sendForm = async () => {
+        
         AWS.config.update({
             region: process.env.REACT_APP_AWS_REGION,
             accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
@@ -51,8 +53,9 @@ export default function Form(props){
                 console.log(data)
                 const [userName, userOrg, userNum, userEmail] = ''
             
-            ;           // successful response
+            ;     
           });
+          enqueueSnackbar('I love snacks.');
     }
 
    
