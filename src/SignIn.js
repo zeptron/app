@@ -4,6 +4,8 @@ import { Auth } from "aws-amplify";
 import UserContext from "./UserContext";
 import { IoLogoGoogle } from "react-icons/io";
 import { Button } from "./containers/Auth.style";
+import G from './assets/google.svg'
+import O from './assets/or.svg'
 
 class SignIn extends React.Component {
   state = {
@@ -58,14 +60,14 @@ class SignIn extends React.Component {
               fullwidth
               title={"Connect with Google"}
               className="google"
-              icon={<img src="https://app.getproflow.com/img/google.1208c7d8.svg"/>}
+              icon={<img src={G}/>}
               iconPosition="left"
               iconStyle={{ color: "#4285f4", marginRight: 5 }}
               intlButtonId="continueGoogleBtn"
               onClick={thisGoogle}
               style={{ color: "rgb(0, 10, 18)" }}
             />
-            <span style={{ textAlign: "center", paddingTop: 10 }}><img src="https://app.getproflow.com/img/or-separator.36b3a8b9.svg"/></span>
+            <span style={{ textAlign: "center", paddingTop: 10 }}><img src={O}/></span>
             <br />
             <input
               onChange={(evt) => this.onChange("username", evt.target.value)}
@@ -151,8 +153,8 @@ const styles = {
   },
   formContainer: {
     padding: 20,
-    width: 400,
-    maxWidth: '100%',
+    width: '100%',
+    maxWidth: 400,
     display: "flex",
     flexDirection: "column",
     boxShadow: "0px 0px 2px rgba(0, 0, 0, .2)",

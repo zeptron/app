@@ -9,7 +9,8 @@ import {
 import Spacer from 'react-spacer'
 import AWS from 'aws-sdk';
 import useInput from '../../utils/hooks/useInput';
-import { SnackbarProvider, useSnackbar } from 'notistack';
+// import { SnackbarProvider, useSnackbar } from 'notistack';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -34,7 +35,7 @@ export default function Form(props){
     const [userOrg, { setWrap: setUserOrg }] = useInput('');
     const [userNum, { setWrap: setUserNum }] = useInput('');
     const [userEmail, { setWrap: setUserEmail }] = useInput('');
-    const { enqueueSnackbar } = useSnackbar();
+    // const { enqueueSnackbar } = useSnackbar();
     const sendForm = async () => {
         
         AWS.config.update({
@@ -55,7 +56,7 @@ export default function Form(props){
             
             ;     
           });
-          enqueueSnackbar('I love snacks.');
+        //   enqueueSnackbar('I love snacks.');
     }
 
    

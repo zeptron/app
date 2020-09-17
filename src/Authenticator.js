@@ -29,23 +29,23 @@ class Authenticator extends React.Component {
         
           <Grid container alignItems="center" justify="center">
             <Grid item xs={12}>
-         <SEO 
-          title="Zeptron - Sign in"
-          path="login"
-          />
-         <Spacer height="100px"/>
-              <h3 style={{textAlign: 'center'}} className={s.header} >
-              {currentState === "showSignIn" && (
-                'Sign In'
-                )}
-                 {currentState === "showSignUp" && (
-                     'Register'
-                     )}
-                      {currentState === "showForgotPassword" && (
-                         'Reset password'
-                         )}
+            <SEO 
+              title="Zeptron - Sign in"
+              path="login"
+              />
+              <Spacer height="100px"/>
+                    <h3 style={{textAlign: 'center'}} className={s.header} >
+                    {currentState === "showSignIn" && (
+                      'Sign In'
+                      )}
+                      {currentState === "showSignUp" && (
+                          'Register'
+                          )}
+                            {currentState === "showForgotPassword" && (
+                              'Reset password'
+                              )}
                 </h3>
-        <Box p={2}>
+       
           <div style={styles.container}>
         {currentState === "showSignIn" && (
           <SignIn
@@ -92,7 +92,7 @@ class Authenticator extends React.Component {
           </div>
         )}
       </div>
-      </Box>
+    
       </Grid>
           </Grid>
      

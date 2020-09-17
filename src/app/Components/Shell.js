@@ -35,32 +35,33 @@ export default function Shell(props) {
         <div>
             <Box minHeight="100vh">
                 <Grid container alignItems="Center" justify="center">
-                    <Grid item md={3} >
-                        <Box bgcolor="primary.dark" minHeight="100vh">
-                           {props.sidebar || 
-                           <div style={{textAlign: 'left'}}>
-                               <Box p={2}>
-                               <Spacer height="10px"/>
-                               <img src={Logo} style={{maxWidth: 150}}/>
-                               <Account/>
-                               <hr/>
-                               {props.isAuthenticated ? (
-                                <>
-                                <div>
-                                    This
-                                </div>
-                                </>
-                               ) : ( 
-                                   ''
-                               )}
-                               <Grid container alignItems="bottom" justify="right">
-                                   <Button onClick={signOut} size="small" variant="contained" color="primary">
-                                       Sign Out 
-                                   </Button>
-                               </Grid>
-                               </Box>
-                           </div>}
-                        </Box>
+                    <Grid item md={3} xs={12}>
+                        <Box bgcolor="primary.light" minHeight="100vh">
+                       {props.sidebar || 
+                       <div style={{textAlign: 'left'}}>
+                           <Box p={2}>
+                           <Spacer height="10px"/>
+                           <img src={Logo} style={{maxWidth: 100, paddingLeft: 10}}/>
+                           <Account/>
+                           <hr/>
+                           {props.isAuthenticated ? (
+                            <>
+                            <div>
+                                This
+                            </div>
+                            </>
+                           ) : ( 
+                                ''
+                           )}
+                           <Grid container alignItems="bottom" justify="right">
+                           <Spacer height="10px"/>
+                               <Button onClick={signOut} size="small" variant="contained" color="primary.light">
+                                   Sign Out 
+                               </Button>
+                           </Grid>
+                           </Box>
+                       </div>}
+                    </Box>
                     </Grid>
                     <Grid item md={9}>
                        <Box height={1}>

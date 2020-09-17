@@ -35,6 +35,8 @@ import Shell from './app/Components/Shell'
 import s from './styles/styles.module.css'
 import Spacer from 'react-spacer'
 import Logo from './assets/logo_white.svg'
+import L from './assets/l.svg'
+import R from './assets/r.svg'
 
 class PrivateRoute extends React.Component {
   state = {
@@ -114,19 +116,17 @@ export const Login =(props) => {
     <Spacer height="20px"/>
     <Link to="/"><img src={Logo} style={{maxWidth: 150, paddingLeft: 25}}/></Link>
     <Spacer height="60px"/>
-    <img src="https://app.getproflow.com/img/dot-square.5d9a7f4d.svg"/>
+    <img src={L}/>
     </div>
-    
     <Spacer height="50px"/>
     <h2 style={{color: 'white'}} className={`${s.header} ${s.center}`}>Welcome to Zeptron</h2>
     <Spacer height="100px"/>
     <div style={{textAlign: 'right'}}>
-    <img src="https://app.getproflow.com/img/dot-rect.b3a7d296.svg"/>
+    <img src={R}/>
     </div>
     </>
     }>
         <Route path="/login" exact component={Authenticator} />
-
     </Shell>
   )
 }
@@ -135,7 +135,7 @@ export const ProtectedLayout = (props) => {
   return (
 <div>
    <Switch>
-     <Shell>
+     {/* <Shell> */}
         <PrivateRoute path="/app/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/app/library" exact component={Library} />
         <PrivateRoute path="/app/studio/configuration/:id" component={ConfigurationSteps} />
@@ -144,7 +144,7 @@ export const ProtectedLayout = (props) => {
         <PrivateRoute path="/app/studio" exact component={Studio} />
         <PrivateRoute path="/app/account" component={Account} />
         <PrivateRoute path="/app/billing" component={Billing} />
-      </Shell>
+      {/* </Shell> */}
     </Switch> 
 </div>
   )
@@ -153,10 +153,13 @@ export const ProtectedLayout = (props) => {
 const Routes = () => (
   <Router>
     <div>
+    <Header />
     <Switch>
       <Route path='/app' component={ProtectedLayout}/>
       <Route path='/login' component={Login}/>
       <Route path='/' component={DefaultRoutes}/>
+      <PrivateRoute path="/app/home" component={Test} />
+      <PrivateRoute path="/app/studio" exact component={Studio} />
     </Switch>
     </div>
   </Router>

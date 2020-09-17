@@ -3,6 +3,8 @@ import { css } from "glamor";
 import { Button } from "./containers/Auth.style";
 import { IoLogoGoogle } from "react-icons/io";
 import { Auth } from "aws-amplify";
+import G from './assets/google.svg'
+import O from './assets/or.svg'
 
 class SignUp extends React.Component {
   state = {
@@ -43,22 +45,20 @@ class SignUp extends React.Component {
     const { showConfirmation } = this.state;
     return (
       <div {...css(styles.container)}>
-        
-        
         {!showConfirmation && (
           <div {...css(styles.formContainer)}>
             <Button
               fullwidth
               title={"Connect with Google"}
               className="google"
-              icon={<img src="https://app.getproflow.com/img/google.1208c7d8.svg"/>}
+              icon={<img src={G}/>}
               iconPosition="left"
               iconStyle={{ color: "#4285f4", marginRight: 5 }}
               intlButtonId="continueGoogleBtn"
               onClick={thisGoogle}
               style={{ color: "rgb(0, 10, 18)" }}
             />
-            <span style={{ textAlign: "center", paddingTop: 10 }}><img src="https://app.getproflow.com/img/or-separator.36b3a8b9.svg"/></span>
+            <span style={{ textAlign: "center", paddingTop: 10 }}><img src={O}/></span>
             <br />
             <input
               {...css(styles.input)}
@@ -81,7 +81,6 @@ class SignUp extends React.Component {
               type="password"
               onChange={(evt) => this.onChange("password", evt.target.value)}
             />
-
             <Button
               fullwidth
               title={"Sign up"}

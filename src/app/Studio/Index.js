@@ -62,10 +62,10 @@ export default function Studio() {
 
   return (
     <div>
-      <Box>
+      <Box bgcolor="black">
         <Spacer height="100px" />
         <Grid container justify="center">
-        {output}
+          {output}
         <NewModelConfig />
         </Grid>
         <Spacer height="100px" />

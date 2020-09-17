@@ -20,12 +20,13 @@ const useStyles = makeStyles((theme) => ({
     tertiary: green[500],
   },
   card: {
-    width: 150,
+    // maxWidth: '100%',
+    width: 650,
     margin: 4,
-    height: 175,
+    height: '100%',
   },
   media: {
-    height: 150,
+    height: 650,
   },
   cardInner: {
     marginTop: "41%",
@@ -62,7 +63,7 @@ export const ModelSettings = ({ modelConfig }) => {
                   <CardMedia
                     component="img"
                     alt={modelConfig.description}
-                    height="250"
+                    height="100%"
                     image={
                       modelConfig.cfStream ? (
                        `${modelConfig.cfStream}`
@@ -73,12 +74,11 @@ export const ModelSettings = ({ modelConfig }) => {
                     title={modelConfig.instanceName}
                     onError={(e)=>{e.target.onerror = null; e.target.src=`${modelConfig.model.image}`}}
                   />
-                  <CardContent>
+                  <CardContent style={{backgroundColor: 'rgb(31 31 31)', color: 'white', zIndex: '2'}}>
                     <Typography gutterBottom variant="h5" component="h2" style={{padding: '8 8 0 8', margin: 0}}>
                       <Box style={{marginRight: 5}} component="div" display="inline"><FiberManualRecordIcon style={getStatus(modelConfig.instanceState)}/></Box>
                       <Box component="div" display="inline" className={classes.statusText}>{modelConfig.instanceName}</Box>
                     </Typography>
-                    {/* <Spacer height="10px" /> */}
                     <Typography
                       variant="body2"
                       color="textSecondary"
@@ -86,18 +86,8 @@ export const ModelSettings = ({ modelConfig }) => {
                     >
                       {modelConfig.instanceLocation}
                     </Typography>
-                    {/* <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {modelConfig.instancePod}
-                    </Typography> */}
-                    
-                    {/* <Spacer height="10px" /> */}
                   </CardContent>
                 </CardActionArea>
-                {/* <Button>View</Button> */}
               </Card>
             </Link>
             </Grid>

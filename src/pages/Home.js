@@ -35,7 +35,6 @@ class Home extends React.Component {
       <div>
         {
           isAuthenticated ? (
-            
             <>
             <Studio/>
             </>
@@ -44,8 +43,8 @@ class Home extends React.Component {
             {/* <Hero
             header="Zeptron makes live video smart with AI"
             subheader="Add AI to CCTV in seconds for analytics and automation"
-            /> */}
-            {/* <Section
+            /> 
+            <Section
             /> */}
             <Start
             button="Yes"
@@ -92,14 +91,12 @@ class Home extends React.Component {
                 </Grid>
               </Grid>
               </Box>
-
               <Box p={2} minHeight="100vh">
               <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
                 <Grid item md={6}>
                   <Spacer height="50px"/>
-                 
                   <h2 className={`${s.header} `}>
                   Set up counting and tracking on your cameras in seconds
                   </h2>
@@ -131,20 +128,12 @@ class Home extends React.Component {
                 </Grid>
               </Grid>
               </Box>
-
-
-            
-
-           
-
             <Box p={2} minHeight="100vh">
                 <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
-
                 <Grid item md={6}>
                   <Spacer height="50px"/>
-                 
                   <h2 className={`${s.header} `}>
                   Get notifications for detections that matter
                   </h2>
@@ -176,15 +165,12 @@ class Home extends React.Component {
                 </Grid>
                 </Grid>
             </Box>
-
             <Box p={2} minHeight="100vh" >
                 <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
-
                 <Grid item md={6}>
                   <Spacer height="50px"/>
-                
                   <h2 className={`${s.header} `}>
                   Use a powerful cloud app to stay in control
                   </h2>
@@ -215,9 +201,7 @@ class Home extends React.Component {
                 </Grid>
                 </Grid>
                 </Grid>
-
             </Box>
-
             <Box bgcolor="secondary.dark" color height="100vh" color="primary.contrastText" minHeight='100vh'>
               <Grid container alignItems="center" justify="center" style={{height: '100%'}}>
                 <Grid item md={8}>
@@ -243,7 +227,6 @@ class Home extends React.Component {
                 </Grid>
               </Grid>
             </Box>
-
             <Start
             header="Start getting more value out of your CCTV today"
             form={
@@ -252,7 +235,6 @@ class Home extends React.Component {
               />
             }
             />
-
             </div>
           )
         }
@@ -260,8 +242,5 @@ class Home extends React.Component {
     )
   }
 }
-
-
-
 
 export default Home
