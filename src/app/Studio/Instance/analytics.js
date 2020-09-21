@@ -219,6 +219,8 @@ export default function Analytics({ match }) {
         <h1 className={s.header} style={{textAlign: 'center'}}>
           {modelConfig.instanceName}
         </h1>
+        <Grid container alignItems="center" justify="center">
+          <Grid item md={6} sm={8} xs={12}>
         <Hidden smUp>
             <div>
             <Button
@@ -290,6 +292,8 @@ export default function Analytics({ match }) {
                 </div>
               ))}
             </div>
+            </Grid>
+        </Grid>
         <Grid container alignItems="center" justify="center">
           <Grid item md={10} sm={12}>
             <Grid container alignItems="center" justify="center" spacing={2}>

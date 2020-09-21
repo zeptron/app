@@ -172,7 +172,12 @@ export const SingleInstance = ({ modelConfig }) => {
           <Box p={4} bgcolor="#000" color="primary.contrastText">
           <Spacer height="20px"/>
               <Grid container alignItems="center" justify="center" id="window">
-                <Grid item md={12} sm={12} xs={12}>
+                <Grid item md={7} sm={9} xs={12}>
+                <Grid item md={12} >
+                    <h3 style={{textAlign: 'center'}} className={s.header} >
+                    {modelConfig.instanceName}
+                    </h3>
+                    </Grid>
                   <Grid container alignItems="center" justify="center" >
                     <Hidden smDown>
                     <Grid item md={3}>
@@ -200,17 +205,13 @@ export const SingleInstance = ({ modelConfig }) => {
                     </div>
                     </Grid>
                     </Hidden>
-                    <Grid item md={6} >
-                    <h3 style={{textAlign: 'center'}} className={s.header} >
-                    {modelConfig.instanceName}
-                    </h3>
-                    </Grid>
                     <Hidden mdUp>
                     <Grid item md={3}>
                       <Spacer height="25px"/>
+
                     <div className={s.chartSelectorWrapper2}>
                       <FormControlLabel
-                      style={{marginLeft: 5}}
+                     
                       control={
                         <Switch
                           checked={instanceState}
@@ -222,7 +223,7 @@ export const SingleInstance = ({ modelConfig }) => {
                       label={instanceState ? 'On' : 'Off'}
                     />
                     <Button
-                       style={{marginLeft: 5}}
+                      style={{marginLeft: 5}}
                       variant="contained"
                       color="secondary"
                       size="small"
@@ -235,6 +236,7 @@ export const SingleInstance = ({ modelConfig }) => {
                     </Hidden>
                     <Grid item md={3}>
                     <Spacer height="25px"/>
+
                     <div className={s.chartSelectorWrapper}>
                       <Hidden mdDown>
                       <Button
@@ -265,10 +267,12 @@ export const SingleInstance = ({ modelConfig }) => {
                 >
                   <RefreshIcon/>
                 </Button>
-                
                     </div>
                     </Grid>
                   </Grid>
+                  </Grid>
+
+                    
                     <Grid item xs={12}>
                     <div style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '20px' }}>
                     {loadingInstanceState && (
@@ -304,7 +308,7 @@ export const SingleInstance = ({ modelConfig }) => {
                       <Grid container alignItems="center" justify="center">
                       <h3 style={{color: 'white'}}  className={s.ocr}>{modelConfig.instanceLocation}</h3>
                       </Grid>
-                </Grid>
+               
                 <Spacer height="20px"/>
               </Grid>
             </Box>
