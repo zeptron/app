@@ -25,10 +25,10 @@ class Header extends React.Component {
 
   checkbackground = () => {
     if(this.state.isScrolled){
-      return {backgroundColor: '#F0F3F6'}
+      return {backgroundColor: '#000'}
     } 
     else {
-      return {backgroundColor: '#F0F3F6'}
+      return {backgroundColor: '#000'}
     }
   }
 
@@ -44,7 +44,7 @@ class Header extends React.Component {
           <img
             alt="icon"
             style={styles.amplifyLogo}
-            src={require("./assets/logo_dark copy.png")}
+            src={require("./assets/logo_white.svg")}
           />
         </Link>
 

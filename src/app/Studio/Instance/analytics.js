@@ -70,8 +70,8 @@ export default function Analytics({ match }) {
 
       DynamoDB.scan({
         // TODO 30.07.2020 yelysei: remove test data
-        TableName: 'tableNamea6849f7e-76ef-4adb-9657-fce1207de856',
-        //TableName: data?.listModelConfigs?.items?.[0]?.tableName,
+        // TableName: 'tableNamea6849f7e-76ef-4adb-9657-fce1207de856',
+        TableName: data?.listModelConfigs?.items?.[0]?.tableName,
       }, (err, data) => {
         if (err) {
           console.error(err);
@@ -213,15 +213,13 @@ export default function Analytics({ match }) {
 
   return (
     <div>
-      <Box p={4}>
-      <Spacer height="80px"/>
+      <Box p={4} color="primary.contrastText" bgcolor="#000">
+      <Spacer height="20px"/>
 
         <h1 className={s.header} style={{textAlign: 'center'}}>
           {modelConfig.instanceName}
         </h1>
-        <Grid container alignItems="center" justify="center">
-          <Grid item md={10}>
-            <Hidden smUp>
+        <Hidden smUp>
             <div>
             <Button
             style={{marginLeft: 5}}
@@ -292,6 +290,8 @@ export default function Analytics({ match }) {
                 </div>
               ))}
             </div>
+        <Grid container alignItems="center" justify="center">
+          <Grid item md={10} sm={12}>
             <Grid container alignItems="center" justify="center" spacing={2}>
               <Grid xs={12}>
               <Bar
@@ -313,7 +313,7 @@ export default function Analytics({ match }) {
                       <Grid container alignItems="center" justify="center">
                       <h3 style={{color: 'white'}}  className={s.ocr}>{modelConfig.instanceLocation}</h3>
                       </Grid>
-        <Spacer height="100px"/>
+        <Spacer height="20px"/>
       </Box>
     </div>
   );

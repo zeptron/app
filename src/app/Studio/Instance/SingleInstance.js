@@ -169,15 +169,14 @@ export const SingleInstance = ({ modelConfig }) => {
 
   return (
     <div>
-          <Box p={4}>
-          <Spacer height="80px"/>
-
+          <Box p={4} bgcolor="#000" color="primary.contrastText">
+          <Spacer height="20px"/>
               <Grid container alignItems="center" justify="center" id="window">
-                <Grid item md={9} sm={12} xs={12}>
+                <Grid item md={12} sm={12} xs={12}>
                   <Grid container alignItems="center" justify="center" >
                     <Hidden smDown>
                     <Grid item md={3}>
-                      <Spacer height="25px"/>
+                      <Spacer height="20px"/>
                     <div className={s.chartSelectorWrapper2}>
                       <FormControlLabel
                       control={
@@ -306,7 +305,7 @@ export const SingleInstance = ({ modelConfig }) => {
                       <h3 style={{color: 'white'}}  className={s.ocr}>{modelConfig.instanceLocation}</h3>
                       </Grid>
                 </Grid>
-                <Spacer height="170px"/>
+                <Spacer height="20px"/>
               </Grid>
             </Box>
     </div>
