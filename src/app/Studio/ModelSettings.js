@@ -75,8 +75,12 @@ export const ModelSettings = ({ modelConfig }) => {
                     onError={(e)=>{e.target.onerror = null; e.target.src=`${modelConfig.model.image}`}}
                   />
                   <CardContent style={{backgroundColor: '#253337', color: 'white', zIndex: '2'}}>
-                    <Typography gutterBottom variant="h5" component="h2" style={{padding: '8 8 0 8', margin: 0}}>
+                    <Grid container alignItems="center" justify="center">
+                      <Grid item xs={3}>
                       <Box style={{marginRight: 5}} component="div" display="inline"><FiberManualRecordIcon style={getStatus(modelConfig.instanceState)}/></Box>
+                      </Grid>
+                      <Grid item xs={6} style={{borderRight: '1px solid black', borderLeft: '1px solid black'}}>
+                      <Typography gutterBottom variant="h5" component="h2" style={{padding: '8 8 0 8', margin: 0}}>
                       <Box component="div" display="inline" className={classes.statusText}>{modelConfig.instanceName}</Box>
                     </Typography>
                     <Typography
@@ -86,6 +90,11 @@ export const ModelSettings = ({ modelConfig }) => {
                     >
                       {modelConfig.instanceLocation}
                     </Typography>
+                      </Grid>
+                      <Grid item xs={3}>
+
+                      </Grid>
+                    </Grid>
                   </CardContent>
                 </CardActionArea>
               </Card>
