@@ -225,7 +225,7 @@ export default function Analytics({ match }) {
             <div>
             <Button
             style={{marginLeft: 5}}
-            href={`/app/${modelConfig.id}/`}
+            href={`/${modelConfig.id}/`}
             variant="contained"
             color="secondary"
             size="small"
@@ -265,7 +265,7 @@ export default function Analytics({ match }) {
             <div className={s.chartSelectorWrapper}>
             <Button
             style={{marginLeft: 5}}
-            href={`/app/studio/${modelConfig.id}/`}
+            href={`/studio/${modelConfig.id}/`}
             variant="contained"
             color="secondary"
             size="small"

@@ -31,7 +31,7 @@ class SignIn extends React.Component {
           this.setState({ user, showConfirmation: true });
         } else {
           updateCurrentUser(user);
-          history.push("/app/studio");
+          history.push("/studio");
         }
       })
       .catch((err) => {

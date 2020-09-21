@@ -4,7 +4,6 @@ import {
   Switch,
   Route,
   Redirect,
-  Link,
   BrowserRouter as Router,
 } from "react-router-dom";
 // Utils
@@ -30,13 +29,9 @@ import Studio from "./app/Studio/Index";
 import Instance from "./app/Studio/Instance";
 import Analytics from "./app/Studio/Instance/analytics";
 import ConfigurationSteps from './app/Studio/ConfigurationSteps';
-import Test from './app/Home.js'
-import Shell from './app/Components/Shell'
-import s from './styles/styles.module.css'
-import Spacer from 'react-spacer'
-import Logo from './assets/logo_white.svg'
-import L from './assets/l.svg'
-import R from './assets/r.svg'
+
+
+
 
 class PrivateRoute extends React.Component {
   state = {
@@ -68,7 +63,7 @@ class PrivateRoute extends React.Component {
           ) : (
             <Redirect
               to={{
-                pathname: "/login",
+                pathname: "/auth",
               }}
             />
           );
@@ -87,11 +82,14 @@ const NoMatch = ({ location }) => (
 );
 
 PrivateRoute = withRouter(PrivateRoute);
- export const DefaultRoutes = () => {
-  return (
+
+const Routes = () => (
+  <Router>
     <div>
       <Header />
+      <ScrollToTop>
       <Switch>
+        <Route path="/login" exact component={Authenticator} />
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
@@ -100,70 +98,20 @@ PrivateRoute = withRouter(PrivateRoute);
         <Route path="/production" exact component={Landing.Production} />
         <Route path="/cctv" exact component={Landing.CCTV} />
         <Route path="/app" exact component={App} />
-        <Route path="/test" component={Test}/>
+        <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
+        <PrivateRoute path="/library" exact component={Library} />
+        <PrivateRoute path="/studio/configuration/:id" component={ConfigurationSteps} />
+        <PrivateRoute path="/studio/:id/analytics" component={Analytics} />
+        <PrivateRoute path="/studio/:id/" component={Instance} />
+        <PrivateRoute path="/studio" exact component={Studio} />
+        <PrivateRoute path="/account" component={Account} />
+        <PrivateRoute path="/billing" component={Billing} />
         <Route component={NoMatch} />
       </Switch>
+      </ScrollToTop>
       {/* <Footer /> */}
-    </div>
-  );
-};
-
-export const Login =(props) => {
-  return (
-    <Shell sidebar={ 
-      <>
-    <div style={{textAlign: 'left'}}>
-    <Spacer height="20px"/>
-    <Link to="/"><img src={Logo} style={{maxWidth: 150, paddingLeft: 25}}/></Link>
-    <Spacer height="60px"/>
-    <img src={L}/>
-    </div>
-    <Spacer height="50px"/>
-    <h2 style={{color: 'white'}} className={`${s.header} ${s.center}`}>Welcome to Zeptron</h2>
-    <Spacer height="100px"/>
-    <div style={{textAlign: 'right'}}>
-    <img src={R}/>
-    </div>
-    </>
-    }>
-        <Route path="/login" exact component={Authenticator} />
-    </Shell>
-  )
-}
-
-export const ProtectedLayout = (props) => {
-  return (
-<div>
-   <Switch>
-     {/* <Shell> */}
-        <PrivateRoute path="/app/library/:id/" exact component={LibTemplate} />
-        <PrivateRoute path="/app/library" exact component={Library} />
-        <PrivateRoute path="/app/studio/configuration/:id" component={ConfigurationSteps} />
-        <PrivateRoute path="/app/studio/:id/analytics" component={Analytics} />
-        <PrivateRoute path="/app/studio/:id/" component={Instance} />
-        <PrivateRoute path="/app/studio" exact component={Studio} />
-        <PrivateRoute path="/app/account" component={Account} />
-        <PrivateRoute path="/app/billing" component={Billing} />
-      {/* </Shell> */}
-    </Switch> 
-</div>
-  )
-}
-
-const Routes = () => (
-  <Router>
-    <div>
-    <Header />
-    <Switch>
-      <Route path='/app' component={ProtectedLayout}/>
-      <Route path='/login' component={Login}/>
-      <Route path='/' component={DefaultRoutes}/>
-      <PrivateRoute path="/app/home" component={Test} />
-      <PrivateRoute path="/app/studio" exact component={Studio} />
-    </Switch>
     </div>
   </Router>
 );
 
 export default Routes;
-

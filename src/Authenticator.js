@@ -7,7 +7,6 @@ import ForgotPassword from "./ForgotPassword";
 import Spacer from 'react-spacer'
 import s from './styles/styles.module.css'
 import SEO from './utils/SEO'
-import Shell from './app/Components/Shell'
 
 class Authenticator extends React.Component {
   state = {

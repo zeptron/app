@@ -105,7 +105,7 @@ export default function SwipeableTemporaryDrawer(props) {
   const AuthItems = [
   {
     name : "Studio",
-    route: "/app/studio",
+    route: "/studio",
     icon: <DashboardIcon style={{color: "#fff"}}/>
   }
   ,{
