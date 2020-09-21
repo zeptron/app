@@ -89,7 +89,7 @@ const Routes = () => (
       <Header />
       <ScrollToTop>
       <Switch>
-        <Route path="/login" exact component={Authenticator} />
+        <Route path="/auth" exact component={Authenticator} />
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />

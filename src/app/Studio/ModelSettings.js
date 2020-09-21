@@ -55,7 +55,7 @@ export const ModelSettings = ({ modelConfig }) => {
     <div>
           <Grid item md={12}>
             <Link
-              to={`/app/studio/${modelConfig.id}`}
+              to={`/studio/${modelConfig.id}`}
               style={{ textDecoration: "none" }}
             >
               <Card className={classes.card}>
