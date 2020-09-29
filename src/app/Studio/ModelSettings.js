@@ -1,5 +1,5 @@
-import React from "react";
-
+import React,  { useContext, useEffect, useMemo, useState }  from "react";
+import AWS from 'aws-sdk';
 import { Link } from "react-router-dom";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
@@ -11,6 +11,8 @@ import Box from '@material-ui/core/Box';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import { makeStyles } from "@material-ui/core/styles";
 import Spacer from "react-spacer";
+import useQuery from '../../graphql/useQuery';
+import * as queries from '../../graphql/queries';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,6 +46,62 @@ const useStyles = makeStyles((theme) => ({
 
 export const ModelSettings = ({ modelConfig }) => {
   const classes = useStyles();
+
+  const MODES = {
+    MIN5: {
+      key: 'MIN5',
+      title: '5 min',
+      seconds: 5 * 60, // 5 minutes
+      timeFrom: 60 * 60, // 1 hour
+    },
+    MIN30: {
+      key: 'MIN30',
+      title: '30 min',
+      seconds: 30 * 60, // 30 minutes
+      timeFrom: 60 * 60 * 12, // 12 hours
+    },
+    HOUR1: {
+      key: 'HOUR1',
+      title: '1 hour',
+      seconds: 60 * 60, // 1 hour
+      timeFrom: 60 * 60 * 24, // 24 hours
+    },
+    DAY1: {
+      key: 'DAY1',
+      title: '1 day',
+      seconds: 1440 * 60, // 1 day
+      timeFrom: 1440 * 60 * 168, // 7 days
+    },
+  };
+
+  const [mode, setMode] = useState(MODES.MIN30.key);
+  const [analytics, setAnalytics] = useState([]);
+  const modelQuery = useQuery(queries.listModelConfigs, {
+    onSuccess: ({ data }) => {
+      AWS.config.update({
+        region: process.env.REACT_APP_AWS_REGION,
+        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+      });
+
+      const DynamoDB = new AWS.DynamoDB();
+
+      DynamoDB.scan({
+        // TODO 30.07.2020 yelysei: remove test data
+        // TableName: 'tableNamea6849f7e-76ef-4adb-9657-fce1207de856',
+        TableName: data?.listModelConfigs?.items?.[0]?.tableName,
+      }, (err, data) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        setAnalytics(data.Items);
+      });
+    },
+  });
+
+  // const count = 
 
   const getStatus = (value) => {
     if(value)
@@ -92,7 +150,7 @@ export const ModelSettings = ({ modelConfig }) => {
                     </Typography>
                       </Grid>
                       <Grid item xs={3}>
-
+                        k
                       </Grid>
                     </Grid>
                   </CardContent>

@@ -54,7 +54,7 @@ class Home extends React.Component {
               />
             }
             />
-              <Box p={2} minHeight="100vh">
+              <Box p={2} minHeight="100vh" >
               <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">

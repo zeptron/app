@@ -83,7 +83,8 @@ export default function Analytics({ match }) {
     },
   });
 
-  useEffect(() => {
+
+useEffect(() => {
     document.title = `Zeptron - Analytics | ${modelQuery.data?.listModelConfigs?.items?.[0].instanceName}`
   }, []);
 
@@ -220,12 +221,12 @@ export default function Analytics({ match }) {
           {modelConfig.instanceName}
         </h1>
         <Grid container alignItems="center" justify="center">
-          <Grid item md={6} sm={8} xs={12}>
+          <Grid item md={6} sm={8} >
         <Hidden smUp>
             <div>
             <Button
             style={{marginLeft: 5}}
-            href={`/${modelConfig.id}/`}
+            href={`/app/${modelConfig.id}/`}
             variant="contained"
             color="secondary"
             size="small"

@@ -63,20 +63,20 @@ export default function Form(props){
     return (
         <div>
            
-                <Grid container alignItems="center" justify="center">
+                <Grid container alignItems="center" justify="center" color="primary.contrastText">
                     <Grid item lg={6} md={9} sm={10} xs={12}>
                     <form className={classes.root} noValidate autoComplete="off">
                         <ButtonGroup 
                         style={{width: 700}}
                         >
-                      <TextField 
-                            id="standard" 
-                            label="Email address" 
-                            variant="standard" 
-                            value={userEmail}
-                            onChange={setUserEmail}
-                            style={{width: 250}}
-                        />
+                            <TextField 
+                                id="standard" 
+                                label="Email address" 
+                                variant="standard" 
+                                value={userEmail}
+                                onChange={setUserEmail}
+                                style={{width: 250}}
+                            />
                         <Button 
                         variant="contained" 
                         size="large" 

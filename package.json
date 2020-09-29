@@ -39,6 +39,7 @@
     "lottie-react-web": "^2.2.2",
     "lottie-web": "^5.7.0",
     "material-ui": "^1.0.0-beta.47",
+    "material-ui-icons": "^1.0.0-beta.36",
     "moment": "latest",
     "moment-timezone": "^0.5.31",
     "notistack": "^1.0.0",

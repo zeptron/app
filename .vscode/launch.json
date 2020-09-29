@@ -3,6 +3,21 @@
         {
             "type": "aws-sam",
             "request": "direct-invoke",
+            "name": "z:src/app/Studio/ModelSettings.ModelSettings (nodejs10.x)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "",
+                "lambdaHandler": "src/app/Studio/ModelSettings.ModelSettings"
+            },
+            "lambda": {
+                "runtime": "nodejs10.x",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
             "name": "z:src/components/Nav/AppBar2.SwipeableTemporaryDrawer (nodejs10.x)",
             "invokeTarget": {
                 "target": "code",
