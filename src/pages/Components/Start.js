@@ -11,7 +11,7 @@ import Form from './Form'
     const [spacing] = React.useState(2);
    
    return (
-    <Box id="start" p={4} bgcolor="primary.dark" color="primary.contrastText" {...css(styles.container)} height="100vh"  >
+    <Box id="start" p={4} {...css(styles.container)} height="100vh"  >
        <Spacer height="200px"/>
          <Grid container justify="center" spacing={spacing} {...css(styles.content)}>
             <Grid item md={8} sm={10} xs={12}>
