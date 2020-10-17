@@ -65,6 +65,7 @@ export default function Form(props){
            
                 <Grid container alignItems="center" justify="center" color="primary.contrastText">
                     <Grid item lg={6} md={9} sm={10} xs={12}>
+                    <p>Get a demo</p>
                     <form className={classes.root} noValidate autoComplete="off">
                         <ButtonGroup 
                         style={{width: 700}}

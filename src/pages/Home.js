@@ -54,12 +54,12 @@ class Home extends React.Component {
               />
             }
             />
-              <Box p={2} minHeight="100vh" >
-              <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
+              <Box p={2} >
+              <Grid container alignItems="center" justify="center" >
                 <Grid item md={8}>
+                <Spacer height="200px"/>
                 <Grid container alignItems="center" justify="center">
                 <Grid item md={6}>
-                  <Spacer height="50px"/>
                   <h2 className={`${s.header} `}>
                   Plug directly into your CCTV network securely
                   </h2>
@@ -68,14 +68,14 @@ class Home extends React.Component {
                   </p>
                   <Hidden smUp>
                   <div style={{textAlign: 'center'}}>
-                  <Button variant="contained" size="large" color="secondary" href="#start">
+                  <Button variant="contained" size="large" color="primary" href="#start">
                     <strong>Start</strong>
                   </Button>
                   </div>
                   </Hidden>
                   <Hidden smDown>
                   <div style={{textAlign: 'left'}}>
-                  <Button variant="contained" size="large" color="secondary" href="#start">
+                  <Button variant="contained" size="large" color="primary" href="#start">
                     <strong>Start</strong>
                   </Button>
                   </div>
@@ -88,10 +88,13 @@ class Home extends React.Component {
                   <Spacer height="50px"/>
                 </Grid>
                 </Grid>
+                <Spacer height="200px"/>
                 </Grid>
               </Grid>
               </Box>
-              <Box p={2} minHeight="100vh">
+
+              <Box p={2} >
+              <Spacer height="200px"/>
               <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
@@ -105,14 +108,14 @@ class Home extends React.Component {
                   </p>
                   <Hidden smUp>
                   <div style={{textAlign: 'center'}}>
-                  <Button variant="contained" size="large" color="secondary" href="#start">
+                  <Button variant="contained" size="large" color="primary" href="#start">
                     <strong>Start</strong>
                   </Button>
                   </div>
                   </Hidden>
                   <Hidden smDown>
                   <div style={{textAlign: 'left'}}>
-                  <Button variant="contained" size="large" color="secondary" href="#start">
+                  <Button variant="contained" size="large" color="primary" href="#start">
                     <strong>Start</strong>
                   </Button>
                   </div>
@@ -127,8 +130,10 @@ class Home extends React.Component {
                 </Grid>
                 </Grid>
               </Grid>
+              <Spacer height="200px"/>
               </Box>
-            <Box p={2} minHeight="100vh">
+            <Box p={2} >
+            <Spacer height="200px"/>
                 <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
@@ -142,14 +147,14 @@ class Home extends React.Component {
                   </p>
                   <Hidden smUp>
                   <div style={{textAlign: 'center'}}>
-                  <Button variant="contained" size="large" color="secondary" href="#start">
+                  <Button variant="contained" size="large" color="primary" href="#start">
                     <strong>Start</strong>
                   </Button>
                   </div>
                   </Hidden>
                   <Hidden smDown>
                   <div style={{textAlign: 'left'}}>
-                  <Button variant="contained" size="large" color="secondary" href="#start">
+                  <Button variant="contained" size="large" color="primary" href="#start">
                     <strong>Start</strong>
                   </Button>
                   </div>
@@ -164,8 +169,10 @@ class Home extends React.Component {
                 </Grid>
                 </Grid>
                 </Grid>
+                <Spacer height="200px"/>
             </Box>
-            <Box p={2} minHeight="100vh" >
+            <Box p={2} >
+            <Spacer height="200px"/>
                 <Grid container alignItems="center" justify="center" style={{height: "100%"}}>
                 <Grid item md={8}>
                 <Grid container alignItems="center" justify="center">
@@ -179,14 +186,14 @@ class Home extends React.Component {
                   </p>
                   <Hidden smUp>
                   <div style={{textAlign: 'center'}}>
-                  <Button variant="contained" size="large" color="secondary" href="#start">
+                  <Button variant="contained" size="large" color="primary" href="#start">
                     <strong>Start</strong>
                   </Button>
                   </div>
                   </Hidden>
                   <Hidden smDown>
                   <div style={{textAlign: 'left'}}>
-                  <Button variant="contained" size="large" color="secondary" href="#start">
+                  <Button variant="contained" size="large" color="primary" href="#start">
                     <strong>Start</strong>
                   </Button>
                   </div>
@@ -201,6 +208,7 @@ class Home extends React.Component {
                 </Grid>
                 </Grid>
                 </Grid>
+                <Spacer height="200px"/>
             </Box>
             {/* <Box bgcolor="secondary.dark" color height="100vh" color="primary.contrastText" minHeight='100vh'>
               <Grid container alignItems="center" justify="center" style={{height: '100%'}}>
