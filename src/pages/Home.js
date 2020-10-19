@@ -264,7 +264,7 @@ class Home extends React.Component {
               </Grid>
               <Spacer height="200px"/>
             </Box>
-            
+
             <Start
             header="Turn your CCTV network into an active management tool today"
             form={
