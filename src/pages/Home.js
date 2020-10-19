@@ -22,6 +22,12 @@ import Section from './Components/Section'
 import {Box, Grid, Button, Hidden} from '@material-ui/core'
 import s from '../styles/styles.module.css'
 import Building from '../assets/building.png'
+import Clock from '../assets/clock1.svg'
+import Tech from '../assets/computing1.svg'
+import Router from '../assets/wifi-router.svg' 
+import Internet from '../assets/internet1.svg'
+import Patience from '../assets/pray1.svg'
+import Technician from '../assets/workers1.svg'
 
 class Home extends React.Component {
 
@@ -180,7 +186,7 @@ class Home extends React.Component {
                 <Grid item md={6}>
                   <Spacer height="50px"/>
                   <h2 className={`${s.header} `}>
-                  Analyse data with our claoud-based app
+                  Analyse data with our cloud-based app
                   </h2>
                   <p className={s.p}>
                   Use the powerful cloud-based Zeptron app to stay in control at all times, start new feeds, configure streams, and get analytics
@@ -211,31 +217,54 @@ class Home extends React.Component {
                 </Grid>
                 <Spacer height="200px"/>
             </Box>
-            {/* <Box bgcolor="secondary.dark" color height="100vh" color="primary.contrastText" minHeight='100vh'>
-              <Grid container alignItems="center" justify="center" style={{height: '100%'}}>
+
+            <Box bgcolor="primary.light" color="primary.contrastText" p={2}>
+            <Spacer height="200px"/>
+              <Grid container alignItems="center" justify="center">
                 <Grid item md={8}>
-                <Grid container alignItems="center" justify="center">
-                <Grid item md={12}>
-                <h2 className={`${s.header} ${s.center}`}>
-                  Loved by...
-                  </h2>
-                   <Spacer height="50px"/>
                   <Grid container alignItems="center" justify="center">
-                    {/* <Grid item md={4} sm={6}>
-                      <img style={{width: 250, maxWidth: '100%'}} src="https://static1.squarespace.com/static/5d7b27bf2da3a5041cc91ffd/t/5d9da5ffbe16a30f8d994aa0/1593416539322/?format=original"/>
-                    </Grid> 
-                    <Grid item md={4} sm={6}>
-                      <img style={{width: 200, maxWidth: '100%'}} src="https://images.squarespace-cdn.com/content/v1/58038734f5e231804130cf01/1530186594390-OS2HAO6YEGV9ILQAQCW1/ke17ZwdGBToddI8pDm48kMtiXMEMZ8ID8MVhA-T_Qc9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIXpy3a2Cibo6eml5BpILeGX-BY3QvcZT7F317PmmzovI/stone_chalk.png"/>
+                    <Grid item md={6}>
+                    <h2 className={`${s.header} ${s.center}`}>
+                      What you need 
+                      </h2>
+                      <Spacer height="100px"/>
                     </Grid>
-                    <Grid item md={4} sm={6}>
-                      <img style={{width: 200, maxWidth: '100%', filter: 'invert(100%)'}} src="https://cdn.concreteplayground.com/content/uploads/2019/04/SRG-Logo-Blk-01.png"/>
-                    </Grid>
+                    <Grid container alignItems="center" justify="center">
+                      <Grid item md={2} sm={4} xs={6}>
+                      <img src={Clock} style={{maxWidth: '50px'}}/>
+                      <p style={{color: '#7F8E93'}}>time</p>
+                      </Grid>
+                      <Grid item md={2} sm={4} xs={6}>
+                      <img src={Tech} style={{maxWidth: '50px'}}/>
+                      <p style={{color: '#7F8E93'}}>tech skills</p>
+                      </Grid>
+                      <Grid item md={2} sm={4} xs={6}>
+                      <Box p={2} m={1} style={{border: '1px solid #e1e1e1', marginBottom: 25}}>
+                      <img src={Router} style={{maxWidth: '50px'}}/>
+                      <p style={{marginBottom: 0}}><strong>router</strong></p>
+                      </Box>
+                      </Grid>
+                      <Grid item md={2} sm={4} xs={6}>
+                      <Box p={2} m={1} style={{border: '1px solid #e1e1e1', marginBottom: 25}}>
+                      <img src={Internet} style={{maxWidth: '50px'}}/>
+                      <p style={{marginBottom: 0}}><strong>internet</strong></p>
+                      </Box>
+                      </Grid>
+                      <Grid item md={2} sm={4} xs={6}>
+                      <img src={Patience} style={{maxWidth: '50px'}}/>
+                      <p style={{color: '#7F8E93'}}>patience</p>
+                      </Grid>
+                      <Grid item md={2} sm={4} xs={6}>
+                      <img src={Technician} style={{maxWidth: '50px'}}/>
+                      <p style={{color: '#7F8E93'}}>technician</p>
+                      </Grid>
+                      </Grid>
                   </Grid>
                 </Grid>
-                </Grid>
-                </Grid>
               </Grid>
-            </Box> */}
+              <Spacer height="200px"/>
+            </Box>
+            
             <Start
             header="Turn your CCTV network into an active management tool today"
             form={

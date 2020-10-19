@@ -19,7 +19,7 @@ import { Button } from "../../containers/Auth.style";
     const [spacing] = React.useState(2);
    
    return (
-    <Box id="start" p={4} {...css(styles.container)} height="100vh" bgcolor="primary.main" color="primary.contrastText" >
+    <Box id="start" p={4} {...css(styles.container)} height="100vh" bgcolor="primary.dark" color="primary.contrastText" >
        <Spacer height="200px"/>
          <Grid container justify="center" spacing={spacing} {...css(styles.content)}>
             <Grid item md={10} sm={10} xs={12}>
