@@ -1,12 +1,21 @@
 import React from 'react';
 import { css } from "glamor";
-import {Box, Button, Grid, Hidden, TextField} from '@material-ui/core'
+import {Box, Grid, Hidden, TextField} from '@material-ui/core'
 import s from '../../styles/styles.module.css'
 import Spacer from 'react-spacer'
 import AWS from 'aws-sdk';
 import useInput from '../../utils/hooks/useInput';
+import G from '../../assets/google.svg'
+import Browsers from '../../assets/browsers.png'
+import { Auth } from "aws-amplify";
+import UserContext from "../../UserContext";
+import { Button } from "../../containers/Auth.style";
 
   export default function Hero(props) {
+
+    const thisGoogle = () => {
+      Auth.federatedSignIn({ provider: "Google" });
+    };
 
 
     // console.log(`require("./../../assets/herobg.mp4")`, 
@@ -38,31 +47,45 @@ import useInput from '../../utils/hooks/useInput';
    return (
       <Box bgcolor="primary.dark" color="primary.contrastText" p={4} {...css(styles.container)}>
        {/* <div {...css(styles.coverOpacity)}></div> */}
-          <Spacer height="250px"/>
+          <Spacer height="100px"/>
               <Grid container alignItems="center" justify="center" {...css(styles.content)}>
                 <Grid item xs={10}>
-                    <Grid item lg={4} md={6} sm={10} xs={12}>
-                   <h1  className={`${s.header}  `} >
-                     {props.header}
+                <Grid container alignItems="center" justify="center">
+                    <Grid item lg={6} md={6} sm={10} xs={12}>
+                   <h1  className={`${s.header} ${s.center} `} >
+                     Deploy AI on any CCTV video network in minutes
                     </h1>
-                    
-                    <p className={`${s.subheader}`} >
-                      {props.subheader}
-                    </p>
-                 
                     <Spacer height="25px"/>
+                    <Grid container alignItems="center" justify="center">
+                    <Grid item md={6}>
+                    <Button
+                    fullwidth
+                    title={<strong>Start now with Google</strong>}
+                    className="google"
+                    icon={<img src={G}/>}
+                    iconPosition="left"
+                    iconStyle={{ color: "#4285f4", marginRight: 5 }}
+                    intlButtonId="continueGoogleBtn"
+                    onClick={thisGoogle}
+                    style={{ color: "rgb(0, 10, 18)" }}
+                  />   
+                  </Grid>   
+                  </Grid>   
+                  <Spacer height="25px"/>
+                    {/* <p className={`${s.subheader} ${s.center}`} >
+                      Deploy AI on live streaming video in seconds, not hours, using Zeptron's cloud-based AI app
+                    </p>
+                     */}
                   </Grid>
-                  <div style={{textAlign: 'left'}}>
-                  {/* <Button size="medium" variant="contained" color="secondary">
-                    Sign up
-                  </Button> */}
-                  <Button size="large" variant="contained" color="secondary" to="/login">
+                  </Grid>
+                  {/* <Button size="large" variant="contained" color="secondary" to="/login">
                     <strong>Learn More</strong>
                   </Button>
-                  </div>
+                */}
+                  <img src={Browsers} style={{maxWidth: '100%'}}/>
                 </Grid>
               </Grid>
-      <Spacer height="200px"/>
+      <Spacer height="100px"/>
     </Box>  
   )
 }

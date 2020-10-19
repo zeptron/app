@@ -46,14 +46,15 @@ class Home extends React.Component {
             /> 
             <Section
             /> */}
-            <Start
+            <Hero/>
+            {/* <Start
             button="Yes"
             form={
               <Hubspot
                 meetcode="/meeting-def"
               />
             }
-            />
+            /> */}
               <Box p={2} >
               <Grid container alignItems="center" justify="center" >
                 <Grid item md={8}>
@@ -61,10 +62,10 @@ class Home extends React.Component {
                 <Grid container alignItems="center" justify="center">
                 <Grid item md={6}>
                   <h2 className={`${s.header} `}>
-                  Plug directly into your CCTV network securely
+                  Route CCTV streams to cloud AI securely
                   </h2>
                   <p className={s.p}>
-                  The Zeptron router connects your CCTV streams to AI in seconds with no code or set up required from you
+                  The Zeptron router connects your CCTV streams to cloud-based GPU in seconds with no code or set up required from you
                   </p>
                   <Hidden smUp>
                   <div style={{textAlign: 'center'}}>
@@ -101,7 +102,7 @@ class Home extends React.Component {
                 <Grid item md={6}>
                   <Spacer height="50px"/>
                   <h2 className={`${s.header} `}>
-                  Set up counting and tracking on your cameras in seconds
+                  Configure actions and notifications for each class from the UI
                   </h2>
                   <p className={s.p}>
                   The Zeptron app makes it easy to set up counting and tracking in seconds using the CCTV cameras at your entrances and exits
@@ -140,7 +141,7 @@ class Home extends React.Component {
                 <Grid item md={6}>
                   <Spacer height="50px"/>
                   <h2 className={`${s.header} `}>
-                  Get notifications for detections that matter
+                  Get push notifications for important detections
                   </h2>
                   <p className={s.p}>
                   Get notified via Slack, SMS or email for the notifications that matter to you
@@ -179,7 +180,7 @@ class Home extends React.Component {
                 <Grid item md={6}>
                   <Spacer height="50px"/>
                   <h2 className={`${s.header} `}>
-                  Use a powerful cloud app to stay in control
+                  Analyse data with our claoud-based app
                   </h2>
                   <p className={s.p}>
                   Use the powerful cloud-based Zeptron app to stay in control at all times, start new feeds, configure streams, and get analytics
@@ -236,7 +237,7 @@ class Home extends React.Component {
               </Grid>
             </Box> */}
             <Start
-            header="Start getting more value out of your CCTV today"
+            header="Turn your CCTV network into an active management tool today"
             form={
               <Hubspot
                 meetcode="/meeting-def"
