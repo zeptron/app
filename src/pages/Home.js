@@ -28,6 +28,7 @@ import Router from '../assets/wifi-router.svg'
 import Internet from '../assets/internet1.svg'
 import Patience from '../assets/pray1.svg'
 import Technician from '../assets/workers1.svg'
+import Table from './Components/Table'
 
 class Home extends React.Component {
 
@@ -260,6 +261,22 @@ class Home extends React.Component {
                       </Grid>
                       </Grid>
                   </Grid>
+                </Grid>
+              </Grid>
+              <Spacer height="200px"/>
+            </Box>
+
+            <Box p={2}>
+            <Spacer height="200px"/>
+              <Grid container alignItems="center" justify="center">
+                <Grid item md={8}>
+                <h2 className={`${s.header} ${s.center}`}>
+                      Pricing
+                      </h2>
+                      <p className={`${s.p} ${s.center}`}>You are not required to purchase a router. </p>
+                      <p className={`${s.p} ${s.center}`}>Our streaming package runs on any Mac / PC / Linux computer.</p>
+                      <Spacer height="50px"/>
+                <Table/>
                 </Grid>
               </Grid>
               <Spacer height="200px"/>
