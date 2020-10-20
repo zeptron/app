@@ -282,6 +282,8 @@ class Home extends React.Component {
               <Spacer height="200px"/>
             </Box>
 
+           
+
             <Start
             header="Turn your CCTV network into an active management tool today"
             form={
@@ -290,6 +292,52 @@ class Home extends React.Component {
               />
             }
             />
+
+            <Box p={2}>
+            <Spacer height="200px"/>
+              <Grid container alignItems="center" justify="center">
+                <Grid item md={8}>
+                <h2 className={`${s.header} ${s.center}`}>
+                      Developer Features
+                </h2>
+                <Grid container >
+                  <Grid item md={6}>
+                    <ul style={{textAlign: 'left'}} className={s.p}>
+                      <li>
+                        streaming package sends 20ms HD feed from Mac / PC / Linux / RPI
+                      </li>
+                      <li>
+                        add new models via AMI
+                      </li>
+                      <li>
+                       app launches instance from model AMI
+                      </li>
+                      <li>
+                       app automatically creates table to hold inference results
+                      </li>
+                    </ul>
+                  </Grid>
+                  <Grid item md={6}>
+                    <ul style={{textAlign: 'left'}} className={s.p}>
+                      <li>
+                        start / stop / run instance from UI
+                      </li>
+                      <li>
+                        set up counting and notifications for each class from UI
+                      </li>
+                      <li>
+                       grant access to instances to other users
+                      </li>
+                      <li>
+                       cut costs with multiple cameras / instance
+                      </li>
+                    </ul>
+                  </Grid>
+                </Grid>
+                </Grid>
+              </Grid>
+              <Spacer height="200px"/>
+            </Box>
             </div>
           )
         }
