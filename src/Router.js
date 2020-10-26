@@ -29,7 +29,7 @@ import Studio from "./app/Studio/Index";
 import Instance from "./app/Studio/Instance";
 import Analytics from "./app/Studio/Instance/analytics";
 import ConfigurationSteps from './app/Studio/ConfigurationSteps';
-
+import Routers from './pages/Router'
 
 
 
@@ -98,6 +98,7 @@ const Routes = () => (
         <Route path="/production" exact component={Landing.Production} />
         <Route path="/cctv" exact component={Landing.CCTV} />
         <Route path="/app" exact component={App} />
+        <Route path="/routers" exact component={Routers} />
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/library" exact component={Library} />
         <PrivateRoute path="/studio/configuration/:id" component={ConfigurationSteps} />

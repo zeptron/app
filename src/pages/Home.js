@@ -29,6 +29,16 @@ import Internet from '../assets/internet1.svg'
 import Patience from '../assets/pray1.svg'
 import Technician from '../assets/workers1.svg'
 import Table from './Components/Table'
+import Slider from "react-slick";
+
+var settings = {
+  appendDots: dots => <ul style={{color: 'white!important'}}>{dots}</ul>,
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
 
 class Home extends React.Component {
 
@@ -277,6 +287,34 @@ class Home extends React.Component {
                       <p className={`${s.p} ${s.center}`}>Our streaming package runs on any Mac / PC / Linux computer.</p>
                       <Spacer height="50px"/>
                 <Table/>
+                </Grid>
+              </Grid>
+              <Spacer height="200px"/>
+            </Box>
+
+            <Box p={2} minHeight='100vh' bgcolor="secondary.light">
+              <Spacer height="200px"/>
+              <Grid container alignItems="center" justify="center">
+                <Grid item md={6}>
+                  <h2 className={`${s.header} ${s.center}`}>
+                    Testimonials
+                  </h2>
+                  <Spacer height="20px"/>
+                  <h3 className={`${s.subheader} ${s.center}`}>"</h3>
+                  <Slider {...settings}>
+                  <div>
+                    <h3 className={`${s.subheader} ${s.center}`}>Zeptron has enabled us to get more out of our CCTV system in seconds.</h3>
+                    <h5 className={s.center}>Matt</h5>
+                  </div>
+                  <div>
+                    <h3 className={`${s.subheader} ${s.center}`}>I love the fact that we didn't have to do any tech work - we just plugged it in and that's it.</h3>
+                    <h5 className={s.center}>Trish</h5>
+                  </div>
+                  <div>
+                    <h3 className={`${s.subheader} ${s.center}`}>As a computer vision engineeer, Zeptron has saved me hours of time and given me incredible flexibility for deploying my models</h3>
+                    <h5 className={s.center}>Van Ngyuen</h5>
+                  </div>
+                </Slider>
                 </Grid>
               </Grid>
               <Spacer height="200px"/>

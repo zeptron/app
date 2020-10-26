@@ -15,7 +15,6 @@ import { Button } from "../../containers/Auth.style";
       Auth.federatedSignIn({ provider: "Google" });
     };
 
- 
     const [spacing] = React.useState(2);
    
    return (

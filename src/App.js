@@ -7,6 +7,9 @@ import Router from "./Router";
 import UserContext from "./UserContext";
 import theme from "./styles/theme.js";
 import TagManager from 'react-gtm-module'
+import { loadStripe } from '@stripe/stripe-js';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import LogRocket from 'logrocket';
 LogRocket.init('mfa6i0/zeptron');
 
@@ -15,6 +18,7 @@ const tagManagerArgs = {
 }
 
 TagManager.initialize(tagManagerArgs)
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
 
 class App extends Component {
   state = {
