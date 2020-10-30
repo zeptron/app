@@ -13,7 +13,7 @@ const Server = ({ id, ip }) => {
       </Alert>
       <p className={s.subclass}>IP: {ip}<br/></p>
       <Spacer height="50px"/>
-      <Button href={`/app/studio/${id}`} variant="contained" color="primary" size="large">
+      <Button href={`/studio/${id}`} variant="contained" color="primary" size="large">
         <span className={s.ctabutton}>Proceed</span>
       </Button>
     </div>

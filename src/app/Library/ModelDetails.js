@@ -74,7 +74,7 @@ export const ModelDetails = ({ model, rows, modelClasses }) => {
 
             <Spacer height="25px" />
             <Link
-              to={`/app/studio/configuration/${model.id}`}
+              to={`/studio/configuration/${model.id}`}
               style={{ textDecoration: "none" }}
             >
               <Hidden xsDown>

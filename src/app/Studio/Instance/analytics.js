@@ -226,7 +226,7 @@ useEffect(() => {
             <div>
             <Button
             style={{marginLeft: 5}}
-            href={`/app/${modelConfig.id}/`}
+            href={`/${modelConfig.id}/`}
             variant="contained"
             color="secondary"
             size="small"
