@@ -5,12 +5,12 @@ import Spacer from 'react-spacer';
 import { Box, Button, Grid, Hidden } from '@material-ui/core';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import moment from 'moment';
+import Loader from '../Components/Loader'
 import RefreshIcon from '@material-ui/icons/Refresh';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import UserContext from '../../../UserContext';
 import useQuery from '../../../graphql/useQuery';
 import * as queries from '../../../graphql/queries';
-import Loader from '../Components/Loader'
 import s from '../../../styles/styles.module.css';
 
 export default function Analytics({ match }) {
@@ -216,7 +216,6 @@ useEffect(() => {
     <div>
       <Box p={4} color="primary.contrastText" bgcolor="#000">
       <Spacer height="20px"/>
-
         <h1 className={s.header} style={{textAlign: 'center'}}>
           {modelConfig.instanceName}
         </h1>
