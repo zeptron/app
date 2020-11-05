@@ -94,7 +94,7 @@ export const ModelSettings = ({ modelConfig }) => {
     '#fabd2f',
   ];
 
-  const [mode, setMode] = useState(MODES.MIN30.key);
+  const [mode, setMode] = useState(MODES.MIN5.key);
   const [analytics, setAnalytics] = useState([]);
   const { user } = useContext(UserContext);
   const modelQuery = useQuery(queries.listModelConfigs, {
