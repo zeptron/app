@@ -9,7 +9,6 @@ import {
 // Utils
 import UserContext from "./UserContext";
 import Header from "./Menu";
-import Footer from "./Footer";
 import Authenticator from "./Authenticator";
 import ScrollToTop from './utils/scroll'
 // Public Routes
@@ -30,6 +29,7 @@ import Instance from "./app/Studio/Instance";
 import Analytics from "./app/Studio/Instance/analytics";
 import ConfigurationSteps from './app/Studio/ConfigurationSteps';
 import Routers from './pages/Router'
+import Redesign from './pages/Redesign'
 
 
 
@@ -99,6 +99,7 @@ const Routes = () => (
         <Route path="/cctv" exact component={Landing.CCTV} />
         <Route path="/app" exact component={App} />
         <Route path="/routers" exact component={Routers} />
+        <Route path="/redesign" exact component={Redesign} />
         <PrivateRoute path="/library/:id/" exact component={LibTemplate} />
         <PrivateRoute path="/library" exact component={Library} />
         <PrivateRoute path="/studio/configuration/:id" component={ConfigurationSteps} />

@@ -10,22 +10,14 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import AppsIcon from '@material-ui/icons/Apps';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Logo from '../../assets/logo_white.svg'
 import { Auth } from "aws-amplify";
 import UserContext from "../../UserContext";
-import s from "../../styles/styles.module.css";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Spacer from 'react-spacer'
-import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: "5px"
   },
   paper: {
-    background: "rgb(37, 51, 55)",
+    background: "#014a79",
     color: "#fff",
     marginRight: theme.spacing(2),
   }
@@ -159,9 +151,9 @@ export default function SwipeableTemporaryDrawer(props) {
       return item.name === checkTabText;
     });
     if(selectedItem && selectedItem[0].route === routeLoction){
-      return {color : "#26a7be"}
+      return {color : "#fff"}
     } else {
-      return {color : "#26a7be"}
+      return {color : "#fff"}
     }
   }
 

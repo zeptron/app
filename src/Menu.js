@@ -25,10 +25,10 @@ class Header extends React.Component {
 
   checkbackground = () => {
     if(this.state.isScrolled){
-      return {backgroundColor: '#000'}
+      return {backgroundColor: '#001740'}
     } 
     else {
-      return {backgroundColor: '#000'}
+      return {backgroundColor: '#001740'}
     }
   }
 
